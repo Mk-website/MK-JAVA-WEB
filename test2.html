@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Selector</title>
+    <style>
+         
+         body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 500;
+            color: #1e88e5;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+            background-color: #f9f9f9;
+        }
+
+        select:focus {
+            border-color: #1e88e5;
+            outline: none;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        pre {
+            background-color: #282c34;
+            color: #61dafb;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            overflow-x: auto;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                height: auto;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            select {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            pre {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            select {
+                font-size: 12px;
+                padding: 6px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            pre {
+                font-size: 10px;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program Selector</h1>
+
+        <!-- First Select: Type of Program -->
+        <label for="selectType">Select Type:</label>
+        <select id="selectType">
+            <option value="">Select Type</option>
+        </select>
+
+        <!-- Second Select: Difficulty Level -->
+        <label for="selectDifficulty">Select Difficulty:</label>
+        <select id="selectDifficulty" disabled>
+            <option value="">Select Difficulty</option>
+        </select>
+
+        <!-- Third Select: Programs -->
+        <label for="selectProgram">Select Program:</label>
+        <select id="selectProgram" disabled>
+            <option value="">Select Program</option>
+        </select>
+
+        <!-- Display Result -->
+        <h3 id="resultTitle"></h3>
+        <p id="result"></p>
+        <pre id="code"></pre>
+        <pre id="Output"></pre>
+    </div>
+
+    <script>
+        const programData = {
+    "Array": {
+        "Easy": {
+            "Sum of Elements": {
+                description: "Program to sum elements of an array.",
+                code: `
+function sumArray(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+           `,
+    output: `
+                let array = [1, 2, 3, 4, 5];
+console.log(sumArray(array)); // Output: 15
+                `
+            },
+            "Find Maximum": {
+                description: "Program to find the maximum element in an array.",
+                code: `
+function findMax(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+// Example usage
+let array = [1, 3, 7, 2, 5];
+console.log(findMax(array)); // Output: 7
+                `,
+            output: `
+let array = [1, 3, 7, 2, 5];
+console.log(findMax(array)); // Output: 7
+                `
+            }
+        },
+        "Medium": {
+            "Reverse Array": {
+                description: "Program to reverse an array.",
+                code: `
+function reverseArray(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+    while (start < end) {
+        [arr[start], arr[end]] = [arr[end], arr[start]];
+        start++;
+        end--;
+    }
+    return arr;
+}
+
+// Example usage
+
+                `,
+                output: `
+                let array = [1, 2, 3, 4, 5];
+console.log(reverseArray(array)); // Output: [5, 4, 3, 2, 1]
+                `
+            },
+            "Find Second Largest": {
+                description: "Program to find the second largest element in an array.",
+                code: `
+function findSecondLargest(arr) {
+    let max = -Infinity;
+    let secondMax = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            secondMax = max;
+            max = arr[i];
+        } else if (arr[i] > secondMax && arr[i] !== max) {
+            secondMax = arr[i];
+        }
+    }
+
+    return secondMax;
+}
+
+// Example usage
+
+                `,
+                output: `
+                let array = [10, 20, 4, 45, 99];
+console.log(findSecondLargest(array)); // Output: 45
+                `
+            }
+        },
+        "Hard": {
+            "Merge Sort": {
+                description: "Program to sort an array using Merge Sort.",
+                code: `
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    const mid = Math.floor(arr.length / 2);
+    const left = mergeSort(arr.slice(0, mid));
+    const right = mergeSort(arr.slice(mid));
+
+    return merge(left, right);
+}
+
+function merge(left, right) {
+    let result = [];
+    let leftIndex = 0;
+    let rightIndex = 0;
+
+    while (leftIndex < left.length && rightIndex < right.length) {
+        if (left[leftIndex] < right[rightIndex]) {
+            result.push(left[leftIndex]);
+            leftIndex++;
+        } else {
+            result.push(right[rightIndex]);
+            rightIndex++;
+        }
+    }
+
+    return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+}
+
+            `,
+                output: `
+                let array = [38, 27, 43, 3, 9, 82, 10];
+console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+    
+                `
+            },
+            "Quick Sort": {
+                description: "Program to sort an array using Quick Sort.",
+                code: `
+function quickSort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    const pivot = arr[arr.length - 1];
+    const left = [];
+    const right = [];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] < pivot) {
+            left.push(arr[i]);
+        } else {
+            right.push(arr[i]);
+        }
+    }
+
+    return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
+// Example usage
+let array = [10, 7, 8, 9, 1, 5];
+console.log(quickSort(array)); // Output: [1, 5, 7, 8, 9, 10]
+                `,
+                output: `
+                let array = [10, 7, 8, 9, 1, 5];
+console.log(quickSort(array)); // Output: [1, 5, 7, 8, 9, 10]
+               
+                `
+            }
+        }
+    },
+    // Add similar data for String, Inheritance, and OOP...
+};
+
+let selectType = document.getElementById("selectType");
+let selectDifficulty = document.getElementById("selectDifficulty");
+let selectProgram = document.getElementById("selectProgram");
+let resultTitle = document.getElementById("resultTitle");
+let result = document.getElementById("result");
+let code = document.getElementById("code");
+let output = document.getElementById("Output");
+
+// Populate the first dropdown (Select Type)
+for (let type in programData) {
+    let option = document.createElement("option");
+    option.value = type;
+    option.text = type;
+    selectType.appendChild(option);
+}
+
+// Event Listener for Type Selection
+selectType.addEventListener("change", function() {
+    selectDifficulty.innerHTML = `<option value="">Select Difficulty</option>`; // Reset second dropdown
+    selectProgram.innerHTML = `<option value="">Select Program</option>`; // Reset third dropdown
+    resultTitle.innerHTML = ""; // Clear result title
+    result.innerHTML = ""; // Clear result
+    code.innerHTML = ""; // Clear code
+
+    if (selectType.value !== "") {
+        selectDifficulty.disabled = false;
+
+        for (let difficulty in programData[selectType.value]) {
+            let option = document.createElement("option");
+            option.value = difficulty;
+            option.text = difficulty;
+            selectDifficulty.appendChild(option);
+        }
+    } else {
+        selectDifficulty.disabled = true;
+        selectProgram.disabled = true;
+    }
+});
+
+// Event Listener for Difficulty Selection
+selectDifficulty.addEventListener("change", function() {
+    selectProgram.innerHTML = `<option value="">Select Program</option>`; // Reset third dropdown
+    resultTitle.innerHTML = ""; // Clear result title
+    result.innerHTML = ""; // Clear result
+    code.innerHTML = ""; // Clear code
+
+    if (selectDifficulty.value !== "") {
+        selectProgram.disabled = false;
+        let programs = programData[selectType.value][selectDifficulty.value];
+
+        for (let program in programs) {
+            let option = document.createElement("option");
+            option.value = program;
+            option.text = program;
+            selectProgram.appendChild(option);
+        }
+    } else {
+        selectProgram.disabled = true;
+    }
+});
+
+// Event Listener for Program Selection
+selectProgram.addEventListener("change", function() {
+    if (selectProgram.value !== "") {
+        let selectedProgram = programData[selectType.value][selectDifficulty.value][selectProgram.value];
+        resultTitle.innerHTML = `Selected Program: ${selectType.value} > ${selectDifficulty.value} > ${selectProgram.value}`;
+        result.innerHTML = `<strong>Description:</strong> ${selectedProgram.description}`;
+        code.innerHTML = selectedProgram.code.trim();
+        output.innerHTML = selectedProgram.output.trim();
+    } else {
+        resultTitle.innerHTML = ""; // Clear result title
+        result.innerHTML = ""; // Clear result
+        code.innerHTML = ""; // Clear code
+    }
+});
+
+    </script>
+</body>
+</html>

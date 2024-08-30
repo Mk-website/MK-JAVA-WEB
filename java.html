@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/util.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="sidebar">
+              <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="/">Java</a></li>
+              <li><a href="#">Programs</a></li>
+              <li><a href="#">About</a></li>
+              
+            </ul>
+            <ul>
+              <li><a href="#"><span><img src="img/mylogo.png" width="50px" alt=""></span>
+              </a></a></li>
+              <li class="hideOnMobile"><a href="index.html">Home</a></li>
+              <li class="hideOnMobile"><a href="#">Login</a></li>
+              <li class="hideOnMobile"><a href="/">Java</a></li>
+              <li class="hideOnMobile"><a href="#">Programs</a></li>
+              <li class="hideOnMobile"><a href="#">About</a></li>
+              <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+            </ul>
+          </nav>
+    </header>
+  
+    <div class="bg">
+        <div class="overlay">
+            <p>JAVA</p>
+        <button class="neon-button1"><a href="#select">Learn Programs</a></button>
+    </div></div>
+    <div class="selector">
+    <div class="container" id="select">
+        <h1>Program Selector</h1>
+
+        <!-- First Select: Type of Program -->
+        <label for="selectType">Select Type:</label>
+        <select id="selectType">
+            <option value="">Select Type</option>
+        </select>
+
+        <!-- Second Select: Difficulty Level -->
+        <label for="selectDifficulty">Select Difficulty:</label>
+        <select id="selectDifficulty" disabled>
+            <option value="">Select Difficulty</option>
+        </select>
+
+        <!-- Third Select: Programs -->
+        <label for="selectProgram">Select Program:</label>
+        <select id="selectProgram" disabled>
+            <option value="">Select Program</option>
+        </select>
+
+        <!-- Display Result -->
+        <h3 id="resultTitle"></h3>
+        <p id="result"></p>
+        <pre id="code"></pre>
+        <pre id="output"></pre>
+    </div>
+</div>
+        <div class="footer">
+            <p>Copyright &copy; CodeLearner.com </p>
+            <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a>
+        </div>
+
+</body>
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/util.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="sidebar">
+              <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="java.html">Java</a></li>
+              <li><a href="#">Programs</a></li>
+              <li><a href="#">About</a></li>
+              
+            </ul>
+            <ul>
+              <li><a href="#"><span><img src="img/mylogo.png" width="50px" alt=""></span>
+              </a></a></li>
+              <li class="hideOnMobile"><a href="/">Home</a></li>
+              <li class="hideOnMobile"><a href="#">Login</a></li>
+              <li class="hideOnMobile"><a href="java.html">Java</a></li>
+              <li class="hideOnMobile"><a href="#">Programs</a></li>
+              <li class="hideOnMobile"><a href="#">About</a></li>
+              <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+            </ul>
+          </nav>
+    </header>
+  
+    <div class="bg">
+        <div class="overlay">
+            <p>Welcome to CodeLearner, 
+            your go-to platform for mastering Java—the backbone of modern software development. 
+            Whether you're a beginner stepping into the world of programming or an experienced coder looking to sharpen your skills, learning 
+            Java is a powerful step towards becoming a proficient developer.</p>
+        <button class="neon-button1"><a href="#java">Get Started</a></button>
+    </div></div>
+    <div class="main">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <a href="java.html"><img src="img/java.webp" alt="Card Image 1">
+                </a></div>
+            <div class="card-content">
+                <h3>Learn JAVA</h3>
+                <p>Master the fundamentals of Java, a powerful and versatile programming language used in web development, mobile apps, and enterprise solutions. Dive into our comprehensive tutorials and start building robust applications today.</p>
+<button class="nano-button"><a href="java.html">Click Me</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" id="java">
+                <img src="img/java.webp" alt="Card Image 2">
+            </div>
+            <div class="card-content">
+                <h3>JAVA Programs</h3>
+                <p>Explore a wide range of Java programs that cover everything from basic syntax to advanced algorithms. Perfect for honing your coding skills and understanding key concepts in Java programming.</p>
+
+<button class="nano-button">Click Me</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+        <div class="footer">
+            <p>Copyright &copy; CodeLearner.com </p>
+            <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a>
+        </div>
+
+</body>
+<script src="main.js"></script>
+</html>

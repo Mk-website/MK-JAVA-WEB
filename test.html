@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Selector</title>
+</head>
+<body>
+    <h1>Program Selector</h1>
+
+    <!-- First Select: Type of Program -->
+    <label for="selectType">Select Type:</label>
+    <select id="selectType">
+        <option value="">Select Type</option>
+    </select>
+
+    <!-- Second Select: Programs -->
+    <label for="selectProgram">Select Program:</label>
+    <select id="selectProgram" disabled>
+        <option value="">Select Program</option>
+    </select>
+
+    <!-- Third Select: Difficulty Level -->
+    <label for="selectDifficulty">Select Difficulty:</label>
+    <select id="selectDifficulty" disabled>
+        <option value="">Select Difficulty</option>
+    </select>
+
+    <!-- Display Result -->
+    <h3 id="resultTitle"></h3>
+    <p id="result"></p>
+
+    
+
+    <script>
+ const programTypes = {
+    "Array": {
+        "Sum of Elements": {
+            "Easy": "Program to sum elements of an array.",
+            "Medium": "Program to sum elements of a 2D array.",
+            "Hard": "Program to sum elements of an array using recursion."
+        },
+        "Reverse Array": {
+            "Easy": "Program to reverse an array.",
+            "Medium": "Program to reverse an array using two-pointer technique.",
+            "Hard": "Program to reverse a linked list."
+        }
+    },
+    "String": {
+        "Reverse String": {
+            "Easy": "Program to reverse a string.",
+            "Medium": "Program to reverse words in a string.",
+            "Hard": "Program to reverse a string using recursion."
+        },
+        "Palindrome Check": {
+            "Easy": "Program to check if a string is a palindrome.",
+            "Medium": "Program to check if a string is a palindrome using two-pointer technique.",
+            "Hard": "Program to check if a linked list is a palindrome."
+        }
+    },
+    "Inheritance": {
+        "Simple Inheritance": {
+            "Easy": "Basic program demonstrating single inheritance in Java.",
+            "Medium": "Program showing method overriding in inheritance.",
+            "Hard": "Program demonstrating multiple inheritance using interfaces."
+        },
+        "Multilevel Inheritance": {
+            "Easy": "Basic program demonstrating multilevel inheritance in Java.",
+            "Medium": "Program showing method resolution in multilevel inheritance.",
+            "Hard": "Complex program demonstrating multilevel inheritance with method overriding."
+        }
+    },
+    "OOP": {
+        "Class and Objects": {
+            "Easy": "Simple program defining a class and creating objects.",
+            "Medium": "Program demonstrating constructors and methods in a class.",
+            "Hard": "Advanced OOP program demonstrating object creation and memory management."
+        },
+        "Polymorphism": {
+            "Easy": "Program demonstrating method overloading.",
+            "Medium": "Program demonstrating method overriding.",
+            "Hard": "Advanced program showing runtime polymorphism."
+        }
+    }
+};
+
+let selectType = document.getElementById("selectType");
+let selectProgram = document.getElementById("selectProgram");
+let selectDifficulty = document.getElementById("selectDifficulty");
+let resultTitle = document.getElementById("resultTitle");
+let result = document.getElementById("result");
+
+// Populate the first dropdown (Select Type)
+for (let type in programTypes) {
+    let option = document.createElement("option");
+    option.value = type;
+    option.text = type;
+    selectType.appendChild(option);
+}
+
+// Event Listener for Type Selection
+selectType.addEventListener("change", function() {
+    selectProgram.innerHTML = `<option value="">Select Program</option>`; // Reset second dropdown
+    selectDifficulty.innerHTML = `<option value="">Select Difficulty</option>`; // Reset third dropdown
+    resultTitle.innerHTML = ""; // Clear result title
+    result.innerHTML = ""; // Clear result
+
+    if (selectType.value !== "") {
+        selectProgram.disabled = false;
+        let programs = programTypes[selectType.value];
+
+        for (let program in programs) {
+            let option = document.createElement("option");
+            option.value = program;
+            option.text = program;
+            selectProgram.appendChild(option);
+        }
+    } else {
+        selectProgram.disabled = true;
+        selectDifficulty.disabled = true;
+    }
+});
+
+// Event Listener for Program Selection
+selectProgram.addEventListener("change", function() {
+    selectDifficulty.innerHTML = `<option value="">Select Difficulty</option>`; // Reset third dropdown
+    resultTitle.innerHTML = ""; // Clear result title
+    result.innerHTML = ""; // Clear result
+
+    if (selectProgram.value !== "") {
+        selectDifficulty.disabled = false;
+
+        for (let difficulty in programTypes[selectType.value][selectProgram.value]) {
+            let option = document.createElement("option");
+            option.value = difficulty;
+            option.text = difficulty;
+            selectDifficulty.appendChild(option);
+        }
+    } else {
+        selectDifficulty.disabled = true;
+    }
+});
+
+// Event Listener for Difficulty Selection
+selectDifficulty.addEventListener("change", function() {
+    if (selectDifficulty.value !== "") {
+        let programDescription = programTypes[selectType.value][selectProgram.value][selectDifficulty.value];
+        resultTitle.innerHTML = `Selected Program: ${selectType.value} > ${selectProgram.value} > ${selectDifficulty.value}`;
+        result.innerHTML = `<strong>Description:</strong> ${programDescription}`;
+    } else {
+        resultTitle.innerHTML = ""; // Clear result title
+        result.innerHTML = ""; // Clear result
+    }
+});
+
+
+    </script>
+</body>
+</html>
