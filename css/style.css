@@ -53,6 +53,7 @@ a
   gap: 20px; /* Space between the cards */
   width: 100%;
   max-width: 800px; /* Maximum width for the container */
+  z-index: 1;
 }
 
 .card {
@@ -281,11 +282,18 @@ p {
   margin-top: 10px;
   color: #666;
 }
-
+.Answer
+{
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+}
 pre {
   background-color: #282c34;
   color: #61dafb;
   padding: 15px;
+  width: 30vw;
+  height: auto;
   border-radius: 5px;
   font-size: 14px;
   overflow-x: auto;
