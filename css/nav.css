@@ -4,12 +4,13 @@
   }
   
   .bg{
-    height: 100vh;
+    height: 50vh;
     background: url('../laptop.jpg');
     background-size: cover;
     background-repeat: no-repeat;
      background-position: center; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
   }
   .bg .overlay 
 {
@@ -21,7 +22,7 @@
   top: 0%;
   color: blue;
   font-size: 2.0em;
-  background-color: rgba(255, 255, 255, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1;
 }
 .bg .overlay p
@@ -30,15 +31,16 @@
   align-items: center;
   text-align: left;
   position: relative;
-
+ color: white;
   font-size: 0.6em;
   width: 50%;
   height: 50%;
-  margin-left: 2%;
+  top:30%;
+  margin-left: 5%;
 }
   nav{
      
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     
     width: 100vw;
     z-index: 3;
@@ -104,6 +106,9 @@
     }
     .bg .overlay p
     {
+      top: 5%;
+      width: 70%;
+      margin-left: 10%;
       font-size: 0.4em;
     }
   }
