@@ -5,14 +5,15 @@
   
   .bg{
     height: 50vh;
-    background: url('../laptop.jpg');
+   /* background: url('../laptop.jpg');
     background-size: cover;
     background-repeat: no-repeat;
      background-position: center; 
+     */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    
   }
-  .bg .overlay 
+ .bg .overlay 
 {
   justify-content: center;
   align-items: center;
@@ -22,7 +23,7 @@
   top: 0%;
   color: blue;
   font-size: 2.0em;
-  background-color: rgba(0, 0, 0, 0.5); 
+/*  background-color: rgba(0, 0, 0, 0.5); */
     z-index: 1;
 }
 .bg .overlay p
@@ -36,16 +37,46 @@
   width: 50%;
   height: 50%;
   top:30%;
-  margin-left: 5%;
+  margin-left: 0%;
 }
-  nav{
-     
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+
+
+header {
+    height: 80vh;
+    width:100vw;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(0, 0, 0, 0.7)), url('../../laptop.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+ 
     
+}
+/*
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10vh;
+ /*  backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px rgba(227, 228, 237, 0.37); 
+    /*border: 1px solid #ffffff6a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    z-index: 5;
+}
+*/
+ nav{
+  position: sticky;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 100vw;
     z-index: 3;
+    color: white;
 
   }
+  
   nav ul{
     width: 100%;
     list-style: none;
@@ -62,7 +93,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: black;
+    color: white;
   }
   nav a:hover{
     background-color: #f0f0f0;
