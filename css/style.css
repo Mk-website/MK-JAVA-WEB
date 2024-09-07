@@ -6,6 +6,14 @@
   {
     background:black;
   }
+
+  .head
+{
+  color: #13AB12;
+  position: relative;
+  top: 15%;
+}
+  
   
 /*  .footer {
     height: 50px;
@@ -25,16 +33,19 @@
 .neon-button1 {
   background-color: #000; /* Dark blue background color */
       color: #fff; /* White text color */
+      width: 20%;
+      height:5%;
+      
       padding: 10px 20px; 
       border: none;
       position: relative;
-      top: 0%;
+      top:0%;
       border-radius: 5px;
       font-size: 18px;
       cursor: pointer;
       box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
       text-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+      transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease, text-shadow 0.3s ease-in-out,transform 1s ease-in-out;
       text-decoration: none; /* Remove underlines for anchor link */
    
 }
@@ -191,6 +202,10 @@ a
 
 /* Responsive design */
 @media (max-width: 800px) {
+ header
+  {
+    height: 70vh;
+  }
   .card-container {
       flex-direction: column; /* Stack the cards vertically on smaller screens */
       align-items: center;
@@ -211,7 +226,9 @@ a
 }
 .neon-button1
 {
-  top: 30%;
+  top: 20%;
+  width: 50%;
+  height: 20%;
 }
 .main
 {
@@ -276,7 +293,7 @@ a
   margin-top: 5%;
 }
 
-h1 {
+.container h1 {
   text-align: center;
   font-weight: 500;
   color: #1e88e5;
@@ -369,6 +386,10 @@ pre {
   pre {
       font-size: 12px;
   }
+ 
+  .bg .overlay h1{
+   top: 5%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -396,6 +417,7 @@ pre {
       font-size: 0.5em;
       width: 70vw;
   }
+ 
 }
 
 footer {
@@ -436,5 +458,3 @@ footer svg:hover {
 footer ul li a:hover {
     color: rgb(255, 255, 255);
 }
-
-  
