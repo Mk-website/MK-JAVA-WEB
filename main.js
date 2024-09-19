@@ -35,17 +35,17 @@ class matrix1
                 System.out.println("Enter columns : ");
                 cols = Integer.parseInt(input.readLine());
                 matrixA=new int[rows][cols];
-                for(i=0;i<rows;i++)
+                for(i=0;i&lt;rows;i++)
                 {
-                    for(j=0;j<cols;j++)
+                    for(j=0;j&lt;cols;j++)
                     {
                         System.out.println("Enter value at ["+i+"]["+j+"] position : ");
                         matrixA[i][j]=Integer.parseInt(input.readLine());
                     }
                 }
-                for(i=0;i<rows;i++)
+                for(i=0;i&lt;rows;i++)
                 {
-                    for(j=0;j<cols;j++)
+                    for(j=0;j&lt;cols;j++)
                     {
                         System.out.print(matrixA[i][j]+" ");
                     }
@@ -97,34 +97,34 @@ class AddMatrix
             int i=0,j=0;
             int addMatrix[][]=new int[matrixA.length][matrixA[0].length];
             System.out.println("Matrix A");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(matrixA[i][j]+" ");
                 }
                 System.out.println("  ");
             }
              System.out.println("Matrix B");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(matrixB[i][j]+" ");
                 }
                 System.out.println("  ");
             }
              System.out.println("Addition of Matrix A and Matrix B : ");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     addMatrix[i][j]=matrixA[i][j]+matrixB[i][j];
                 }
             }
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(addMatrix[i][j]+" ");
                 }
@@ -158,36 +158,36 @@ class MultiplyMatrix
             int i=0,j=0,k=0;
             int multiplyMatrix[][]=new int[matrixA.length][matrixA[0].length];
              System.out.println("Matrix A");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(matrixA[i][j]+" ");
                 }
                 System.out.println("  ");
             }
              System.out.println("Matrix B");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(matrixB[i][j]+" ");
                 }
                 System.out.println("  ");
             }
              System.out.println("Multiplication of Matrix A and Matrix B : ");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
-                    for(k=0;k<matrixA[i].length;k++)
+                    for(k=0;k&lt;matrixA[i].length;k++)
                     multiplyMatrix[i][j]+=matrixA[i][k]*matrixB[k][j];
                 
                 }
             }
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[0].length;j++)
+                for(j=0;j&lt;matrixA[0].length;j++)
                 {
                     System.out.print(multiplyMatrix[i][j]+" ");
                 }
@@ -221,18 +221,18 @@ class SubtractMatrix
             int i=0,j=0;
             int subtractMatrix[][]=new int[matrixA.length][matrixA[0].length];
              System.out.println("Matrix A");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(matrixA[i][j]+" ");
                 }
                 System.out.println("  ");
             }
              System.out.println("Matrix B");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(matrixB[i][j]+" ");
                 }
@@ -240,16 +240,16 @@ class SubtractMatrix
             }
              System.out.println("Subtraction of Matrix A and Matrix B : ");
           
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     subtractMatrix[i][j]=matrixA[i][j]-matrixB[i][j];
                 }
             }
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(subtractMatrix[i][j]+" ");
                 }
@@ -289,9 +289,9 @@ class LowerTriangle
         {
             int matrixA[][]={{1,2,3},{4,5,6},{7,8,9}};
             int i,j;
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-               for(j=0;j<=i;j++)
+               for(j=0;j&lt;=i;j++)
                {
                 System.out.print(matrixA[i][j]+" ");
                }
@@ -319,13 +319,13 @@ class UpperTriangle
         {
             int matrixA[][]={{1,2,3},{4,5,6},{7,8,9}};
             int i,j;
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-               for(j=0;j<i;j++)
+               for(j=0;j&lt;i;j++)
                {
                 System.out.print("  ");
                }
-                for(j=i;j<matrixA[i].length;j++)
+                for(j=i;j&lt;matrixA[i].length;j++)
                {
                 System.out.print(matrixA[i][j]+" ");
                }
@@ -354,17 +354,17 @@ class FrequencyOddEven
             int arr[][]={{1,2,3},{4,5,6},{7,8,9}},i,j;
             int countEven=0,countOdd=0;
              System.out.println("Matrix");
-            for(i=0;i<arr.length;i++)
+            for(i=0;i&lt;arr.length;i++)
             {
-                for(j=0;j<arr[i].length;j++)
+                for(j=0;j&lt;arr[i].length;j++)
                 {
                     System.out.print(arr[i][j]+" ");
                 }
                 System.out.println("  ");
             }
-            for(i=0;i<arr.length;i++)
+            for(i=0;i&lt;arr.length;i++)
             {
-                for(j=0;j<arr[0].length;j++)
+                for(j=0;j&lt;arr[0].length;j++)
                 {
                     if(arr[i][j]%2==0)
                     {
@@ -404,27 +404,27 @@ class SumRowCol
                          {7,8,9}};
             int sumRow,sumCol,i,j;
              System.out.println("Matrix");
-            for(i=0;i<arr.length;i++)
+            for(i=0;i&lt;arr.length;i++)
             {
-                for(j=0;j<arr[i].length;j++)
+                for(j=0;j&lt;arr[i].length;j++)
                 {
                     System.out.print(arr[i][j]+" ");
                 }
                 System.out.println("  ");
             }
-            for(i=0;i<arr.length;i++)
+            for(i=0;i&lt;arr.length;i++)
             {
                 sumRow=0;
-                for(j=0;j<arr[0].length;j++)
+                for(j=0;j&lt;arr[0].length;j++)
                 {
                     sumRow+=arr[i][j];
                 }
                  System.out.println("Sum of Row "+(i+1)+" "+sumRow);
             }
-            for(j=0;j<arr[0].length;j++) 
+            for(j=0;j&lt;arr[0].length;j++) 
             {
                 sumCol=0;
-                for(i=0;i<arr.length;i++)
+                for(i=0;i&lt;arr.length;i++)
                 {
                     sumCol+=arr[i][j];
                 }
@@ -459,25 +459,25 @@ class transpose
             int transpose[][]=new int[matrixA.length][matrixA[0].length];
             int i=0,j=0;
             System.out.println("Matrix A");
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     System.out.print(matrixA[i][j]+" ");
                 }
                 System.out.println("  ");
             }
-            for(i=0;i<matrixA.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j<matrixA[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
                     transpose[j][i]=matrixA[i][j];
                 }
             }
             System.out.println("Transpose of MatrixA : ");
-             for(i=0;i<transpose.length;i++)
+             for(i=0;i&lt;transpose.length;i++)
             {
-                for(j=0;j<transpose[i].length;j++)
+                for(j=0;j&lt;transpose[i].length;j++)
                 {
                     System.out.print(transpose[i][j]+" ");
                 }
@@ -797,7 +797,7 @@ class decimalToBinary
 	int Decimal=12,i=0,temp;
 	int Binary[] = new int[10];
 	temp = Decimal;
-	while(temp>0)
+	while(temp&gt;0)
 			{
 			Binary[i]=temp%2;
 			temp/=2;
@@ -864,7 +864,7 @@ class SumOfDigit
 		public static void main(String st[])
 		{
 		int digit=5447,sum=0,rem;
-		while(digit>0)
+		while(digit&gt;0)
 		{
 		rem=digit%10;
 		sum+=rem;
@@ -922,7 +922,7 @@ class CountString
 		else 
 		{
 		count_number++;
-		for(i=0;i<str.length();i++) 
+		for(i=0;i&lt;str.length();i++) 
 		{
 		 if(i==0 && str.charAt(i)!=' ')
 			{
@@ -1039,7 +1039,7 @@ class Odd
 	{
 	public static void main(String st[])
 	{
-	for(int i=1;i<=20;i++)
+	for(int i=1;i&lt;=20;i++)
 	{
 	if(i%2!=0)
 	{
@@ -1073,7 +1073,7 @@ class Even
         {
         public static void main(String st[])
         {
-        for(int i=1;i<=20;i++)
+        for(int i=1;i&lt;=20;i++)
         {
         if(i%2==0)
         {
@@ -1108,7 +1108,7 @@ class StringToInt
 	{
 	String num = "1234";
 	int number=0,sign =1;
-	for(int i=0;i<num.length();i++)
+	for(int i=0;i&lt;num.length();i++)
 	{
 	char c = num.charAt(i);
 	if(i==0 && c =='-')
@@ -1116,7 +1116,7 @@ class StringToInt
 	 sign = -1;
 	 
 	}
-	else if(c >='0' && c <= '9')
+	else if(c >='0' && c &lt;= '9')
 	{
 	number=number * 10 +(c-'0');
 	
@@ -1168,10 +1168,10 @@ class SumPrimeNum
 	public static void main(String st[])
 	{
 	int num,sum=0,isPrime;
-	for(num=2;num<=100;num++)
+	for(num=2;num&lt;=100;num++)
 	{
 	isPrime=1;
-	for(int i = 2; i<=num/2;i++)
+	for(int i = 2; i&lt;=num/2;i++)
 	{
 	if(num%i==0)
 	{
@@ -1204,12 +1204,12 @@ class SwapArr
 	{
 	int arr[] = {1,2,3,4},i,f=arr[0],l=arr[arr.length-1];
 	System.out.println("Before Swaping ");
-	for(i=0;i<arr.length;i++)
+	for(i=0;i&lt;arr.length;i++)
 	{
 	 System.out.print(" "+arr[i]);
 	}
 	System.out.println();
-	for(i=0;i<arr.length;i++)
+	for(i=0;i&lt;arr.length;i++)
 	{
 	if(i==0)
 	{
@@ -1226,7 +1226,7 @@ class SwapArr
 	}
 	
 	System.out.println("After Swaping ");
-	for(i=0;i<arr.length;i++)
+	for(i=0;i&lt;arr.length;i++)
         {
          System.out.print(" "+arr[i]);
         }
@@ -1251,7 +1251,7 @@ class CountEvenOdd
 	public static void main(String st[])
 	{
 	int arr[] = {1,2,3,4,5,6},i,even=0,odd=0;
-	for(i=0;i<arr.length-1;i++)
+	for(i=0;i&lt;arr.length-1;i++)
 	{
 	if(arr[i]%2==0)
 	{
@@ -1262,7 +1262,7 @@ class CountEvenOdd
 	odd++;
 	}
 	}
-	for(i=0;i<arr.length;i++)
+	for(i=0;i&lt;arr.length;i++)
         {
          System.out.print(" "+arr[i]);
         }
@@ -1308,7 +1308,7 @@ class PalindromeNum
             public static void main(String st[])
             {
                 int num = 121,digit,rev=0,temp =num;
-                while(temp>0)
+                while(temp&gt;0)
                 {
                     digit=temp%10;
                     rev=(digit*10)+rev;
@@ -1348,7 +1348,7 @@ class AddOfDigit
 		public static void main(String st[])
 		{
 		int digit=5447,add=0,rem;
-		while(digit>0)
+		while(digit&gt;0)
 		{
 		rem=digit%10;
 		add+=rem;
@@ -2890,7 +2890,7 @@ class Exception4
                     while(input.hasNextInt())
                     {
                         num=input.nextInt();
-                        if(num > 0)
+                        if(num &gt; 0)
                         {
                             System.out.println(num);
                             throw new NumberIsPositive();
@@ -2989,9 +2989,9 @@ class NumberAreDuplicate extends Throwable
                     {
                     java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
                     arr[0]=Integer.parseInt(input.readLine());
-                    for(i=1;i<arr.length;i++)
+                    for(i=1;i&lt;arr.length;i++)
                     {
-                        for(j=i-1;j<i;j++)
+                        for(j=i-1;j&lt;i;j++)
                         {
 
                         arr[i]=Integer.parseInt(input.readLine());
@@ -3038,7 +3038,7 @@ Number are Duplicate
     "create a method that takes a string as input and throws an exception if the string does not contain vowels.": {
         description: "Program to create a method that takes a string as input and throws an exception if the string does not contain vowels.",
         code: `
-      package exception7;
+package exception7;
 class NotContainVowels extends Throwable
     {
         public String getMessage()
@@ -3053,7 +3053,7 @@ class Exception7
             int i;
             char ch;
             boolean isVowel=false;
-            for(i=0;i<str.length();i++)
+            for(i=0;i&lt;str.length();i++)
             {
                 ch = str.charAt(i);
                 if(ch == 'a' || ch == 'o' || ch == 'e' || ch =='i' || ch == 'u' || ch == 'A' || ch == 'O' || ch == 'E' || ch =='I' || ch == 'U')
@@ -3095,7 +3095,7 @@ class Exception7
         }
     }
 
-`,
+` ,
               output: `
 Manjit
 String contain vowel
@@ -3216,7 +3216,7 @@ class Exception12
 
 `,
               output: `
-C:\>java exception12.Exception12
+C:\&gt;java exception12.Exception12
 Please Enter at least one Argument!
               `
     },
@@ -3250,7 +3250,7 @@ class Exception13
 
 `,
               output: `
-C:\>java exception13.Exception13 a
+C:\&gt;java exception13.Exception13 a
 Please Enter an Integer value!
               `
     },
@@ -3795,7 +3795,7 @@ class SavingsAccount extends BankAccount {
 
     
     public void withdraw(double amount) {
-        if (getBalance() - amount < 100) {
+        if (getBalance() - amount &lt ;100) {
             System.out.println("Withdrawal not allowed. Balance will fall below $100.");
         } else {
             super.withdraw(amount);
@@ -4285,54 +4285,190 @@ code//
      "Enter the character from user using InputStreamReader": {
         description: "Program to Enter the character from user using InputStreamReader",
         code: `
-      code//
+      package input1;
+class Input1
+	{
+	public static void main(String st[])  
+		{
+		char ch = ' ';
+		java.io.InputStreamReader isr = new java.io.InputStreamReader(System.in);
+			try 
+			{
+			System.out.println("Enter any character");
+			 ch = (char)isr.read();
+			System.out.println(ch);
+			}
+			catch( java.io.IOException ex)
+				{
+				System.out.println(ex.getMessage());
+				}
+			catch(Throwable th)
+			{
+				System.out.println(th.getMessage());
 
+			}
+		}
+	}
 `,
               output: `
-             output//
+Enter any character
+a
+You enter : a
               `
     },
     "Enter the string from user using BufferedStreamReader": {
         description: "Program to Enter the string from user using BufferedStreamReader",
         code: `
-      code//
+package input2;
+class Input2
+	{
+	public static void main(String st[])  		{
+		java.io.InputStreamReader isr = new java.io.InputStreamReader(System.in);
+		java.io.BufferedReader  input = new java.io.BufferedReader(isr);
+			//int x = isr.read();
+			//System.out.println(x);
+
+			try
+			{
+			System.out.println("Enter Somrthing");
+			String inp=input.readLine();
+			System.out.println("You enter : "+inp);
+			}
+		catch(java.io.IOException e)
+			{
+			System.out.println(e.getMessage());
+			}
+
+			catch(Throwable th)
+			{
+				System.out.println(th.getMessage());
+
+			}
+
+		}
+	}
 
 `,
               output: `
-             output//
+Enter Somrthing
+manjit
+manjit
               `
     },
     "Enter the integer from user using Scanner class": {
         description: "Program to Enter the integer from user using Scanner class",
         code: `
-      code//
+package input3;
+class Input3
+	{
+	public static void main(String st[])
+		{
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		try{
+        System.out.println("Enter Any Number : ");
+		int x =sc.nextInt();
+		System.out.println("You enter : "+x);
+		}
+		catch(java.util.InputMismatchException e)
+			{
+				System.out.println("Please Enter Integer value");
+			}
+		}
+}
 
 `,
               output: `
-             output//
+Enter Any Number : 
+12
+You enter : 12
               `
     },
     "Enter the float from user using Scanner class": {
         description: "Program to Enter the float from user using Scanner class",
         code: `
-      code//
+package input4;
+class Input4
+	{
+	public static void main(String st[])
+		{
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		try{
+        System.out.println("Enter Any Number : ");
+		float x =sc.nextFloat();
+		System.out.println("You enter : "+x);
+		}
+		catch(java.util.InputMismatchException e)
+			{
+				System.out.println("Please Enter float value");
+			}
+		}
+}
 
 `,
               output: `
-             output//
+Enter Any Number : 
+12.86
+You enter : 12.86
               `
     },
     "Enter the double from user using Scanner class": {
         description: "Program to Enter the double from user using Scanner class",
         code: `
-      code//
+package input5;
+class Input5
+	{
+	public static void main(String st[])
+		{
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		try{
+        System.out.println("Enter Any Number : ");
+		double x =sc.nextDouble();
+		System.out.println("You enter : "+x);
+		}
+		catch(java.util.InputMismatchException e)
+			{
+				System.out.println("Please Enter floating point value");
+			}
+		}
+}
 
 `,
               output: `
-             output//
+Enter Any Number : 
+12.8754
+You enter : 12.8754
               `
     },
     "Enter the boolean from user using Scanner class": {
+        description: "Program to Enter the boolean from user using Scanner class",
+        code: `
+package input6;
+class Input6
+	{
+	public static void main(String st[])
+		{
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		boolean x;
+		try{
+        System.out.println("Enter false/true : ");
+		x =sc.nextBoolean();
+		System.out.println("you enter : "+x);
+		}
+		catch(java.util.InputMismatchException e)
+			{
+				System.out.println("Please Enter true/false value");
+			}
+		}
+}
+
+`,
+              output: `
+Enter false/true : 
+true
+You enter : true
+              `
+    },
+    /*"Enter the boolean from user using Scanner class": {
         description: "Program to Enter the boolean from user using Scanner class",
         code: `
       code//
@@ -4341,17 +4477,7 @@ code//
               output: `
              output//
               `
-    },
-    "Enter the boolean from user using Scanner class": {
-        description: "Program to Enter the boolean from user using Scanner class",
-        code: `
-      code//
-
-`,
-              output: `
-             output//
-              `
-    },
+    },*/
     "Enter the long integer from user using Scanner class": {
         description: "Program to Enter the long integer from user using Scanner class",
         code: `
@@ -5116,37 +5242,80 @@ code//
       " Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.": {
           description: "Program to create a class called Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.",
           code: `
-        code//
+package currentdate;
+import java.util.Date;
+
+class CurrentDate extends Date {
+    public static void main(String[] args) {
+        // Create a CurrentDate object
+        CurrentDate currentDate = new CurrentDate();
+
+        // Print the current date
+        System.out.println("Current Date: " + currentDate);
+    }
+}
+
 `,
                 output: `
-   output//
+Current Date: Thu Sep 19 20:25:38 IST 2024
                 `
       },
       "Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.": {
           description: "Program to Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.",
           code: `
-        code//
+package currentdate2;
+class CurrentDate  {
+    public static void main(String[] args) {
+        // Create a CurrentDate object
+        java.util.Date currentDate = new java.util.Date();
+
+        // Print the current date
+        System.out.println("Current Date: " + currentDate);
+    }
+}
+
 `,
                 output: `
-   output//
+Current Date: Thu Sep 19 20:26:52 IST 2024
                 `
       },
       "Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.": {
           description: "Program to Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.",
           code: `
-        code//
+ package currentdate2;
+ import java.util.Date;
+class CurrentDate extends Date {
+    public static void main(String[] args) {
+        // Create a CurrentDate object
+        CurrentDate currentDate = new CurrentDate();
+
+        // Print the current date
+        System.out.println("Current Date: " + currentDate);
+    }
+}
+
 `,
                 output: `
-   output//
+Current Date: Thu Sep 19 20:26:52 IST 2024
                 `
       },
       "Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.": {
           description: "Program to Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.",
           code: `
-        code//
+package currentdate3;
+
+class CurrentDate extends java.util.Date {
+    public static void main(String[] args) {
+        // Create a CurrentDate object
+        CurrentDate currentDate = new CurrentDate();
+
+        // Print the current date
+        System.out.println("Current Date: " + currentDate);
+    }
+}
 `,
                 output: `
-   output//
+Current Date: Thu Sep 19 20:26:52 IST 2024
                 `
       },
       "Create a Java program to create a package with multiple default classes.": {
@@ -5534,7 +5703,831 @@ output: `
           output//
           `
     },
+    " append the string using StringBuffer class": {
+        description: "Program to  append the string using StringBuffer class.",
+        code: `
+public class StringBufferAppendExample {
+    public static void main(String[] args) {
+        // Create a StringBuffer object
+        StringBuffer sb = new StringBuffer("Hello");
+
+        // Append a string to the existing StringBuffer
+        sb.append(" World");
+
+        // Print the result
+        System.out.println("Appended String: " + sb.toString());
+    }
+}
+
+
+`,
+output: `
+Appended String: Hello World
+          `
+    },
+    "insert the string using StringBuffer class": {
+        description: "Program to insert the string using StringBuffer class.",
+        code: `
+  public class StringBufferInsertExample {
+    public static void main(String[] args) {
+        // Create a StringBuffer object
+        StringBuffer sb = new StringBuffer("Hello World");
+
+        // Insert a string at a specified index
+        sb.insert(6, "Java ");
+
+        // Print the result
+        System.out.println("String after insertion: " + sb.toString());
+    }
+}
+
+
+`,
+output: `
+ String after insertion: Hello Java World
+
+          `
+    },
+    "add characters to a string.": {
+        description: "Program to add characters to a string.",
+        code: `
+            public class AddCharacters {
+                public static void main(String[] args) {
+                    String str = "Hello";
+                    str += "!";
+                    System.out.println(str);
+                }
+            }
+        `,
+        output: `
+Hello!
+        `
+    }
+    ,
+    "check if two strings are anagrams.": {
+        description: "Program to check if two strings are anagrams.",
+        code: `
+            public class AnagramCheck {
+                public static void main(String[] args) {
+                    String str1 = "listen";
+                    String str2 = "silent";
+                    boolean isAnagram = true;
+    
+                    if (str1.length() != str2.length()) {
+                        isAnagram = false;
+                    } else {
+                        char[] arr1 = str1.toCharArray();
+                        char[] arr2 = str2.toCharArray();
+    
+                        for (int i = 0; i < arr1.length; i++) {
+                            int count1 = 0, count2 = 0;
+                            for (int j = 0; j < arr1.length; j++) {
+                                if (arr1[i] == arr1[j]) count1++;
+                                if (arr1[i] == arr2[j]) count2++;
+                            }
+                            if (count1 != count2) {
+                                isAnagram = false;
+                                break;
+                            }
+                        }
+                    }
+                    System.out.println(isAnagram ? "Anagram" : "Not Anagram");
+                }
+            }
+        `,
+        output: `
+Anagram
+        `
+    }
+    ,
+   "check if a string is a palindrome": {
+    description: "Program to check if a string is a palindrome ",
+    code: `
+        public class PalindromeCheck {
+            public static void main(String[] args) {
+                String str = "madam";
+                boolean isPalindrome = true;
+                
+                int length = str.length();
+                for (int i = 0; i < length / 2; i++) {
+                    if (str.charAt(i) != str.charAt(length - 1 - i)) {
+                        isPalindrome = false;
+                        break;
+                    }
+                }
+
+                System.out.println(isPalindrome ? "Palindrome" : "Not a Palindrome");
+            }
+        }
+    `,
+    output: `
+Palindrome
+    `
+}
+,
+    "convert an enum to string.": {
+        description: "Program to convert an enum to string.",
+        code: `
+            public class EnumToString {
+                enum Day { SUNDAY, MONDAY, TUESDAY }
+    
+                public static void main(String[] args) {
+                    Day day = Day.MONDAY;
+                    String dayString = day.name();
+                    System.out.println(dayString);
+                }
+            }
+        `,
+        output: `
+MONDAY
+        `
+    }
+    ,
+    "convert String to String Array.": {
+        description: "Program to convert String to String Array.",
+        code: `
+            public class StringToArray {
+                public static void main(String[] args) {
+                    String str = "Hello World";
+                    char[] charArray = new char[str.length()];
+    
+                    for (int i = 0; i < str.length(); i++) {
+                        charArray[i] = str.charAt(i);
+                    }
+    
+                    for (char c : charArray) {
+                        System.out.print(c + " ");
+                    }
+                }
+            }
+        `,
+        output: `
+H e l l o   W o r l d
+        `
+    }
+    ,
+    "count the number of words in a string.": {
+        description: "Program to count the number of words in a string.",
+        code: `
+            public class CountWords {
+                public static void main(String[] args) {
+                    String str = "Hello World Program";
+                    int wordCount = 1; // At least one word exists
+    
+                    for (int i = 0; i < str.length(); i++) {
+                        if (str.charAt(i) == ' ') {
+                            wordCount++;
+                        }
+                    }
+    
+                    System.out.println("Number of words: " + wordCount);
+                }
+            }
+        `,
+        output: `
+Number of words: 3
+        `
+    }
+    ,
+   "count the total number of characters in a string.": {
+    description: "Program to count the total number of characters in a string.",
+    code: `
+        public class CountCharacters {
+            public static void main(String[] args) {
+                String str = "Hello World";
+                int count = 0;
+
+                for (int i = 0; i < str.length(); i++) {
+                    if (str.charAt(i) != ' ') {
+                        count++;
+                    }
+                }
+
+                System.out.println("Total characters: " + count);
+            }
+        }
+    `,
+    output: `
+Total characters: 10
+    `
+}
+,
+    "count the total number of vowels and consonants in a string.": {
+        description: "Program to count the total number of vowels and consonants in a string.",
+        code: `
+            public class VowelConsonantCount {
+                public static void main(String[] args) {
+                    String str = "Hello World";
+                    int vowelCount = 0;
+                    int consonantCount = 0;
+                    str = str.toLowerCase();
+    
+                    for (int i = 0; i < str.length(); i++) {
+                        char ch = str.charAt(i);
+                        if (ch >= 'a' && ch <= 'z') {
+                            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                                vowelCount++;
+                            } else {
+                                consonantCount++;
+                            }
+                        }
+                    }
+    
+                    System.out.println("Vowels: " + vowelCount);
+                    System.out.println("Consonants: " + consonantCount);
+                }
+            }
+        `,
+        output: `
+Vowels: 3
+Consonants: 7
+        `
+    }
+    ,
+    "determine whether one string is a rotation of another.": {
+        description: "Program to determine whether one string is a rotation of another.",
+        code: `
+            public class StringRotation {
+                public static void main(String[] args) {
+                    String str1 = "abcde";
+                    String str2 = "cdeab";
+                    
+                    if (str1.length() != str2.length()) {
+                        System.out.println("Not a rotation");
+                        return;
+                    }
+    
+                    String combined = str1 + str1;
+                    boolean isRotation = true;
+    
+                    for (int i = 0; i <= combined.length() - str2.length(); i++) {
+                        boolean match = true;
+                        for (int j = 0; j < str2.length(); j++) {
+                            if (combined.charAt(i + j) != str2.charAt(j)) {
+                                match = false;
+                                break;
+                            }
+                        }
+                        if (match) {
+                            isRotation = true;
+                            break;
+                        }
+                    }
+    
+                    System.out.println(isRotation ? "Rotation" : "Not a rotation");
+                }
+            }
+        `,
+        output: `
+Rotation
+        `
+    }
+    ,
+    "divide a string into 'N' equal parts without using any built-in functions.": {
+        description: "Program to divide a string into 'N' equal parts without using any built-in functions.",
+        code: `
+            public class DivideString {
+                public static void main(String[] args) {
+                    String str = "abcdefghij";
+                    int n = 5;
+    
+                    if (str.length() % n != 0) {
+                        System.out.println("Cannot divide string into equal parts.");
+                    } else {
+                        int partSize = str.length() / n;
+                        for (int i = 0; i < str.length(); i++) {
+                            System.out.print(str.charAt(i));
+                            if ((i + 1) % partSize == 0) {
+                                System.out.println();
+                            }
+                        }
+                    }
+                }
+            }
+        `,
+        output: `
+ab
+cd
+ef
+gh
+ij
+        `
+    }
+    ,
+   "find all subsets of a string.": {
+    description: "Program to find all subsets of a string.",
+    code: `
+        public class SubsetsOfString {
+            public static void main(String[] args) {
+                String str = "abc";
+                int n = str.length();
+                System.out.println("Subsets are:");
+                
+                for (int i = 0; i < (1 << n); i++) {
+                    String subset = "";
+                    for (int j = 0; j < n; j++) {
+                        if ((i & (1 << j)) != 0) {
+                            subset += str.charAt(j);
+                        }
+                    }
+                    System.out.println(subset);
+                }
+            }
+        }
+    `,
+    output: `
+Subsets are:
+
+a
+b
+ab
+c
+ac
+bc
+abc
+    `
+}
+,
+    "find all the permutations of a string.": {
+        description: "Program to find all the permutations of a string.",
+        code: `
+            public class PermutationsOfString {
+                public static void main(String[] args) {
+                    String str = "abc";
+                    generatePermutations(str, "");
+                }
+    
+                public static void generatePermutations(String str, String prefix) {
+                    if (str.length() == 0) {
+                        System.out.println(prefix);
+                    } else {
+                        for (int i = 0; i < str.length(); i++) {
+                            char ch = str.charAt(i);
+                            String remaining = "";
+                            for (int j = 0; j < str.length(); j++) {
+                                if (i != j) {
+                                    remaining += str.charAt(j);
+                                }
+                            }
+                            generatePermutations(remaining, prefix + ch);
+                        }
+                    }
+                }
+            }
+        `,
+        output: `
+abc
+acb
+bac
+bca
+cab
+cba
+        `
+    }
+    ,
+    "find maximum and minimum occurring character in a string.": {
+        description: "Program to find maximum and minimum occurring character in a string.",
+        code: `
+            public class MaxMinChar {
+                public static void main(String[] args) {
+                    String str = "programming";
+                    int[] charCount = new int[256];
+    
+                    for (int i = 0; i < str.length(); i++) {
+                        charCount[str.charAt(i)]++;
+                    }
+    
+                    char maxChar = ' ';
+                    char minChar = ' ';
+                    int maxCount = 0;
+                    int minCount = Integer.MAX_VALUE;
+    
+                    for (int i = 0; i < charCount.length; i++) {
+                        if (charCount[i] > 0) {
+                            if (charCount[i] > maxCount) {
+                                maxCount = charCount[i];
+                                maxChar = (char) i;
+                            }
+                            if (charCount[i] < minCount) {
+                                minCount = charCount[i];
+                                minChar = (char) i;
+                            }
+                        }
+                    }
+    
+                    System.out.println("Maximum occurring character: " + maxChar + " (" + maxCount + ")");
+                    System.out.println("Minimum occurring character: " + minChar + " (" + minCount + ")");
+                }
+            }
+        `,
+        output: `
+            Maximum occurring character: g (2)
+            Minimum occurring character: a (1)
+        `
+    }
+    ,
+    "find the reverse of the string.": {
+        description: "Program to find the reverse of the string.",
+        code: `
+            public class ReverseString {
+                public static void main(String[] args) {
+                    String str = "hello";
+                    String reversed = "";
+    
+                    for (int i = str.length() - 1; i >= 0; i--) {
+                        reversed += str.charAt(i);
+                    }
+    
+                    System.out.println("Reversed string: " + reversed);
+                }
+            }
+        `,
+        output: `
+            Reversed string: olleh
+        `
+    }
+    ,
+   "find the duplicate characters in a string.": {
+    description: "Program to find the duplicate characters in a string.",
+    code: `
+        public class DuplicateCharacters {
+            public static void main(String[] args) {
+                String str = "programming";
+                boolean[] visited = new boolean[256];
+
+                System.out.println("Duplicate characters are:");
+                for (int i = 0; i < str.length(); i++) {
+                    char currentChar = str.charAt(i);
+                    if (visited[currentChar]) {
+                        System.out.println(currentChar);
+                    } else {
+                        visited[currentChar] = true;
+                    }
+                }
+            }
+        }
+    `,
+    output: `
+        Duplicate characters are:
+        r
+        g
+    `
+}
+,
+    "find the duplicate words in a string.": {
+        description: "Program to find the duplicate words in a string.",
+        code: `
+            public class DuplicateWords {
+                public static void main(String[] args) {
+                    String str = "this is a test this test is a demo demo demo";
+                    String[] words = new String[256];
+                    boolean[] visited = new boolean[256];
+                    int wordCount = 0;
+    
+                    String currentWord = "";
+                    for (int i = 0; i < str.length(); i++) {
+                        char ch = str.charAt(i);
+                        if (ch == ' ' || i == str.length() - 1) {
+                            if (i == str.length() - 1 && ch != ' ') {
+                                currentWord += ch;
+                            }
+                            boolean isDuplicate = false;
+                            for (int j = 0; j < wordCount; j++) {
+                                if (words[j].equals(currentWord)) {
+                                    isDuplicate = true;
+                                    break;
+                                }
+                            }
+                            if (!isDuplicate) {
+                                words[wordCount++] = currentWord;
+                            }
+                            currentWord = "";
+                        } else {
+                            currentWord += ch;
+                        }
+                    }
+    
+                    System.out.println("Duplicate words are:");
+                    for (int i = 0; i < wordCount; i++) {
+                        if (!visited[i]) {
+                            String word = words[i];
+                            int count = 0;
+                            for (int j = 0; j < wordCount; j++) {
+                                if (words[j].equals(word)) {
+                                    count++;
+                                }
+                            }
+                            if (count > 1) {
+                                System.out.println(word);
+                                visited[i] = true;
+                            }
+                        }
+                    }
+                }
+            }
+        `,
+        output: `
+            Duplicate words are:
+            this
+            test
+            is
+            demo
+        `
+    }
+    ,
+    "find the frequency of characters": {
+        description: "Program to find the frequency of characters.",
+        code: `
+public class CharacterFrequency {
+    public static void main(String[] args) {
+        // Input string
+        String str = "programming";
+
+        // Array to track character frequencies
+        int[] freq = new int[256]; // ASCII characters range from 0 to 255
+
+        // Loop through the string to count frequencies
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            freq[ch]++;
+        }
+
+        // Print the frequencies of characters
+        System.out.println("Character frequencies are:");
+        for (int i = 0; i < freq.length; i++) {
+            if (freq[i] > 0) {
+                System.out.println((char) i + ": " + freq[i]);
+            }
+        }
+    }
+}
+
+
+`,
+output: `
+Character frequencies are:
+p: 2
+r: 2
+o: 1
+g: 2
+a: 1
+m: 2
+i: 1
+n: 1
+
+          `
+    },
     "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   "comming soon": {
         description: "Program to comming soon.",
         code: `
           code//
