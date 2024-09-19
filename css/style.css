@@ -37,7 +37,7 @@ html {
   background-color: #000; /* Dark blue background color */
       color: #fff; /* White text color */
       width: 15%;
-      height:10%;
+      height:15%;
        
       border: none;
       position: relative;
@@ -244,8 +244,12 @@ html {
   top: 30%;
   width: 30%;
   height: 20%;
-  font-size: 0.5em;
 }
+.neon-button1 a
+  {
+    font-size: 0.9em;
+    font-weight: 900;
+  }
 .main
 {
   
