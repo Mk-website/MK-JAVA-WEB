@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Animation on Button Click</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.image {
+    width: 400px;
+    height: 300px;
+    transition: transform 1s ease-in-out;
+}
+
+.image.animate {
+    transform: scale(1.2) rotate(10deg);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Animation on Button Click</h1>
+
+        <div class="buttons">
+            <button onclick="animateImage('image1')">Animate Image 1</button>
+            <button onclick="animateImage('image2')">Animate Image 2</button>
+            <button onclick="animateImage('image3')">Animate Image 3</button>
+        </div>
+
+        <div class="images">
+            <img id="image1" class="image" src="https://via.placeholder.com/400x300?text=Image+1" alt="Image 1">
+            <img id="image2" class="image" src="https://via.placeholder.com/400x300?text=Image+2" alt="Image 2">
+            <img id="image3" class="image" src="https://via.placeholder.com/400x300?text=Image+3" alt="Image 3">
+        </div>
+    </div>
+
+    <script >
+        function animateImage(imageId) {
+    // Remove the animation from all images first
+    const images = document.querySelectorAll('.image');
+    images.forEach(image => {
+        image.classList.remove('animate');
+    });
+
+    // Add animation to the selected image
+    const selectedImage = document.getElementById(imageId);
+    selectedImage.classList.add('animate');
+}
+
+    </script>
+</body>
+</html>

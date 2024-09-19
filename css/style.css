@@ -30,18 +30,19 @@
     color: white;
   }
 */
+html {
+  scroll-behavior: smooth;
+}
 .neon-button1 {
   background-color: #000; /* Dark blue background color */
       color: #fff; /* White text color */
       width: 15%;
-      height:15%;
-      
-      padding: 10px 20px; 
+      height:10%;
+       
       border: none;
       position: relative;
       top:30%;
       border-radius: 25px;
-      font-size: 18px;
       cursor: pointer;
       box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
       text-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
@@ -49,12 +50,26 @@
       text-decoration: none; /* Remove underlines for anchor link */
    
 }
-a
+.neon-button1 a
 {
-  color: #fff;
+  font-size: 1.5em;
+  color: black;
+  font-weight: 600;
+}
+.neon-button1 a:hover
+{
+  color :white;
+}
+@media (max-width: 1200px) {
+        .neon-button1
+        {
+            height: 20%;
+            width: 20%;
+        }
 }
 .neon-button1:hover {
   background-color: #0000ff;
+  color: white;
   box-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
   text-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
 }
@@ -227,7 +242,7 @@ a
 .neon-button1
 {
   top: 30%;
-  width: 25%;
+  width: 30%;
   height: 20%;
   font-size: 0.5em;
 }
@@ -280,11 +295,11 @@ a
   {
     height: 70vh;
   }
-  .neon-button1
+ .neon-button1
   {
     width: 40%;
-    height: 10%;
-  }
+    height: 15%;
+  } 
 }
 .selector
 {

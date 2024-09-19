@@ -390,12 +390,14 @@ selectDifficulty.addEventListener("change", function() {
     if (selectDifficulty.value !== "") {
         selectProgram.disabled = false;
         let programs = programData[selectType.value][selectDifficulty.value];
+        let counter = 1; // Initialize a counter for numbering
 
         for (let program in programs) {
             let option = document.createElement("option");
             option.value = program;
-            option.text = program;
+            option.text = `${counter}. ${program}`; // Add numbering to the program text
             selectProgram.appendChild(option);
+            counter++; // Increment counter
         }
     } else {
         selectProgram.disabled = true;

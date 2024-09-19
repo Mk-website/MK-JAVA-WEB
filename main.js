@@ -17,43 +17,260 @@ function showSidebar(){
   const programData = {
     "2D ARRAYS": {
         "Easy": {
-            "1.Enter the Matrix of rows and columns entered by the user and print in matrix format": {
+            "Enter the Matrix of rows and columns entered by the user and print in matrix format": {
                 description: "Program to Enter the Matrix of rows and columns entered by the user and print in matrix format",
                 code: `
-               code//
+package matrix1;
+class matrix1
+        {
+            public static void main(String st[])
+            {
+                java.io.BufferedReader input= new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+                int rows=0,cols=0,i=0,j=0;
+                 int matrixA[][];
+                try
+                {
+                System.out.println("Enter rows : ");
+                rows = Integer.parseInt(input.readLine());
+                System.out.println("Enter columns : ");
+                cols = Integer.parseInt(input.readLine());
+                matrixA=new int[rows][cols];
+                for(i=0;i<rows;i++)
+                {
+                    for(j=0;j<cols;j++)
+                    {
+                        System.out.println("Enter value at ["+i+"]["+j+"] position : ");
+                        matrixA[i][j]=Integer.parseInt(input.readLine());
+                    }
+                }
+                for(i=0;i<rows;i++)
+                {
+                    for(j=0;j<cols;j++)
+                    {
+                        System.out.print(matrixA[i][j]+" ");
+                    }
+                    System.out.println(" ");
+                }
+                }
+                catch(java.io.IOException e)
+                {
+                    System.out.println("input not found!");
+                }
+                catch(NumberFormatException e)
+                {
+                    System.out.println("Please Enter Integer!");
+                }
+                catch(NegativeArraySizeException e)
+                {
+                    System.out.println("Please Enter Positive Value!");
+                }
+            }
+        }
 `,
 output: `
-                output//
+Enter rows :
+2
+Enter columns :
+2
+Enter value at [0][0] position :
+1
+Enter value at [0][1] position :
+2
+Enter value at [1][0] position :
+3
+Enter value at [1][1] position :
+4
+1 2
+3 4
                 `
             },
-            "2.Add Two Matrices": {
+            "Add Two Matrices": {
                 description: "Program to Add Two Matrices",
                 code: `
-                code//
+package addmatrix;
+class AddMatrix
+    {
+        public static void main(String st[])
+        {
+            int matrixA[][]={{1,2},{3,4}};
+            int matrixB[][]={{5,6},{7,8}};
+            int i=0,j=0;
+            int addMatrix[][]=new int[matrixA.length][matrixA[0].length];
+            System.out.println("Matrix A");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(matrixA[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+             System.out.println("Matrix B");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(matrixB[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+             System.out.println("Addition of Matrix A and Matrix B : ");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    addMatrix[i][j]=matrixA[i][j]+matrixB[i][j];
+                }
+            }
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(addMatrix[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+        }
+    }
 `,
                 output: `
-                output//
+Matrix A
+1 2
+3 4
+Matrix B
+5 6
+7 8
+Addition of Matrix A and Matrix B :
+6 8
+10 12
                 `
             },
-"3.Multiply Two Matrices": {
+"Multiply Two Matrices": {
                 description: "Program to Multiply Two Matrices",
                 code: `
-               code//
+package multiplymatrix;
+class MultiplyMatrix 
+    {
+        public static void main(String st[])
+        {
+            int matrixA[][]={{1,2},{3,4}};
+            int matrixB[][]={{5,6},{7,8}};
+            int i=0,j=0,k=0;
+            int multiplyMatrix[][]=new int[matrixA.length][matrixA[0].length];
+             System.out.println("Matrix A");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(matrixA[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+             System.out.println("Matrix B");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(matrixB[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+             System.out.println("Multiplication of Matrix A and Matrix B : ");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    for(k=0;k<matrixA[i].length;k++)
+                    multiplyMatrix[i][j]+=matrixA[i][k]*matrixB[k][j];
+                
+                }
+            }
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[0].length;j++)
+                {
+                    System.out.print(multiplyMatrix[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+        }
+    }
 `,
 output: `
-                output//
+Matrix A
+1 2
+3 4
+Matrix B
+5 6
+7 8
+Multiplication of Matrix A and Matrix B :
+19 22
+43 50
                 `
             },
-            "4.subtract the two matrices": {
+            "Subtract the two matrices": {
                 description: "Program to subtract the two matrices",
                 code: `
-                code//
+package subtractmatrix;
+class SubtractMatrix
+    {
+        public static void main(String st[])
+        {
+            int matrixA[][]={{1,2},{3,4}};
+            int matrixB[][]={{5,6},{7,8}};
+            int i=0,j=0;
+            int subtractMatrix[][]=new int[matrixA.length][matrixA[0].length];
+             System.out.println("Matrix A");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(matrixA[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+             System.out.println("Matrix B");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(matrixB[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+             System.out.println("Subtraction of Matrix A and Matrix B : ");
+          
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    subtractMatrix[i][j]=matrixA[i][j]-matrixB[i][j];
+                }
+            }
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(subtractMatrix[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+        }
+    }
 `,
                 output: `
-                output//
+Matrix A
+1 2
+3 4
+Matrix B
+5 6
+7 8
+Subtraction of Matrix A and Matrix B :
+-4 -4
+-4 -4
                 `
             },
-            "5.determine whether two matrices are equal": {
+            "Determine whether two matrices are equal": {
                 description: "Program to determine whether two matrices are equal",
                 code: `
                code//
@@ -62,52 +279,223 @@ output: `
                 output//
                 `
             },
-            "6.display the lower triangular matrix": {
+            "Display the lower triangular matrix": {
                 description: "Program to display the lower triangular matrix",
                 code: `
-                code//
+package lowertriangle;
+class LowerTriangle
+    {
+        public static void main(String st[])
+        {
+            int matrixA[][]={{1,2,3},{4,5,6},{7,8,9}};
+            int i,j;
+            for(i=0;i<matrixA.length;i++)
+            {
+               for(j=0;j<=i;j++)
+               {
+                System.out.print(matrixA[i][j]+" ");
+               }
+                
+                System.out.println();
+            }
+            
+            
+        }
+    }
 `,
                 output: `
-                output//
+1
+4 5
+7 8 9
                 `
             },
-            "7.display the upper triangular matrix": {
+            "Display the upper triangular matrix": {
                 description: "Program to display the upper triangular matrix",
                 code: `
-               code//
+package uppertriangle;
+class UpperTriangle
+    {
+        public static void main(String st[])
+        {
+            int matrixA[][]={{1,2,3},{4,5,6},{7,8,9}};
+            int i,j;
+            for(i=0;i<matrixA.length;i++)
+            {
+               for(j=0;j<i;j++)
+               {
+                System.out.print("  ");
+               }
+                for(j=i;j<matrixA[i].length;j++)
+               {
+                System.out.print(matrixA[i][j]+" ");
+               }
+                System.out.println();
+            }
+            
+            
+        }
+    }
 `,
 output: `
-                output//
+1 2 3
+  5 6
+    9
                 `
             },
-            "8.find the frequency of odd & even numbers in the given matrix": {
+            "Find the frequency of odd & even numbers in the given matrix": {
                 description: "Program to find the frequency of odd & even numbers in the given matrix",
                 code: `
-                code//
+package frequencyoddeven;
+
+class FrequencyOddEven
+    {
+        public static void main(String st[])
+        {
+            int arr[][]={{1,2,3},{4,5,6},{7,8,9}},i,j;
+            int countEven=0,countOdd=0;
+             System.out.println("Matrix");
+            for(i=0;i<arr.length;i++)
+            {
+                for(j=0;j<arr[i].length;j++)
+                {
+                    System.out.print(arr[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+            for(i=0;i<arr.length;i++)
+            {
+                for(j=0;j<arr[0].length;j++)
+                {
+                    if(arr[i][j]%2==0)
+                    {
+                        countEven++;
+                    }
+                    else
+                    {
+                        countOdd++;
+                    }
+                }
+            }
+            System.out.println("Frequency of Even Number is : "+countEven);
+            System.out.println("Frequency of Odd Number is : "+countOdd);
+        }
+    }
 `,
                 output: `
-                output//
+Matrix
+1 2 3
+4 5 6
+7 8 9
+Frequency of Even Number is : 4
+Frequency of Odd Number is : 5
                 `
             },
-            "9.find the sum of each row and each column of a matrix": {
+            "Find the sum of each row and each column of a matrix": {
                 description: "Program to find the sum of each row and each column of a matrix",
                 code: `
-               code//
+package sumrowcol;
+
+class SumRowCol
+    {
+        public static void main(String st[])
+        {
+            int arr[][]={{1,2,3},
+                         {4,5,6},
+                         {7,8,9}};
+            int sumRow,sumCol,i,j;
+             System.out.println("Matrix");
+            for(i=0;i<arr.length;i++)
+            {
+                for(j=0;j<arr[i].length;j++)
+                {
+                    System.out.print(arr[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+            for(i=0;i<arr.length;i++)
+            {
+                sumRow=0;
+                for(j=0;j<arr[0].length;j++)
+                {
+                    sumRow+=arr[i][j];
+                }
+                 System.out.println("Sum of Row "+(i+1)+" "+sumRow);
+            }
+            for(j=0;j<arr[0].length;j++) 
+            {
+                sumCol=0;
+                for(i=0;i<arr.length;i++)
+                {
+                    sumCol+=arr[i][j];
+                }
+                System.out.println("Sum of col "+(j+1)+" "+sumCol);
+            }
+           
+        }
+    }
 `,
 output: `
-                output//
+Matrix
+1 2 3
+4 5 6
+7 8 9
+Sum of Row 1 6
+Sum of Row 2 15
+Sum of Row 3 24
+Sum of col 1 12
+Sum of col 2 15
+Sum of col 3 18
                 `
             },
-            "10.find the transpose of a given matrix": {
+            "Find the transpose of a given matrix": {
                 description: "Program to find the transpose of a given matrix",
                 code: `
-                code//
+package transpose;
+class transpose
+    {
+        public static void main(String st[])
+        {
+            int matrixA[][]={{1,2},{3,4}};
+            int transpose[][]=new int[matrixA.length][matrixA[0].length];
+            int i=0,j=0;
+            System.out.println("Matrix A");
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    System.out.print(matrixA[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+            for(i=0;i<matrixA.length;i++)
+            {
+                for(j=0;j<matrixA[i].length;j++)
+                {
+                    transpose[j][i]=matrixA[i][j];
+                }
+            }
+            System.out.println("Transpose of MatrixA : ");
+             for(i=0;i<transpose.length;i++)
+            {
+                for(j=0;j<transpose[i].length;j++)
+                {
+                    System.out.print(transpose[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+        }
+    }
 `,
                 output: `
-                output//
+Matrix A
+1 2
+3 4
+Transpose of MatrixA :
+1 3
+2 4
                 `
             },
-            "11.determine whether a given matrix is an identity matrix": {
+            "Determine whether a given matrix is an identity matrix": {
                 description: "Program to determine whether a given matrix is an identity matrix",
                 code: `
                code//
@@ -116,7 +504,7 @@ output: `
                 output//
                 `
             },
-            "12.Transpose matrix": {
+            "Transpose matrix": {
                 description: "Program to Transpose matrix",
                 code: `
                 code//
@@ -125,7 +513,7 @@ output: `
                 output//
                 `
             },
-            "13.determine whether a given matrix is a sparse matrix": {
+            "Determine whether a given matrix is a sparse matrix": {
                 description: "Program to determine whether a given matrix is a sparse matrix",
                 code: `
                code//
@@ -138,120 +526,40 @@ output: `
         },
             
         "Medium": {
-            "Reverse Array": {
-                description: "Program to reverse an array.",
+            "comming soon": {
+                description: "comming soon",
                 code: `
-function reverseArray(arr) {
-    let start = 0;
-    let end = arr.length - 1;
-    while (start < end) {
-        [arr[start], arr[end]] = [arr[end], arr[start]];
-        start++;
-        end--;
-    }
-    return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
             },
-            "Find Second Largest": {
-                description: "Program to find the second largest element in an array.",
-                code: `
-function findSecondLargest(arr) {
-    let max = -Infinity;
-    let secondMax = -Infinity;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > max) {
-            secondMax = max;
-            max = arr[i];
-        } else if (arr[i] > secondMax && arr[i] !== max) {
-            secondMax = arr[i];
-        }
-    }
-
-    return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-            }
+            
         },
         "Hard": {
-            "Merge Sort": {
-                description: "Program to sort an array using Merge Sort.",
+            "comming soon": {
+                description: "comming soon",
                 code: `
-function mergeSort(arr) {
-    if (arr.length <= 1) {
-        return arr;
-    }
-
-    const mid = Math.floor(arr.length / 2);
-    const left = mergeSort(arr.slice(0, mid));
-    const right = mergeSort(arr.slice(mid));
-
-    return merge(left, right);
-}
-
-function merge(left, right) {
-    let result = [];
-    let leftIndex = 0;
-    let rightIndex = 0;
-
-    while (leftIndex < left.length && rightIndex < right.length) {
-        if (left[leftIndex] < right[rightIndex]) {
-            result.push(left[leftIndex]);
-            leftIndex++;
-        } else {
-            result.push(right[rightIndex]);
-            rightIndex++;
-        }
-    }
-
-    return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
-// Example usage
-let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                code//
+                `,
+                output:
+                `
+                output//
                 `
             },
-            "Quick Sort": {
-                description: "Program to sort an array using Quick Sort.",
+            "comming soon": {
+                description: "comming soon",
                 code: `
-function quickSort(arr) {
-    if (arr.length <= 1) {
-        return arr;
-    }
-
-    const pivot = arr[arr.length - 1];
-    const left = [];
-    const right = [];
-
-    for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i] < pivot) {
-            left.push(arr[i]);
-        } else {
-            right.push(arr[i]);
-        }
-    }
-
-    return [...quickSort(left), pivot, ...quickSort(right)];
-}
-
-// Example usage
-let array = [10, 7, 8, 9, 1, 5];
-console.log(quickSort(array)); // Output: [1, 5, 7, 8, 9, 10]
+            code//
+                `,
+                output:
                 `
+                output//
+                `
+                
             }
         }
         
@@ -322,130 +630,34 @@ console.log(quickSort(array)); // Output: [1, 5, 7, 8, 9, 10]
           },
         },
       "Medium": {
-          "Reverse Array": {
-              description: "Program to reverse an array.",
+          "comming soon": {
+              description: "comming soon",
               code: `
-function reverseArray(arr) {
-  let start = 0;
-  let end = arr.length - 1;
-  while (start < end) {
-      [arr[start], arr[end]] = [arr[end], arr[start]];
-      start++;
-      end--;
-  }
-  return arr;
-}
-
+            code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                output//
                 `
           },
-          "Find Second Largest": {
-              description: "Program to find the second largest element in an array.",
-              code: `
-function findSecondLargest(arr) {
-  let max = -Infinity;
-  let secondMax = -Infinity;
-
-  for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > max) {
-          secondMax = max;
-          max = arr[i];
-      } else if (arr[i] > secondMax && arr[i] !== max) {
-          secondMax = arr[i];
-      }
-  }
-
-  return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-          }
+         
       },
       "Hard": {
-          "Merge Sort": {
-              description: "Program to sort an array using Merge Sort.",
+          "comming soon": {
+              description: "comming soon",
               code: `
-function mergeSort(arr) {
-  if (arr.length <= 1) {
-      return arr;
-  }
-
-  const mid = Math.floor(arr.length / 2);
-  const left = mergeSort(arr.slice(0, mid));
-  const right = mergeSort(arr.slice(mid));
-
-  return merge(left, right);
-}
-
-function merge(left, right) {
-  let result = [];
-  let leftIndex = 0;
-  let rightIndex = 0;
-
-  while (leftIndex < left.length && rightIndex < right.length) {
-      if (left[leftIndex] < right[rightIndex]) {
-          result.push(left[leftIndex]);
-          leftIndex++;
-      } else {
-          result.push(right[rightIndex]);
-          rightIndex++;
-      }
-  }
-
-  return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+            code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
           },
-          "Quick Sort": {
-              description: "Program to sort an array using Quick Sort.",
-              code: `
-function quickSort(arr) {
-  if (arr.length <= 1) {
-      return arr;
-  }
-
-  const pivot = arr[arr.length - 1];
-  const left = [];
-  const right = [];
-
-  for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] < pivot) {
-          left.push(arr[i]);
-      } else {
-          right.push(arr[i]);
-      }
-  }
-
-  return [...quickSort(left), pivot, ...quickSort(right)];
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-          }
+          
       }
   },
   "BASIC PROGRAMMING CONSTRUCTS": {
     "Easy": {
-        "Hello World!": {
+        " Hello World!": {
             description: "Write a Java program to print ‘Hello World!’ on screen",
             code: `
 package hello;
@@ -463,7 +675,7 @@ class hello
                 Hello World!
                 `
         },
-        "sum of two numbers": {
+        " Sum of two numbers": {
             description: "Write a Java program to print the sum of two numbers",
             code: `
 package Sum;
@@ -479,7 +691,7 @@ class Sum
                 output: `
                 Sum of 5,10 = 15`
         },
-        "product of two numbers": {
+        " Product of two numbers": {
             description: "Write a Java program that takes two numbers and display the product of two numbers",
             code: `
 package product;
@@ -496,7 +708,7 @@ class product
                 Product of 5,10=50
                 `
         }, 
-        "Arithmetic Operators": {
+        " Arithmetic Operators": {
             description: "Write a Java program to print the sum, multiply, subtract, divide and remainder of two numbers",
             code: `
 package multiop;
@@ -522,7 +734,7 @@ Divisio of 10/5=2
 Reminder of 10%5=0
                 `
         },
-        "Average of the numbers": {
+        " Average of the numbers": {
             description: "Write a Java program that takes five numbers as input to calculate and print the average of the numbers",
             code: `
 package avg;
@@ -537,7 +749,7 @@ System.out.println("Average of 5 number is :-"+avg);
 
 `,
                 output: `
-            package avg;
+package avg;
 class avg{
 public static void main(String[] st)
 {
@@ -549,7 +761,7 @@ System.out.println("Average of 5 number is :-"+avg);
 
                 `
         },
-        "swap two variables": {
+        " Swap two variables": {
             description: "Write a Java program to swap two variables",
             code: `
 package swap;
@@ -574,7 +786,7 @@ Before Swap : a = 45 b = 50
 After Swap : a = 50 b = 45
                 `
         },
-        "convert a decimal number to binary numbers": {
+        " convert a decimal number to binary numbers": {
             description: "Write a Java program to convert a decimal number to binary numbers",
             code: `
 package decimalToBinary;
@@ -607,1391 +819,1171 @@ class decimalToBinary
 0000001100
                 `
         },
-        "convert a binary number to decimal number": {
+        "8. Convert a binary number to decimal number": {
             description: "Write a Java program to convert a binary number to decimal number",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package binaryToDecimal;
+class  BinaryToDecimal
+		{
+		public static void main(String st[])
+		{
+		byte binary[] = {0,0,1,1};
+		int decimal=0,power =0,i=0;
+		for(i=binary.length-1;i>=0;i--)
+		{
+		 if(binary[i]==1)
+		{
+		decimal +=Math.pow(2,power);
+		}
+		power++;
+		}
+		System.out.println("Decimal number is :"+decimal);
+		}
+		}
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                Decimal number is :3
                 `
         },
-        "is Java installed ?": {
+        " is Java installed ?": {
             description: "Write a Java program to check whether Java is installed on your computer or not",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
-
+            code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+               output//
                 `
         },
-        "sum of the digits of an integer": {
+        " Sum of the digits of an integer": {
             description: "Write a Java program and compute the sum of the digits of an integer",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+            package sumofdigit;
+class SumOfDigit
+		{
+		public static void main(String st[])
+		{
+		int digit=5447,sum=0,rem;
+		while(digit>0)
+		{
+		rem=digit%10;
+		sum+=rem;
+		digit/=10;
+		}
+		System.out.println("Sum of digit "+sum);
+		}
+		}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                Sum of digit 20
                 `
         },
-        "compare two numbers": {
+        " Compare two numbers": {
             description: "Write a Java program to compare two numbers",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package compare;
+class Compare
+	{
+	public static void main(String st[])
+	{
+	int a=12,b=56;
+	if(a==b)
+	System.out.println("Number are equel");
+	else
+	System.out.println("Number are Not equel");
+	}
+	}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                Number are Not equel
                 `
         },
-        "count the letters, spaces, numbers and other characters ": {
+        " Count the letters, spaces, numbers and other characters ": {
             description: "Write a Java program to count the letters, spaces, numbers and other characters of an input strings",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package countstring;
+class CountString
+		{
+		private int count_latter;
+		private int count_space;
+		private int count_number;
+		private int count_character;
+
+		void count(String str)
+		{ int i;
+		if(str=="")
+		{
+		System.out.println("Empty String");
+		}
+		else 
+		{
+		count_number++;
+		for(i=0;i<str.length();i++) 
+		{
+		 if(i==0 && str.charAt(i)!=' ')
+			{
+			count_latter++;
+			} 
+		else if(str.charAt(i)==' ')
+			{
+			count_space++;
+			if(str.charAt(i+1)!=' ' && str.charAt(i+1)!=' ')
+			{
+			 count_latter++;
+			}
+			}
+		else if(str.charAt(i)=='\n')
+			{
+			count_number++;
+			if(str.charAt(i+1)!=' ' && str.charAt(i+1)!=' ')
+			{
+			 count_latter++;
+			}
+			}
+		count_character++;
+		}
+		}
+		}
+		
+		void display()
+		{
+		System.out.println("No. of latters :-"+count_latter+"\nNo of Character :- "+count_character+"\nNo of Space :-"+count_space+"\nNo of Line :-"+count_number);
+		}
+		
+		public static void main(String st[])
+		{
+		CountString obj = new CountString();
+		String sentance = "My name is Manjit";
+		obj.count(sentance);
+		obj.display();
+		}
+		}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+No. of latters :-4
+No of Character :- 17
+No of Space :-3
+No of Line :-1
                 `
         },
-        "ascii value": {
+        " Ascii value": {
             description: "Write a Java program to print the ascii value of a given character",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package ascii;
+class Ascii
+	{
+	public static void main(String st[])
+	{
+	char character = 'A';
+        int asciiValue = character;
+        System.out.println("ASCII value of " + character+" is " + asciiValue);
+        }
+        }
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                ASCII value of A is 65
                 `
         },
-        "computes the value of n+nn+nnn": {
+        " Computes the value of n+nn+nnn": {
             description: "Write a Java program that accepts an integer (n) and computes the value of n+nn+nnn",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package computen;
+class ComputeN
+	{
+	public static void main(String st[])
+	{
+	int n = 2;
+	int N = n+(n*n)+(n*n*n);
+	System.out.println("n = "+n+"Value of (n+(nn)+(nnn)) :- "+N);
+	}
+	}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+              n = 2 Value of (n+(nn)+(nnn)) :- 14  
                 `
         },
-        "display the system time": {
+        " Display the system time": {
             description: "Write a Java program to display the system time",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package systemtime;
+class SystemTime
+	{
+	public static void main(String st[])
+	{
+	java.util.Date obj = new java.util.Date();
+	System.out.println(obj);
+	}
+	}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+Sun Sep 15 11:42:11 IST 2024
                 `
         },
-        "odd numbers from 1 to 20": {
+        " Odd numbers from 1 to 20": {
             description: "Write a Java program to print the odd numbers from 1 to 20",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package odd;
+class Odd
+	{
+	public static void main(String st[])
+	{
+	for(int i=1;i<=20;i++)
+	{
+	if(i%2!=0)
+	{
+	System.out.println(i);
+	}
+	}
+	}
+	}
+
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
                 `
         },
-        "even numbers from 1 to 20": {
+        " Even numbers from 1 to 20": {
             description: "Write a Java program to print the even numbers from 1 to 20",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package even;
+class Even
+        {
+        public static void main(String st[])
+        {
+        for(int i=1;i<=20;i++)
+        {
+        if(i%2==0)
+        {
+        System.out.println(i);
+        }
+        }
+        }
+        }
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
                 `
         },
-        "convert a string to an integer": {
+        " Convert a string to an integer": {
             description: "Write a Java program to convert a string to an integer",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package stringtoint;
+class StringToInt
+	{
+	public static void main(String st[])
+	{
+	String num = "1234";
+	int number=0,sign =1;
+	for(int i=0;i<num.length();i++)
+	{
+	char c = num.charAt(i);
+	if(i==0 && c =='-')
+	{
+	 sign = -1;
+	 
+	}
+	else if(c >='0' && c <= '9')
+	{
+	number=number * 10 +(c-'0');
+	
+	}
+	else 
+	{
+	System.out.println("Error");
+	}
+	}
+		System.out.println("String to integer "+number*sign);
+	}
+	}
+	
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                String to integer 1234
                 `
         },
-        "convert seconds to hour, minute and seconds": {
+        " Convert seconds to hour, minute and seconds": {
             description: "Write a Java program to convert seconds to hour, minute and seconds",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package convertsecondtohhmmss;
+class ConvertSecondToHhMmSs
+		{
+		public static void main(String st[])
+		{
+		int sec =3600,hh,mm,ss,temp;
+		hh=sec/3600;
+		temp=sec%3600;
+		mm=temp/60;
+		ss=temp%60;
+		System.out.println("Seconds to hh:mm:ss "+hh+":"+mm+":"+ss);
+		}
+		}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+               Seconds to hh:mm:ss 1:0:0
                 `
         },
-        "sum of the first 100 prime number": {
+        " Sum of the first 100 prime number": {
             description: "Write a Java program to compute the sum of the first 100 prime numbers",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package sumprimenum;
+class SumPrimeNum
+	{
+	public static void main(String st[])
+	{
+	int num,sum=0,isPrime;
+	for(num=2;num<=100;num++)
+	{
+	isPrime=1;
+	for(int i = 2; i<=num/2;i++)
+	{
+	if(num%i==0)
+	{
+	isPrime =0;
+	break;
+	}
+	}
+	if(isPrime==1)
+	{
+		sum+=num;
+	}
+	}
+	System.out.println("Sum of First 100 prime Number : "+sum);
+	}
+	}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                Sum of First 100 prime Number : 1060
                 `
         },
-        "swap the first and last elements of an array": {
+        " Swap the first and last elements of an array": {
             description: "Write a Java program to swap the first and last elements of an array and create a new array",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package swaparr;
+class SwapArr
+	{
+	public static void main(String st[])
+	{
+	int arr[] = {1,2,3,4},i,f=arr[0],l=arr[arr.length-1];
+	System.out.println("Before Swaping ");
+	for(i=0;i<arr.length;i++)
+	{
+	 System.out.print(" "+arr[i]);
+	}
+	System.out.println();
+	for(i=0;i<arr.length;i++)
+	{
+	if(i==0)
+	{
+	arr[i]=l;
+	}
+	else if(i==arr.length-1)
+	{
+	arr[i]=f;
+	}
+	else 
+	{
+	arr[i]=arr[i];
+	}
+	}
+	
+	System.out.println("After Swaping ");
+	for(i=0;i<arr.length;i++)
+        {
+         System.out.print(" "+arr[i]);
+        }
+	
+	}
+	}
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+Before Swaping
+ 1 2 3 4
+After Swaping
+ 4 2 3 1
                 `
         },
-        "count the number of even and odd elements in a given array": {
+        " Count the number of even and odd elements in a given array": {
             description: "Write a Java program to count the number of even and odd elements in a given array",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package countevenodd;
+class CountEvenOdd
+	{
+	public static void main(String st[])
+	{
+	int arr[] = {1,2,3,4,5,6},i,even=0,odd=0;
+	for(i=0;i<arr.length-1;i++)
+	{
+	if(arr[i]%2==0)
+	{
+	even++;
+	}
+	else
+	{
+	odd++;
+	}
+	}
+	for(i=0;i<arr.length;i++)
+        {
+         System.out.print(" "+arr[i]);
+        }
+	System.out.println("\nNo of Even elements :"+even+"\nNo of Odd elements:"+odd);
+	}
+	}
+
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+1 2 3 4 5 6
+No of Even elements :2
+No of Odd elements:3
                 `
         },
         "square root": {
             description: "Write a Java program to compute the square root of an given integer",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package squreroot;
+class Squreroot	
+	{
+	public static void main(String st[])
+	{
+	double num=36,squreroot;
+	squreroot=Math.sqrt(num);
+	System.out.println("Squreroot of "+num+ " is "+squreroot);
+	}
+	}
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                Squreroot of 36 is 6
                 `
         },
         "palindrome or not": {
             description: "Write a Java program to check if a positive number is a palindrome or nots",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package palindromenum;
+
+class PalindromeNum
+        {
+            public static void main(String st[])
+            {
+                int num = 121,digit,rev=0,temp =num;
+                while(temp>0)
+                {
+                    digit=temp%10;
+                    rev=(digit*10)+rev;
+                    temp/=10; 
+                }
+                if(rev == num)
+                {
+                    System.out.println("Number is Palindrome "+rev);
+                }
+                else
+                {
+                    System.out.println("Number is Palindrome "+num);
+                }
+            }
+        }
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                Number is Palindrome 121
                 `
         },
         "add two numbers without using any arithmetic operators": {
             description: "Write a Java program to add two numbers without using any arithmetic operators",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
-
+            code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                output//
                 `
         },
         "Add all the digits of a given positive integer": {
             description: "Write a Java program to add all the digits of a given positive integer",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package addofdigit;
+class AddOfDigit
+		{
+		public static void main(String st[])
+		{
+		int digit=5447,add=0,rem;
+		while(digit>0)
+		{
+		rem=digit%10;
+		add+=rem;
+		digit/=10;
+		}
+		System.out.println("Addition of digit "+sum);
+		}
+		}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                Sum of digit 20
                 `
         },
         "Area of circle": {
             description: "Java program to find area of circle",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package areaofcircle;
+class AreaOfCircle
+	{
+	public static void main(String st[])
+	{
+	final float PI = 3.14f;
+	float r = 7f,area;
+	area = PI*r*r;
+	System.out.println("Area of Circle is : "+area);
+	}
+	}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                Area of Circle is : 153.86002
                 `
         },
         "Area of rectangle": {
             description: "Java Program to find area of rectangle",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+package areaofrectangle;
+class AreaOfRectangle
+		{
+		public static void main(String st[])
+		{
+		float l=12f,b=5f,area;
+		area = l*b;
+		System.out.println("Area of Rectangle is :- "+area);
+		}
+		}
+
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+               Area of Rectangle is :- 60.0
                 `
         },
         "area of triangle": {
             description: "Java Program to find area of triangle",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+package areaoftriangle;
+class AreaOfTriangle
+		{
+		public static void main(String st[])
+		{
+		double a=6,b=4,c=8,s,area;
+		s=(a+b+c)/2;
+		area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+		System.out.println("Area of Triangle is :- "+area);
+		}
+		}
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Area of equilateral triangle": {
             description: "Java Program to find area of equilateral triangle",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Area of rhombus": {
             description: "Java Program to find area of rhombus",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Area of parallelogram": {
             description: "Java Program to find area of parallelogram",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Area of Prism": {
             description: "Java Program to find area of Prism",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Volume of sphere": {
             description: "Java Program to find volume of sphere",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Volume of cylinder": {
             description: "Java Program to find volume of cylinder",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Volume of cuboid": {
             description: "Java Program to find volume of cuboid",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Volume of cone": {
             description: "Java Program to find volume of cone",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Surface area of cuboids": {
             description: " Java program to find surface area of cuboids",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Surface area of cylinder": {
             description: "Java program to find surface area of cylinder",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Surface area of cube": {
             description: "Java program to find surface area of cubes",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Calculate average marks": {
             description: "Java program to calculate average marks",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Check vowel or consonant": {
             description: "Java program to check vowel or consonant",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Sum of N numbers": {
             description: "Java program to sum of N numbers",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Factorial of any number": {
             description: "Java program to find factorial of any number",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Calculate electricity bill": {
             description: "Java Program to calculate electricity bill",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Calculate CGPA Percentage": {
             description: "Java Program To Calculate CGPA Percentage",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Calculate compound interest": {
             description: "Java Program to calculate compound interestn",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Calculate Batting Average": {
             description: "Java Program To Calculate Batting Average",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Calculate Commission Percentage": {
             description: "Java Pogram to Calculate Commission Percentage",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Find Distance Between Two Points": {
             description: "Java Pogram To Find Distance Between Two Points",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Power Of Number": {
             description: "Java Program To Calculate Power Of Number",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "take three numbers from the user and print the greatest number": {
             description: "Write a Java program to take three numbers from the user and print the greatest number",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "find the number of days in a month": {
             description: "Write a Java program to find the number of days in a month",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "test a number is positive or negative": {
             description: "Write a Java program to test a number is positive or negative",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "print name of the day": {
             description: " Write a Java Program to accept number of week’s day (1-7) and print name of the day",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "print whether that year is a leap year or not": {
             description: "Write a Java program that takes a year from user and print whether that year is a leap year or not",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "first 5 natural numbersn": {
             description: "Write a program in Java to display the first 5 natural numbers",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "check vowel or consonant": {
             description: "Write a java program to check vowel or consonant",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Cube of the number upto given an integer": {
             description: " Write a Java program to display the cube of the number upto given an integer",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "display the n terms of odd natural number and their sum": {
             description: "Write a Java program to display the n terms of odd natural number and their sum",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "display the multiplication table of a given integer": {
             description: "Write a Java program to display the multiplication table of a given integer",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "reads an integer and check whether it is negative, zero, or positive": {
             description: "Write a Java program that reads an integer and check whether it is negative, zero, or positive",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "reads an positive integer and count the number of digits": {
             description: "Write a Java program that reads an positive integer and count the number of digits",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "three numbers and check All numbers are equal or not": {
             description: "Write a Java program that accepts three numbers and check All numbers are equal or not",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "Accepts three numbers from the user and check if numbers are in “increasing” or “decreasing” order.": {
             description: "Write a Java program to print ‘Hello World!’ on screen",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "determines a student’s grade": {
             description: "Write a Java program that determines a student’s grades",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "create a simple calculator": {
             description: "Write a Java program to create a simple calculator",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "concatenate two string": {
             description: "Write a Java program to concatenate two string",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "convert all characters in a string to lowercase": {
             description: "Write a Java program to convert all characters in a string to lowercase",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "convert all characters in a string to uppercase": {
             description: "Write a Java program to convert all characters in a string to uppercase",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "trim a string(remove whitespaces)": {
             description: "Write a Java program to trim a string(remove whitespaces)",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "get a substring of a given string between two specified positions": {
             description: "Write a Java program to get a substring of a given string between two specified positions",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "replace all the ‘d’ characters with ‘f’ characters": {
             description: "Write a Java program to replace all the ‘d’ characters with ‘f’ characters",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "get the length of a given string": {
             description: "Write a Java program to get the length of a given string",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "print current date and time in the specified format": {
             description: "Write a Java program to print current date and time in the specified format",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "get the character at the given index within the String": {
             description: "Write a Java program to get the character at the given index within the String",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "remove a particular character from a string": {
             description: "Write a Java program to remove a particular character from a string",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "reverse a String": {
             description: "Write a Java program to reverse a String",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "remove html tags from a string": {
             description: "Write a Java program to remove html tags from a string",
             code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
         "count total number of lines from a string": {
             description: "Write a Java program to count total number of lines from a string",
             code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-        max = arr[i];
-    }
-}
-return max;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
         },
@@ -2693,277 +2685,73 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
         },
     },
     "Medium": {
-        "Reverse Array": {
-            description: "Program to reverse an array.",
+        "comming soon": {
+            description: "comming soon",
             code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-    [arr[start], arr[end]] = [arr[end], arr[start]];
-    start++;
-    end--;
-}
-return arr;
-}
-
-// Example usage
-let array = [1, 2, 3, 4, 5];
-console.log(reverseArray(array)); // Output: [5, 4, 3, 2, 1]
-            `
+            code//
+            `,
+        output:
+        `
+        output//
+        `
         },
-        "Find Second Largest": {
-            description: "Program to find the second largest element in an array.",
-            code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
-        secondMax = max;
-        max = arr[i];
-    } else if (arr[i] > secondMax && arr[i] !== max) {
-        secondMax = arr[i];
-    }
-}
-
-return secondMax;
-}
-
-// Example usage
-let array = [10, 20, 4, 45, 99];
-console.log(findSecondLargest(array)); // Output: 45
-            `
-        }
     },
     "Hard": {
-        "Merge Sort": {
-            description: "Program to sort an array using Merge Sort.",
+        "comming soon": {
+            description: "comming soon",
             code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-    return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
-        result.push(left[leftIndex]);
-        leftIndex++;
-    } else {
-        result.push(right[rightIndex]);
-        rightIndex++;
-    }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
-// Example usage
-let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-            `
-        },
-        "Quick Sort": {
-            description: "Program to sort an array using Quick Sort.",
-            code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-    return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] < pivot) {
-        left.push(arr[i]);
-    } else {
-        right.push(arr[i]);
-    }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
-
-// Example usage
-let array = [10, 7, 8, 9, 1, 5];
-console.log(quickSort(array)); // Output: [1, 5, 7, 8, 9, 10]
+            code//
+            `,
+            output: `
+            output//
             `
         }
     }
 },
 "DATA CONVERSION": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
-
+        code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                output//
                 `
       },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
 
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+        code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                output//
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
 
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+        code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+                output//
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -2971,162 +2759,51 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 " DELEGATION EVENT MODEL": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+     
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -3134,162 +2811,484 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "EXCEPTION HANDLING": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
+      "Java program that throws an exception and catch it using a try-catch block.": {
+          description: "Java program that throws an exception and catch it using a try-catch block.",
           code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
+        code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+               output//
                 `
       },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
+      "create a method that takes an integer as a parameter and throws an exception if the number is odd.": {
+        description: "Program to create a method that takes an integer as a parameter and throws an exception if the number is odd.",
+        code: `
+      code//
 
 `,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+              output: `
+             output//
+              `
+    },
+    "create a method that reads a file and throws an exception if the file is not found": {
+        description: "Program to create a method that reads a file and throws an exception if the file is not found",
+        code: `
+package exception3;
+class Exception3 
+    {
+        void readFile(String file) throws java.io.FileNotFoundException
+            {
+                java.io.File fileName = new java.io.File(file);
+                if(!fileName.exists())
+                {
+                    throw new java.io.FileNotFoundException();
+                }
+            }
+        public static void  main(String st[])
+        {
+            Exception3 file=new Exception3();
+            try
+            {
+                file.readFile("text.txt");
+            }
+            catch(java.io.FileNotFoundException e)
+            {
+                System.out.println("File Not Found!");
+            }
+        }
+    }
+
+
+`,
+              output: `
+File Found : text.txt
+              `
+    },
+    "reads a list of numbers from a file and throws an exception if any of the numbers are positive": {
+        description: "Program to reads a list of numbers from a file and throws an exception if any of the numbers are positive",
+        code: `
+      package exception4;
+class NumberIsPositive extends Throwable
+        {
+            public String getMessage()
+            {
+                return "File contain positive number";
+            }
+        }
+class Exception4
+        {
+            public static void main(String st[])
+            {
+                try
+                {
+                java.io.File file = new java.io.File("text.txt");
+                java.util.Scanner input = new java.util.Scanner(file);
+                int num;
+                while(input.hasNextLine())
+                {
+                    while(input.hasNextInt())
+                    {
+                        num=input.nextInt();
+                        if(num > 0)
+                        {
+                            System.out.println(num);
+                            throw new NumberIsPositive();
+                        }
+                    
+                    }
+                if(!input.hasNextInt())
+                    {
+                        System.out.println(input.next()+" is not integer");
+                    }
+                }
+                }
+                 catch(java.io.FileNotFoundException e)
+                {
+                    System.out.println(e.getMessage());
+                }
+                catch (java.util.InputMismatchException e)
+                {
+                    System.out.println("File not contain Integer!");
+                }
+                catch (NumberIsPositive e)
+                {
+                    System.out.println(e.getMessage());
+                }
+            }   
+        }
+
+`,
+              output: `
+File contain positive number
+              `
+    },
+    "Reads a file and throws an exception if the file is empty.": {
+        description: "Program that reads a file and throws an exception if the file is empty.",
+        code: `
+     package exception5;
+class FileIsEmpty extends Throwable
+        {
+            public String getMessage()
+            {
+                return "File is Empty!";
+            }
+        }
+class Exception5
+        {
+            public static void main(String st[])
+            {
+                try
+                {
+                java.io.File file = new java.io.File("text.txt");
+                java.util.Scanner input = new java.util.Scanner(file);
+                if(!input.hasNextLine())
+                {
+                    throw new FileIsEmpty();
+                }
+                else
+                {
+                    System.out.println("File is not Empty");
+                }
+                }
+                catch (FileIsEmpty e)
+                {
+                    System.out.println(e.getMessage()); 
+                }
+                catch(java.io.FileNotFoundException e)
+                {
+                    System.out.println(e.getMessage());
+                }
+            }   
+        }
+
+`,
+              output: `
+File is not Empty
+              `
+    },
+    "reads a list of integers from the user and throws an exception if any numbers are duplicates": {
+        description: "Program to reads a list of integers from the user and throws an exception if any numbers are duplicates",
+        code: `
+      package exception6;
+class NumberAreDuplicate extends Throwable
+        {
+            public String getMessage()
+            {
+                return "Number are Duplicate";
+            }
+        }
+    class Exception6
+            {
+                public static void main(String st[])
+                {
+                     int arr[]=new int[5];
+                    int i,j;
+                    boolean isDuplicate = true;
+                    try
+                    {
+                    java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+                    arr[0]=Integer.parseInt(input.readLine());
+                    for(i=1;i<arr.length;i++)
+                    {
+                        for(j=i-1;j<i;j++)
+                        {
+
+                        arr[i]=Integer.parseInt(input.readLine());
+                        if(arr[i]==arr[j])
+                        {
+                            throw new NumberAreDuplicate();
+                        }
+                        else
+                        {
+                            isDuplicate=false;
+                        }
+                        }
+                        
+                    }
+                    if(!isDuplicate)
+                    {
+                        System.out.println("Number are not Duplicate");
+                    }
+                    }
+                    catch(java.io.IOException e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
+                    catch(NumberFormatException e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
+                    catch(NumberAreDuplicate e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
+                }
+            }
+
+`,
+              output: `
+1
+2
+3
+3
+Number are Duplicate
+              `
+    },
+    "create a method that takes a string as input and throws an exception if the string does not contain vowels.": {
+        description: "Program to create a method that takes a string as input and throws an exception if the string does not contain vowels.",
+        code: `
+      package exception7;
+class NotContainVowels extends Throwable
+    {
+        public String getMessage()
+        {
+            return "string does not contain vowels.";
+        }
+    }
+class Exception7
+    {
+        static void getString(String str) throws NotContainVowels
+        {
+            int i;
+            char ch;
+            boolean isVowel=false;
+            for(i=0;i<str.length();i++)
+            {
+                ch = str.charAt(i);
+                if(ch == 'a' || ch == 'o' || ch == 'e' || ch =='i' || ch == 'u' || ch == 'A' || ch == 'O' || ch == 'E' || ch =='I' || ch == 'U')
+                {
+                    isVowel=true;
+                    break;
+                }
+                else
+                {
+                    isVowel=false;
+                    
+                }
+            }
+            if(!isVowel)
+            {
+                throw new NotContainVowels();
+            }
+            else
+            {
+                System.out.println("String contain vowel");
+            }
+        }
+        public static void main(String st[])
+        {
+            try
+            {
+            java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+            String str = input.readLine();
+            getString(str);
+            }
+            catch(java.io.IOException e)
+            {
+                System.out.println(e.getMessage());
+            }
+            catch(NotContainVowels e)
+            {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+`,
+              output: `
+Manjit
+String contain vowel
+              `
+    },
+    "connect the Java API to Database, if connection not successful then throw an exception": {
+        description: "Program to connect the Java API to Database, if connection not successful then throw an exception",
+        code: `
+      package exception8;
+class NotConnected extends Throwable 
+        {
+            public String getMessage()
+            {
+                return "Connection not Successful!";
+            }
+        }
+class Exception8
+    {
+        public static void main(String st[])
+        {
+            java.sql.Connection con =null;
+            try
+            {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/DB","root","java");
+            System.out.println(con);
+            if(con==null)
+            {
+                throw new NotConnected();
+            }
+            else
+            {
+                System.out.println("Database Connected Successfully");
+            }
+            }
+            catch(ClassNotFoundException e)
+            {
+                System.out.println(e.getMessage());
+            }
+            catch(java.sql.SQLException e)
+            {
+                System.out.println(e.getMessage());
+            }
+            catch(NotConnected e)
+            {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+`,
+              output: `
+   Database Connected Successfully
+              `
+    },
+    "manage the driver with path, username and password, if not successful then throw an exception": {
+        description: "Program to manage the driver with path, username and password, if not successful then throw an exception",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "throw the SQL Query, insert, delete, update, if not successful then throw an exception": {
+        description: "Program to throw the SQL Query, insert, delete, update, if not successful then throw an exception",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "show an example of throws Keyword.": {
+        description: "Program to show an example of throws Keyword.",
+        code: `
+      package exception11;
+class Exception11
+        {
+            public static void main(String st[]) throws java.io.IOException
+            {
+                java.io.InputStreamReader input = new java.io.InputStreamReader(System.in);
+                System.out.println("The main function throw io exception to JVM using thorws Keyword!");
+                System.out.println(input.read());
+            }
+        }
+
+`,
+              output: `
+             The main function throw io exception to JVM using thorws Keyword!
+             97
+              `
+    },
+    "show an example of multiple catch": {
+        description: "Program to show an example of multiple catch",
+        code: `
+package exception12;
+class Exception12
+    {
+        public static void main(String st[])
+        {
+            try
+            {
+                System.out.println(Integer.parseInt(st[0]));
+            }
+            catch(ArrayIndexOutOfBoundsException e)
+            {
+                System.out.println("Please Enter at least one Argument!");
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Please Enter an Integer value!");
+            }
+        }
+    }
+
+`,
+              output: `
+C:\>java exception12.Exception12
+Please Enter at least one Argument!
+              `
+    },
+    "show an example of nested try block.": {
+        description: "Program to show an example of nested try block.",
+        code: `
+package exception13;
+
+class Exception13 
+    {
+        public static void main(String st[])
+        {
+            try
+            {
+                System.out.println(st[0]); 
+                try
+                {
+                    System.out.println(Integer.parseInt(st[0]));
+                }
+                catch(NumberFormatException e)
+                {
+                    System.out.println("Please Enter an Integer value!");
+                }
+            }
+            catch(ArrayIndexOutOfBoundsException e)
+            {
+                System.out.println("Please Enter at least one Argument!");
+            }
+        }
+    }
+
+`,
+              output: `
+C:\>java exception13.Exception13 a
+Please Enter an Integer value!
+              `
+    },
+      
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
 
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -3430,122 +3429,48 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
       
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
       "Find Second Largest": {
           description: "Program to find the second largest element in an array.",
           code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -3553,162 +3478,52 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "GRAPHICAL USER INTERFACE (AWT)": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+      
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+     
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -3716,162 +3531,52 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "GRAPHICAL USER INTERFACE (SWINGS)": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
     
-                `
-      }
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+     
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -3879,77 +3584,358 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "INHERITANCE": {
   "Easy": {
-      "1.create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark.": {
+      "Create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark.": {
           description: "JAVA Program to create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark.",
           code: `
-        code//
+package animal;
+class  Animal
+	{
+	void makeSound()
+	{
+	System.out.println("Animal make Sounds");
+	}
+	}
+class Cat extends Animal
+	{
+	void makeSound()
+	{
+	System.out.println("Meow Meow");
+	}
+	}
+class  Main
+	{
+	public static void main(String st[])
+	{
+	Animal animal=new Animal();
+	animal.makeSound();
+	Animal cat=new Cat();
+	cat.makeSound();
+	}
+	}
+
 
 `,
                 output: `
-            output//
+Animal make Sounds
+Meow Meow
                 `
       },
-      "2.create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print Repairing a car.": {
+      "Create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print Repairing a car.": {
           description: "JAVA Program to create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print Repairing a car.",
           code: `
-        code//
+package vehicle;
+
+class Vehicle
+	{
+	void drive()
+	{
+	System.out.println("Drive Vehicle");
+	}
+	}
+	class Car extends Vehicle
+	{
+	void drive()
+	{
+	System.out.println("Repairing Car");
+	}
+	}
+	class Main
+	{
+	public static void main(String st[])
+	{
+	Vehicle vehicle=new Vehicle();
+	vehicle.drive();
+	Vehicle car = new Car();
+	car.drive();
+	}
+	}
+
 
 `,
                 output: `
-            output//
+Drive Vehicle
+Repairing Car
                 `
       },
-      "3.create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.": {
+      "Create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.": {
           description: "JAVA Program to create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.",
           code: `
-        code//
+package shape;
+
+class Shape
+	{
+	double getArea()
+	{
+	System.out.println("Calculate Area");
+	return 0;
+	}
+	}
+	class Rectangle extends Shape
+	{
+	private double length;
+	private double width;
+	Rectangle(double l,double w)
+	{
+	length=l;
+	width=w;
+	}
+	double getArea()
+	{
+	return length*width;
+	}
+	}
+	class  Main
+	{
+	public static void main(String st[])
+	{
+	Shape rectangle=new Rectangle(4.0,5.0);
+	double area = rectangle.getArea();
+	System.out.println("Area of Rectangle is : " + area);
+	}
+	}
+
 
 `,
                 output: `
-            output//
+Area of Rectangle is : 20.0
                 `
       },
-      "4.create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().": {
+      "Create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().": {
           description: "JAVA Program to create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().",
           code: `
-        code//
+package employee;
+
+class Employee
+	{
+	private double salary;
+	public Employee(double salary)
+	{
+	this.salary=salary;
+	}
+	void work()
+	{
+	System.out.println("Employee is working");
+	}
+	double getSalary()
+	{
+	return salary;
+	}
+	}
+class HRManager extends Employee
+	{
+	public HRManager(double salary)
+	{
+	super(salary);
+	}
+	void work()
+	{
+	System.out.println("HRManager is managing employee");
+	}
+	void addEmployee()
+	{
+	System.out.println("HR Manager adding Employee");
+	}
+	}
+class Main
+	{
+	public static void main(String st[])
+	{
+	Employee emp=new Employee(5000);
+	emp.work();
+	System.out.println("Salary : "+emp.getSalary());
+	HRManager hrm=new HRManager(10000);
+	hrm.work();
+	System.out.println("Salary : "+hrm.getSalary());
+	hrm.addEmployee();
+	}
+	}
+
 
 `,
                 output: `
-            output//
+Employee is working
+Salary : 5000.0
+HRManager is managing employee
+Salary : 10000.0
+HR Manager adding Employee
                 `
       },
-      "5.create a class known as BankAccount with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.": {
+      "Create a class known as BankAccount with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.": {
           description: "JAVA Program to create a class known as 'BankAccount' with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.",
           code: `
-        code//
+package bankaccount;
+
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double bal) {
+        balance = bal;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    public void withdraw(double amount) {
+        balance -= amount;
+        System.out.println("Withdrawn: " + amount);
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+
+class SavingsAccount extends BankAccount {
+    public SavingsAccount(double balance) {
+        super(balance);
+    }
+
+    
+    public void withdraw(double amount) {
+        if (getBalance() - amount < 100) {
+            System.out.println("Withdrawal not allowed. Balance will fall below $100.");
+        } else {
+            super.withdraw(amount);
+        }
+    }
+}
+
+ class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+        account.deposit(500);
+        account.withdraw(200);
+        System.out.println("Balance: " + account.getBalance());
+
+        SavingsAccount savingsAccount = new SavingsAccount(1000);
+        savingsAccount.deposit(500);
+        savingsAccount.withdraw(200);
+        savingsAccount.withdraw(1300); 
+        System.out.println("Balance: " + savingsAccount.getBalance());
+    }
+}
+
 
 `,
                 output: `
-            output//
+Deposited: 500.0
+Withdrawn: 200.0
+Balance: 1300.0
+Deposited: 500.0
+Withdrawn: 200.0
+Withdrawal not allowed. Balance will fall below $100.
+Balance: 1300.0
                 `
       },
-      "6.create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.": {
+      "Create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.": {
           description: "JAVA Program to create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.",
           code: `
-        code//
+package animal2;
+
+class Animal
+	{
+	void move()
+	{
+	System.out.println("Move");
+	}
+	}
+class Cheetah extends Animal
+	{
+	void move()
+	{
+	System.out.println("Cheetah Run");
+	}
+	}
+class Main
+	{
+	public static void main(String st[])
+	{
+	Animal a=new Animal();
+	a.move();
+	Cheetah c = new Cheetah();
+	c.move();
+	}
+	}
+
 
 `,
                 output: `
-            output//
+Move
+Cheetah Run
                 `
       },
-      "7.create a class known as Person with methods called getFirstName() and getLastName(). Create a subclass called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title": {
+      "Create a class known as Person with methods called getFirstName() and getLastName(). Create a subclass called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title": {
           description: "JAVA Program to create a class known as Person with methods called getFirstName() and getLastName(). Create a subclass called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title",
           code: `
-        code//
+package person;
+
+class Person
+    {
+        private String firstName;
+        private String lastName;
+        private int employeeId;
+         String jobTitle;
+        Person(String fn,String ln)
+        {
+            firstName=fn;
+            lastName=ln;
+            
+        }
+        String getFirstName()
+            {
+                return firstName;
+            }
+            String getLastName()
+            {
+                return lastName;
+            }
+       
+    }
+    class Employee extends Person 
+            {
+                private int employeeId;
+                private String jobTitle;
+                Employee(String fn,String ln, int empId,String jt)
+                {
+                    super(fn,ln);
+                    employeeId=empId;
+                    jobTitle=jt;
+                }
+                int getEmployeeId()
+                {
+                    return employeeId;
+                }
+                String getLastName()
+                {
+                    System.out.println(super.getLastName());
+                    return jobTitle;
+                }
+         
+            }
+    class Main
+        {
+            public static void main(String st[])
+                {
+                    Employee p1 = new Employee("Manjit","Kumar",1,"Manager");
+                    System.out.println("Name : "+p1.getFirstName());
+                    System.out.println("Job Title : "+p1.getLastName());
+                    System.out.println("Employee Id : "+p1.getEmployeeId());
+
+                }
+        }
 
 `,
                 output: `
-            output//
+Name : Manjit
+Last Name : Kumar
+Job Title : Manager
+Employee Id : 1
                 `
       },
-      "8.create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.": {
+      "Create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.": {
           description: "JAVA Program to create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.",
           code: `
         code//
@@ -3959,7 +3945,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "9.create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.": {
+      "Create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.": {
           description: "JAVA Program to create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.",
           code: `
         code//
@@ -3969,7 +3955,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "10.creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.": {
+      "Creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.": {
           description: "JAVA Program to creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.",
           code: `
         code//
@@ -3979,47 +3965,162 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "11.showing an example of super keyword": {
+      "Showing an example of super keyword": {
           description: "JAVA Program to showing an example of super keyword",
           code: `
-        code//
+package superkeyword;
+class Base
+    {
+        int x;
+        void x()
+        {
+            x=5;
+             System.out.println(x);
+        }
+       
+    }
+class Child extends Base
+        {
+            void display()
+            {
+            int x=10;
+            super.x =20;
+            System.out.println("Value of Child x : "+x);
+            System.out.println("Value of Base x : "+super.x);
+            }
+            
+        }
+class Main
+        {
+            public static void main(String st[])
+            {
+                Child obj = new Child();
+                obj.display();
+                obj.x();
+            }
+        }
 
 `,
                 output: `
-            output//
+Value of Child x : 10
+Value of Base x : 20
+5
                 `
       },
-      "12.showing an example of super function": {
+      "Showing an example of super function": {
           description: "JAVA Program to showing an example of super function",
           code: `
-        code//
+        package superfunction;
+
+class A
+    {
+        private int num1;
+        private int num2;
+        A(int x,int y)
+        {
+            num1=x;
+            num2=y;
+            System.out.println(x+" + "+y+" = "+(num1+num2));
+        }
+    }
+class B extends A
+        {
+            B()
+            {
+                super(4,5);
+            }
+            
+        }
+class Main
+        {
+            public static void main(String st[])
+                {
+                    B obj = new B();
+                }
+        }
 
 `,
                 output: `
-            output//
+            4 + 5 = 9
                 `
       },
-      "13.showing an example of method overriding": {
+      "Showing an example of method overriding": {
           description: "JAVA Program to showing an example of method overriding",
           code: `
-        code//
+        package methodoverriding;
+
+class A
+        {
+            String  display()
+            {
+                return "This is Class A";
+            }
+        }
+class B extends A
+        {
+            String display()
+            {
+                return "This is Class B";
+            }
+        }
+class Main
+    {
+        B obj=new B();
+        System.out.println(obj.display());
+    }
 
 `,
                 output: `
-            output//
+            This is Class B
                 `
       },
-      "14.showing an example of dynamic method dispatch": {
+      "Showing an example of dynamic method dispatch": {
           description: "JAVA Program to showing an example of dynamic method dispatch",
           code: `
-        code//
+package dynamicmethoddispatch;
+
+class A {
+    String display() {
+        return "This is Class A";
+    }
+}
+
+class B extends A {
+    String display() {
+        return "This is Class B";
+    }
+}
+
+class C extends A {
+    String display() {
+        return "This is Class C";
+    }
+}
+
+class Main {
+    public static void main(String st[]) {
+        A obj;  // reference of type A
+
+        obj = new A();
+        System.out.println(obj.display());  
+
+        obj = new B();
+        System.out.println(obj.display()); 
+
+        obj = new C();
+        System.out.println(obj.display()); 
+    }
+}
+
 
 `,
                 output: `
-            output//
+This is Class A
+This is Class B
+This is Class C
                 `
       },
-      "15.create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.": {
+      "Create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.": {
           description: "JAVA Program to create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.",
           code: `
         code//
@@ -4029,7 +4130,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "16.create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.": {
+      "Create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.": {
           description: "JAVA Program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.",
           code: `
         code//
@@ -4039,7 +4140,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "17.create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.": {
+      "Create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.": {
           description: "JAVA Program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.",
           code: `
         code//
@@ -4049,7 +4150,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "18.create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.": {
+      "Create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.": {
           description: "JAVA Program to create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.",
           code: `
         code//
@@ -4059,8 +4160,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "19.create an abstracWrite a Java program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.t class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape": {
-          description: "JAVA Program to create an abstracWrite a Java program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.t class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape",
+      "Create an abstracWrite a Java program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.": {
+          description: "JAVA Program to create an abstracWrite a Java program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.",
           code: `
         code//
 
@@ -4069,7 +4170,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "20.create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape": {
+      "Create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape": {
           description: "JAVA Program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape",
           code: `
         code//
@@ -4079,7 +4180,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "21.create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.": {
+      "Create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.": {
           description: "JAVA Program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.",
           code: `
         code//
@@ -4089,7 +4190,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "22.create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.": {
+      "Create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.": {
           description: "JAVA Program to create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.",
           code: `
         code//
@@ -4099,7 +4200,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "23.create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.": {
+      "Create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.": {
           description: "JAVA Program to create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.",
           code: `
         code//
@@ -4109,7 +4210,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "24.create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.": {
+      "Create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.": {
           description: "JAVA Program to create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.",
           code: `
         code//
@@ -4119,7 +4220,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "25.create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.": {
+      "Create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.": {
           description: "JAVA Program to create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.",
           code: `
         code//
@@ -4129,7 +4230,7 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
             output//
                 `
       },
-      "26.create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape": {
+      "Create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape": {
           description: "JAVA Program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape",
           code: `
         code//
@@ -4142,122 +4243,38 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
                  
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+     
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -4265,162 +4282,141 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "INPUT/OUTPUT": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
-          code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
+     "Enter the character from user using InputStreamReader": {
+        description: "Program to Enter the character from user using InputStreamReader",
+        code: `
+      code//
 
 `,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
+              output: `
+             output//
+              `
+    },
+    "Enter the string from user using BufferedStreamReader": {
+        description: "Program to Enter the string from user using BufferedStreamReader",
+        code: `
+      code//
 
 `,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+              output: `
+             output//
+              `
+    },
+    "Enter the integer from user using Scanner class": {
+        description: "Program to Enter the integer from user using Scanner class",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "Enter the float from user using Scanner class": {
+        description: "Program to Enter the float from user using Scanner class",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "Enter the double from user using Scanner class": {
+        description: "Program to Enter the double from user using Scanner class",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "Enter the boolean from user using Scanner class": {
+        description: "Program to Enter the boolean from user using Scanner class",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "Enter the boolean from user using Scanner class": {
+        description: "Program to Enter the boolean from user using Scanner class",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "Enter the long integer from user using Scanner class": {
+        description: "Program to Enter the long integer from user using Scanner class",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "Get all characters from the file and display on the screen": {
+        description: "Program to Get all characters from the file and display on the screen",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    },
+    "Get all characters from the file, count number of lines, words, characters and display on the screen": {
+        description: "Program to Get all characters from the file, count number of lines, words, characters and display on the screen",
+        code: `
+      code//
+
+`,
+              output: `
+             output//
+              `
+    }
+
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+      
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -4428,8 +4424,109 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "INTERFACES": {
   "Easy": {
-    "comming soon": {
-        description: "Program to comming soon.",
+    "create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes.": {
+        description: "Program to create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes.",
+        code: `
+package shape;
+
+interface Shape 
+    {
+         double getArea();
+    }
+class Rectangle implements Shape
+    {
+        private double length;
+        private double width;
+        Rectangle(double l,double w)
+        {
+            length=l;
+            width=w;
+        }
+       public double getArea()
+        {
+            return length*width;
+        }
+    }
+class Circle implements Shape
+    {
+        final double PI = 3.14;
+        private double radius;
+        Circle(double r)
+        {
+            radius=r;
+        }
+       public double getArea()
+        {
+            return PI*radius*radius;
+        }
+    }
+class Triangle implements Shape
+    {
+        private double base;
+        private double heigth;
+        Triangle(double b,double h)
+        {
+            base = b;
+            heigth =h;
+        }
+       public double getArea()
+        {
+            return (1.0/2.0*(base*heigth));
+        }
+    }
+class Main
+    {
+        public static void main(String st[])
+        {
+        Shape obj;
+        obj = new Rectangle(3.0,4.0);
+        System.out.println("Area of Rectangle is : "+obj.getArea());
+        obj = new Circle(7.0);
+        System.out.println("Area of Circle is : "+obj.getArea());
+        obj = new Triangle(7.0,8.0);
+        System.out.println("Area of Triangle is : "+obj.getArea());
+        }
+    }
+
+`,
+output: `
+Area of Rectangle is : 12.0
+Area of Circle is : 153.86
+Area of Triangle is : 28.0
+          `
+    },
+    "create a Animal interface with a method called bark() that takes no arguments and returns void. Create a Dog class that implements Animal and overrides speak() to print \"Dog is barking\".": {
+        description: "Program to create a Animal interface with a method called bark() that takes no arguments and returns void. Create a Dog class that implements Animal and overrides speak() to print \"Dog is barking\"..",
+        code: `
+package animal;
+
+interface Animal
+    {
+        void bark();
+    }
+class Dog implements Animal
+    {
+        public void bark()
+        {
+            System.out.println("Dog is barking ");
+        }
+    }
+class Main
+    {
+        public static void main(String st[])
+            {
+                Animal obj = new Dog();
+                obj.bark();
+            }
+    }
+
+`,
+output: `
+          Dog is barking
+          `
+    },
+    "create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes.": {
+        description: "Program to create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes..",
         code: `
           code//
 
@@ -4438,8 +4535,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods.": {
+        description: "Program to create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods..",
         code: `
           code//
 
@@ -4448,125 +4545,122 @@ output: `
           output//
           `
     },
+    "create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. Create a class Rectangle that implements the Resizable interface and implements the resize methods.": {
+        description: "Program to create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. Create a class Rectangle that implements the Resizable interface and implements the resize methods..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "create an interface Drawable with a method draw() that takes no arguments and returns void. Create three classes Circle, Rectangle, and Triangle that implement the Drawable interface and override the draw() method to draw their respective shapes.": {
+        description: "Program to create an interface Drawable with a method draw() that takes no arguments and returns void. Create three classes Circle, Rectangle, and Triangle that implement the Drawable interface and override the draw() method to draw their respective shapes..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
+        description: "Program to create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports.": {
+        description: "Program to create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method.": {
+        description: "Program to create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    " create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations. Create two classes AES and RSA that implement the Encryptable interface and provide their own encryption and decryption algorithms.": {
+        description: "Program to  create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations. Create two classes AES and RSA that implement the Encryptable interface and provide their own encryption and decryption algorithms..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
+        description: "Program to create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   
 
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
       "Find Second Largest": {
           description: "Program to find the second largest element in an array.",
           code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -4574,162 +4668,60 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "JAVA DATABASE CONNECTIVITY": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
-          code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
 
 `,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
 
 `,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+output: `
+          output//
+          `
+    },
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+      
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -4737,162 +4729,52 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 " MULTITHREADING": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+     
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+     
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -4918,8 +4800,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Rectangle\" with width and height attributes. Calculate the area and perimeter of the rectangle": {
+          description: "Program to create a class called \"Rectangle\" with width and height attributes. Calculate the area and perimeter of the rectangle",
           code: `
         code//
 `,
@@ -4927,8 +4809,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Circle\" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.": {
+          description: "Program to create a class called \"Circle\" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.",
           code: `
         code//
 `,
@@ -4936,8 +4818,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Book\" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.": {
+          description: "Program to create a class called \"Book\" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.",
           code: `
         code//
 `,
@@ -4945,8 +4827,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Employee\" with a name, job title, and salary attributes, and methods to calculate and update salary.": {
+          description: "Program to create a class called \"Employee\" with a name, job title, and salary attributes, and methods to calculate and update salary.",
           code: `
         code//
 `,
@@ -4954,8 +4836,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Bank\" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called \"Account\" to maintain account details of a particular customer.": {
+          description: "Program to create a class called \"Bank\" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called \"Account\" to maintain account details of a particular customer.",
           code: `
         code//
 `,
@@ -4963,8 +4845,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create class called \"TrafficLight\" with attributes for color and duration, and methods to change the color and check for red or green.": {
+          description: "Program to create class called \"TrafficLight\" with attributes for color and duration, and methods to change the color and check for red or green.",
           code: `
         code//
 `,
@@ -4972,8 +4854,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Employee\" with a name, salary, and hire date attributes, and a method to calculate years of service.": {
+          description: "Program to create a class called \"Employee\" with a name, salary, and hire date attributes, and a method to calculate years of service.",
           code: `
         code//
 `,
@@ -4981,8 +4863,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Student\" with a name, grade, and courses attributes, and methods to add and remove courses.": {
+          description: "Program to create a class called \"Student\" with a name, grade, and courses attributes, and methods to add and remove courses.",
           code: `
         code//
 `,
@@ -4990,8 +4872,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Library\" with a collection of books and methods to add and remove books.": {
+          description: "Program to create a class called \"Library\" with a collection of books and methods to add and remove books.",
           code: `
         code//
 `,
@@ -4999,8 +4881,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Airplane\" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.": {
+          description: "Program to create a class called \"Airplane\" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.",
           code: `
         code//
 `,
@@ -5008,8 +4890,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Inventory\" with a collection of products and methods to add and remove products, and to check for low inventory.": {
+          description: "Program to create a class called \"Inventory\" with a collection of products and methods to add and remove products, and to check for low inventory.",
           code: `
         code//
 `,
@@ -5017,8 +4899,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"School\" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.": {
+          description: "Program to create a class called \"School\" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.",
           code: `
         code//
 `,
@@ -5026,8 +4908,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"MusicLibrary\" with a collection of songs and methods to add and remove songs, and to play a random song.": {
+          description: "Program to create a class called \"MusicLibrary\" with a collection of songs and methods to add and remove songs, and to play a random song.",
           code: `
         code//
 `,
@@ -5035,8 +4917,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Shape\" with abstract methods for calculating area and perimeter, and subclasses for \"Rectangle\", \"Circle\", and \"Triangle\".": {
+          description: "Program to create a class called \"Shape\" with abstract methods for calculating area and perimeter, and subclasses for \"Rectangle\", \"Circle\", and \"Triangle\".",
           code: `
         code//
 `,
@@ -5044,8 +4926,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Movie\" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.": {
+          description: "Program to create a class called \"Movie\" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.",
           code: `
         code//
 `,
@@ -5053,8 +4935,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called \"Restaurant\" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.": {
+          description: "Program to create a class called \"Restaurant\" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.",
           code: `
         code//
 `,
@@ -5062,8 +4944,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class with methods to search for flights and hotels, and to book and cancel reservations.": {
+          description: "Program to create a class with methods to search for flights and hotels, and to book and cancel reservations.",
           code: `
         code//
 `,
@@ -5071,8 +4953,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "Create a class showing an example of default constructor.": {
+          description: "Program to Create a class showing an example of default constructor.",
           code: `
         code//
 `,
@@ -5080,8 +4962,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "Create a class showing an example of parameterized constructor.": {
+          description: "Program to Create a class showing an example of parameterized constructor.",
           code: `
         code//
 `,
@@ -5089,8 +4971,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "Create a class showing an example of copy constructor.": {
+          description: "Program to Create a class showing an example of copy constructor.",
           code: `
         code//
 `,
@@ -5098,8 +4980,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students": {
+          description: "Program to Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students",
           code: `
         code//
 `,
@@ -5107,8 +4989,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-"comming soon": {
-          description: "Program to comming soon",
+"Create a class showing the area of circle and rectangle by method overloading.": {
+          description: "Program to Create a class showing the area of circle and rectangle by method overloading.",
           code: `
         code//
 `,
@@ -5116,8 +4998,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "Create a class, entering the command line arguments from the user and show all the arguments as output..": {
+          description: "Program to Create a class, entering the command line arguments from the user and show all the arguments as output..",
           code: `
         code//
 `,
@@ -5125,8 +5007,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.": {
+          description: "Program to Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.",
           code: `
         code//
 `,
@@ -5134,8 +5016,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.": {
+          description: "Program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.",
           code: `
         code//
 `,
@@ -5143,8 +5025,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.": {
+          description: "Program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.",
           code: `
         code//
 `,
@@ -5152,8 +5034,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.": {
+          description: "Program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.",
           code: `
         code//
 `,
@@ -5161,8 +5043,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.": {
+          description: "Program to create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.",
           code: `
         code//
 `,
@@ -5170,8 +5052,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.": {
+          description: "Program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.",
           code: `
         code//
 `,
@@ -5179,26 +5061,8 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
    output//
                 `
       },
-      "comming soon": {
-          description: "Program to comming soon",
-          code: `
-        code//
-`,
-                output: `
-   output//
-                `
-      },
-      "comming soon": {
-          description: "Program to comming soon",
-          code: `
-        code//
-`,
-                output: `
-   output//
-                `
-      },
-      "comming soon": {
-          description: "Program to comming soon",
+      "create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.": {
+          description: "Program to create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.",
           code: `
         code//
 `,
@@ -5207,126 +5071,41 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
                 `
       },
      
-
     },
                 
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+      
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -5334,162 +5113,130 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 " PACKAGES": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
+      " Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.": {
+          description: "Program to create a class called Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.",
           code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
-
+        code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+   output//
                 `
       },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
+      "Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.": {
+          description: "Program to Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.",
           code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
-
+        code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+   output//
                 `
-      }
+      },
+      "Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.": {
+          description: "Program to Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.": {
+          description: "Program to Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Create a Java program to create a package with multiple default classes.": {
+          description: "Program to Create a Java program to create a package with multiple default classes.",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      " Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.": {
+          description: "Program to  Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.": {
+          description: "Program to Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Create a Java program to create a package with public class and protected members to be accessed in another class.": {
+          description: "Program to Create a Java program to create a package with public class and protected members to be accessed in another class.",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.": {
+          description: "Program to Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Create a Java program to create a package with public class and public members to be accessed in another class.": {
+          description: "Program to Create a Java program to create a package with public class and public members to be accessed in another class.",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
+      
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -5497,162 +5244,249 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "SINGLE DIMENSION ARRAYS": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
+      "Copy all elements of one array into another array": {
+          description: "Program to copy all elements of one array into another array",
           code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
-
+        code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+   output//
                 `
       },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
+      "Find the frequency of each element in the array": {
+          description: "Program to find the frequency of each element in the array",
           code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
-
+        code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
+   output//
                 `
-      }
+      },
+      "Left rotate the elements of an array": {
+          description: "Program to left rotate the elements of an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the duplicate elements of an array": {
+          description: "Program to print the duplicate elements of an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the elements of an array": {
+          description: "Program to print the elements of an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the elements of an array in reverse order": {
+          description: "Program to print the elements of an array in reverse order",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the elements of an array present on even position": {
+          description: "Program to  print the elements of an array present on even position",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the elements of an array present on odd position": {
+          description: "Program to print the elements of an array present on odd position",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the largest element in an array": {
+          description: "Program to print the largest element in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the smallest element in an array": {
+          description: "Program to print the smallest element in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the number of elements present in an array": {
+          description: "Program to print the number of elements present in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print the sum of all the items of the array": {
+          description: "Program to print the sum of all the items of the array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Right rotate the elements of an array": {
+          description: "Program to right rotate the elements of an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Sort the elements of an array in ascending order": {
+          description: "Program to sort the elements of an array in ascending order",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Sort the elements of an array in descending order": {
+          description: "Program to sort the elements of an array in descending order",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Find 3rd Largest Number in an array": {
+          description: "Program to Find 3rd Largest Number in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Find 2nd Largest Number in an array": {
+          description: "Program to Find 2nd Largest Number in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Find Largest Number in an array": {
+          description: "Program to Find Largest Number in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Find 2nd Smallest Number in an array": {
+          description: "Program to Find 2nd Smallest Number in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Find Smallest Number in an array": {
+          description: "Program to Find Smallest Number in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Remove Duplicate Element in an array": {
+          description: "Program to Remove Duplicate Element in an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "Print Odd and Even Numbers from an array": {
+          description: "Program to Print Odd and Even Numbers from an array",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      "How to Sort an Array in Java": {
+          description: "Program to How to Sort an Array in Java",
+          code: `
+        code//
+`,
+                output: `
+   output//
+                `
+      },
+      
+      
   },
   "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
 
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
   },
   "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
-
+code//
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
 
 `,
                 output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -5660,162 +5494,100 @@ console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
 },
 "STRINGS": {
   "Easy": {
-      "Sum of Elements": {
-          description: "Program to sum elements of an array.",
-          code: `
-function sumArray(arr) {
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  sum += arr[i];
-}
-return sum;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      },
-      "Find Maximum": {
-          description: "Program to find the maximum element in an array.",
-          code: `
-function findMax(arr) {
-let max = arr[0];
-for (let i = 1; i < arr.length; i++) {
-  if (arr[i] > max) {
-      max = arr[i];
-  }
-}
-return max;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
-  },
-  "Medium": {
-      "Reverse Array": {
-          description: "Program to reverse an array.",
-          code: `
-function reverseArray(arr) {
-let start = 0;
-let end = arr.length - 1;
-while (start < end) {
-  [arr[start], arr[end]] = [arr[end], arr[start]];
-  start++;
-  end--;
-}
-return arr;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-function findSecondLargest(arr) {
-let max = -Infinity;
-let secondMax = -Infinity;
-
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-      secondMax = max;
-      max = arr[i];
-  } else if (arr[i] > secondMax && arr[i] !== max) {
-      secondMax = arr[i];
-  }
-}
-
-return secondMax;
-}
-
-`,
-                output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
-    
-                `
-      }
-  },
-  "Hard": {
-      "Merge Sort": {
-          description: "Program to sort an array using Merge Sort.",
-          code: `
-function mergeSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const mid = Math.floor(arr.length / 2);
-const left = mergeSort(arr.slice(0, mid));
-const right = mergeSort(arr.slice(mid));
-
-return merge(left, right);
-}
-
-function merge(left, right) {
-let result = [];
-let leftIndex = 0;
-let rightIndex = 0;
-
-while (leftIndex < left.length && rightIndex < right.length) {
-  if (left[leftIndex] < right[rightIndex]) {
-      result.push(left[leftIndex]);
-      leftIndex++;
-  } else {
-      result.push(right[rightIndex]);
-      rightIndex++;
-  }
-}
-
-return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
 
 `,
 output: `
-         let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "comming soon": {
+        description: "Program to comming soon.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+  },
+  "Medium": {
+      "comming soon": {
+          description: "comming soon",
+          code: `
+code//
+
+`,
+                output: `
+                output//
     
                 `
       },
-      "Quick Sort": {
-          description: "Program to sort an array using Quick Sort.",
+     
+  },
+  "Hard": {
+      "comming soon": {
+          description: "comming soon",
           code: `
-function quickSort(arr) {
-if (arr.length <= 1) {
-  return arr;
-}
-
-const pivot = arr[arr.length - 1];
-const left = [];
-const right = [];
-
-for (let i = 0; i < arr.length - 1; i++) {
-  if (arr[i] < pivot) {
-      left.push(arr[i]);
-  } else {
-      right.push(arr[i]);
-  }
-}
-
-return [...quickSort(left), pivot, ...quickSort(right)];
-}
+code//
+`,
+output: `
+         output//
+    
+                `
+      },
+      "comming soon": {
+          description: "comming soon",
+          code: `
+code//
 
 `,
       output: `
-                let array = [38, 27, 43, 3, 9, 82, 10];
-console.log(mergeSort(array)); // Output: [3, 9, 10, 27, 38, 43, 82]
+                output//
     
                 `
       }
@@ -5889,12 +5661,14 @@ selectDifficulty.addEventListener("change", function() {
     if (selectDifficulty.value !== "") {
         selectProgram.disabled = false;
         let programs = programData[selectType.value][selectDifficulty.value];
+        let counter = 1; // Initialize a counter for numbering
 
         for (let program in programs) {
             let option = document.createElement("option");
             option.value = program;
-            option.text = program;
+            option.text = `${counter}. ${program}`; // Add numbering to the program text
             selectProgram.appendChild(option);
+            counter++; // Increment counter
         }
     } else {
         selectProgram.disabled = true;
@@ -5904,6 +5678,7 @@ selectDifficulty.addEventListener("change", function() {
 // Event Listener for Program Selection
 selectProgram.addEventListener("change", function() {
     if (selectProgram.value !== "") {
+        let i=0;
         let selectedProgram = programData[selectType.value][selectDifficulty.value][selectProgram.value];
         resultTitle.innerHTML = `Selected Program: ${selectType.value} > ${selectDifficulty.value} > ${selectProgram.value}`;
         result.innerHTML = `<strong>Description:</strong> ${selectedProgram.description}`;
