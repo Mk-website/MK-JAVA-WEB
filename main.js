@@ -7,6 +7,11 @@ function showSidebar(){
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'none'
   }
+  function close()
+  {
+    alert("comming soon");
+  }
+  //close();
   // const typelist = ["Array","Basic"];
   // let select = document.getElementById("selecttype");
   // select.style.color = "red";
@@ -3299,21 +3304,130 @@ code//
       "to find the smallest number among three numbers.": {
           description: "Write a Java method to to find the smallest number among three numbers.",
           code: `
-            code//
+ package findsmallest;
+class FindSmallest 
+        {
+            private int num1,num2,num3;
+            void setNum1(int num)
+            {
+                 num1=num;
+            }
+            void setNum2(int num)
+            {
+                 num2=num;
+            }
+            void setNum3(int num)
+            {
+                 num3=num;
+            }
+            int getNum1()
+            {
+                 return num1;
+            }
+            int getNum2()
+            {
+                 return num2;
+            }
+            int getNum3()
+            {
+                 return num3;
+            }
+            int findSmallest()
+            {
+    
+                if(num1==num2 && num2==num3)
+                {
+                    System.out.println("Number are same !");
+                    return num1;
+                }
+                if(num1<num2)
+                {
+                    if(num1<num3)
+                    {
+                        return num1;
+                    }
+                    else if(num3<num2)
+                    {
+                        return num3;
+                    }
+                    else 
+                    {
+                        return num2;
+                    }
+                }
+                else if(num2<num3)
+                    {
+                        return num2;
+                    }
+                    else
+                    return num3;
+            }
+            public static void main(String st[])
+            {
+                FindSmallest obj = new FindSmallest();
+                obj.setNum1(4);
+                obj.setNum2(5);
+                obj.setNum3(2);
+                int small =obj.findSmallest();
+                System.out.println(obj.getNum1() + " "+obj.getNum2() + " "+obj.getNum3() + "\n Smallest Number is : "+ small);
+            }
+        }
             `
     ,
                 output: `
-              output//
+ 4 5 2
+ Smallest Number is : 2
                 `
       },
       "compute the average of three numbers.": {
           description: "Write a Java method to compute the average of three numbers.",
           code: `
-            code//
+package average;
+class Average 
+        {
+            private int num1,num2,num3;
+            void setNum1(int num)
+            {
+                 num1=num;
+            }
+            void setNum2(int num)
+            {
+                 num2=num;
+            }
+            void setNum3(int num)
+            {
+                 num3=num;
+            }
+            int getNum1()
+            {
+                 return num1;
+            }
+            int getNum2()
+            {
+                 return num2;
+            }
+            int getNum3()
+            {
+                 return num3;
+            }
+            float average()
+            {
+                return (num1+num2+num3)/3;
+            }
+            public static void main(String st[])
+            {
+                Average obj = new Average();
+                obj.setNum1(4);
+                obj.setNum2(5);
+                obj.setNum3(6);
+                System.out.println(obj.getNum1() + " "+obj.getNum2() + " "+obj.getNum3() + "\n Average is : "+ obj.average());
+            }
+        }
             `
     ,
                 output: `
-              output//
+ 4 5 6
+ Average is : 5.0
                 `
       },
       "display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.": {
@@ -3329,11 +3443,52 @@ code//
       "count all the words in a string.": {
           description: "Write a Java method to count all the words in a string.",
           code: `
-            code//
+package countwords;
+class CountWords 
+        {
+            private String str;
+            void setStr(String Str)
+            {
+                str=Str;
+            }
+            String getStr()
+            {
+                return str;
+            }
+            int countWords()
+            {
+                int count=0;
+                //int wordfound =0;
+                for(int i=0; i<str.length();i++)
+                {
+                    char c = str.charAt(i);
+                    if (i==0 && c!= ' ')
+                    {
+                        count+=1;
+                    }
+                    if(c ==' ' || c == '\t' || c=='\n' ) 
+                    {
+                        if(str.charAt(i+1)!=' ')
+                        {
+                            count++;
+                        }
+                    }
+
+                }
+                return count;
+            }
+            public static void main(String st[])
+            {
+                CountWords obj=new CountWords();
+                obj.setStr("My name is Manjit");
+                System.out.println("No of word in sentance : "+obj.getStr()+"\n"+obj.countWords());
+            }
+        }
             `
     ,
                 output: `
-              output//
+No of word in sentance : My name is Manjit
+4
                 `
       },
       "compute the future investment value at a given interest rate for a specified number of years.": {
@@ -3349,11 +3504,51 @@ code//
       "print characters between two characters (i.e. A to P)": {
           description: "Write a Java method to print characters between two characters (i.e. A to P).",
           code: `
-            code//
+package printchar;
+class PrintChar
+{
+    private char firstChar,lastChar;
+    void setFirstChar(char c)
+    {
+        firstChar=c;
+    }
+    void setLastChar(char c)
+    {
+        lastChar=c;
+    }
+    char getFirstChar()
+    {
+        return firstChar;
+    }
+    char getLastChar()
+    {
+        return lastChar;
+    }
+    void printChar(char c1,char c2)
+    {
+        char i;
+        for(i=c1;i<c2;i++)
+        {
+            System.out.println(i);
+        }
+    }
+    public static void  main(String st[])
+    {
+        PrintChar obj = new PrintChar();
+        obj.setFirstChar('M');
+        obj.setLastChar('Q');
+        char a = obj.getFirstChar();
+        char b = obj.getLastChar();
+        obj.printChar(a,b);
+    }
+}
             `
     ,
                 output: `
-              output//
+M
+N
+O
+P
                 `
       },
       "check whether a string is a valid password": {
