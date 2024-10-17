@@ -9753,17 +9753,7 @@ output: `
     
                 `
       },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
 
-`,
-      output: `
-                output//
-    
-                `
-      }
   }
 },
 };
