@@ -308,6 +308,7 @@ html {
     width: 40%;
     height: 15%;
   } 
+
 }
 .selector
 {
@@ -423,7 +424,7 @@ label
 
   pre {
     font-size: 1em;
-    width: 75vw;
+    width: 73vw;
 }
  
   .bg .overlay h1{

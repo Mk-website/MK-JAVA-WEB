@@ -333,52 +333,168 @@ output: `
     9
                 `
             },
-            "Find the frequency of odd & even numbers in the given matrix": {
-                description: "Program to find the frequency of odd & even numbers in the given matrix",
+            
+           
+            "Find the transpose of a given matrix": {
+                description: "Program to find the transpose of a given matrix",
                 code: `
-package frequencyoddeven;
-
-class FrequencyOddEven
+package transpose;
+class transpose
     {
         public static void main(String st[])
         {
-            int arr[][]={{1,2,3},{4,5,6},{7,8,9}},i,j;
-            int countEven=0,countOdd=0;
-             System.out.println("Matrix");
-            for(i=0;i&lt;arr.length;i++)
+            int matrixA[][]={{1,2},{3,4}};
+            int transpose[][]=new int[matrixA.length][matrixA[0].length];
+            int i=0,j=0;
+            System.out.println("Matrix A");
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j&lt;arr[i].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
-                    System.out.print(arr[i][j]+" ");
+                    System.out.print(matrixA[i][j]+" ");
                 }
                 System.out.println("  ");
             }
-            for(i=0;i&lt;arr.length;i++)
+            for(i=0;i&lt;matrixA.length;i++)
             {
-                for(j=0;j&lt;arr[0].length;j++)
+                for(j=0;j&lt;matrixA[i].length;j++)
                 {
-                    if(arr[i][j]%2==0)
-                    {
-                        countEven++;
-                    }
-                    else
-                    {
-                        countOdd++;
-                    }
+                    transpose[j][i]=matrixA[i][j];
                 }
             }
-            System.out.println("Frequency of Even Number is : "+countEven);
-            System.out.println("Frequency of Odd Number is : "+countOdd);
+            System.out.println("Transpose of MatrixA : ");
+             for(i=0;i&lt;transpose.length;i++)
+            {
+                for(j=0;j&lt;transpose[i].length;j++)
+                {
+                    System.out.print(transpose[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
         }
     }
 `,
                 output: `
-Matrix
-1 2 3
-4 5 6
-7 8 9
-Frequency of Even Number is : 4
-Frequency of Odd Number is : 5
+Matrix A
+1 2
+3 4
+Transpose of MatrixA :
+1 3
+2 4
+                `
+            },
+            "Transpose matrix": {
+                description: "Program to Transpose matrix",
+                code: `
+package transpose;
+class transpose
+    {
+        public static void main(String st[])
+        {
+            int matrixA[][]={{1,2},{3,4}};
+            int transpose[][]=new int[matrixA.length][matrixA[0].length];
+            int i=0,j=0;
+            System.out.println("Matrix A");
+            for(i=0;i&lt;matrixA.length;i++)
+            {
+                for(j=0;j&lt;matrixA[i].length;j++)
+                {
+                    System.out.print(matrixA[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+            for(i=0;i&lt;matrixA.length;i++)
+            {
+                for(j=0;j&lt;matrixA[i].length;j++)
+                {
+                    transpose[j][i]=matrixA[i][j];
+                }
+            }
+            System.out.println("Transpose of MatrixA : ");
+             for(i=0;i&lt;transpose.length;i++)
+            {
+                for(j=0;j&lt;transpose[i].length;j++)
+                {
+                    System.out.print(transpose[i][j]+" ");
+                }
+                System.out.println("  ");
+            }
+        }
+    }
+`,
+                output: `
+Matrix A
+1 2
+3 4
+Transpose of MatrixA :
+1 3
+2 4
+                `
+            },
+           
+            
+        },
+            
+        "Medium": {
+            "Determine whether a given matrix is an identity matrix": {
+                description: "Program to determine whether a given matrix is an identity matrix",
+                code: `
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class IdentityMatrix {
+    
+    public static boolean isIdentityMatrix(int[][] matrix, int size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i == j && matrix[i][j] != 1) {
+                    return false;  // Diagonal element is not 1
+                }
+                if (i != j && matrix[i][j] != 0) {
+                    return false;  // Non-diagonal element is not 0
+                }
+            }
+        }
+        return true;
+    }
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter the size of the matrix: ");
+        int size = Integer.parseInt(reader.readLine());
+        int[][] matrix = new int[size][size];
+        
+        System.out.println("Enter the elements of the matrix:");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = Integer.parseInt(reader.readLine());
+            }
+        }
+        
+        if (isIdentityMatrix(matrix, size)) {
+            System.out.println("The matrix is an identity matrix.");
+        } else {
+            System.out.println("The matrix is not an identity matrix.");
+        }
+    }
+}
+
+`,
+output: `
+Enter the size of the matrix: 3
+Enter the elements of the matrix:
+1
+0
+0
+0
+1
+0
+0
+0
+1
+The matrix is an identity matrix.
+
                 `
             },
             "Find the sum of each row and each column of a matrix": {
@@ -437,121 +553,126 @@ Sum of col 1 12
 Sum of col 2 15
 Sum of col 3 18
                 `
-            },
-            "Find the transpose of a given matrix": {
-                description: "Program to find the transpose of a given matrix",
+            },  
+        },
+        "Hard": {
+            "Find the frequency of odd & even numbers in the given matrix": {
+                description: "Program to find the frequency of odd & even numbers in the given matrix",
                 code: `
-package transpose;
-class transpose
+package frequencyoddeven;
+
+class FrequencyOddEven
     {
         public static void main(String st[])
         {
-            int matrixA[][]={{1,2},{3,4}};
-            int transpose[][]=new int[matrixA.length][matrixA[0].length];
-            int i=0,j=0;
-            System.out.println("Matrix A");
-            for(i=0;i&lt;matrixA.length;i++)
+            int arr[][]={{1,2,3},{4,5,6},{7,8,9}},i,j;
+            int countEven=0,countOdd=0;
+             System.out.println("Matrix");
+            for(i=0;i&lt;arr.length;i++)
             {
-                for(j=0;j&lt;matrixA[i].length;j++)
+                for(j=0;j&lt;arr[i].length;j++)
                 {
-                    System.out.print(matrixA[i][j]+" ");
+                    System.out.print(arr[i][j]+" ");
                 }
                 System.out.println("  ");
             }
-            for(i=0;i&lt;matrixA.length;i++)
+            for(i=0;i&lt;arr.length;i++)
             {
-                for(j=0;j&lt;matrixA[i].length;j++)
+                for(j=0;j&lt;arr[0].length;j++)
                 {
-                    transpose[j][i]=matrixA[i][j];
+                    if(arr[i][j]%2==0)
+                    {
+                        countEven++;
+                    }
+                    else
+                    {
+                        countOdd++;
+                    }
                 }
             }
-            System.out.println("Transpose of MatrixA : ");
-             for(i=0;i&lt;transpose.length;i++)
-            {
-                for(j=0;j&lt;transpose[i].length;j++)
-                {
-                    System.out.print(transpose[i][j]+" ");
-                }
-                System.out.println("  ");
-            }
+            System.out.println("Frequency of Even Number is : "+countEven);
+            System.out.println("Frequency of Odd Number is : "+countOdd);
         }
     }
 `,
                 output: `
-Matrix A
-1 2
-3 4
-Transpose of MatrixA :
-1 3
-2 4
-                `
-            },
-            "Determine whether a given matrix is an identity matrix": {
-                description: "Program to determine whether a given matrix is an identity matrix",
-                code: `
-               code//
-`,
-output: `
-                output//
-                `
-            },
-            "Transpose matrix": {
-                description: "Program to Transpose matrix",
-                code: `
-                code//
-`,
-                output: `
-                output//
+Matrix
+1 2 3
+4 5 6
+7 8 9
+Frequency of Even Number is : 4
+Frequency of Odd Number is : 5
                 `
             },
             "Determine whether a given matrix is a sparse matrix": {
                 description: "Program to determine whether a given matrix is a sparse matrix",
                 code: `
-               code//
-`,
-output: `
-                output//
-                `
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class SparseMatrix {
+
+    public static boolean isSparseMatrix(int[][] matrix, int rows, int cols) {
+        int zeroCount = 0;
+        int totalElements = rows * cols;
+
+        // Counting the number of zeroes in the matrix
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    zeroCount++;
+                }
             }
-            
-        },
-            
-        "Medium": {
-            "comming soon": {
-                description: "comming soon",
-                code: `
-code//
+        }
+        
+        // Check if more than half of the elements are zeros
+        return zeroCount > (totalElements / 2);
+    }
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter the number of rows: ");
+        int rows = Integer.parseInt(reader.readLine());
+        System.out.print("Enter the number of columns: ");
+        int cols = Integer.parseInt(reader.readLine());
+        
+        int[][] matrix = new int[rows][cols];
+        
+        System.out.println("Enter the elements of the matrix:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = Integer.parseInt(reader.readLine());
+            }
+        }
+        
+        if (isSparseMatrix(matrix, rows, cols)) {
+            System.out.println("The matrix is a sparse matrix.");
+        } else {
+            System.out.println("The matrix is not a sparse matrix.");
+        }
+    }
+}
 
 `,
-                output: `
-                output//
-    
+output: `
+Enter the number of rows: 3
+Enter the number of columns: 3
+Enter the elements of the matrix:
+1
+0
+0
+0
+0
+2
+0
+0
+0
+The matrix is a sparse matrix.
+
                 `
             },
-            
-        },
-        "Hard": {
-            "comming soon": {
-                description: "comming soon",
-                code: `
-                code//
-                `,
-                output:
-                `
-                output//
-                `
-            },
-            "comming soon": {
-                description: "comming soon",
-                code: `
-            code//
-                `,
-                output:
-                `
-                output//
-                `
-                
-            }
+           
         }
         
 
@@ -559,8 +680,8 @@ code//
     // Add similar data for String, Inheritance, and OOP...
     "APPLETS": {
       "Easy": {
-          "comming soon": {
-              description: "Program to comming soon.",
+          "Create an applet showing the string \"Hello World\" which is embedded in the HTML page": {
+              description: "Program to Create an applet showing the string \"Hello World\" which is embedded in the HTML page.",
               code: `
                 code//
 
@@ -569,8 +690,8 @@ code//
                 output//
                 `
           },
-          "comming soon": {
-              description: "Program to comming soon.",
+          "Create an applet showing the string \"Hello World\" which is executed by an appletviewer": {
+              description: "Program to Create an applet showing the string \"Hello World\" which is executed by an appletviewer.",
               code: `
                 code//
 
@@ -579,8 +700,8 @@ code//
                 output//
                 `
           },
-         "comming soon": {
-              description: "Program to comming soon.",
+         "Create an applet in Java to draw a circle": {
+              description: "Program to Create an applet in Java to draw a circle.",
               code: `
                 code//
 
@@ -589,8 +710,8 @@ code//
                 output//
                 `
           },
-          "comming soon": {
-              description: "Program to comming soon.",
+          "Create an applet in Java to draw a polygon": {
+              description: "Program to Create an applet in Java to draw a polygon.",
               code: `
                 code//
 
@@ -599,8 +720,8 @@ code//
                 output//
                 `
           },
-          "comming soon": {
-              description: "Program to comming soon.",
+          "Create an applet in Java to draw a rectangle": {
+              description: "Program to Create an applet in Java to draw a rectangle.",
               code: `
                 code//
 
@@ -609,8 +730,8 @@ code//
                 output//
                 `
           },
-          "comming soon": {
-              description: "Program to comming soon.",
+          "Create an applet in Java to draw a square": {
+              description: "Program to Create an applet in Java to draw a square.",
               code: `
                 code//
 
@@ -619,6 +740,88 @@ code//
                 output//
                 `
           },
+        "Create an applet in Java to draw a 4 concentric circles.": {
+              description: "Create an applet in Java to draw a 4 concentric circles.",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+          "Create an applet in Java to draw a line.": {
+              description: "Create an applet in Java to draw a line.",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+          "Create an applet in Java to draw a oval.": {
+              description: "Create an applet in Java to draw a oval.",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+          "Create an applet in Java to draw a arc.": {
+              description: "Create an applet in Java to draw a arc.",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+          "Create an applet in Java to change the background color.": {
+              description: "Create an applet in Java to change the background color.",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+          "Create an applet in Java to draw rounded rectangle.": {
+              description: "Create an applet in Java to draw rounded rectangle.",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+          "Create an applet in Java to set font.": {
+              description: "Create an applet in Java to set font.",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+          "Create an applet to display a digital clock.": {
+              description: "Create an applet to display a digital clock.",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+          "Java Program to Draw a Smiling Face using Graphics Class Methods": {
+              description: "Java Program to Draw a Smiling Face using Graphics Class Methods",
+              code: `
+            code//
+`,
+                output: `
+                output//
+                `
+          },
+         
         },
       "Medium": {
           "comming soon": {
@@ -740,15 +943,7 @@ System.out.println("Average of 5 number is :-"+avg);
 
 `,
                 output: `
-package avg;
-class avg{
-public static void main(String[] st)
-{
-int a=5,b=6,c=8,d=9,e=4;
-int avg = (a+b+c+d+e)/5;
-System.out.println("Average of 5 number is :-"+avg);
-}
-}
+Average of 5 number is :- 5
 
                 `
         },
@@ -802,8 +997,6 @@ class decimalToBinary
 			 
 	}
 	}
-
-
 `,
                 output: `
             Binary no. of 12
@@ -4211,8 +4404,8 @@ Rounded float: 13.0
 },
 "DATA CONVERSION": {
   "Easy": {
-      "comming soon": {
-          description: "comming soon",
+      "How to convert String to int": {
+          description: "Program to convert String to int",
           code: `
         code//
 `,
@@ -4220,6 +4413,269 @@ Rounded float: 13.0
                 output//
                 `
       },
+      "How to convert int to String": {
+          description: "Program to convert int to String",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+
+      "How to convert String to long": {
+          description: "Program to convert String to long",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert long to String": {
+          description: "Program to convert long to String",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert String to float": {
+          description: "Program to convert String to float",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert float to String": {
+          description: "Program to convert float to String",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert String to double": {
+          description: "Program to convert String to double",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert double to String": {
+          description: "Program to convert double to String",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert String to Date": {
+          description: "Program to convert String to Date",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Date to String": {
+          description: "Program to convert Date to String",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert String to char": {
+          description: "Program to convert String to char",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert char to String": {
+          description: "Program to convert char to String",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert String to Object": {
+          description: "Program to convert String to Object",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Object to String": {
+          description: "Program to convert Object to String",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert int to long": {
+          description: "Program to convert int to long",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert long to int": {
+          description: "Program to convert long to int",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert int to double": {
+          description: "Program to convert int to double",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert double to int": {
+          description: "Program to convert double to int",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert char to int": {
+          description: "Program to convert char to int",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert int to char": {
+          description: "Program to convert int to char",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert String to boolean": {
+          description: "Program to convert String to boolean",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert boolean to String": {
+          description: "Program to convert boolean to String",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Date to Timestamp": {
+          description: "Program to convert Date to Timestamp",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Timestamp to Date": {
+          description: "Program to convert Timestamp to Date",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Binary to Decimal": {
+          description: "Program to convert Binary to Decimal",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Decimal to Binary": {
+          description: "Program to convert Decimal to Binary",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Hex to Decimal": {
+          description: "Program to convert Hex to Decimal",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Decimal to Hex": {
+          description: "Program to convert Decimal to Hex",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Octal to Decimal": {
+          description: "Program to convert Octal to Decimal",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+"How to convert Decimal to Octal": {
+          description: "Program to convert Decimal to Octal",
+          code: `
+        code//
+`,
+                output: `
+                output//
+                `
+      },
+
 
   },
   "Medium": {
@@ -4260,8 +4716,8 @@ code//
 },
 " DELEGATION EVENT MODEL": {
   "Easy": {
-      "comming soon": {
-          description: "comming soon",
+      "Display Some Text in the Frame using Labels": {
+          description: "Program to display Some Text in the Frame using Labels",
           code: `
 code//
 
@@ -4271,10 +4727,222 @@ code//
     
                 `
       },
+      "Create Text Area and Password Field": {
+          description: "Program to create Text Area and Password Field",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Create a Button and Display Image in the Frame when Clicked": {
+          description: "Program to Create a Button and Display Image in the Frame when Clicked",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Create 2 Radio Buttons and Display Selected Button Label": {
+          description: "Program to Create 2 Radio Buttons and Display Selected Button Label",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Handle KeyBoardEvent": {
+          description: "Program to Handle KeyBoardEvent",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Handle MouseEvent": {
+          description: "Program to Handle MouseEvent",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+
+      "Get and Set State and Get Label of a Check Box": {
+          description: "Program to Get and Set State and Get Label of a Check Box",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Create Check Boxes and Radio Buttons": {
+          description: "Program to Create Check Boxes and Radio Buttons",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Create and Switch between Frames using Buttons": {
+          description: "Program to Create and Switch between Frames using Buttons",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Create and Set Border to Push Buttons": {
+          description: "Program to Create and Set Border to Push Buttons",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Create a List Box to Select Multiple Items and Display it in the Frame": {
+          description: "Program to Create a List Box to Select Multiple Items and Display it in the Frame",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Display a Message in a New Frame": {
+          description: "Program to Display a Message in a New Frame",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Close the Frame using WindowAdapter Class": {
+          description: "Program to Close the Frame using WindowAdapter Class",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Check Which Fonts are Available in a Local System": {
+          description: "Program to Check Which Fonts are Available in a Local System",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Display Text in Different Fonts": {
+          description: "Program to Display Text in Different Fonts",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Change Frame Background Color as Cyan": {
+          description: "Program to Change Frame Background Color as Cyan",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Change the Applet Background Colour when Button Clicked": {
+          description: "Program to Change the Applet Background Colour when Button Clicked",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Display Several Dots on the Screen Continuously": {
+          description: "Program to Display Several Dots on the Screen Continuously",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Validate the TextField for only entering numbers using KeyListener": {
+          description: "Program to Validate the TextField for only entering numbers using KeyListener",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+      "Validate the TextField for only entering email id using KeyAdapter": {
+          description: "Program to Validate the TextField for only entering email id using KeyAdapter",
+          code: `
+code//
+
+`,
+                output: `
+                output//
+    
+                `
+      },
+     
+     
   },
   "Medium": {
       "comming soon": {
-          description: "comming soon",
+          description: "Program to comming soon",
           code: `
 code//
 
@@ -5169,8 +5837,8 @@ code//
 },
 "GRAPHICAL USER INTERFACE (AWT)": {
   "Easy": {
-      "comming soon": {
-          description: "comming soon",
+      "Create a simple AWT application that displays a button with FlowLayout manager.": {
+          description: "Program to Create a simple AWT application that displays a button with FlowLayout manager.",
           code: `
 code//
 
@@ -5180,59 +5848,194 @@ code//
     
                 `
       },
-      
-  },
-  "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
+      "Create a simple AWT application that displays a button with Custom Layout.": {
+        description: "Program to Create a simple AWT application that displays a button with Custom Layout.",
+        code: `
 code//
 
 `,
-                output: `
-                output//
-    
-                `
-      },
-     
-  },
-  "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).": {
+        description: "Program to Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).",
+        code: `
 code//
 
 `,
-                output: `
-                output//
-    
-                `
-      }
-  }
-},
-"GRAPHICAL USER INTERFACE (SWINGS)": {
-  "Easy": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a TextField with FlowLayout manager.": {
+        description: "Program to Create a simple AWT application that displays a TextField with FlowLayout manager.",
+        code: `
 code//
 
 `,
-                output: `
-                output//
-    
-                `
-      },
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a TextField with Custom Layout.": {
+        description: "Program to Create a simple AWT application that displays a TextField with Custom Layout.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a Checkbox with FlowLayout manager.": {
+        description: "Program to Create a simple AWT application that displays a Checkbox with FlowLayout manager.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a Checkbox with Custom Layout.": {
+        description: "Program to Create a simple AWT application that displays a Checkbox with Custom Layout.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a Label with FlowLayout manager.": {
+        description: "Program to Create a simple AWT application that displays a Label with FlowLayout manager.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a Label with Custom Layout.": {
+        description: "Program to Create a simple AWT application that displays a Label with Custom Layout.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a Choice with FlowLayout manager.": {
+        description: "Program to Create a simple AWT application that displays a Choice with FlowLayout manager.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a Choice with Custom Layout.": {
+        description: "Program to Create a simple AWT application that displays a Choice with Custom Layout.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.": {
+        description: "Program to Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a CheckboxGroup with Custom Layout.": {
+        description: "Program to Create a simple AWT application that displays a CheckboxGroup with Custom Layout.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a List with FlowLayout manager.": {
+        description: "Program to Create a simple AWT application that displays a List with FlowLayout manager.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a List with Custom": {
+        description: "Program to Create a simple AWT application that displays a List with Custom",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a TextArea with FlowLayout manager.": {
+        description: "Program to Create a simple AWT application that displays a TextArea with FlowLayout manager.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application that displays a TextArea with Custom Layout.": {
+        description: "Program to Create a simple AWT application that displays a TextArea with Custom Layout.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.": {
+        description: "Program to Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+   
     
   },
   "Medium": {
@@ -5814,161 +6617,832 @@ This is Class C
       "Create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.": {
           description: "JAVA Program to create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.",
           code: `
-        code//
+ abstract class Animal
+{
+    abstract void sound();
+}
+class Tiger extends Animal
+{
+    public void sound()
+    {
+        System.out.println("Tiger sound");
+    }
+}
+class Lion extends Animal
+{
+    public void sound()
+    {
+        System.out.println("Lion sound");
+    }
+}
+class Main
+{
+    public static void main(String[] args) {
+        Animal lion,tiger;
+        lion = new Lion();
+        lion.sound();
+        tiger = new Tiger();
+        tiger.sound();
+
+    }
+}
 
 `,
                 output: `
-            output//
+Lion sound
+Tiger sound
                 `
       },
       "Create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.": {
           description: "JAVA Program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.",
           code: `
-        code//
+abstract class Shape
+        {
+            abstract double calculatePerimeter();
+            abstract double calculateArea();
+        }
+class Circle extends Shape
+    {
+         private double radius;
+
+    public Circle(double r) {
+        radius = r;
+    }
+    double calculateArea() {
+        return Math.PI * radius * radius; // Area = π * r^2
+    }
+    double calculatePerimeter() {
+        return 2 * Math.PI * radius; // Perimeter = 2 * π * r
+    }
+    }
+class Triangle extends Shape
+            {
+                 private double side1;
+    private double side2;
+    private double side3;
+
+    // Constructor for Triangle
+    public Triangle(double s1, double s2, double s3) {
+        side1 = s1;
+        side2 = s2;
+        side3 = s3;
+    }
+
+    
+    double calculateArea() {
+        double s = (side1 + side2 + side3) / 2; 
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3)); // Area using Heron's formula
+    }
+
+   
+    double calculatePerimeter() {
+        return side1 + side2 + side3; 
+    }
+            }
+class Main
+        {
+            public static void main(String st[])
+                {
+        Shape circle = new Circle(5);
+        System.out.println("Circle Area: " + circle.calculateArea());
+        System.out.println("Circle Perimeter: " + circle.calculatePerimeter());
+
+        System.out.println(); 
+
+        
+        Shape triangle = new Triangle(3, 4, 5);
+        System.out.println("Triangle Area: " + triangle.calculateArea());
+        System.out.println("Triangle Perimeter: " + triangle.calculatePerimeter());
+                }
+        }
 
 `,
                 output: `
-            output//
+Circle Area: 78.53981633974483
+Circle Perimeter: 31.41592653589793
+
+Triangle Area: 6.0
+Triangle Perimeter: 12.0
                 `
       },
       "Create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.": {
           description: "JAVA Program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.",
           code: `
-        code//
+abstract class BankAccount {
+    protected double balance;
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+    abstract void deposit(double amount);
+    abstract void withdraw(double amount);
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+
+class SavingsAccount extends BankAccount {
+    private final double interestRate = 0.03; 
+
+    // Constructor to initialize balance
+    public SavingsAccount(double balance) {
+        super(balance);
+    }
+
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            balance += balance * interestRate; 
+            System.out.println("Deposited: " + amount + " into Savings Account. New Balance: " + balance);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrew: " + amount + " from Savings Account. New Balance: " + balance);
+        } else {
+            System.out.println("Insufficient balance or invalid amount.");
+        }
+    }
+}
+
+
+class CurrentAccount extends BankAccount {
+    private final double overdraftLimit = 1000; 
+
+    
+    public CurrentAccount(double balance) {
+        super(balance);
+    }
+
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount + " into Current Account. New Balance: " + balance);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+   
+    void withdraw(double amount) {
+        if (amount > 0 && (balance - amount) >= -overdraftLimit) {
+            balance -= amount;
+            System.out.println("Withdrew: " + amount + " from Current Account. New Balance: " + balance);
+        } else {
+            System.out.println("Overdraft limit exceeded or invalid amount.");
+        }
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount savings = new SavingsAccount(500);
+        savings.deposit(200);
+        savings.withdraw(100);
+
+        BankAccount current = new CurrentAccount(1000);
+        current.deposit(300);
+        current.withdraw(1500); 
+    }
+}
+
 
 `,
                 output: `
-            output//
+Deposited: 500.0
+Withdrawn: 200.0
+Balance: 1300.0
+Deposited: 500.0
+Withdrawn: 200.0
+Withdrawal not allowed. Balance will fall below $100.
+Balance: 1300.0
                 `
       },
       "Create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.": {
           description: "JAVA Program to create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.",
           code: `
-        code//
+abstract class Animal
+        {
+            abstract void eat();
+            abstract void sleep();
+        }
+class Lion extends Animal
+    {
+        void eat() 
+                {
+        System.out.println("Lion is eating meat.");
+                }
+        void sleep() 
+                {
+        System.out.println("Lion sleeps for about 20 hours a day.");
+                }
+    }
+class Tiger extends Animal
+        {
+        void eat()
+                {
+        System.out.println("Tiger is eating meat.");
+                }
+        void sleep() 
+                {
+        System.out.println("Tiger sleeps for about 16 hours a day.");
+                }
+        }
+class Deer extends Animal
+        {
+        void eat() 
+                {
+        System.out.println("Deer is eating meat.");
+                }
+        void sleep() 
+                {
+        System.out.println("Deer sleeps for about 4 hours a day.");
+                }
+        }
+class Main
+        {
+            public static void main(String st[])
+                    {
+                        Animal lion = new Lion();
+                        lion.eat();
+                        lion.sleep();
+                
+                        Animal tiger = new Tiger();
+                        tiger.eat();
+                        tiger.sleep();
+                
+                        Animal deer = new Deer();
+                        deer.eat();
+                        deer.sleep();
+                    }
+        }
+
 
 `,
                 output: `
-            output//
+Lion is eating meat.
+Lion sleeps for about 20 hours a day.
+Tiger is eating meat.
+Tiger sleeps for about 16 hours a day.
+Deer is eating meat.
+Deer sleeps for about 4 hours a day.
                 `
       },
-      "Create an abstracWrite a Java program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.": {
+      "create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.": {
           description: "JAVA Program to create an abstracWrite a Java program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.",
           code: `
-        code//
+abstract class Employee {
+    protected String name;
+    protected int employeeId;
+    protected double baseSalary;
+
+    
+    public Employee(String n, int empId, double bSalary) {
+        name = n;
+        employeeId = empId;
+        baseSalary = bSalary;
+    }
+
+    
+    abstract double calculateSalary();
+    abstract void displayInfo();
+}
+
+
+class Manager extends Employee {
+    private double bonus;
+
+    /
+    public Manager(String name, int employeeId, double baseSalary, double b) {
+        super(name, employeeId, baseSalary);
+        bonus = b;
+    }
+
+    
+    double calculateSalary() {
+        return baseSalary + bonus; 
+    }
+
+    
+    void displayInfo() {
+        System.out.println("Manager Name: " + name);
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Base Salary: Rs" + baseSalary);
+        System.out.println("Bonus: Rs" + bonus);
+        System.out.println("Total Salary: Rs" + calculateSalary());
+    }
+}
+
+
+class Programmer extends Employee {
+    private double overtimeRate;
+    private int overtimeHours;
+
+    
+    public Programmer(String name, int employeeId, double baseSalary, double otRate, int otHours) {
+        super(name, employeeId, baseSalary);
+        overtimeRate = otRate;
+        overtimeHours = otHours;
+    }
+
+    
+    double calculateSalary() {
+        return baseSalary + (overtimeRate * overtimeHours); 
+    }
+
+    
+    void displayInfo() {
+        System.out.println("Programmer Name: " + name);
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Base Salary: Rs" + baseSalary);
+        System.out.println("Overtime Rate: Rs" + overtimeRate + " per hour");
+        System.out.println("Overtime Hours: " + overtimeHours);
+        System.out.println("Total Salary: Rs" + calculateSalary());
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Manager manager = new Manager("Manjit", 101, 90000, 15000);
+        manager.displayInfo();
+
+        System.out.println(); 
+
+        
+        Programmer programmer = new Programmer("Sandeep", 102, 60000, 40, 10);
+        programmer.displayInfo();
+    }
+}
+
 
 `,
                 output: `
-            output//
+Manager Name: Manjit
+Employee ID: 101
+Base Salary: Rs. 90000.0
+Bonus: Rs. 15000.0
+Total Salary: Rs. 105000.0
+
+Programmer Name: Sandeep
+Employee ID: 102
+Base Salary: Rs. 60000.0
+Overtime Rate: Rs. 40.0 per hour
+Overtime Hours: 10
+Total Salary: Rs. 60400.0
                 `
       },
       "Create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape": {
           description: "JAVA Program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape",
           code: `
-        code//
+abstract class Shape3D {
+    
+    abstract double calculateVolume();
+    abstract double calculateSurfaceArea();
+}
+
+
+class Sphere extends Shape3D {
+    private double radius;
+
+
+    public Sphere(double r) {
+        radius = r;
+    }
+
+    
+    double calculateVolume() {
+        return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3); 
+    }
+
+    
+    double calculateSurfaceArea() {
+        return 4 * Math.PI * Math.pow(radius, 2); 
+    }
+}
+
+class Cube extends Shape3D {
+    private double side;
+
+    
+    public Cube(double s) {
+        side = s;
+    }
+
+   
+    double calculateVolume() {
+        return Math.pow(side, 3); // Volume = side^3
+    }
+
+    
+    double calculateSurfaceArea() {
+        return 6 * Math.pow(side, 2); // Surface Area = 6 * side^2
+    }
+}
+
+
+class Main {
+    public static void main(String[] args) {
+        
+        Shape3D sphere = new Sphere(5);
+        System.out.println("Sphere Volume: " + sphere.calculateVolume());
+        System.out.println("Sphere Surface Area: " + sphere.calculateSurfaceArea());
+
+        System.out.println(); 
+
+        
+        Shape3D cube = new Cube(4);
+        System.out.println("Cube Volume: " + cube.calculateVolume());
+        System.out.println("Cube Surface Area: " + cube.calculateSurfaceArea());
+    }
+}
+
 
 `,
                 output: `
-            output//
+Sphere Volume: 523.5987755982989
+Sphere Surface Area: 314.1592653589793
+
+Cube Volume: 64.0
+Cube Surface Area: 96.0
                 `
       },
       "Create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.": {
           description: "JAVA Program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.",
           code: `
-        code//
-
+abstract class Vehicle
+        {
+            abstract String startEngine();
+            abstract String stopEngine();
+        }
+class Car extends Vehicle
+        {
+            String startEngine()
+            {
+                return "Engine Started";
+            }
+            String stopEngine()
+            {
+                return "Engine Stoped";
+            }
+        }
+class Motorcycle extends Vehicle
+        {
+             String startEngine()
+            {
+                return "Engine Started";
+            }
+            String stopEngine()
+            {
+                return "Engine Stoped";
+            }
+        }
+class Main
+        {
+            public static void main(String st[])
+                {
+                    Vehicle obj = new Car();
+                    System.out.println("Car "+obj.startEngine());
+                    System.out.println("Car "+obj.stopEngine());
+                    Vehicle obj2 = new Motorcycle();
+                    System.out.println("Motorcycle "+obj2.startEngine());
+                    System.out.println("Motorcycle "+obj2.stopEngine());
+                }
+        }
 `,
                 output: `
-            output//
+Car Engine Started
+Car Engine Stoped
+Motorcycle Engine Started
+Motorcycle Engine Stoped
                 `
       },
       "Create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.": {
           description: "JAVA Program to create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.",
           code: `
-        code//
+abstract class Person
+        {
+            abstract void eat();
+            abstract void exercise();
+        }
+class Athlete extends Person
+        {
+                public void eat() {
+        System.out.println("The Athlete eats a balanced diet with lots of protein, vegetables, and healthy carbs.");
+    }
+    public void exercise() {
+        System.out.println("The Athlete exercises daily, with intense cardio, strength training, and endurance activities.");
+    }
+
+        }
+class LazyPerson extends Person
+        {
+            public  void eat() {
+        System.out.println("The LazyPerson prefers fast food and snacks while watching TV or lounging on the couch.");
+    }
+    public void exercise() {
+        System.out.println("The LazyPerson rarely exercises, opting instead for naps and minimal physical activity.");
+    }
+        }
+class Main
+        {
+            public static void main(String st[])
+            {
+        Person athlete = new Athlete();
+        athlete.eat();
+        athlete.exercise();
+
+        System.out.println(); // Just for spacing
+
+        
+        Person lazyPerson = new LazyPerson();
+        lazyPerson.eat();
+        lazyPerson.exercise();
+            }
+        }
 
 `,
                 output: `
-            output//
+The Athlete eats a balanced diet with lots of protein, vegetables, and healthy carbs.
+The Athlete exercises daily, with intense cardio, strength training, and endurance activities.
+
+The LazyPerson prefers fast food and snacks while watching TV or lounging on the couch.
+The LazyPerson rarely exercises, opting instead for naps and minimal physical activity.
                 `
       },
       "Create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.": {
           description: "JAVA Program to create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.",
           code: `
-        code//
+abstract class Instrument
+            {
+                abstract void play();
+                abstract void tune();
+            }
+class Glockenspiel extends Instrument
+            {
+                public  void play() {
+        System.out.println("Playing the Glockenspiel with mallets, producing a bright, metallic sound.");
+    }
+    public  void tune() {
+        System.out.println("Tuning the Glockenspiel by adjusting the bars to the correct pitch.");
+    }
+            }
+class Violin extends Instrument 
+            {
+                public  void play() {
+        System.out.println("Playing the Violin with a bow, producing smooth, melodious sounds.");
+    }
+    public  void tune() {
+        System.out.println("Tuning the Violin by adjusting the tension of the strings.");
+    }
+            }
+class Main
+        {
+            public static void main(String st[])
+                {
+        Instrument glockenspiel = new Glockenspiel();
+        glockenspiel.play();
+        glockenspiel.tune();
+
+        System.out.println(); 
+
+        
+        Instrument violin = new Violin();
+        violin.play();
+        violin.tune();
+                }
+        }
 
 `,
                 output: `
-            output//
+Playing the Glockenspiel with mallets, producing a bright, metallic sound.
+Tuning the Glockenspiel by adjusting the bars to the correct pitch.
+
+Playing the Violin with a bow, producing smooth, melodious sounds.
+Tuning the Violin by adjusting the tension of the strings.
                 `
       },
       "Create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.": {
           description: "JAVA Program to create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.",
           code: `
-        code//
+abstract class Shape2D {
+   
+    abstract void draw();
+    abstract void resize(double factor);
+}
+
+
+class Rectangle extends Shape2D {
+    private double width;
+    private double height;
+
+    // Constructor for Rectangle
+    public Rectangle(double w, double h) {
+        width = w;
+        height = h;
+    }
+
+    
+    void draw() {
+        System.out.println("Drawing a Rectangle with width " + width + " and height " + height);
+    }
+
+    
+    void resize(double factor) {
+        width *= factor;
+        height *= factor;
+        System.out.println("Resized Rectangle to width " + width + " and height " + height);
+    }
+}
+
+
+class Circle extends Shape2D {
+    private double radius;
+
+    
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+   
+    void draw() {
+        System.out.println("Drawing a Circle with radius " + radius);
+    }
+
+    
+    void resize(double factor) {
+        radius *= factor;
+        System.out.println("Resized Circle to radius " + radius);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        
+        Shape2D rectangle = new Rectangle(5, 10);
+        rectangle.draw();
+        rectangle.resize(1.5);
+
+        System.out.println(); // Just for spacing
+
+        
+        Shape2D circle = new Circle(7);
+        circle.draw();
+        circle.resize(2);
+    }
+}
+
 
 `,
                 output: `
-            output//
+Drawing a Rectangle with width 5.0 and height 10.0
+Resized Rectangle to width 7.5 and height 15.0
+
+Drawing a Circle with radius 7.0
+Resized Circle to radius 14.0
                 `
       },
       "Create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.": {
           description: "JAVA Program to create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.",
           code: `
-        code//
+abstract class Bird
+    {
+        abstract void fly();
+        abstract void makeSound();
+    }
+class Eagle extends Bird
+    {
+        public  void fly() {
+        System.out.println("Eagle soars high in the sky, gliding with powerful wings.");
+    }
+    public void makeSound() {
+        System.out.println("Eagle makes a sharp, high-pitched screech.");
+    }
+    }
+class Hawk extends Bird
+        {
+            public   void fly() {
+        System.out.println("Hawk flies swiftly, diving at great speed to catch prey.");
+    }
+    public void makeSound() {
+        System.out.println("Hawk makes a loud, piercing call.");
+    }
+        }
+class Main
+        {
+            public static void main(String st[])
+            {
+                Bird eagle,hawk;
+                eagle = new Eagle();
+                hawk = new Hawk();
+                eagle.fly();
+                eagle.makeSound();
+                hawk.fly();
+                hawk.makeSound();
+
+            }
+        }
 
 `,
                 output: `
-            output//
+Eagle soars high in the sky, gliding with powerful wings.
+Eagle makes a sharp, high-pitched screech.
+Hawk flies swiftly, diving at great speed to catch prey.
+Hawk makes a loud, piercing call.
                 `
       },
       "Create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape": {
           description: "JAVA Program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape",
           code: `
-        code//
+abstract class GeometricShape {
+    
+    abstract double area();
+    abstract double perimeter();
+}
+
+
+class Triangle extends GeometricShape {
+    private double side1, side2, side3;
+
+    
+    public Triangle(double s1, double s2, double s3) {
+        side1 = s1;
+        side2 = s2;
+        side3 = s3;
+    }
+
+    
+    double area() {
+        double s = (side1 + side2 + side3) / 2; // Semi-perimeter
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3)); // Area using Heron's formula
+    }
+
+    
+    double perimeter() {
+        return side1 + side2 + side3;
+    }
+}
+
+
+class Square extends GeometricShape {
+    private double side;
+
+    
+    public Square(double s) {
+        side = s;
+    }
+
+   
+    double area() {
+        return side * side; // Area = side^2
+    }
+
+    
+    double perimeter() {
+        return 4 * side; 
+    }
+}
+
+ class Main {
+    public static void main(String[] args) {
+        
+        Triangle triangle = new Triangle(3, 4, 5);
+        System.out.println("Triangle Area: " + triangle.area());
+        System.out.println("Triangle Perimeter: " + triangle.perimeter());
+
+        System.out.println();
+
+        Square square = new Square(5);
+        System.out.println("Square Area: " + square.area());
+        System.out.println("Square Perimeter: " + square.perimeter());
+    }
+}
+
 
 `,
                 output: `
-            output//
+Triangle Area: 6.0
+Triangle Perimeter: 12.0
+
+Square Area: 25.0
+Square Perimeter: 20.0
                 `
       },
                  
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
+      
      
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+     
   }
 },
 "INPUT/OUTPUT": {
@@ -6202,41 +7676,11 @@ You enter : true
 
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
+     
       
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
     
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
   }
 },
 "INTERFACES": {
@@ -6485,8 +7929,8 @@ code//
 },
 "JAVA DATABASE CONNECTIVITY": {
   "Easy": {
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Create the connection with MySQL Database and manage the driver.": {
+        description: "Program to Create the connection with MySQL Database and manage the driver..",
         code: `
           code//
 
@@ -6495,8 +7939,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Create the table in the database from Java API.": {
+        description: "Program to Create the table in the database from Java API..",
         code: `
           code//
 
@@ -6505,49 +7949,90 @@ output: `
           output//
           `
     },
+    "Insert the row in the table in the database from Java API.": {
+        description: "Program to Insert the row in the table in the database from Java API..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "Update the row in the table in the database from Java API.": {
+        description: "Program to Update the row in the table in the database from Java API..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "Delete the row in the table in the database from Java API.": {
+        description: "Program to Delete the row in the table in the database from Java API..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "Select multiple rows from the database table in Java API and show the result on the screen.": {
+        description: "Program to Select multiple rows from the database table in Java API and show the result on the screen..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.": {
+        description: "Program to Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only.": {
+        description: "Program to Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only..",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+    "Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement": {
+        description: "Program to Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement.",
+        code: `
+          code//
+
+`,
+output: `
+          output//
+          `
+    },
+   
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
+     
       
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+     
   }
 },
 " MULTITHREADING": {
   "Easy": {
-      "comming soon": {
-          description: "comming soon",
+      "create a basic Java thread that prints \"Hello, World!\" when executed.": {
+          description: "Program to create a basic Java thread that prints \"Hello, World!\" when executed.",
           code: `
 code//
 
@@ -6557,44 +8042,145 @@ code//
     
                 `
       },
-     
+      "creates two threads to find and print even and odd numbers from 1 to 20.": {
+        description: "Program to creates two threads to find and print even and odd numbers from 1 to 20.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "sorts an array of integers using multiple threads.": {
+        description: "Program to sorts an array of integers using multiple threads.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "performs matrix multiplication using multiple threads.": {
+        description: "Program to performs matrix multiplication using multiple threads.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "calculates the sum of all prime numbers up to a given limit using multiple threads.": {
+        description: "Program to calculates the sum of all prime numbers up to a given limit using multiple threads.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "implement a concurrent web crawler that crawls multiple websites simultaneously using threads.": {
+        description: "Program to implement a concurrent web crawler that crawls multiple websites simultaneously using threads.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "creates a bank account with concurrent deposits and withdrawals using threads.": {
+        description: "Program to creates a bank account with concurrent deposits and withdrawals using threads.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "create multiple threads by using Runnbale interface": {
+        description: "Program to create multiple threads by using Runnbale interface",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "create multiple threads by using Thread class": {
+        description: "Program to create multiple threads by using Thread class",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "create multiple threads, set its name and its priority.": {
+        description: "Program to create multiple threads, set its name and its priority.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "create multiple threads, show an example of synchronization keyword.": {
+        description: "Program to create multiple threads, show an example of synchronization keyword.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.": {
+        description: "Program to create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+    "create multiple threads, show an example of join and yield methods.": {
+        description: "Program to create multiple threads, show an example of join and yield methods.",
+        code: `
+code//
+
+`,
+              output: `
+              output//
+  
+              `
+    },
+   
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
      
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+     
   }
 },
 "OBJECT ORIENTED PROGRAMMING": {
@@ -6891,41 +8477,10 @@ code//
     },
                 
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
       
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+      
   }
 },
 " PACKAGES": {
@@ -7065,41 +8620,11 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       },
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
+      
       
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+      
   }
 },
 "SINGLE DIMENSION ARRAYS": {
@@ -7315,47 +8840,17 @@ code//
       
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
+     
 
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+     
   }
 },
 "STRINGS": {
   "Easy": {
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Check if a String contains only digits?": {
+        description: "Program to Check if a String contains only digits?.",
         code: `
           code//
 
@@ -7364,8 +8859,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    " perform Deep Copy for String?": {
+        description: "Program to  perform Deep Copy for String?.",
         code: `
           code//
 
@@ -7374,8 +8869,8 @@ output: `
           output//
           `
     },
-   "comming soon": {
-        description: "Program to comming soon.",
+   "prove String is immutable programmatically?": {
+        description: "Program to prove String is immutable programmatically?.",
         code: `
           code//
 
@@ -7384,8 +8879,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "remove all occurrences of a given character from input String?": {
+        description: "Program to remove all occurrences of a given character from input String?.",
         code: `
           code//
 
@@ -7603,6 +9098,18 @@ Total characters: 10
     `
 }
 ,
+"count the total number of punctuation characters exists in a String":
+{
+ description: "Program to count the total number of punctuation characters exists in a String."
+ ,
+ code : `
+ code//
+ `,
+ output:
+ `
+ output//
+ `
+},
     "count the total number of vowels and consonants in a string.": {
         description: "Program to count the total number of vowels and consonants in a string.",
         code: `
@@ -7633,8 +9140,19 @@ Total characters: 10
 Vowels: 3
 Consonants: 7
         `
-    }
-    ,
+    },
+"determine whether a given string is palindrome":
+{
+ description: "Program to determine whether a given string is palindrome."
+ ,
+ code : `
+ code//
+ `,
+ output:
+ `
+ output//
+ `
+},
     "determine whether one string is a rotation of another.": {
         description: "Program to determine whether one string is a rotation of another.",
         code: `
@@ -7968,8 +9486,8 @@ n: 1
 
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "find the largest and smallest word in a string": {
+        description: "Program to find the largest and smallest word in a string.",
         code: `
           code//
 
@@ -7978,8 +9496,8 @@ output: `
           output//
           `
     },
-   "comming soon": {
-        description: "Program to comming soon.",
+   "find the longest repeating sequence in a string": {
+        description: "Program to find the longest repeating sequence in a string.",
         code: `
           code//
 
@@ -7988,8 +9506,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "find the most repeated word in a text file": {
+        description: "Program to find the most repeated word in a text file.",
         code: `
           code//
 
@@ -7998,8 +9516,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "find the number of the words in the given text file": {
+        description: "Program to find the number of the words in the given text file.",
         code: `
           code//
 
@@ -8008,8 +9526,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    " Get a Character From the Given String": {
+        description: "Program to  Get a Character From the Given String.",
         code: `
           code//
 
@@ -8018,8 +9536,8 @@ output: `
           output//
           `
     },
-   "comming soon": {
-        description: "Program to comming soon.",
+   "nsert a string into another string": {
+        description: "Program to nsert a string into another string.",
         code: `
           code//
 
@@ -8028,8 +9546,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Iterate Over Characters in String": {
+        description: "Program to Iterate Over Characters in String.",
         code: `
           code//
 
@@ -8038,8 +9556,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Print a New Line in String": {
+        description: "Program to Print a New Line in String.",
         code: `
           code//
 
@@ -8048,8 +9566,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Print even length words": {
+        description: "Program to Print even length words.",
         code: `
           code//
 
@@ -8058,8 +9576,8 @@ output: `
           output//
           `
     },
-   "comming soon": {
-        description: "Program to comming soon.",
+   "print smallest and biggest possible palindrome word in a given string": {
+        description: "Program to print smallest and biggest possible palindrome word in a given string.",
         code: `
           code//
 
@@ -8068,8 +9586,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "remove all the white spaces from a string": {
+        description: "Program to remove all the white spaces from a string.",
         code: `
           code//
 
@@ -8078,8 +9596,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "replace lower-case characters with upper-case and vice-versa": {
+        description: "Program to replace lower-case characters with upper-case and vice-versa.",
         code: `
           code//
 
@@ -8088,8 +9606,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "replace the spaces of a string with a specific character": {
+        description: "Program to replace the spaces of a string with a specific character.",
         code: `
           code//
 
@@ -8098,8 +9616,8 @@ output: `
           output//
           `
     },
-   "comming soon": {
-        description: "Program to comming soon.",
+   " separate the Individual Characters from a String": {
+        description: "Program to  separate the Individual Characters from a String.",
         code: `
           code//
 
@@ -8108,8 +9626,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Splitting into a number of sub-strings": {
+        description: "Program to Splitting into a number of sub-strings.",
         code: `
           code//
 
@@ -8118,8 +9636,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    " swap two string variables without using third or temp variable.": {
+        description: "Program to  swap two string variables without using third or temp variable..",
         code: `
           code//
 
@@ -8128,8 +9646,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Swapping Pair of Characters": {
+        description: "Program to Swapping Pair of Characters.",
         code: `
           code//
 
@@ -8138,8 +9656,8 @@ output: `
           output//
           `
     },
-   "comming soon": {
-        description: "Program to comming soon.",
+   "Read two String user input and check if first contains second?": {
+        description: "Program to Read two String user input and check if first contains second?.",
         code: `
           code//
 
@@ -8148,8 +9666,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    " Reserve String without reverse() function": {
+        description: "Program to  Reserve String without reverse() function.",
         code: `
           code//
 
@@ -8158,8 +9676,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    " Reverse String Word by Word": {
+        description: "Program to  Reverse String Word by Word.",
         code: `
           code//
 
@@ -8168,8 +9686,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "check if two Strings are created with same characters?": {
+        description: "Program to check if two Strings are created with same characters?.",
         code: `
           code//
 
@@ -8178,8 +9696,8 @@ output: `
           output//
           `
     },
-   "comming soon": {
-        description: "Program to comming soon.",
+   "find out first non repeated character from input String?": {
+        description: "Program to find out first non repeated character from input String?.",
         code: `
           code//
 
@@ -8188,8 +9706,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    "Create an object StringBuffer class to reverse the string.": {
+        description: "Program to Create an object StringBuffer class to reverse the string..",
         code: `
           code//
 
@@ -8198,8 +9716,8 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
+    " Create an object StringBuffer class to show functionality of insert, append, delete and replace functions.": {
+        description: "Program to  Create an object StringBuffer class to show functionality of insert, append, delete and replace functions..",
         code: `
           code//
 
@@ -8208,36 +9726,7 @@ output: `
           output//
           `
     },
-    "comming soon": {
-        description: "Program to comming soon.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-   "comming soon": {
-        description: "Program to comming soon.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "comming soon": {
-        description: "Program to comming soon.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
+ 
   },
   "Medium": {
       "comming soon": {
