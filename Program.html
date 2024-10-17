@@ -63,9 +63,20 @@
         <!-- Display Result -->
         <h3 id="resultTitle"></h3>
         <p id="result"></p>
-        <div class="Answer">
+        <!--div class="Answer">
         <pre id="code"></pre>
         <pre id="output"></pre>
+    </div-->
+    <div class="Answer">
+        <div class="prehead">
+           <p class="code">Code</p><button class="copy" onclick="copyCode()">copy</button>
+           <pre id="code"></pre>
+        </div>
+        
+        <div class="prehead2">
+            <p>Output</p> 
+            <pre id="output"></pre>
+        </div>
     </div>
     </div>
 </div>
@@ -127,5 +138,6 @@
     </footer-->
 
 </body>
+<script src="nav.js"></script>
 <script src="main.js"></script>
 </html>

@@ -60,4 +60,28 @@
   margin-top: 5%;
   
 } 
-
+.code
+{
+  display: inline;
+  position: relative;
+}
+.copy
+{
+  height: auto;
+  width: 15%;
+  position: absolute;
+  right: 0;
+  padding: 5px 10px; /* Add some padding for better appearance */
+  font-size: 12px;
+  background-color: #61dafb; /* Optional: style the button */
+  color: #282c34; /* Optional: contrasting text color */
+  border: none; /* Optional: remove border */
+  border-radius: 5px; /* Optional: rounded corners */
+  cursor: pointer; /* Add a pointer on hover */
+}
+.prehead
+{
+  /* background-color: red; */
+  position: relative;
+  border: 2px red solid;
+}

@@ -215,7 +215,10 @@ html {
 .nano-button:hover {
   background-color: #ff4da6;
 }
-
+.nano-button a
+{
+  color: white;
+}
 /* Responsive design */
 @media (max-width: 800px) {
  header
@@ -377,7 +380,7 @@ pre {
   background-color: #282c34;
   color: #61dafb;
   padding: 15px;
-  width: 30vw;
+  width: 35vw;
   height: auto;
   border-radius: 5px;
   font-size: 14px;
@@ -388,7 +391,7 @@ pre {
 }
 label
 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 /* Responsive Styles */
 @media (max-width: 800px) {
@@ -420,7 +423,7 @@ label
 
   pre {
     font-size: 1em;
-    width: 70vw;
+    width: 75vw;
 }
  
   .bg .overlay h1{
