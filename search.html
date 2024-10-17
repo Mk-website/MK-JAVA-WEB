@@ -1,0 +1,63 @@
+Here is a code snippet to create a search bar in HTML for searching programs from a programData object:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program Search</title>
+<style>
+    /* Example styling for the search bar */
+    .search-container {
+        margin: 20px;
+    }
+
+    .search-container input[type="text"] {
+        width: 300px;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .search-results {
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="searchProgram()" placeholder="Search for a program...">
+</div>
+
+<div class="search-results" id="searchResults">
+</div>
+
+<script>
+const programData = [
+    { name: "Program A", category: "Category X" },
+    { name: "Program B", category: "Category Y" },
+    { name: "Program C", category: "Category X" },
+];
+
+function searchProgram() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const searchResults = document.getElementById("searchResults");
+    
+    const filteredPrograms = programData.filter(program => program.name.toLowerCase().includes(searchInput));
+
+    searchResults.innerHTML = "";
+
+    filteredPrograms.forEach(program => {
+        const programElement = document.createElement("div");
+        programElement.textContent = `${program.name} - ${program.category}`;
+        searchResults.appendChild(programElement);
+    });
+}
+</script>
+
+</body>
+</html>
+```
+
+You can customize the styling according to your preference and also modify the programData array with your actual program data. When you type in the search bar, it will filter and display the matching programs based on the program name.
