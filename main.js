@@ -446,8 +446,8 @@ import java.io.IOException;
 public class IdentityMatrix {
     
     public static boolean isIdentityMatrix(int[][] matrix, int size) {
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
+        for (int i = 0; i &lt; size; i++) {
+            for (int j = 0; j &lt; size; j++) {
                 if (i == j && matrix[i][j] != 1) {
                     return false;  // Diagonal element is not 1
                 }
@@ -466,8 +466,8 @@ public class IdentityMatrix {
         int[][] matrix = new int[size][size];
         
         System.out.println("Enter the elements of the matrix:");
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
+        for (int i = 0; i &lt; size; i++) {
+            for (int j = 0; j &lt; size; j++) {
                 matrix[i][j] = Integer.parseInt(reader.readLine());
             }
         }
@@ -618,8 +618,8 @@ public class SparseMatrix {
         int totalElements = rows * cols;
 
         // Counting the number of zeroes in the matrix
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
                 if (matrix[i][j] == 0) {
                     zeroCount++;
                 }
@@ -627,7 +627,7 @@ public class SparseMatrix {
         }
         
         // Check if more than half of the elements are zeros
-        return zeroCount > (totalElements / 2);
+        return zeroCount &gt; (totalElements / 2);
     }
     
     public static void main(String[] args) throws IOException {
@@ -640,8 +640,8 @@ public class SparseMatrix {
         int[][] matrix = new int[rows][cols];
         
         System.out.println("Enter the elements of the matrix:");
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
                 matrix[i][j] = Integer.parseInt(reader.readLine());
             }
         }
@@ -683,7 +683,17 @@ The matrix is a sparse matrix.
           "Create an applet showing the string \"Hello World\" which is embedded in the HTML page": {
               description: "Program to Create an applet showing the string \"Hello World\" which is embedded in the HTML page.",
               code: `
-                code//
+import java.applet.*;
+import java.awt.*;
+public class HelloWorld extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawString("Hello World!", 100, 100);
+    }
+}
+/*
+ <applet code = "HelloWorld.class" width = "300" height= "500"></applet>
+ */
 
 `,
  output: `
@@ -693,7 +703,17 @@ The matrix is a sparse matrix.
           "Create an applet showing the string \"Hello World\" which is executed by an appletviewer": {
               description: "Program to Create an applet showing the string \"Hello World\" which is executed by an appletviewer.",
               code: `
-                code//
+import java.applet.*;
+import java.awt.*;
+public class HelloWorld extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawString("Hello World!", 100, 100);
+    }
+}
+/*
+ <applet code = "HelloWorld.class" width = "300" height= "500"></applet>
+ */
 
 `,
  output: `
@@ -703,7 +723,17 @@ The matrix is a sparse matrix.
          "Create an applet in Java to draw a circle": {
               description: "Program to Create an applet in Java to draw a circle.",
               code: `
-                code//
+import java.applet.*;
+import java.awt.*;
+public class Circle extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawOval(100, 100, 100, 100);
+    }
+}
+/*
+ <applet code = "Circle.class" width = "300" height= "500"></applet>
+ */
 
 `,
  output: `
@@ -713,7 +743,19 @@ The matrix is a sparse matrix.
           "Create an applet in Java to draw a polygon": {
               description: "Program to Create an applet in Java to draw a polygon.",
               code: `
-                code//
+import java.applet.Applet;
+import java.awt.*;
+public class polygon extends Applet {
+    public void paint(Graphics g)
+    {
+        int x[]={100,200,300,400};
+        int y[]={200,200,300,400};
+        g.drawPolygon(x, y,4);
+    }
+}
+/*
+ <applet code = "polygon.class" width = "300" height= "500"></applet>
+ */
 
 `,
  output: `
@@ -723,7 +765,18 @@ The matrix is a sparse matrix.
           "Create an applet in Java to draw a rectangle": {
               description: "Program to Create an applet in Java to draw a rectangle.",
               code: `
-                code//
+import java.applet.*;
+import java.awt.*;
+public class Rectangle extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawRect(100, 100, 150, 100);
+    }
+}
+/*
+ <applet code = "Rectangle.class" width = "300" height= "500"></applet>
+ */
+
 
 `,
  output: `
@@ -733,7 +786,19 @@ The matrix is a sparse matrix.
           "Create an applet in Java to draw a square": {
               description: "Program to Create an applet in Java to draw a square.",
               code: `
-                code//
+import java.applet.*;
+import java.awt.*;
+public class Square extends Applet{
+    
+    public void paint(Graphics g)
+    {
+        g.drawRect(100, 100, 100, 100);
+    }
+}
+/*
+ <applet code = "Square.class" width = "300" height= "500"></applet>
+ */
+
 
 `,
  output: `
@@ -743,7 +808,20 @@ The matrix is a sparse matrix.
         "Create an applet in Java to draw a 4 concentric circles.": {
               description: "Create an applet in Java to draw a 4 concentric circles.",
               code: `
-            code//
+import java.applet.*;
+import java.awt.*;
+public class Circles extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawOval(100, 100, 100, 100);
+        g.drawOval(250, 100, 100, 100);
+        g.drawOval(400, 100, 100, 100);
+        g.drawOval(550, 100, 100, 100);
+    }
+}
+/*
+ <applet code = "Circles.class" width = "300" height= "500"></applet>
+ */
 `,
                 output: `
                 output//
@@ -752,7 +830,17 @@ The matrix is a sparse matrix.
           "Create an applet in Java to draw a line.": {
               description: "Create an applet in Java to draw a line.",
               code: `
-            code//
+import java.applet.*;
+import java.awt.*;
+public class Line extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawLine(100, 100, 100, 200);
+    }
+}
+/*
+ <applet code = "Line.class" width = "300" height= "500"></applet>
+ */
 `,
                 output: `
                 output//
@@ -761,7 +849,18 @@ The matrix is a sparse matrix.
           "Create an applet in Java to draw a oval.": {
               description: "Create an applet in Java to draw a oval.",
               code: `
-            code//
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class Oval extends Applet {
+    public void paint(Graphics g)
+    {
+        g.drawOval(100, 100, 100, 50);
+    }
+}
+/*
+ <applet code = "Oval.class" width = "300" height= "500"></applet>
+ */
 `,
                 output: `
                 output//
@@ -770,7 +869,18 @@ The matrix is a sparse matrix.
           "Create an applet in Java to draw a arc.": {
               description: "Create an applet in Java to draw a arc.",
               code: `
-            code//
+import java.applet.*;
+import java.awt.*;
+public class Arc extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawArc(100, 100, 100, 100, 30, 180);
+    }
+}
+
+/*
+ <applet code = "Arc.class" width = "300" height= "500"></applet>
+ */
 `,
                 output: `
                 output//
@@ -815,7 +925,24 @@ The matrix is a sparse matrix.
           "Java Program to Draw a Smiling Face using Graphics Class Methods": {
               description: "Java Program to Draw a Smiling Face using Graphics Class Methods",
               code: `
-            code//
+import java.applet.Applet;
+import java.awt.Graphics;
+
+/**
+ * SmileFace
+ */
+public class SmileFace extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawOval(100, 100, 200, 200);
+        g.drawOval(150, 150, 20, 20);
+        g.drawOval(230, 150, 20, 20);
+        g.drawArc(150, 200, 100, 50, 200, 150);
+    }
+}
+/*
+ <applet code = "smileface.SmileFace.class" width = "300" height= "500"></applet>
+ */
 `,
                 output: `
                 output//
@@ -5840,7 +5967,31 @@ code//
       "Create a simple AWT application that displays a button with FlowLayout manager.": {
           description: "Program to Create a simple AWT application that displays a button with FlowLayout manager.",
           code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Button b1 = new Button("Click me");
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(new FlowLayout(FlowLayout.CENTER));
+        add(b1);
+        setVisible(true);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
 
 `,
                 output: `
@@ -5851,7 +6002,33 @@ code//
       "Create a simple AWT application that displays a button with Custom Layout.": {
         description: "Program to Create a simple AWT application that displays a button with Custom Layout.",
         code: `
-code//
+
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Button b1 = new Button("Click me");
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(null);
+        b1.setBounds(100,100,50,30);
+        add(b1);
+        
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 
 `,
               output: `
@@ -5862,7 +6039,40 @@ code//
     "Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).": {
         description: "Program to Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Button b1 = new Button("Click me");
+    Button b2 = new Button("Click me");
+    Button b3 = new Button("Click me");
+    Button b4 = new Button("Click me");
+    Button b5 = new Button("Click me");
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(new BorderLayout(10,10));
+        
+        //b1.setBounds(100,100,50,30);
+        add(b1,BorderLayout.EAST);
+        add(b2,BorderLayout.NORTH);
+        add(b3,BorderLayout.WEST);
+        add(b4,BorderLayout.SOUTH);
+        add(b5,BorderLayout.CENTER);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 
 `,
               output: `
@@ -5873,8 +6083,31 @@ code//
     "Create a simple AWT application that displays a TextField with FlowLayout manager.": {
         description: "Program to Create a simple AWT application that displays a TextField with FlowLayout manager.",
         code: `
-code//
-
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    TextField tf = new TextField();
+    MyFrame()
+    {
+        setBounds(100,100,500,400);
+        setLayout(new FlowLayout(FlowLayout.CENTER));
+        tf.setBounds(100, 100, 500, 50);;
+        add(tf);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 `,
               output: `
               output//
@@ -5884,8 +6117,31 @@ code//
     "Create a simple AWT application that displays a TextField with Custom Layout.": {
         description: "Program to Create a simple AWT application that displays a TextField with Custom Layout.",
         code: `
-code//
-
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    TextField tf = new TextField();
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(null);
+        tf.setBounds(100,100,500,100);
+        add(tf);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 `,
               output: `
               output//
@@ -5895,7 +6151,31 @@ code//
     "Create a simple AWT application that displays a Checkbox with FlowLayout manager.": {
         description: "Program to Create a simple AWT application that displays a Checkbox with FlowLayout manager.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Checkbox cb = new Checkbox();
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        add(cb);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
 
 `,
               output: `
@@ -5906,7 +6186,31 @@ code//
     "Create a simple AWT application that displays a Checkbox with Custom Layout.": {
         description: "Program to Create a simple AWT application that displays a Checkbox with Custom Layout.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Checkbox cb = new Checkbox();
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(null);
+        cb.setBounds(100, 100, 50, 50);
+        add(cb);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 
 `,
               output: `
@@ -5917,7 +6221,31 @@ code//
     "Create a simple AWT application that displays a Label with FlowLayout manager.": {
         description: "Program to Create a simple AWT application that displays a Label with FlowLayout manager.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Label l1 = new Label("This is Label");
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        add(l1);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
 
 `,
               output: `
@@ -5928,7 +6256,32 @@ code//
     "Create a simple AWT application that displays a Label with Custom Layout.": {
         description: "Program to Create a simple AWT application that displays a Label with Custom Layout.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Label l1 = new Label("This is Label");
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(null);
+        l1.setBounds(100,100,100,50);
+        add(l1);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
 
 `,
               output: `
@@ -5939,7 +6292,39 @@ code//
     "Create a simple AWT application that displays a Choice with FlowLayout manager.": {
         description: "Program to Create a simple AWT application that displays a Choice with FlowLayout manager.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Choice ch = new Choice();
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        ch.setBounds(100,100,100,50);
+        ch.addItem("Apple");
+        ch.addItem("Mango");
+        ch.addItem("Orange");
+        ch.addItem("Grapes");
+        ch.addItem("Pear");
+        ch.addItem("Coconut");
+        add(ch);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
+
 
 `,
               output: `
@@ -5950,7 +6335,40 @@ code//
     "Create a simple AWT application that displays a Choice with Custom Layout.": {
         description: "Program to Create a simple AWT application that displays a Choice with Custom Layout.",
         code: `
-code//
+package awt10;
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Choice ch = new Choice();
+    MyFrame()
+    {
+        setBounds(100,100,200,400);
+        setLayout(null);
+        ch.setBounds(100,100,100,50);
+        ch.addItem("Apple");
+        ch.addItem("Mango");
+        ch.addItem("Orange");
+        ch.addItem("Grapes");
+        ch.addItem("Pear");
+        ch.addItem("Coconut");
+        add(ch);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
+
 
 `,
               output: `
@@ -6751,7 +7169,7 @@ class SavingsAccount extends BankAccount {
     }
 
     void deposit(double amount) {
-        if (amount > 0) {
+        if (amount &gt; 0) {
             balance += amount;
             balance += balance * interestRate; 
             System.out.println("Deposited: " + amount + " into Savings Account. New Balance: " + balance);
@@ -6761,7 +7179,7 @@ class SavingsAccount extends BankAccount {
     }
 
     void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
+        if (amount &gt; 0 && amount &lt;= balance) {
             balance -= amount;
             System.out.println("Withdrew: " + amount + " from Savings Account. New Balance: " + balance);
         } else {
@@ -6780,7 +7198,7 @@ class CurrentAccount extends BankAccount {
     }
 
     void deposit(double amount) {
-        if (amount > 0) {
+        if (amount &gt; 0) {
             balance += amount;
             System.out.println("Deposited: " + amount + " into Current Account. New Balance: " + balance);
         } else {
@@ -6790,7 +7208,7 @@ class CurrentAccount extends BankAccount {
 
    
     void withdraw(double amount) {
-        if (amount > 0 && (balance - amount) >= -overdraftLimit) {
+        if (amount &gt; 0 && (balance - amount) &gt;= -overdraftLimit) {
             balance -= amount;
             System.out.println("Withdrew: " + amount + " from Current Account. New Balance: " + balance);
         } else {
@@ -7932,27 +8350,106 @@ code//
     "Create the connection with MySQL Database and manage the driver.": {
         description: "Program to Create the connection with MySQL Database and manage the driver..",
         code: `
-          code//
+import java.sql.DriverManager;
+
+public class Jdbc1 {
+    public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/java", "root", "java");
+        if (con!=null) {
+            System.out.println("Conection successful");
+        }
+        else
+        {
+            System.out.println("Not connectedc");
+        }
+    }
+}
+
 
 `,
 output: `
-          output//
+Conection successful
           `
     },
     "Create the table in the database from Java API.": {
         description: "Program to Create the table in the database from Java API..",
         code: `
-          code//
+public class Jdbc2 {
+  
+        public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        int r=-1;
+        java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/Myjava", "root", "java");
+        if (con!=null) {
+            System.out.println("Conection successful");
+        }
+        else
+        {
+            System.out.println("Not connectedc");
+        }
+        java.sql.Statement st = con.createStatement();
+        try
+        {
+            r =st.executeUpdate("Create table student(Roll_no int(5),Name varchar(30),Marks int(5))");
+        }
+        catch(java.sql.SQLSyntaxErrorException e)
+        {
+            System.out.println("Table exists!");
+        }
+    
+        //System.out.println(r);
+        if (r==0) {
+            System.out.println("Table created!");
+        }
+        else
+        {
+            System.out.println("Table not created!");
+        }
+    }
+    }
 
 `,
 output: `
-          output//
+Table created!
           `
     },
     "Insert the row in the table in the database from Java API.": {
         description: "Program to Insert the row in the table in the database from Java API..",
         code: `
-          code//
+public class Jdbc3 {
+    public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        int r=0;
+        java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/Myjava", "root", "java");
+        if (con!=null) {
+            System.out.println("Conection successful");
+        }
+        else
+        {
+            System.out.println("Not connectedc");
+        }
+        java.sql.Statement st = con.createStatement();
+        try
+        {
+            r =st.executeUpdate("insert into student values(3,'Abhishek',96)");
+        }
+        catch(java.sql.SQLSyntaxErrorException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        if (r!=0) {
+            System.out.println("Row inserted!");
+        }
+        else
+        {
+            System.out.println("Row not inserted!");
+        }
+    }
+}
 
 `,
 output: `
@@ -7962,7 +8459,37 @@ output: `
     "Update the row in the table in the database from Java API.": {
         description: "Program to Update the row in the table in the database from Java API..",
         code: `
-          code//
+public class Jdbc4 {
+    public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        int r=0;
+        java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/Myjava", "root", "java");
+        if (con!=null) {
+            System.out.println("Conection successful");
+        }
+        else
+        {
+            System.out.println("Not connectedc");
+        }
+        java.sql.Statement st = con.createStatement();
+        try
+        {
+            r =st.executeUpdate("Update student set Name = 'Manjit Kumar' where Roll_no = 1");
+        }
+        catch(java.sql.SQLSyntaxErrorException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        if (r!=0) {
+            System.out.println("Row Updated!");
+        }
+        else
+        {
+            System.out.println("Row not Updated!");
+        }
+    }
+}
 
 `,
 output: `
@@ -7972,7 +8499,38 @@ output: `
     "Delete the row in the table in the database from Java API.": {
         description: "Program to Delete the row in the table in the database from Java API..",
         code: `
-          code//
+public class Jdbc5 {
+    public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        int r=0;
+        java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/Myjava", "root", "java");
+        if (con!=null) {
+            System.out.println("Conection successful");
+        }
+        else
+        {
+            System.out.println("Not connectedc");
+        }
+        java.sql.Statement st = con.createStatement();
+        try
+        {
+            r =st.executeUpdate("delete from student where Roll_no = 1");
+        }
+        catch(java.sql.SQLSyntaxErrorException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        if (r!=0) {
+            System.out.println("Row Deleted!");
+        }
+        else
+        {
+            System.out.println("Row not Deleted!");
+        }
+    }
+}
+
 
 `,
 output: `
@@ -7982,7 +8540,43 @@ output: `
     "Select multiple rows from the database table in Java API and show the result on the screen.": {
         description: "Program to Select multiple rows from the database table in Java API and show the result on the screen..",
         code: `
-          code//
+public class Jdbc6 {
+    public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        java.sql.ResultSet res=null;
+        java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/Myjava", "root", "java");
+        if (con!=null) {
+            System.out.println("Conection successful");
+        }
+        else
+        {
+            System.out.println("Not connectedc");
+        }
+        java.sql.Statement st = con.createStatement();
+        try
+        {
+            res =st.executeQuery("select * from student ");
+        }
+        catch(java.sql.SQLSyntaxErrorException e)
+        {
+            System.out.println(e.getMessage());
+        }
+            //System.out.println("Rows "+res.next());
+            int i=0;
+            while (res.next()) {
+                //System.out.println("Rows "+res.next());
+                int Roll_no = res.getInt("Roll_no");
+                String Name = res.getString("Name");
+                int marks = res.getInt("Marks");
+                System.out.println("Roll No : "+Roll_no);
+                System.out.println("Name : "+Name);
+                System.out.println("Marks : "+marks);
+            }
+        }
+
+    }
+
 
 `,
 output: `
@@ -7992,7 +8586,59 @@ output: `
     "Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.": {
         description: "Program to Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen..",
         code: `
-          code//
+public class Jdbc7 {
+    public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
+    {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        java.sql.ResultSet res=null;
+        int rowNum =0;
+        java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/Myjava", "root", "java");
+        if (con!=null) {
+            System.out.println("Conection successful");
+        }
+        else
+        {
+            System.out.println("Not connectedc");
+        }
+        java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        try
+        {
+            rowNum = Integer.parseInt(input.readLine());
+        }
+        catch(java.io.IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        java.sql.Statement st = con.createStatement(java.sql.ResultSet.CONCUR_READ_ONLY,java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE);
+        try
+        {
+            res =st.executeQuery("select * from student ");
+        }
+        catch(java.sql.SQLSyntaxErrorException e)
+        {
+            System.out.println(e.getMessage());
+        }
+           
+            int i=1;
+            while (res.next()) {
+                if (i==rowNum) {
+                    int Roll_no = res.getInt("Roll_no");
+                    String Name = res.getString("Name");
+                    int marks = res.getInt("Marks");
+                    System.out.println("Roll No : "+Roll_no);
+                    System.out.println("Name : "+Name);
+                    System.out.println("Marks : "+marks);
+                }
+               i++;
+            }
+        }
+
+    }
+
 
 `,
 output: `
@@ -8632,7 +9278,30 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Copy all elements of one array into another array": {
           description: "Program to copy all elements of one array into another array",
           code: `
-        code//
+class CopyArray
+	{
+	public static void main(String st[])
+	{
+	int arr[]={1,2,3,4},i;
+	int arr2[] = new int[arr.length];
+	for(i=0;i&lt;arr.length;i++)
+	{
+	arr2[i]=arr[i];
+	
+	}
+	System.out.println("Orignel Array");
+	for(i=0;i&lt;arr.length;i++)
+	{
+	System.out.println(arr[i]);
+	}
+	System.out.println("Copy Array");
+        for(i=0;i&lt;arr.length;i++)
+        {
+        System.out.println(arr2[i]);
+        }
+	}
+	}
+
 `,
                 output: `
    output//
@@ -8641,7 +9310,35 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Find the frequency of each element in the array": {
           description: "Program to find the frequency of each element in the array",
           code: `
-        code//
+class Frequency {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 2, 3, 3, 3, 4, 4, 4, 4};
+        int[] frequency = new int[array.length];
+
+        for (int i = 0; i &lt; array.length; i++) {
+            int count = 0;
+            for (int j = 0; j &lt; array.length; j++) {
+                if (array[i] == array[j]) {
+                    count++;
+                }
+            }
+            frequency[i] = count;
+        }
+
+        for (int i = 0; i &lt; array.length; i++) {
+            boolean isDuplicate = false;
+            for (int j = 0; j &lt; i; j++) {
+                if (array[i] == array[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                System.out.println("Number " + array[i] + " appears " + frequency[i] + " times");
+            }
+        }
+    }
+}
 `,
                 output: `
    output//
@@ -8650,7 +9347,34 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Left rotate the elements of an array": {
           description: "Program to left rotate the elements of an array",
           code: `
-        code//
+class LeftRotate {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int rotations = 2;
+
+        System.out.println("Original array:");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // Left rotate
+        for (int i = 0; i &lt; rotations; i++) {
+            int temp = array[0];
+            for (int j = 0; j &lt; array.length - 1; j++) {
+                array[j] = array[j + 1];
+            }
+            array[array.length - 1] = temp;
+        }
+
+        System.out.println("Rotated array:");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
+
 `,
                 output: `
    output//
@@ -8659,7 +9383,25 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Print the duplicate elements of an array": {
           description: "Program to print the duplicate elements of an array",
           code: `
-        code//
+ class Duplicate {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 2, 3, 3, 3, 4, 4, 4, 4};
+
+        System.out.println("Duplicate elements:");
+        for (int i = 0; i &lt; array.length; i++) {
+            int count = 0;
+            for (int j = 0; j &lt; array.length; j++) {
+                if (array[i] == array[j]) {
+                    count++;
+                }
+            }
+            if (count &gt; 1 && array[i] != -1) {
+                System.out.println(array[i]);
+                array[i] = -1;
+            }
+        }
+    }
+}
 `,
                 output: `
    output//
@@ -8668,7 +9410,18 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Print the elements of an array": {
           description: "Program to print the elements of an array",
           code: `
-        code//
+class PrintArray
+	{
+	public static void main(String st[])
+	{
+	int arr[]={1,2,3,4},i;
+	for(i=0;i&lt;arr.length;i++)
+	{
+	System.out.println(arr[i]);
+	}
+	}
+	}
+
 `,
                 output: `
    output//
@@ -8677,7 +9430,18 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Print the elements of an array in reverse order": {
           description: "Program to print the elements of an array in reverse order",
           code: `
-        code//
+class PrintReverseArray
+        {
+        public static void main(String st[])
+        {
+        int arr[]={1,2,3,4},i;
+        for(i=arr.length-1;i&gt;0;i--)
+        {
+        System.out.println(arr[i]);
+        }
+        }
+        }
+
 `,
                 output: `
    output//
@@ -8686,7 +9450,20 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Print the elements of an array present on even position": {
           description: "Program to  print the elements of an array present on even position",
           code: `
-        code//
+class PrintEvenPosition
+		{
+		public static void main(String st[])
+		{
+		int arr[]={1,2,3,4},i;
+		for(i=0;i&lt;arr.length;i++)
+		{
+		if(i%2==0)
+		{
+		System.out.println(arr[i]);
+		}
+		}
+		}
+		}
 `,
                 output: `
    output//
@@ -8695,7 +9472,20 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Print the elements of an array present on odd position": {
           description: "Program to print the elements of an array present on odd position",
           code: `
-        code//
+class PrintOddPosition
+                {
+                public static void main(String st[])
+                {
+                int arr[]={1,2,3,4},i;
+                for(i=0;i&lt;arr.length;i++)
+                {
+                if(i%2!=0)
+                {
+                System.out.println(arr[i]);
+                }
+                }
+                }
+                }
 `,
                 output: `
    output//
@@ -8704,7 +9494,29 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Print the largest element in an array": {
           description: "Program to print the largest element in an array",
           code: `
-        code//
+class Largest
+	{
+	public static void main(String st[])
+	{
+	int arr[]={1,20,30,4,5},i,temp,max=0;
+	temp=arr[0];
+	for(i=0;i&lt;arr.length;i++)
+	{
+	if(arr[i]&gt;temp)
+	{
+	temp=arr[i];
+	max=temp;
+	}
+	else
+	{
+	max=temp;
+	}
+	}
+	System.out.println("Largest element is :- "+max);
+	
+	}
+	}
+
 `,
                 output: `
    output//
@@ -8713,7 +9525,29 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Print the smallest element in an array": {
           description: "Program to print the smallest element in an array",
           code: `
-        code//
+class Smallest
+        {
+        public static void main(String st[])
+        {
+        int arr[]={1,20,30,4,5},i,temp,min=0;
+        temp=arr[0];
+        for(i=0;i&lt;arr.length;i++)
+        {
+        if(arr[i]&lt;temp)
+        {
+        temp=arr[i];
+        min=temp;
+        }
+        else
+        {
+        min=temp;
+        }
+        }
+        System.out.println("Smallest element is :- "+min);
+
+        }
+        }
+
 `,
                 output: `
    output//
@@ -8731,7 +9565,18 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Print the sum of all the items of the array": {
           description: "Program to print the sum of all the items of the array",
           code: `
-        code//
+class SumOfElements
+	{
+	public static void main(String st[])
+	{
+	int arr[]={1,2,3,4},sum=0,i;
+	for(i=0;i&lt;arr.length;i++)
+	{
+	sum+=arr[i];
+	}
+	System.out.println("Sum Of Element :- "+sum);
+	}
+	}
 `,
                 output: `
    output//
@@ -8749,7 +9594,29 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Sort the elements of an array in ascending order": {
           description: "Program to sort the elements of an array in ascending order",
           code: `
-        code//
+class Sort
+	{
+	public static void main(String st[])
+	{
+	int arr[]={4,3,5,1,6},i,j,temp;
+	for(i=0;i&lt;arr.length;i++)
+	{
+	for(j=i+1;j&lt;arr.length;j++)
+	{
+	if(arr[j]&gt;arr[i])
+	{
+	temp=arr[i];
+	arr[i]=arr[j];
+	arr[j]=temp;
+	}
+	}
+	}
+	for(i=0;i&lt;arr.length;i++)
+	{
+	System.out.println(arr[i]);
+	}
+	}
+	}
 `,
                 output: `
    output//
@@ -8785,7 +9652,29 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Find Largest Number in an array": {
           description: "Program to Find Largest Number in an array",
           code: `
-        code//
+class Largest
+	{
+	public static void main(String st[])
+	{
+	int arr[]={1,20,30,4,5},i,temp,max=0;
+	temp=arr[0];
+	for(i=0;i&lt;arr.length;i++)
+	{
+	if(arr[i]&gt;temp)
+	{
+	temp=arr[i];
+	max=temp;
+	}
+	else
+	{
+	max=temp;
+	}
+	}
+	System.out.println("Largest element is :- "+max);
+	
+	}
+	}
+
 `,
                 output: `
    output//
