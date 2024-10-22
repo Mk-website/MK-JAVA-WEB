@@ -10818,28 +10818,62 @@ Course History not found for Manjit
       "Create a class showing an example of default constructor.": {
           description: "Program to Create a class showing an example of default constructor.",
           code: `
-        code//
+class Default
+        {
+        Default()
+        {
+        System.println("Hello, I am Default Constructor!");
+        }
+        public static void main(String st[])
+        {
+        new Default();
+        }
+        }
 `,
                 output: `
-   output//
+Hello, I am Default Constructor!
                 `
       },
       "Create a class showing an example of parameterized constructor.": {
           description: "Program to Create a class showing an example of parameterized constructor.",
           code: `
-        code//
+class Parameterized
+        {
+        Parameterized(String n)
+        {
+        System.println("Hello,"+n+" I am Parameterized Constructor!");
+        }
+        public static void main(String st[])
+        {
+        new Parameterized("Manjit");
+        }
+        }
 `,
                 output: `
-   output//
+Hello,Manjit I am Parameterized Constructor
                 `
       },
       "Create a class showing an example of copy constructor.": {
           description: "Program to Create a class showing an example of copy constructor.",
           code: `
-        code//
+class Copy
+        {
+        Copy()
+        {
+        }
+        Copy(Copy obj)
+        {
+        System.println("Hello, I am Copy Constructor!");
+        }
+        public static void main(String st[])
+        {
+        Copy obj =new Copy();
+        Copy copyObj = new Copy(obj);
+        }
+        }
 `,
                 output: `
-   output//
+Hello, I am Copy Constructor!
                 `
       },
       "Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students": {
@@ -10863,10 +10897,22 @@ Course History not found for Manjit
       "Create a class, entering the command line arguments from the user and show all the arguments as output..": {
           description: "Program to Create a class, entering the command line arguments from the user and show all the arguments as output..",
           code: `
-        code//
+class CmdLineArg
+        {
+        public static void main(String st[])
+        {
+        for(int i =0;i<st.length();i++)
+      {
+        System.out.println(st[i]);
+        }
+        }
+        }
 `,
                 output: `
-   output//
+C:/>java CmdLineArg Manjit Sandeep Abhishek
+Manjit 
+Sandeep 
+Abhishek
                 `
       },
       "Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.": {
@@ -11026,19 +11072,86 @@ Current Date: Thu Sep 19 20:26:52 IST 2024
       "Create a Java program to create a package with multiple default classes.": {
           description: "Program to Create a Java program to create a package with multiple default classes.",
           code: `
-        code//
+class A
+    {
+        A()
+        {
+            System.out.println("I am Class A");
+        }
+    }
+class B
+    {
+        B()
+        {
+            System.out.println("I am Class B");
+        }
+    }
+class C
+    {
+        C()
+        {
+            System.out.println("I am Class C");
+        }
+    }
+    class Main
+        {
+            public static void main(String[] args) {
+                new A();
+                new B();
+                new C();
+            }
+        }
 `,
                 output: `
-   output//
+ I am Class A
+ I am Class B
+ I am Class C
                 `
       },
       " Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.": {
           description: "Program to  Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.",
           code: `
-        code//
+package pack1.pack;
+public class ClassA
+    {
+       public void display()
+        {
+            System.out.println("This is Class A!");
+        }
+    }
+--------------------------------------------------
+package pack1.pack;
+public class ClassB
+    {
+        public void display()
+        {
+            System.out.println("This is Class B!");
+        }
+    }
+---------------------------------------------------
+package pack1.pack;
+public class ClassC
+    {
+        public void display()
+        {
+            System.out.println("This is Class C!");
+        }
+    }
+--------------------------------------------------
+package pack1.pack;
+public class ClassD
+    {
+        public void display()
+        {
+            System.out.println("This is Class D!");
+        }
+    }
 `,
                 output: `
-   output//
+ This is Class A!
+ This is Class B!
+ This is Class C!
+ This is Class D!
                 `
       },
       "Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.": {
@@ -11117,8 +11230,16 @@ class CopyArray
 
 `,
                 output: `
-   output//
-                `
+Orignel Array
+1
+2
+3
+4
+Copy Array
+1
+2
+3
+4               `
       },
       "Find the frequency of each element in the array": {
           description: "Program to find the frequency of each element in the array",
@@ -11154,7 +11275,11 @@ class Frequency {
 }
 `,
                 output: `
-   output//
+Number 1 appears 1 times
+Number 2 appears 2 times
+Number 3 appears 3 times
+Number 4 appears 4 times
+
                 `
       },
       "Left rotate the elements of an array": {
@@ -11190,7 +11315,10 @@ class LeftRotate {
 
 `,
                 output: `
-   output//
+Original array:
+1 2 3 4 5
+Rotated array:
+3 4 5 1 2
                 `
       },
       "Print the duplicate elements of an array": {
@@ -11237,7 +11365,13 @@ class PrintArray
 
 `,
                 output: `
-   output//
+Duplicate elements:
+2
+3
+3
+4
+4
+4
                 `
       },
       "Print the elements of an array in reverse order": {
@@ -11248,7 +11382,7 @@ class PrintReverseArray
         public static void main(String st[])
         {
         int arr[]={1,2,3,4},i;
-        for(i=arr.length-1;i&gt;0;i--)
+        for(i=arr.length-1;i&gt=;0;i--)
         {
         System.out.println(arr[i]);
         }
@@ -11257,8 +11391,10 @@ class PrintReverseArray
 
 `,
                 output: `
-   output//
-                `
+4
+3
+2
+1                `
       },
       "Print the elements of an array present on even position": {
           description: "Program to  print the elements of an array present on even position",
@@ -11279,7 +11415,8 @@ class PrintEvenPosition
 		}
 `,
                 output: `
-   output//
+1
+3
                 `
       },
       "Print the elements of an array present on odd position": {
@@ -11301,7 +11438,7 @@ class PrintOddPosition
                 }
 `,
                 output: `
-   output//
+2 4
                 `
       },
       "Print the largest element in an array": {
@@ -11332,7 +11469,7 @@ class Largest
 
 `,
                 output: `
-   output//
+Largest element is :- 30
                 `
       },
       "Print the smallest element in an array": {
@@ -11363,7 +11500,7 @@ class Smallest
 
 `,
                 output: `
-   output//
+Smallest element is :- 1
                 `
       },
       "Print the number of elements present in an array": {
@@ -11392,7 +11529,7 @@ class SumOfElements
 	}
 `,
                 output: `
-   output//
+Sum Of Element :- 10
                 `
       },
       "Right rotate the elements of an array": {
@@ -11432,16 +11569,46 @@ class Sort
 	}
 `,
                 output: `
-   output//
+1
+3
+4
+5
+6
                 `
       },
       "Sort the elements of an array in descending order": {
           description: "Program to sort the elements of an array in descending order",
           code: `
-        code//
+class Sort
+	{
+	public static void main(String st[])
+	{
+	int arr[]={4,3,5,1,6},i,j,temp;
+	for(i=0;i&lt;arr.length;i++)
+	{
+	for(j=i+1;j&lt;arr.length;j++)
+	{
+	if(arr[j]&lt;arr[i])
+	{
+	temp=arr[i];
+	arr[i]=arr[j];
+	arr[j]=temp;
+	}
+	}
+	}
+	for(i=0;i&lt;arr.length;i++)
+	{
+	System.out.println(arr[i]);
+	}
+	}
+	}
 `,
                 output: `
-   output//
+6
+5
+4
+3
+1
                 `
       },
       "Find 3rd Largest Number in an array": {
@@ -11490,7 +11657,7 @@ class Largest
 
 `,
                 output: `
-   output//
+Largest element is :- 30
                 `
       },
       "Find 2nd Smallest Number in an array": {
