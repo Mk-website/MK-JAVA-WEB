@@ -898,7 +898,16 @@ public class Arc extends Applet{
           "Create an applet in Java to draw rounded rectangle.": {
               description: "Create an applet in Java to draw rounded rectangle.",
               code: `
-            code//
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class RoundedRectangleApplet extends Applet {
+
+    public void paint(Graphics g) {
+        g.RoundRect(50, 50, 200, 100, 30, 30);  
+}
+
 `,
                 output: `
                 output//
@@ -2569,23 +2578,102 @@ Grade: B
         "create a simple calculator": {
             description: "Write a Java program to create a simple calculator",
             code: `
-class SimpleCalculator {
+class Calculator {
+    
     public static void main(String[] args) {
-        int num1 = 10, num2 = 5;
-        System.out.println("Addition: " + (num1 + num2));
-        System.out.println("Subtraction: " + (num1 - num2));
-        System.out.println("Multiplication: " + (num1 * num2));
-        System.out.println("Division: " + (num1 / num2));
+        double num1=0.0,num2=0.0,result;
+        char ch=' ';
+        java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        java.io.BufferedReader input1 = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        System.out.println("Opration Menu: ");
+        System.out.println("Addition : +");
+        System.out.println("Subtraction : -");
+        System.out.println("Multiplication : *");
+        System.out.println("Division : /");
+        System.out.println("Enter Opration :");
+        try {
+            ch = (char)input.read();
+        } catch (java.io.IOException e) {
+            System.out.println(e.getMessage());
+        }
+        if (ch>'a') {
+            System.out.println("Exit");
+            return;
+        }
+        else
+        {
+        System.out.println("Enter 1st Number : ");
+        try
+        {
+            num1 = Double.parseDouble(input1.readLine());
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Enter Number only!");
+          
+        }
+        catch(java.io.IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Enter 2nd Number : ");
+        try
+        {
+            num2 = Double.parseDouble(input1.readLine());
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Enter Number only!");
+
+        }
+        catch(java.io.IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
+        switch (ch) {
+            case '+':
+                result = num1+num2;
+                System.out.println("Result : "+result);
+                break;
+                case '-':
+                result = num1-num2;
+                System.out.println("Result : "+result);
+                break;
+                case '/':
+                result = num1/num2;
+                System.out.println("Result : "+result);
+                break;
+                case '*':
+                result = num1*num2;
+                System.out.println("Result : "+result);
+                break;
+
+            default:
+            System.out.println("Invalied Opration!!");
+                break;
+        }
     }
+    }
+
 }
+
 
 
 `,
                 output: `
-Addition: 15
-Subtraction: 5
-Multiplication: 50
-Division: 2
+Opration Menu:
+Addition : +
+Subtraction : -
+Multiplication : *
+Division : /
+Enter Opration :
++
+Enter 1st Number :
+6
+Enter 2nd Number :
+5
+Result : 11.0
 
     
                 `
@@ -2741,7 +2829,7 @@ class CurrentDateTime {
 
 `,
                 output: `
-Current Date and Time: 03-10-2024 10:20:30 (This will vary based on the actual date and time)
+Current Date and Time: 03-10-2024 10:20:30 
 
     
                 `
@@ -3382,7 +3470,7 @@ import java.util.Arrays;
 
 class SortNames {
     public static void main(String[] args) {
-        String[] names = {"Charlie", "Alice", "Bob", "Eve", "David"};
+        String[] names = {"Charlie", "Manjit", "Bob", "Eve", "David"};
         Arrays.sort(names);
         System.out.println("Names in alphabetical order: " + Arrays.toString(names));
     }
@@ -3391,7 +3479,7 @@ class SortNames {
             `,
             output:
             `
-Names in alphabetical order: [Alice, Bob, Charlie, David, Eve]
+Names in alphabetical order: [Manjit, Bob, Charlie, David, Eve]
 
             `
         },
@@ -5724,11 +5812,33 @@ class Average
       "display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.": {
           description: "Write a Java method to display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.",
           code: `
-            code//
+public class MidChar {
+   static void midChar(String s)
+    {
+        if ((s.length()%2)==0) {
+                int mid1 = ((s.length())/2)-1;
+                int mid2 = (s.length()/2);
+            System.out.println(s.charAt(mid1));
+            System.out.println(s.charAt(mid2));
+        }
+        else
+        {
+            int mid = ((s.length())/2);
+            System.out.println(s.charAt(mid));
+        }
+    
+    }
+    public static void main(String[] args) {
+        String str = "Manjit";
+        midChar(str);
+    }
+}
+
             `
     ,
                 output: `
-              output//
+ n
+ j
                 `
       },
       "count all the words in a string.": {
@@ -5875,91 +5985,127 @@ P
       "count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative": {
           description: "Write a Java method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative.",
           code: `
-            code//
+public class NumDigit {
+   static void numDigit(int num)
+    {
+        int count=0,temp;
+        while (num>0) {
+            
+            temp = num%10;
+            if (temp==2) {
+                count++;
+            } 
+            num/=10;
+
+        }
+        System.out.println("count "+count);
+    }
+    public static void main(String[] args) {
+        numDigit(12322);
+    }
+}
+
             `
     ,
                 output: `
-              output//
+count 3
                 `
       },
       "accepts three integers and checks whether they are consecutive or not. Returns true or false": {
           description: "Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.",
           code: `
-            code//
+public class ThreeInt {
+    boolean consecutive(int a,int b,int c)
+    {
+        if (++a==b && ++b==c) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    public static void main(String[] args) {
+        int num1=2,num2=3,num3=4;
+        boolean cons = new ThreeInt().consecutive(num1, num2, num3);
+        System.out.println(cons);
+    }
+}
+
             `
     ,
                 output: `
-              output//
+true
                 `
       },
       "that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false": {
           description: "Write a Java method to that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false.",
           code: `
-            code//
+public class MidPoint {
+     boolean midPoint(int a,int b,int c)
+    {
+        if (++a==b && --c==b) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    public static void main(String[] args) {
+        int num1=2,num2=3,num3=4;
+        boolean mid = new MidPoint().midPoint(num1, num2, num3);
+        System.out.println(mid);
+    }
+}
+
             `
     ,
                 output: `
-              output//
+true
                 `
       },
       "that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false": {
           description: "Write a Java method to that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.",
           code: `
-            code//
+public class Vowel {
+    boolean isVowel(String s)
+    {
+        boolean isVowel = false;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c=='a' || c =='A' || c=='i' || c == 'I' || c =='e' || c=='E' || c=='o' || c=='O' || c=='u' || c=='U') {
+                isVowel =true;
+            }
+            else
+            {
+                isVowel = false;
+                break;
+            }
+        }
+        return isVowel;
+    }
+    public static void main(String[] args) {
+        boolean vowel = new Vowel().isVowel("aio");
+        System.out.println(vowel);
+    }
+}
+
             `
     ,
                 output: `
-              output//
+true
                 `
       },
       
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+     
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+     
   }
 },
 "GRAPHICAL USER INTERFACE (AWT)": {
@@ -8051,54 +8197,138 @@ true
 You enter : true
               `
     },
-    /*"Enter the boolean from user using Scanner class": {
-        description: "Program to Enter the boolean from user using Scanner class",
-        code: `
-      code//
-
-`,
-              output: `
-             output//
-              `
-    },*/
     "Enter the long integer from user using Scanner class": {
         description: "Program to Enter the long integer from user using Scanner class",
         code: `
-      code//
+class Input6
+	{
+	public static void main(String st[])
+		{
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		boolean x;
+		try{
+        System.out.println("Enter Long int : ");
+		x =sc.nextLong();
+		System.out.println("you enter : "+x);
+		}
+		catch(java.util.InputMismatchException e)
+			{
+				System.out.println("Please Enter Long int value");
+			}
+		}
+}
 
 `,
               output: `
-             output//
+123454
               `
     },
+ 
+    
+  },
+  "Medium": {
     "Get all characters from the file and display on the screen": {
         description: "Program to Get all characters from the file and display on the screen",
         code: `
-      code//
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileCharacterReader {
+    public static void main(String[] args) {
+        // Replace with your file path
+        String filePath = "sample.txt";
+
+        try (FileReader fileReader = new FileReader(filePath)) {
+            int character;
+            System.out.println("File contents:");
+            // Read file character by character
+            while ((character = fileReader.read()) != -1) {
+                // Print each character to the console
+                System.out.print((char) character);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+    }
+}
+
 
 `,
               output: `
-             output//
+File contents:
+This is a sample file.
+It contains multiple lines of text.
+
               `
     },
-    "Get all characters from the file, count number of lines, words, characters and display on the screen": {
-        description: "Program to Get all characters from the file, count number of lines, words, characters and display on the screen",
-        code: `
-      code//
-
-`,
-              output: `
-             output//
-              `
-    }
-
-  },
-  "Medium": {
-     
       
   },
   "Hard": {
-    
+    "Get all characters from the file, count number of lines, words, characters and display on the screen": {
+        description: "Program to Get all characters from the file, count number of lines, words, characters and display on the screen",
+        code: `
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileStatistics {
+    public static void main(String[] args) {
+        String filePath = "sample.txt";
+
+        // Initialize counters for lines, words, and characters
+        int lineCount = 0;
+        int wordCount = 0;
+        int characterCount = 0;
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            System.out.println("File contents:");
+            
+            // Read each line from the file
+            while ((line = bufferedReader.readLine()) != null) {
+                // Print the current line
+                System.out.println(line);
+                
+                // Count lines
+                lineCount++;
+
+                // Count characters (including spaces)
+                characterCount += line.length();
+
+                // Count words (splitting by spaces)
+                String[] words = line.split("\\s+"); // Splits by spaces, tabs, or newlines
+                wordCount += words.length;
+            }
+
+            // Display the results
+            System.out.println("\nStatistics:");
+            System.out.println("Number of lines: " + lineCount);
+            System.out.println("Number of words: " + wordCount);
+            System.out.println("Number of characters: " + characterCount);
+
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+    }
+}
+
+
+`,
+              output: `
+File contents:
+This is a sample file.
+It contains multiple lines of text.
+
+Statistics:
+Number of lines: 2
+Number of words: 8
+Number of characters: 47
+
+              `
+    }
+
   }
 },
 "INTERFACES": {
@@ -8207,142 +8437,724 @@ output: `
     "create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes.": {
         description: "Program to create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes..",
         code: `
-          code//
+interface Flyable
+    {
+        void fly_obj();
+    }
+class Spacecraft implements Flyable
+        {
+            public void fly_obj()
+            {
+                System.out.println("Spacecraft is Flyable");
+            }
+        }
+class Airplane implements Flyable
+        {
+             public void fly_obj()
+            {
+                System.out.println("Airplane is Flyable");
+            }
+        }
+class Helicopter implements Flyable
+        {
+             public void fly_obj()
+            {
+                System.out.println("Helicopter is Flyable");
+            }
+        }
+class Main
+    {
+        public static void main(String st[])
+            {
+                Flyable obj;
+                obj=new Spacecraft();
+                obj.fly_obj();
+                obj=new Airplane();
+                obj.fly_obj();
+                obj=new Helicopter();
+                obj.fly_obj();
+
+            }
+    }
 
 `,
 output: `
           output//
           `
     },
-    "create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods.": {
-        description: "Program to create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods..",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
+ 
     "create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. Create a class Rectangle that implements the Resizable interface and implements the resize methods.": {
         description: "Program to create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. Create a class Rectangle that implements the Resizable interface and implements the resize methods..",
         code: `
-          code//
+// Interface defining resizable behavior
+interface Resizable {
+    void resizeWidth(int width);
+    void resizeHeight(int height);
+}
+
+// Rectangle class implementing Resizable interface
+class Rectangle implements Resizable {
+    private int width;
+    private int height;
+
+    // Constructor
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Method to resize the width
+    @Override
+    public void resizeWidth(int newWidth) {
+        this.width = newWidth;
+        System.out.println("Rectangle width resized to: " + newWidth);
+    }
+
+    // Method to resize the height
+    @Override
+    public void resizeHeight(int newHeight) {
+        this.height = newHeight;
+        System.out.println("Rectangle height resized to: " + newHeight);
+    }
+
+    // Method to display the current dimensions of the rectangle
+    public void displayDimensions() {
+        System.out.println("Rectangle dimensions -> Width: " + width + ", Height: " + height);
+    }
+}
+
+// Main class to test the implementation
+public class ResizableDemo {
+    public static void main(String[] args) {
+        // Create a Rectangle object
+        Rectangle rectangle = new Rectangle(10, 5);
+
+        // Display initial dimensions
+        rectangle.displayDimensions();
+
+        // Resize width and height
+        rectangle.resizeWidth(15);
+        rectangle.resizeHeight(10);
+
+        // Display updated dimensions
+        rectangle.displayDimensions();
+    }
+}
+
 
 `,
 output: `
-          output//
+Rectangle dimensions -> Width: 10, Height: 5
+Rectangle width resized to: 15
+Rectangle height resized to: 10
+Rectangle dimensions -> Width: 15, Height: 10
+
           `
     },
     "create an interface Drawable with a method draw() that takes no arguments and returns void. Create three classes Circle, Rectangle, and Triangle that implement the Drawable interface and override the draw() method to draw their respective shapes.": {
         description: "Program to create an interface Drawable with a method draw() that takes no arguments and returns void. Create three classes Circle, Rectangle, and Triangle that implement the Drawable interface and override the draw() method to draw their respective shapes..",
         code: `
-          code//
+// Interface defining drawable behavior
+interface Drawable {
+    void draw();
+}
+
+// Circle class implementing Drawable interface
+class Circle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a Circle");
+    }
+}
+
+// Rectangle class implementing Drawable interface
+class Rectangle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a Rectangle");
+    }
+}
+
+// Triangle class implementing Drawable interface
+class Triangle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a Triangle");
+    }
+}
+
+// Main class to test the drawing functionality
+public class DrawableDemo {
+    public static void main(String[] args) {
+        // Create instances of different shapes
+        Drawable circle = new Circle();
+        Drawable rectangle = new Rectangle();
+        Drawable triangle = new Triangle();
+
+        // Draw each shape
+        circle.draw();
+        rectangle.draw();
+        triangle.draw();
+    }
+}
+
 
 `,
 output: `
-          output//
-          `
-    },
-    "create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
-        description: "Program to create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method..",
-        code: `
-          code//
+Drawing a Circle
+Drawing a Rectangle
+Drawing a Triangle
 
-`,
-output: `
-          output//
           `
     },
+
     "create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports.": {
         description: "Program to create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports..",
         code: `
-          code//
+interface Playable {
+    void play();
+}
+
+class Football implements Playable {
+    public void play() {
+        System.out.println("Playing Football");
+    }
+}
+
+class Volleyball implements Playable {
+    public void play() {
+        System.out.println("Playing Volleyball");
+    }
+}
+
+class Basketball implements Playable {
+    public void play() {
+        System.out.println("Playing Basketball");
+    }
+}
+
+public class PlayableDemo {
+    public static void main(String[] args) {
+        Playable football = new Football();
+        Playable volleyball = new Volleyball();
+        Playable basketball = new Basketball();
+
+        // Play each sport
+        football.play();
+        volleyball.play();
+        basketball.play();
+    }
+}
+
 
 `,
 output: `
-          output//
+Playing Football
+Playing Volleyball
+Playing Basketball
+
+          `
+    },
+  },
+  "Medium": {
+    "create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
+        description: "Program to create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method..",
+        code: `
+interface Sortable {
+    void sort(int[] arr);
+}
+
+class BubbleSort implements Sortable {
+    
+    public void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap arr[j] and arr[j+1]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("Array sorted using Bubble Sort: " + Arrays.toString(arr));
+    }
+}
+
+class SelectionSort implements Sortable {
+    public void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j; // Find the minimum element
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+        System.out.println("Array sorted using Selection Sort: " + Arrays.toString(arr));
+    }
+}
+
+public class Sorting {
+    public static void main(String[] args) {
+        int[] array1 = {64, 34, 25, 12, 22, 11, 90};
+        int[] array2 = {64, 34, 25, 12, 22, 11, 90};
+
+        // Sorting using BubbleSort
+        Sortable bubbleSort = new BubbleSort();
+        bubbleSort.sort(array1);
+
+        // Sorting using SelectionSort
+        Sortable selectionSort = new SelectionSort();
+        selectionSort.sort(array2);
+    }
+}
+
+
+`,
+output: `
+Array sorted using Bubble Sort: [11, 12, 22, 25, 34, 64, 90]
+Array sorted using Selection Sort: [11, 12, 22, 25, 34, 64, 90]
+
           `
     },
     "create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method.": {
         description: "Program to create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method..",
         code: `
-          code//
+interface Searchable {
+    boolean search(String keyword);
+}
+
+class Document implements Searchable {
+    private String content;
+
+    public Document(String content) {
+        this.content = content;
+    }
+
+    public boolean search(String keyword) {
+        boolean found = content.contains(keyword);
+        if (found) {
+            System.out.println("Keyword '" + keyword + "' found in Document.");
+        } else {
+            System.out.println("Keyword '" + keyword + "' not found in Document.");
+        }
+        return found;
+    }
+}
+
+class WebPage implements Searchable {
+    private String htmlContent;
+
+    public WebPage(String htmlContent) {
+        this.htmlContent = htmlContent;
+    }
+
+ 
+    public boolean search(String keyword) {
+        boolean found = htmlContent.contains(keyword);
+        if (found) {
+            System.out.println("Keyword '" + keyword + "' found in WebPage.");
+        } else {
+            System.out.println("Keyword '" + keyword + "' not found in WebPage.");
+        }
+        return found;
+    }
+}
+
+// Main class to test the search functionality
+public class SearchableDemo {
+    public static void main(String[] args) {
+        // Create a document and a webpage with some content
+        Document document = new Document("This is a simple document containing some text.");
+        WebPage webPage = new WebPage("<html><body>This is a simple webpage.</body></html>");
+
+        // Search for a keyword in the document
+        document.search("simple");
+
+        // Search for a keyword in the webpage
+        webPage.search("webpage");
+
+        // Search for a keyword that doesn't exist
+        document.search("missing");
+        webPage.search("missing");
+    }
+}
+
 
 `,
 output: `
-          output//
+Keyword 'simple' found in Document.
+Keyword 'webpage' found in WebPage.
+Keyword 'missing' not found in Document.
+Keyword 'missing' not found in WebPage.
+
+          `
+    },
+    
+  },
+  "Hard": {
+    "create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods.": {
+        description: "Program to create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods..",
+        code: `
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+interface Account {
+    void deposit(double amount);
+    void withdraw(double amount);
+    void calculateInterest();
+    void viewBalance();
+}
+
+class Bank {
+    private List<Account> accounts;
+
+    public Bank() {
+        accounts = new ArrayList<>();
+    }
+
+    public void addAccount(Account account) {
+        accounts.add(account);
+    }
+
+    public void displayAccounts() {
+        System.out.println("Bank Accounts:");
+        for (Account account : accounts) {
+            account.viewBalance();
+        }
+    }
+}
+
+class SavingsAccount implements Account {
+    private double balance;
+    private double interestRate;
+
+    public SavingsAccount(double initialDeposit, double interestRate) {
+        this.balance = initialDeposit;
+        this.interestRate = interestRate;
+    }
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited " + amount + " to SavingsAccount. New balance: " + balance);
+    }
+
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrew " + amount + " from SavingsAccount. New balance: " + balance);
+        } else {
+            System.out.println("Insufficient balance in SavingsAccount.");
+        }
+    }
+
+    public void calculateInterest() {
+        double interest = balance * (interestRate / 100);
+        balance += interest;
+        System.out.println("Interest added to SavingsAccount. New balance: " + balance);
+    }
+
+    public void viewBalance() {
+        System.out.println("SavingsAccount Balance: " + balance);
+    }
+}
+
+class CurrentAccount implements Account {
+    private double balance;
+    private double overdraftLimit;
+
+    public CurrentAccount(double initialDeposit, double overdraftLimit) {
+        this.balance = initialDeposit;
+        this.overdraftLimit = overdraftLimit;
+    }
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited " + amount + " to CurrentAccount. New balance: " + balance);
+    }
+
+    public void withdraw(double amount) {
+        if (balance + overdraftLimit >= amount) {
+            balance -= amount;
+            System.out.println("Withdrew " + amount + " from CurrentAccount. New balance: " + balance);
+        } else {
+            System.out.println("Overdraft limit exceeded in CurrentAccount.");
+        }
+    }
+
+    public void calculateInterest() {
+        System.out.println("No interest for CurrentAccount.");
+    }
+
+
+    public void viewBalance() {
+        System.out.println("CurrentAccount Balance: " + balance);
+    }
+}
+
+public class BankingSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        Bank bank = new Bank();
+        
+        SavingsAccount savingsAccount = new SavingsAccount(1000.0, 5.0); // Initial deposit 1000, interest rate 5%
+        bank.addAccount(savingsAccount);
+        
+        CurrentAccount currentAccount = new CurrentAccount(500.0, 200.0); // Initial deposit 500, overdraft limit 200
+        bank.addAccount(currentAccount);
+
+        savingsAccount.deposit(200);
+        savingsAccount.calculateInterest();
+        savingsAccount.withdraw(300);
+        
+        currentAccount.deposit(150);
+        currentAccount.withdraw(600);
+        
+        bank.displayAccounts();
+        
+        scanner.close();
+    }
+}
+
+
+`,
+output: `
+Deposited 200.0 to SavingsAccount. New balance: 1200.0
+Interest added to SavingsAccount. New balance: 1260.0
+Withdrew 300.0 from SavingsAccount. New balance: 960.0
+Deposited 150.0 to CurrentAccount. New balance: 650.0
+Withdrew 600.0 from CurrentAccount. New balance: 50.0
+Bank Accounts:
+SavingsAccount Balance: 960.0
+CurrentAccount Balance: 50.0
+
           `
     },
     " create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations. Create two classes AES and RSA that implement the Encryptable interface and provide their own encryption and decryption algorithms.": {
         description: "Program to  create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations. Create two classes AES and RSA that implement the Encryptable interface and provide their own encryption and decryption algorithms..",
         code: `
-          code//
+
+interface Encryptable {
+    String encrypt(String data);
+    String decrypt(String encryptedData);
+}
+
+class AES implements Encryptable {
+
+    public String encrypt(String data) {
+        // Simulated AES encryption (reverse the string)
+        String encrypted = new StringBuilder(data).reverse().toString();
+        System.out.println("AES Encrypted Data: " + encrypted);
+        return encrypted;
+    }
+
+
+    public String decrypt(String encryptedData) {
+        // Simulated AES decryption (reverse the string back)
+        String decrypted = new StringBuilder(encryptedData).reverse().toString();
+        System.out.println("AES Decrypted Data: " + decrypted);
+        return decrypted;
+    }
+}
+
+class RSA implements Encryptable {
+    public String encrypt(String data) {
+        // Simulated RSA encryption (shift each character by 3)
+        StringBuilder encrypted = new StringBuilder();
+        for (char c : data.toCharArray()) {
+            encrypted.append((char) (c + 3));
+        }
+        System.out.println("RSA Encrypted Data: " + encrypted.toString());
+        return encrypted.toString();
+    }
+
+    public String decrypt(String encryptedData) {
+        // Simulated RSA decryption (shift each character back by 3)
+        StringBuilder decrypted = new StringBuilder();
+        for (char c : encryptedData.toCharArray()) {
+            decrypted.append((char) (c - 3));
+        }
+        System.out.println("RSA Decrypted Data: " + decrypted.toString());
+        return decrypted.toString();
+    }
+}
+
+// Main class to test the encryption and decryption
+public class EncryptionDemo {
+    public static void main(String[] args) {
+        // Create instances of AES and RSA
+        Encryptable aesEncryption = new AES();
+        Encryptable rsaEncryption = new RSA();
+
+        // Test AES encryption and decryption
+        String aesEncrypted = aesEncryption.encrypt("HelloAES");
+        aesEncryption.decrypt(aesEncrypted);
+
+        // Test RSA encryption and decryption
+        String rsaEncrypted = rsaEncryption.encrypt("HelloRSA");
+        rsaEncryption.decrypt(rsaEncrypted);
+    }
+}
+
 
 `,
 output: `
-          output//
+AES Encrypted Data: SEAolleH
+AES Decrypted Data: HelloAES
+RSA Encrypted Data: KhoorUVD
+RSA Decrypted Data: HelloRSA
+
           `
     },
     "create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
         description: "Program to create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method..",
         code: `
-          code//
+// Interface defining sorting behavior
+interface Sortable {
+    void sort(int[] array);
+}
+
+// QuickSort class implementing Sortable interface
+class QuickSort implements Sortable {
+
+
+    public void sort(int[] array) {
+        quickSort(array, 0, array.length - 1);
+        System.out.println("QuickSorted Array (Descending): ");
+        printArray(array);
+    }
+
+    // QuickSort implementation
+    private void quickSort(int[] array, int low, int high) {
+        if (low < high) {
+            int partitionIndex = partition(array, low, high);
+            quickSort(array, low, partitionIndex - 1);
+            quickSort(array, partitionIndex + 1, high);
+        }
+    }
+
+    // Partition method for QuickSort
+    private int partition(int[] array, int low, int high) {
+        int pivot = array[high];
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (array[j] > pivot) { // For descending order
+                i++;
+                swap(array, i, j);
+            }
+        }
+        swap(array, i + 1, high);
+        return i + 1;
+    }
+
+    // Swap elements
+    private void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+// MergeSort class implementing Sortable interface
+class MergeSort implements Sortable {
+
+    public void sort(int[] array) {
+        mergeSort(array, 0, array.length - 1);
+        System.out.println("MergeSorted Array (Descending): ");
+        printArray(array);
+    }
+
+    // MergeSort implementation
+    private void mergeSort(int[] array, int left, int right) {
+        if (left < right) {
+            int middle = (left + right) / 2;
+            mergeSort(array, left, middle);
+            mergeSort(array, middle + 1, right);
+            merge(array, left, middle, right);
+        }
+    }
+
+    // Merge method for MergeSort
+    private void merge(int[] array, int left, int middle, int right) {
+        int n1 = middle - left + 1;
+        int n2 = right - middle;
+
+        int[] leftArray = new int[n1];
+        int[] rightArray = new int[n2];
+
+        for (int i = 0; i < n1; i++) {
+            leftArray[i] = array[left + i];
+        }
+        for (int j = 0; j < n2; j++) {
+            rightArray[j] = array[middle + 1 + j];
+        }
+
+        int i = 0, j = 0, k = left;
+        while (i < n1 && j < n2) {
+            if (leftArray[i] > rightArray[j]) { // For descending order
+                array[k] = leftArray[i];
+                i++;
+            } else {
+                array[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            array[k] = leftArray[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            array[k] = rightArray[j];
+            j++;
+            k++;
+        }
+    }
+}
+
+// Utility method to print the array
+public class SortableDemo {
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    // Main method to test QuickSort and MergeSort
+    public static void main(String[] args) {
+        int[] array1 = {34, 7, 23, 32, 5, 62};
+        int[] array2 = {29, 10, 14, 37, 13};
+
+        // QuickSort
+        Sortable quickSort = new QuickSort();
+        quickSort.sort(array1);
+
+        // MergeSort
+        Sortable mergeSort = new MergeSort();
+        mergeSort.sort(array2);
+    }
+}
+
 
 `,
 output: `
-          output//
+QuickSorted Array (Descending): 
+62 34 32 23 7 5 
+MergeSorted Array (Descending): 
+37 29 14 13 10 
+
           `
     },
-   
-
-  },
-  "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "Find Second Largest": {
-          description: "Program to find the second largest element in an array.",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
-  },
-  "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
   }
 },
 "JAVA DATABASE CONNECTIVITY": {
@@ -8648,17 +9460,415 @@ output: `
     "Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only.": {
         description: "Program to Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only..",
         code: `
-          code//
+import java.sql.*;
+import java.util.Scanner;
+
+public class ScrollableUpdateableResultSet {
+    private static final String URL = "jdbc:mysql://localhost:3306/school"; // Change to your database URL
+    private static final String USERNAME = "root"; // Change to your username
+    private static final String PASSWORD = "manjit"; // Change to your password
+
+    public static void main(String[] args) {
+        try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
+            // Create a statement for scrollable and updatable ResultSet
+            String query = "SELECT * FROM students";
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = stmt.executeQuery(query);
+
+            Scanner scanner = new Scanner(System.in);
+            boolean exit = false;
+
+            while (!exit) {
+                System.out.println("\nOptions:");
+                System.out.println("1. Insert a new student");
+                System.out.println("2. Update an existing student");
+                System.out.println("3. Delete a student");
+                System.out.println("4. Display all students");
+                System.out.println("5. Exit");
+                System.out.print("Choose an option: ");
+                int choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 1:
+                        // Insert a new student
+                        System.out.print("Enter student name: ");
+                        String name = scanner.next();
+                        System.out.print("Enter student age: ");
+                        int age = scanner.nextInt();
+                        rs.moveToInsertRow();
+                        rs.updateString("name", name);
+                        rs.updateInt("age", age);
+                        rs.insertRow();
+                        System.out.println("Inserted new student: " + name);
+                        break;
+
+                    case 2:
+                        // Update an existing student
+                        System.out.print("Enter student ID to update: ");
+                        int updateId = scanner.nextInt();
+                        boolean found = false;
+
+                        while (rs.next()) {
+                            if (rs.getInt("id") == updateId) {
+                                found = true;
+                                System.out.print("Enter new name: ");
+                                String newName = scanner.next();
+                                System.out.print("Enter new age: ");
+                                int newAge = scanner.nextInt();
+                                rs.updateString("name", newName);
+                                rs.updateInt("age", newAge);
+                                rs.updateRow();
+                                System.out.println("Updated student ID " + updateId);
+                                break;
+                            }
+                        }
+
+                        if (!found) {
+                            System.out.println("Student ID " + updateId + " not found.");
+                        }
+                        rs.beforeFirst(); // Reset cursor position
+                        break;
+
+                    case 3:
+                        // Delete a student
+                        System.out.print("Enter student ID to delete: ");
+                        int deleteId = scanner.nextInt();
+                        found = false;
+
+                        while (rs.next()) {
+                            if (rs.getInt("id") == deleteId) {
+                                found = true;
+                                rs.deleteRow();
+                                System.out.println("Deleted student ID " + deleteId);
+                                break;
+                            }
+                        }
+
+                        if (!found) {
+                            System.out.println("Student ID " + deleteId + " not found.");
+                        }
+                        rs.beforeFirst(); // Reset cursor position
+                        break;
+
+                    case 4:
+                        // Display all students
+                        System.out.println("Students List:");
+                        rs.beforeFirst(); // Move cursor to the beginning
+                        while (rs.next()) {
+                            System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name") + ", Age: " + rs.getInt("age"));
+                        }
+                        break;
+
+                    case 5:
+                        exit = true;
+                        break;
+
+                    default:
+                        System.out.println("Invalid option. Please try again.");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
 
 `,
 output: `
-          output//
+Options:
+1. Insert a new student
+2. Update an existing student
+3. Delete a student
+4. Display all students
+5. Exit
+Choose an option: 1
+Enter student name: Manjit
+Enter student age: 20
+Inserted new student: Manjit
+
+Options:
+1. Insert a new student
+2. Update an existing student
+3. Delete a student
+4. Display all students
+5. Exit
+Choose an option: 4
+Students List:
+ID: 1, Name: Manjit kumar, Age: 21
+ID: 2, Name: Sandeep, Age: 22
+ID: 3, Name: Manjit, Age: 20
+
+Options:
+1. Insert a new student
+2. Update an existing student
+3. Delete a student
+4. Display all students
+5. Exit
+Choose an option: 2
+Enter student ID to update: 3
+Enter new name: Manjit kumar
+Enter new age: 21
+Updated student ID 3
+
+Options:
+1. Insert a new student
+2. Update an existing student
+3. Delete a student
+4. Display all students
+5. Exit
+Choose an option: 4
+Students List:
+ID: 1, Name: Manjit kumar, Age: 21
+ID: 2, Name: Sandeep, Age: 22
+ID: 3, Name: Manjit kumar, Age: 21
+
           `
     },
     "Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement": {
         description: "Program to Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement.",
         code: `
-          code//
+package jdbc9;
+class Database
+	{
+	java.sql.Connection con;
+    java.sql.PreparedStatement pstm;
+	//java.sql.Statement stm;
+	public Database(String url,String user,String pwd)
+		{
+		try
+		{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con = java.sql.DriverManager.getConnection(url,user,pwd);
+		}
+		catch(ClassNotFoundException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		catch(java.sql.SQLException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		}
+		int insert_DB(String q,String rno,String n,String c,int a,String dob) throws java.sql.SQLException
+		{
+            pstm = con.prepareStatement(q);
+            pstm.setString(1, rno);
+            pstm.setString(2, n);
+            pstm.setString(3, c);
+            pstm.setInt(4, a);
+            pstm.setString(5, dob);
+			return pstm.executeUpdate();
+		}
+		int 	update_DB(String q,String rno,String n,String c,int a,String dob,String cond) throws java.sql.SQLException
+		{
+            pstm = con.prepareStatement(q);
+            pstm.setString(1, rno);
+            pstm.setString(2, n);
+            pstm.setString(3, c);
+            pstm.setInt(4, a);
+            pstm.setString(5, dob);
+			pstm.setString(6, cond);
+			return pstm.executeUpdate();
+		}
+
+		int delete_DB(String q,String wrn) throws java.sql.SQLException
+		{
+            pstm = con.prepareStatement(q);
+            pstm.setString(1, wrn);
+			return pstm.executeUpdate();
+		}
+		void close() throws java.sql.SQLException
+		{
+		con.close();
+		}
+
+	}
+
+class Main
+	{
+		private String rollNo;
+		private String name;
+		private String course;
+		private int Age;
+		private String DoB;
+		void setRollNo(String r)
+		{
+			rollNo = r;
+		}
+		void setName(String n)
+		{
+			name = n;
+		}
+		void setCourse(String c)
+		{
+			course = c;
+		}
+		void setAge(int age)
+		{
+			Age = age;
+		}
+		void setDoB(String d)
+		{
+			DoB = d;
+		}
+		String getRollNo()
+		{
+			return rollNo;		
+		}
+		String getName()
+		{
+			return name;
+		}
+		String getCourse()
+		{
+			return course;		
+		}
+		int getAge()
+		{
+			return Age;
+		}
+		String getDoB()
+		{
+			return DoB;	
+		}
+		void insert(Database db)
+        {
+            try
+				{
+				java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+				System.out.println("Enter Roll no : ");
+				setRollNo(input.readLine());
+				System.out.println("Enter your Name : ");
+				setName(input.readLine());
+				System.out.println("Enter Course : ");
+				setCourse(input.readLine());
+				System.out.println("Enter Age: ");
+				setAge(Integer.parseInt(input.readLine()));
+				System.out.println("Enter Date of Birth : ");
+				setDoB(input.readLine());
+				int ok =db.insert_DB("insert into student value(?,?,?,?,?)",getRollNo(),getName(),getCourse(),getAge(),getDoB());
+                    if (ok!=0) {
+                        System.out.println("Row Inserted Successfully!");
+                    }
+                    else
+                    {
+                        System.out.println("Row Not Inserted!"); 
+                    }
+            }
+				catch(java.io.IOException e)
+				{
+					System.out.println(e.getMessage());
+				}
+				catch(NumberFormatException e)
+				{
+					System.out.println("Please Enter Positive value ");
+				}
+				catch(java.sql.SQLException e)
+				{
+				System.out.println(e.getMessage());
+				}
+        }
+        void update(Database db)
+        {
+            String query = "update student set Roll_no = ? , Name = ? ,course = ? ,Age = ?,DoB = ? where Roll_no = ?";
+            String wrn=" ";
+            try
+				{
+				java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+				System.out.println("Enter Roll no : ");
+				setRollNo(input.readLine());
+				System.out.println("Enter your Name : ");
+				setName(input.readLine());
+				System.out.println("Enter Course : ");
+				setCourse(input.readLine());
+				System.out.println("Enter Age: ");
+				setAge(Integer.parseInt(input.readLine()));
+				System.out.println("Enter Date of Birth : ");
+				setDoB(input.readLine());
+                System.out.println("Where :");
+                wrn = input.readLine();
+                int ok =db.update_DB(query,getRollNo(),getName(),getCourse(),getAge(),getDoB(),wrn);
+                if (ok!=0) {
+                    System.out.println("Row Updated Successfully!");
+                }
+                else
+                {
+                    System.out.println("Row Not Updated!"); 
+                } 
+            }
+				catch(java.io.IOException e)
+				{
+					System.out.println(e.getMessage());
+				}
+				catch(NumberFormatException e)
+				{
+					System.out.println("Please Enter Positive value ");
+				}
+				catch(java.sql.SQLException e)
+				{
+				System.out.println(e.getMessage());
+				}
+             }
+        void delete(Database db)
+        {
+            String query = "delete from student where Roll_no = ?";
+            String wrn=" ";
+            try
+            {
+            java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+            System.out.println("Where :");
+            wrn = input.readLine();
+           int ok= db.delete_DB(query,wrn);
+            if (ok!=0) {
+            System.out.println("Row deleted Successfully!");
+            }
+            else
+            {
+            System.out.println("Row Not Deleted!"); 
+            }
+            }
+            catch(java.io.IOException e)
+				{
+					System.out.println(e.getMessage());
+				}
+				catch(java.sql.SQLException e)
+				{
+				System.out.println(e.getMessage());
+				}
+        }
+		public static void main(String st[])
+			{
+				Database db = new Database("jdbc:mysql://localhost:/mydb","root","java");
+				Main obj = new Main();
+                int select=0;
+				java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+				while (select!=4) {
+                    try
+                    {
+                        select = Integer.parseInt(input.readLine());
+                    }
+                    catch(java.io.IOException e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
+                    if (select==1) {
+                        obj.insert(db);
+                    }
+                    else if (select == 2) {
+                        obj.update(db);
+                    }
+                    else if (select == 3) {
+                        obj.delete(db);
+                    }
+                    else
+                    {
+                        System.out.println("Invalied!");
+                    }
+                }
+               
+			}
+	}
 
 `,
 output: `
@@ -8834,91 +10044,694 @@ code//
       "1.create a class called \"Person\" with a name and age attribute. Create two instances of the \"Person\" class, set their attributes using the constructor, and print their name and age.": {
           description: "Program to create a class called Person with a name and age attribute. Create two instances of the \"Person\" class, set their attributes using the constructor, and print their name and age.",
           code: `
-        code//
+class Person{
+    private String name;
+    private int age;
+    Person(String pName , int pAge)
+    {
+        name = pName;
+        age = pAge;
+    }
+    void display()
+    {
+        System.out.println("Name : "+name+"\nAge : "+age);
+    }
+    public static void main(String st[])
+    {
+        Person obj1=new Person("Manjit",18);
+        obj1.display();
+        Person obj2=new Person("Sandeep",24);
+        obj2.display();
+    }
+}
 `,
                 output: `
-   output//
+Name : Manjit
+Age : 18
+Name : Sandeep
+Age : 24
                 `
       },
       "2.create a class called \"Dog\" with a name and breed attribute. Create two instances of the \"Dog\" class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.": {
           description: "Program to create a class called Dog with a name and breed attribute. Create two instances of the Dog class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.",
           code: `
-        code//
+class Dog
+    {
+        private String name,breed;
+        Dog(String dName,String dBreed)
+        {
+            name=dName;
+            breed=dBreed;
+        }
+        String setName(String dName)
+        {
+            name=dName;
+            return name;
+        }
+        String setBreed(String dBreed)
+        {
+            breed=dBreed;
+            return breed;
+        }
+        void display()
+        {
+            System.out.println("Dog Name : "+name+"\nDog Breed : "+breed);
+        }
+        public static void main(String st[])
+        {
+            Dog obj = new Dog("Tiger","Boxer");
+                obj.setName("Sheru");
+                obj.setBreed("Bulldog");
+                obj.display();
+        }
+    }
 `,
                 output: `
-   output//
+Dog Name : Sheru
+Dog Breed : Bulldog
+
                 `
       },
       "create a class called \"Rectangle\" with width and height attributes. Calculate the area and perimeter of the rectangle": {
           description: "Program to create a class called \"Rectangle\" with width and height attributes. Calculate the area and perimeter of the rectangle",
           code: `
-        code//
+class Rectangle 
+    {
+        private float width,height;
+        float setWidth(float rWidth)
+        {
+            width=rWidth;
+            return width;
+        }
+        float setHeigth(float rHeigth)
+        {
+            height=rHeigth;
+            return height;
+        }
+        float area()
+        {
+            return width*height;
+        }
+        float perimeter()
+        {
+            return (2*(width+height));
+        }
+        void display()
+        {
+            System.out.println("Perimeter of Rectangle : "+perimeter()+"\nArea of Rectangle : "+area());
+        }
+        public static void main(String st[])
+        {
+            Rectangle obj = new Rectangle();
+            obj.setWidth(15f);
+            obj.setHeigth(20f);
+            obj.perimeter();
+            obj.area();
+            obj.display();
+        }
+    }
 `,
                 output: `
-   output//
+Perimeter of Rectangle : 70.0
+Area of Rectangle : 300.0
                 `
       },
       "create a class called \"Circle\" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.": {
           description: "Program to create a class called \"Circle\" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.",
           code: `
-        code//
+class Circle
+        {
+            final private float PI = 3.14f;
+            private float radius;
+            Circle(float cRadius)
+            {
+                radius=cRadius;
+            }
+            float getRadius()
+            {
+                return radius;
+            }
+            void setRadius(float cRadius)
+            {
+                radius=cRadius;
+            }
+            float area()
+            {
+                return PI*(radius*radius);
+            }
+            float circumference()
+            {
+                return 2*PI*radius;
+            }
+            public static void main (String st[])
+            {
+                Circle obj = new Circle(7.0f);
+                System.out.println("Radius : "+obj.getRadius());
+                System.out.println("Perimeter of Circle : "+obj.circumference());
+                System.out.println("Area of Circle : "+obj.area());
+                obj.setRadius(14f);
+                System.out.println("New Radius : "+obj.getRadius());
+                System.out.println("New Perimeter of Circle : "+obj.circumference());
+                System.out.println("New Area of Circle : "+obj.area());
+                
+            }
+        }
 `,
                 output: `
-   output//
+Radius : 7.0
+Perimeter of Circle : 43.960003
+Area of Circle : 153.86
+New Radius : 14.0
+New Perimeter of Circle : 87.920006
+New Area of Circle : 615.44
                 `
       },
       "create a class called \"Book\" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.": {
           description: "Program to create a class called \"Book\" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.",
           code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class Book {
+    private String title;
+    private String author;
+    private String isbn;
+
+    // Constructor
+    public Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+    }
+
+    // Getters
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' +
+                '}';
+    }
+}
+
+class BookCollection {
+    private List<Book> books;
+
+    // Constructor
+    public BookCollection() {
+        books = new ArrayList<>();
+    }
+
+    // Method to add a book
+    public void addBook(Book book) {
+        books.add(book);
+        System.out.println("Book added: " + book);
+    }
+
+    // Method to remove a book by ISBN
+    public void removeBook(String isbn) {
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getIsbn().equals(isbn)) {
+                System.out.println("Book removed: " + books.get(i));
+                books.remove(i);
+                return;
+            }
+        }
+        System.out.println("Book with ISBN " + isbn + " not found.");
+    }
+
+    // Method to display all books
+    public void displayBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books in the collection.");
+            return;
+        }
+        System.out.println("Books in the collection:");
+        for (Book book : books) {
+            System.out.println(book);
+        }
+    }
+}
+
+public class BookManagementSystem {
+    public static void main(String[] args) {
+        BookCollection collection = new BookCollection();
+
+        // Create some books
+        Book book1 = new Book("Java Programming", "Manjit", "1234567890");
+        Book book2 = new Book("Python Programming", "Sandeep", "0987654321");
+        Book book3 = new Book("C++ Programming", "Abhishek", "1122334455");
+
+        // Add books to the collection
+        collection.addBook(book1);
+        collection.addBook(book2);
+        collection.addBook(book3);
+
+        // Display all books
+        collection.displayBooks();
+
+        // Remove a book
+        collection.removeBook("0987654321");
+
+        // Display all books again
+        collection.displayBooks();
+    }
+}
+
 `,
                 output: `
-   output//
+Book added: Book{title='Java Programming', author='Manjit', isbn='1234567890'}
+Book added: Book{title='Python Programming', author='Sandeep', isbn='0987654321'}
+Book added: Book{title='C++ Programming', author='Abhishek', isbn='1122334455'}
+Books in the collection:
+Book{title='Java Programming', author='Manjit', isbn='1234567890'}
+Book{title='Python Programming', author='Sandeep', isbn='0987654321'}
+Book{title='C++ Programming', author='Abhishek', isbn='1122334455'}
+Book removed: Book{title='Python Programming', author='Jane Doe', isbn='0987654321'}
+Books in the collection:
+Book{title='Java Programming', author='Manjit', isbn='1234567890'}
+Book{title='C++ Programming', author='Abhishek', isbn='1122334455'}
+
                 `
       },
       "create a class called \"Employee\" with a name, job title, and salary attributes, and methods to calculate and update salary.": {
           description: "Program to create a class called \"Employee\" with a name, job title, and salary attributes, and methods to calculate and update salary.",
           code: `
-        code//
+class Employee 
+    {
+        private String name;
+        private String jobTitle;
+        private double salary;
+        public Employee(String name, String jobTitle, double salary) {
+        this.name = name;
+        this.jobTitle = jobTitle;
+        this.salary = salary;
+    }
+
+    // Method to display employee details
+    public void displayEmployeeDetails() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Job Title: " + jobTitle);
+        System.out.println("Current Salary: Rs " + salary);
+    }
+
+    // Method to calculate salary after increment
+    public double calculateSalary(double percentageIncrease) {
+        return salary + (salary * percentageIncrease / 100);
+    }
+
+    // Method to update salary
+    public void updateSalary(double newSalary) {
+        this.salary = newSalary;
+        System.out.println("Salary updated successfully!");
+    }
+
+    // Main method for testing
+    public static void main(String[] args) {
+        // Create an Employee object
+        Employee emp = new Employee("Manjit", "Software Engineer", 60000);
+
+        // Display employee details
+        emp.displayEmployeeDetails();
+
+        // Calculate new salary with a 10% increase
+        double newSalary = emp.calculateSalary(10);
+        System.out.println("New Salary after 10% increment: $" + newSalary);
+
+        // Update the salary
+        emp.updateSalary(newSalary);
+
+        // Display updated employee details
+        emp.displayEmployeeDetails();
+    }
+}
 `,
                 output: `
-   output//
+Employee Name: Manjit
+Job Title: Software Engineer
+Current Salary: Rs 60000.0
+New Salary after 10% increment: $66000.0
+Salary updated successfully!
+Employee Name: Manjit
+Job Title: Software Engineer
+Current Salary: Rs 66000.0
                 `
       },
       "create a class called \"Bank\" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called \"Account\" to maintain account details of a particular customer.": {
           description: "Program to create a class called \"Bank\" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called \"Account\" to maintain account details of a particular customer.",
           code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class Account {
+    private String accountNumber;
+    private String accountHolder;
+    private double balance;
+
+    // Constructor
+    public Account(String accountNumber, String accountHolder) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = 0.0; // Initial balance is 0
+    }
+
+    // Getters
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount + " | New Balance: $" + balance);
+        } else {
+            System.out.println("Deposit amount must be positive!");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: $" + amount + " | New Balance: $" + balance);
+        } else {
+            System.out.println("Invalid withdrawal amount!");
+        }
+    }
+}
+
+class Bank {
+    private List<Account> accounts;
+
+    // Constructor
+    public Bank() {
+        accounts = new ArrayList<>();
+    }
+
+    // Method to add an account
+    public void addAccount(Account account) {
+        accounts.add(account);
+        System.out.println("Account added: " + account.getAccountHolder());
+    }
+
+    // Method to remove an account by account number
+    public void removeAccount(String accountNumber) {
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).getAccountNumber().equals(accountNumber)) {
+                System.out.println("Account removed: " + accounts.get(i).getAccountHolder());
+                accounts.remove(i);
+                return;
+            }
+        }
+        System.out.println("Account with account number " + accountNumber + " not found.");
+    }
+
+    // Method to get account by account number
+    public Account getAccount(String accountNumber) {
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                return account;
+            }
+        }
+        return null;
+    }
+}
+
+public class BankManagementSystem {
+    public static void main(String[] args) {
+        Bank bank = new Bank();
+
+        // Create some accounts
+        Account account1 = new Account("12345", "Manjit");
+        Account account2 = new Account("67890", "Sandeep");
+
+        // Add accounts to the bank
+        bank.addAccount(account1);
+        bank.addAccount(account2);
+
+        // Perform some transactions
+        account1.deposit(500);
+        account1.withdraw(200);
+
+        account2.deposit(1000);
+        account2.withdraw(1500); // This should show an invalid withdrawal message
+
+        // Remove an account
+        bank.removeAccount("12345");
+        
+        // Try to remove a non-existing account
+        bank.removeAccount("11111");
+    }
+}
+
 `,
                 output: `
-   output//
+Account added: Manjit
+Account added: Sandeep
+Deposited: Rs. 5000.0 | New Balance: Rs. 5000.0
+Withdrawn: Rs. 200.0 | New Balance: Rs. 300.0
+Deposited: Rs. 1000.0 | New Balance: Rs. 1000.0
+Invalid withdrawal amount!
+Account removed: Manjit
+Account with account number 11111 not found.
+
                 `
       },
       "create class called \"TrafficLight\" with attributes for color and duration, and methods to change the color and check for red or green.": {
           description: "Program to create class called \"TrafficLight\" with attributes for color and duration, and methods to change the color and check for red or green.",
           code: `
-        code//
+class TrafficLight {
+    private String color;    // Current color of the traffic light
+    private int duration;    // Duration for which the color is displayed in seconds
+
+    // Constructor
+    public TrafficLight(String color, int duration) {
+        this.color = color;
+        this.duration = duration;
+    }
+
+    // Method to change the color of the traffic light
+    public void changeColor(String newColor, int newDuration) {
+        this.color = newColor;
+        this.duration = newDuration;
+        System.out.println("Traffic light changed to: " + color + " for " + duration + " seconds.");
+    }
+
+    // Method to check if the light is red
+    public boolean isRed() {
+        return color.equalsIgnoreCase("red");
+    }
+
+    // Method to check if the light is green
+    public boolean isGreen() {
+        return color.equalsIgnoreCase("green");
+    }
+
+    // Method to display current status
+    public void displayStatus() {
+        System.out.println("Current color: " + color + ", Duration: " + duration + " seconds.");
+    }
+}
+
+public class TrafficLightSystem {
+    public static void main(String[] args) {
+        // Create a TrafficLight object
+        TrafficLight trafficLight = new TrafficLight("Red", 30);
+
+        // Display current status
+        trafficLight.displayStatus();
+
+        // Check if the light is red or green
+        System.out.println("Is the light red? " + trafficLight.isRed());
+        System.out.println("Is the light green? " + trafficLight.isGreen());
+
+        // Change the color to green
+        trafficLight.changeColor("Green", 45);
+
+        // Display current status again
+        trafficLight.displayStatus();
+
+        // Check again if the light is red or green
+        System.out.println("Is the light red? " + trafficLight.isRed());
+        System.out.println("Is the light green? " + trafficLight.isGreen());
+    }
+}
+
 `,
                 output: `
-   output//
+Current color: Red, Duration: 30 seconds.
+Is the light red? true
+Is the light green? false
+Traffic light changed to: Green for 45 seconds.
+Current color: Green, Duration: 45 seconds.
+Is the light red? false
+Is the light green? true
+
                 `
       },
       "create a class called \"Employee\" with a name, salary, and hire date attributes, and a method to calculate years of service.": {
           description: "Program to create a class called \"Employee\" with a name, salary, and hire date attributes, and a method to calculate years of service.",
           code: `
-        code//
+import java.time.LocalDate;
+import java.time.Period;
+
+class Employee {
+    private String name;          // Employee name
+    private double salary;        // Employee salary
+    private LocalDate hireDate;   // Employee hire date
+
+    // Constructor
+    public Employee(String name, double salary, LocalDate hireDate) {
+        this.name = name;
+        this.salary = salary;
+        this.hireDate = hireDate;
+    }
+
+    // Method to calculate years of service
+    public int calculateYearsOfService() {
+        LocalDate currentDate = LocalDate.now(); // Get the current date
+        Period period = Period.between(hireDate, currentDate); // Calculate the period
+        return period.getYears(); // Return the number of years
+    }
+
+    // Method to display employee details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Salary: Rs." + salary);
+        System.out.println("Hire Date: " + hireDate);
+        System.out.println("Years of Service: " + calculateYearsOfService());
+    }
+}
+
+public class EmployeeManagement {
+    public static void main(String[] args) {
+        // Create an Employee object
+        Employee employee = new Employee("Manjit", 50000, LocalDate.of(2015, 9, 15));
+
+        // Display employee details
+        employee.displayDetails();
+    }
+}
+
 `,
                 output: `
-   output//
+Name: Manjit
+Salary: Rs. 50000.0
+Hire Date: 2015-09-15
+Years of Service: 9
+
                 `
       },
       "create a class called \"Student\" with a name, grade, and courses attributes, and methods to add and remove courses.": {
           description: "Program to create a class called \"Student\" with a name, grade, and courses attributes, and methods to add and remove courses.",
           code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class Student {
+    private String name;                  // Student's name
+    private String grade;                 // Student's grade
+    private List<String> courses;         // List of courses
+
+    // Constructor
+    public Student(String name, String grade) {
+        this.name = name;
+        this.grade = grade;
+        this.courses = new ArrayList<>(); // Initialize the courses list
+    }
+
+    // Method to add a course
+    public void addCourse(String course) {
+        if (!courses.contains(course)) {
+            courses.add(course);
+            System.out.println("Course " + course + " added for " + name);
+        } else {
+            System.out.println("Course " + course + " already exists for " + name);
+        }
+    }
+
+    // Method to remove a course
+    public void removeCourse(String course) {
+        if (courses.contains(course)) {
+            courses.remove(course);
+            System.out.println("Course " + course + " removed for " + name);
+        } else {
+            System.out.println("Course " + course + " not found for " + name);
+        }
+    }
+
+    // Method to display student details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Grade: " + grade);
+        System.out.println("Courses: " + courses);
+    }
+}
+
+public class StudentManagement {
+    public static void main(String[] args) {
+        // Create a Student object
+        Student student = new Student("Manjit", "10th Grade");
+
+        // Display student details
+        student.displayDetails();
+
+        // Add courses
+        student.addCourse("Mathematics");
+        student.addCourse("Science");
+        student.addCourse("English");
+
+        // Display student details after adding courses
+        student.displayDetails();
+
+        // Remove a course
+        student.removeCourse("Science");
+
+        // Display student details after removing a course
+        student.displayDetails();
+
+        // Attempt to remove a course that doesn't exist
+        student.removeCourse("History");
+    }
+}
+
 `,
                 output: `
-   output//
+Name: Manjit
+Grade: 10th Grade
+Courses: []
+Course Mathematics added for Manjit
+Course Science added for Manjit
+Course English added for Manjit
+Name: Manjit
+Grade: 10th Grade
+Courses: [Mathematics, Science, English]
+Course Science removed for Manjit
+Name: Manjit
+Grade: 10th Grade
+Courses: [Mathematics, English]
+Course History not found for Manjit
+
                 `
       },
       "create a class called \"Library\" with a collection of books and methods to add and remove books.": {
@@ -9741,21 +11554,69 @@ class Largest
     "Check if a String contains only digits?": {
         description: "Program to Check if a String contains only digits?.",
         code: `
-          code//
+class Digit
+	{
+	public static void main(String st[])
+	{
+	String str="768";
+	boolean isDigit=false;
+	int i;
+	for(i=0;i &lt; str.length();i++)
+	{
+	if(str.charAt(i) &gt; '0' && str.charAt(i) &lt; '9')
+	{
+	isDigit=true;
+	}
+	else{
+	isDigit=false;
+	break;
+	}
+	}
+	if(isDigit)
+	{
+	System.out.println("Only digit");
+	}
+	else
+	{
+	System.out.println("Mix");
+	}
+	}
+	}
+
 
 `,
 output: `
-          output//
+Only digit
           `
     },
     " perform Deep Copy for String?": {
         description: "Program to  perform Deep Copy for String?.",
         code: `
-          code//
+class DeepCopy {
+    public static void main(String[] args) {
+        String original = "Hello";
+        StringBuffer sb = new StringBuffer(original);
+        String copy = sb.toString();
+
+        System.out.println("Original: " + original);
+        System.out.println("Copy: " + copy);
+
+        // Modify the original string
+        original = "World";
+
+        System.out.println("After modification:");
+        System.out.println("Original: " + original);
+        System.out.println("Copy: " + copy);
+    }
+}
 
 `,
 output: `
-          output//
+Original: Hello
+Copy: Hello
+After modification:
+Original: World
+Copy: Hello
           `
     },
    "prove String is immutable programmatically?": {
@@ -10325,11 +12186,11 @@ cba
             }
         `,
         output: `
-            Duplicate words are:
-            this
-            test
-            is
-            demo
+Duplicate words are:
+this
+test
+is
+demo
         `
     }
     ,
