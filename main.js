@@ -697,7 +697,7 @@ public class HelloWorld extends Applet{
 
 `,
  output: `
-                output//
+<img src="AppletImg/HW.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet showing the string \"Hello World\" which is executed by an appletviewer": {
@@ -717,7 +717,7 @@ public class HelloWorld extends Applet{
 
 `,
  output: `
-                output//
+<img src="AppletImg/HW.png" alt="polygon" loading="lazy">
                 `
           },
          "Create an applet in Java to draw a circle": {
@@ -737,7 +737,7 @@ public class Circle extends Applet{
 
 `,
  output: `
-                output//
+<img src="AppletImg/circle.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to draw a polygon": {
@@ -759,7 +759,7 @@ public class polygon extends Applet {
 
 `,
  output: `
-                output//
+<img src="AppletImg/polygon.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to draw a rectangle": {
@@ -780,7 +780,7 @@ public class Rectangle extends Applet{
 
 `,
  output: `
-                output//
+<img src="AppletImg/Rectangle.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to draw a square": {
@@ -802,7 +802,7 @@ public class Square extends Applet{
 
 `,
  output: `
-                output//
+<img src="AppletImg/square.png" alt="polygon" loading="lazy">
                 `
           },
         "Create an applet in Java to draw a 4 concentric circles.": {
@@ -824,7 +824,7 @@ public class Circles extends Applet{
  */
 `,
                 output: `
-                output//
+<img src="AppletImg/circles.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to draw a line.": {
@@ -843,7 +843,7 @@ public class Line extends Applet{
  */
 `,
                 output: `
-                output//
+<img src="AppletImg/line.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to draw a oval.": {
@@ -863,7 +863,7 @@ public class Oval extends Applet {
  */
 `,
                 output: `
-                output//
+<img src="AppletImg/oval.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to draw a arc.": {
@@ -883,7 +883,7 @@ public class Arc extends Applet{
  */
 `,
                 output: `
-                output//
+<img src="AppletImg/Arc.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to change the background color.": {
@@ -954,34 +954,15 @@ public class SmileFace extends Applet{
  */
 `,
                 output: `
-                output//
+<img src="AppletImg/smile.png" alt="polygon" loading="lazy">
                 `
           },
          
         },
       "Medium": {
-          "comming soon": {
-              description: "comming soon",
-              code: `
-            code//
-`,
-                output: `
-                output//
-                `
-          },
          
       },
       "Hard": {
-          "comming soon": {
-              description: "comming soon",
-              code: `
-            code//
-`,
-                output: `
-                output//
-    
-                `
-          },
           
       }
   },
