@@ -9174,7 +9174,7 @@ public class Jdbc1 {
         }
         else
         {
-            System.out.println("Not connectedc");
+            System.out.println("Not connected");
         }
     }
 }
@@ -9200,7 +9200,7 @@ public class Jdbc2 {
         }
         else
         {
-            System.out.println("Not connectedc");
+            System.out.println("Not connected");
         }
         java.sql.Statement st = con.createStatement();
         try
@@ -9225,6 +9225,7 @@ public class Jdbc2 {
 
 `,
 output: `
+Conection successful
 Table created!
           `
     },
@@ -9242,7 +9243,7 @@ public class Jdbc3 {
         }
         else
         {
-            System.out.println("Not connectedc");
+            System.out.println("Not connected");
         }
         java.sql.Statement st = con.createStatement();
         try
@@ -9265,7 +9266,8 @@ public class Jdbc3 {
 
 `,
 output: `
-          output//
+Conection successful
+Row inserted!
           `
     },
     "Update the row in the table in the database from Java API.": {
@@ -9305,7 +9307,7 @@ public class Jdbc4 {
 
 `,
 output: `
-          output//
+Conection successful
           `
     },
     "Delete the row in the table in the database from Java API.": {
@@ -9346,7 +9348,8 @@ public class Jdbc5 {
 
 `,
 output: `
-          output//
+Conection successful
+Row Deleted!
           `
     },
     "Select multiple rows from the database table in Java API and show the result on the screen.": {
@@ -9392,7 +9395,16 @@ public class Jdbc6 {
 
 `,
 output: `
-          output//
+Conection successful
+Roll No : 1
+Name : Manjit
+Marks : 98
+Roll No : 2
+Name : Manjit
+Marks : 96
+Roll No : 3
+Name : Abhishek
+Marks : 96
           `
     },
     "Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.": {
@@ -9413,6 +9425,7 @@ public class Jdbc7 {
             System.out.println("Not connectedc");
         }
         java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        System.out.println("Enter Row Number: ");
         try
         {
             rowNum = Integer.parseInt(input.readLine());
@@ -9454,7 +9467,11 @@ public class Jdbc7 {
 
 `,
 output: `
-          output//
+Enter Row Number:
+2
+Roll No : 2
+Name : Manjit
+Marks : 96
           `
     },
     "Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only.": {
@@ -9464,9 +9481,9 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class ScrollableUpdateableResultSet {
-    private static final String URL = "jdbc:mysql://localhost:3306/school"; // Change to your database URL
-    private static final String USERNAME = "root"; // Change to your username
-    private static final String PASSWORD = "manjit"; // Change to your password
+    private static final String URL = "jdbc:mysql://localhost:3306/school"; 
+    private static final String USERNAME = "root"; 
+    private static final String PASSWORD = "java"; 
 
     public static void main(String[] args) {
         try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
@@ -9568,7 +9585,7 @@ public class ScrollableUpdateableResultSet {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+           System.out.println(e.getMessage());
         }
     }
 }
@@ -9872,7 +9889,95 @@ class Main
 
 `,
 output: `
-          output//
+Insert : 1
+Update : 2
+Delete : 3
+1
+Enter Roll no :
+4298/22
+Enter your Name :
+Manjit
+Enter Course :
+BCA
+Enter Age:
+20
+Enter Date of Birth :
+2005-01-02
+Row Inserted Successfully!
+Insert : 1
+Update : 2
+Delete : 3
+1
+Enter Roll no :
+4204/22
+Enter your Name :
+Abhishek
+Enter Course :
+BCA
+Enter Age:
+20
+Enter Date of Birth :
+2004-06-21
+Row Inserted Successfully!
+Insert : 1
+Update : 2
+Delete : 3
+1
+Enter Roll no :
+4231/22
+Enter your Name :
+Pawan
+Enter Course :
+BCA
+Enter Age:
+20
+Enter Date of Birth :
+2004-09-18
+Row Inserted Successfully!
+Insert : 1
+Update : 2
+Delete : 3
+1
+Enter Roll no :
+4201/22
+Enter your Name :
+Kartik
+Enter Course :
+BCA
+Enter Age:
+22
+Enter Date of Birth :
+2002-01-01
+Row Inserted Successfully!
+Insert : 1
+Update : 2
+Delete : 3
+2
+Enter Roll no :
+4298/22
+Enter your Name :
+Manjit kumar
+Enter Course :
+BCA
+Enter Age:
+20
+Enter Date of Birth :
+2005-01-02
+Where :
+4298/22
+Row Updated Successfully!
+Insert : 1
+Update : 2
+Delete : 3
+3
+Where :
+4231/22
+Row deleted Successfully!
+Insert : 1
+Update : 2
+Delete : 3
+4
+Invalied!
           `
     },
    
@@ -9890,55 +9995,347 @@ output: `
       "create a basic Java thread that prints \"Hello, World!\" when executed.": {
           description: "Program to create a basic Java thread that prints \"Hello, World!\" when executed.",
           code: `
-code//
+class Mythread extends Thread
+{
+    public void run()
+    {
+        System.out.println(getName()+" Hello World!");
+    }
+}
+ class Thread1 {
+    public static void main(String[] args) {
+        Mythread t1 = new Mythread();
+        Mythread t2 = new Mythread();
+        Mythread t3 = new Mythread();
+        Mythread t4 = new Mythread();
+        t1.setName("T1");
+        t2.setName("T2");
+        t3.setName("T3");
+        t4.setName("T4");
+        t2.start();
+        t1.start();
+        t3.start();
+        t4.start();
+    }
+    
+}
+
 
 `,
                 output: `
-                output//
+T2 Hello World!
+T3 Hello World!
+T1 Hello World!
+T4 Hello World!
     
                 `
       },
       "creates two threads to find and print even and odd numbers from 1 to 20.": {
         description: "Program to creates two threads to find and print even and odd numbers from 1 to 20.",
         code: `
-code//
+class Mythread extends Thread
+{
+    public void run()
+    {
+        for(int i=1;i<=20;i++)
+        {
+            System.out.println(i);
+        }
+    }
+}
+ class Thread2 {
+    public static void main(String[] args) {
+        Mythread t1 = new Mythread();
+        Mythread t2 = new Mythread();
+        t1.start();
+        t2.start();
+    }
+   
+    
+}
 
 `,
               output: `
-              output//
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
   
               `
     },
     "sorts an array of integers using multiple threads.": {
         description: "Program to sorts an array of integers using multiple threads.",
         code: `
-code//
+package thread3;
+class Sort
+{
+    void sortArr(int arr[])
+    {
+        int temp;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[i]>arr[j]) {
+                    temp = arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+    }
+}
+class Mythread extends Thread
+{
+    Sort s=new Sort();
+    public void run()
+    {
+        int array[] = {1,4,3,5,6,7};
+        System.out.println(getName()+" Unsorted Array: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+        s.sortArr(array);
+        System.out.println(getName()+" Sorted Array: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+}
+public class Thread3 {
+    public static void main(String[] args) {
+        Mythread t1 = new Mythread();
+        Mythread t2 = new Mythread();
+        Mythread t3 = new Mythread();
+        Mythread t4 = new Mythread();
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}
+
 
 `,
               output: `
-              output//
+Thread-0 Unsorted Array:
+1
+4
+3
+5
+6
+7
+Thread-3 Unsorted Array:
+1
+4
+3
+5
+6
+Thread-2 Unsorted Array:
+1
+4
+3
+5
+6
+7
+Thread-2 Sorted Array:
+1
+3
+4
+5
+6
+7
+Thread-1 Unsorted Array:
+1
+4
+3
+5
+6
+7
+7
+Thread-0 Sorted Array:
+1
+3
+4
+5
+6
+7
+Thread-3 Sorted Array:
+1
+3
+4
+5
+6
+7
+Thread-1 Sorted Array:
+1
+3
+4
+5
+6
+7
   
               `
     },
     "performs matrix multiplication using multiple threads.": {
         description: "Program to performs matrix multiplication using multiple threads.",
         code: `
-code//
+class MatrixMulti
+{
+    void matrixMulti(int arr1[][],int arr2[][],int multi[][])
+    {
+        int temp;
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr1[i].length; j++) {
+                for (int k = 0; k < arr1[i].length; k++) {
+                    multi[i][j]+=arr1[i][k]*arr2[k][j];
+                }
+            }
+        }
+    }
+}
+class Mythread extends Thread
+{
+    MatrixMulti matrix = new MatrixMulti();
+    public void run()
+    {
+        int array1[][] = {{1,2,3},{4,5,1},{6,8,4}};
+        int array2[][] = {{4,6,7},{8,3,1},{2,6,2}};
+        int multi[][] = new int[array1.length][array1[0].length];
+        System.out.println(getName()+" Matrix 1: ");
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array1[0].length; j++) {
+                System.out.print(array1[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println(getName()+" Matrix 2: ");
+        for (int i = 0; i < array2.length; i++) {
+            for (int j = 0; j < array2[0].length; j++) {
+                System.out.print(array2[i][j]+" ");
+            }
+            System.out.println();
+        }
+        matrix.matrixMulti(array1, array2, multi);
+        for (int i = 0; i < multi.length; i++) {
+            for (int j = 0; j < multi[0].length; j++) {
+                System.out.print(multi[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Mythread t1= new Mythread();
+        t1.start();
+        
+    }
+    
+}
+
 
 `,
               output: `
-              output//
+Thread-0 Matrix 1:
+1 2 3
+4 5 1
+6 8 4
+Thread-0 Matrix 2:
+4 6 7
+8 3 1
+2 6 2
+26 30 15
+58 45 35
+96 84 58
   
               `
     },
     "calculates the sum of all prime numbers up to a given limit using multiple threads.": {
         description: "Program to calculates the sum of all prime numbers up to a given limit using multiple threads.",
         code: `
-code//
+class PrimeNum
+{
+    int num,sum,isPrime;
+    void primeNum(int s,int l)
+    {
+        
+        for(num=s;num<=l;num++)
+        {
+        isPrime=1;
+        for(int i = 2; i<=num/2;i++)
+        {
+        if(num%i==0)
+        {
+        isPrime =0;
+        break;
+        }
+        }
+        if(isPrime==1)
+        {
+            sum+=num;
+        }
+        }
+        System.out.println("Sum of "+s+" to "+l+" prime Number : "+sum);
+        }
+    }
+    class Mythread extends Thread
+    {
+        PrimeNum obj = new PrimeNum();
+        public void run()
+        {
+            obj.primeNum(5, 7);
+        }
+    }
+ class Main{
+    public static void main(String[] args) {
+        Mythread t1 = new Mythread();
+        t1.start();
+        
+    }
+    
+}
+
 
 `,
               output: `
-              output//
+Sum of 5 to 7 prime Number : 12
   
               `
     },
@@ -9967,22 +10364,72 @@ code//
     "create multiple threads by using Runnbale interface": {
         description: "Program to create multiple threads by using Runnbale interface",
         code: `
-code//
+class MyThread implements Runnable
+{
+    public void run()
+    {
+        System.out.println("Hello I am Thread!");
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        MyThread t2 = new MyThread();
+        Thread t1 = new Thread(new MyThread());
+        t1.start();
+    
+    }
+    
+}
 
 `,
               output: `
-              output//
+Hello I am Thread!
   
               `
     },
     "create multiple threads by using Thread class": {
         description: "Program to create multiple threads by using Thread class",
         code: `
-code//
+class MyThread extends Thread
+{
+    public void run()
+    {
+        System.out.println("I am "+getName());
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.setName("Thread 1");
+        MyThread t2 = new MyThread();
+        t2.setName("Thread 2");
+        MyThread t3 = new MyThread();
+        t3.setName("Thread 3");
+        MyThread t4 = new MyThread();
+        t4.setName("Thread 4");
+        MyThread t5 = new MyThread();
+        t5.setName("Thread 5");
+        MyThread t6 = new MyThread();
+        t6.setName("Thread 6");
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
+        t6.start();
+
+    }
+}
+
 
 `,
               output: `
-              output//
+I am Thread 1
+I am Thread 6
+I am Thread 5
+I am Thread 4
+I am Thread 2
+I am Thread 3
   
               `
     },
