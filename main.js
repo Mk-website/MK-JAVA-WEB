@@ -692,7 +692,7 @@ public class HelloWorld extends Applet{
     }
 }
 /*
- <applet code = "HelloWorld.class" width = "300" height= "500"></applet>
+ &lt;applet code = "HelloWorld.class" width = "300" height= "500">&lt;/applet>
  */
 
 `,
@@ -712,7 +712,7 @@ public class HelloWorld extends Applet{
     }
 }
 /*
- <applet code = "HelloWorld.class" width = "300" height= "500"></applet>
+ &lt;applet code = "HelloWorld.class" width = "300" height= "500">&lt;/applet>
  */
 
 `,
@@ -732,7 +732,7 @@ public class Circle extends Applet{
     }
 }
 /*
- <applet code = "Circle.class" width = "300" height= "500"></applet>
+ &lt;applet code = "Circle.class" width = "300" height= "500">&lt;/applet>
  */
 
 `,
@@ -754,7 +754,7 @@ public class polygon extends Applet {
     }
 }
 /*
- <applet code = "polygon.class" width = "300" height= "500"></applet>
+ &lt;applet code = "polygon.class" width = "300" height= "500">&lt;/applet>
  */
 
 `,
@@ -774,7 +774,7 @@ public class Rectangle extends Applet{
     }
 }
 /*
- <applet code = "Rectangle.class" width = "300" height= "500"></applet>
+ &lt;applet code = "Rectangle.class" width = "300" height= "500">&lt;/applet>
  */
 
 
@@ -796,7 +796,7 @@ public class Square extends Applet{
     }
 }
 /*
- <applet code = "Square.class" width = "300" height= "500"></applet>
+ &lt;applet code = "Square.class" width = "300" height= "500">&lt;/applet>
  */
 
 
@@ -820,7 +820,7 @@ public class Circles extends Applet{
     }
 }
 /*
- <applet code = "Circles.class" width = "300" height= "500"></applet>
+ &lt;applet code = "Circles.class" width = "300" height= "500">&lt;/applet>
  */
 `,
                 output: `
@@ -839,7 +839,7 @@ public class Line extends Applet{
     }
 }
 /*
- <applet code = "Line.class" width = "300" height= "500"></applet>
+ &lt;applet code = "Line.class" width = "300" height= "500">&lt;/applet>
  */
 `,
                 output: `
@@ -859,7 +859,7 @@ public class Oval extends Applet {
     }
 }
 /*
- <applet code = "Oval.class" width = "300" height= "500"></applet>
+ &lt;applet code = "Oval.class" width = "300" height= "500">&lt;/applet>
  */
 `,
                 output: `
@@ -879,7 +879,7 @@ public class Arc extends Applet{
 }
 
 /*
- <applet code = "Arc.class" width = "300" height= "500"></applet>
+ &lt;applet code = "Arc.class" width = "300" height= "500">&lt;/applet>
  */
 `,
                 output: `
@@ -950,7 +950,7 @@ public class SmileFace extends Applet{
     }
 }
 /*
- <applet code = "smileface.SmileFace.class" width = "300" height= "500"></applet>
+ &lt;applet code = "smileface.SmileFace.class" width = "300" height= "500">&lt;/applet>
  */
 `,
                 output: `
