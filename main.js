@@ -5198,21 +5198,64 @@ code//
       "Java program that throws an exception and catch it using a try-catch block.": {
           description: "Java program that throws an exception and catch it using a try-catch block.",
           code: `
-        code//
+class Excep1
+        {
+        public static void main(String st[])
+        {
+        try{
+        System.out.println(st[0]);
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+        System.out.println("kindly please give some argument");
+        }
+        }
+        }
 
 `,
                 output: `
-               output//
+kindly please give some argument
                 `
       },
       "create a method that takes an integer as a parameter and throws an exception if the number is odd.": {
         description: "Program to create a method that takes an integer as a parameter and throws an exception if the number is odd.",
         code: `
-      code//
+// Custom exception class for Odd Number Exception
+class OddNumberException extends Exception {
+    public OddNumberException(String message) {
+        super(message);
+    }
+}
+
+public class OddNumberChecker {
+
+    // Method that throws an exception if the number is odd
+    public static void checkEvenNumber(int number) throws OddNumberException {
+        if (number % 2 != 0) {
+            throw new OddNumberException("The number " + number + " is odd.");
+        } else {
+            System.out.println("The number " + number + " is even.");
+        }
+    }
+
+    public static void main(String[] args) {
+        int numberToCheck = 5; // Change this value to test with different numbers
+        
+        try {
+            // Call the method to check if the number is even
+            checkEvenNumber(numberToCheck);
+        } catch (OddNumberException e) {
+            // Handle the exception and print the message
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
 
 `,
               output: `
-             output//
+The number 5 is odd.
+
               `
     },
     "create a method that reads a file and throws an exception if the file is not found": {
@@ -5538,21 +5581,186 @@ class Exception8
     "manage the driver with path, username and password, if not successful then throw an exception": {
         description: "Program to manage the driver with path, username and password, if not successful then throw an exception",
         code: `
-      code//
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+// Custom exception for database connection failure
+class DatabaseConnectionException extends Exception {
+    public DatabaseConnectionException(String message) {
+        super(message);
+    }
+}
+
+public class DriverManagerExample {
+
+    // Method to load driver and connect to the database
+    public static void connectToDatabase(String driver, String url, String username, String password) throws DatabaseConnectionException {
+        Connection connection = null;
+        try {
+            // Load the database driver
+            Class.forName(driver);
+            
+            // Attempt to establish a connection
+            connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connection established successfully!");
+        } catch (ClassNotFoundException e) {
+            // Handle the case where the driver class is not found
+            throw new DatabaseConnectionException("Database driver not found: " + driver);
+        } catch (SQLException e) {
+            // Handle SQL errors related to connection
+            throw new DatabaseConnectionException("Failed to connect to the database. Check your URL, username, or password.");
+        } finally {
+            // Close the connection if it was successfully created
+            if (connection != null) {
+                try {
+                    connection.close();
+                    System.out.println("Connection closed.");
+                } catch (SQLException e) {
+                    System.out.println("Failed to close the connection.");
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        String driver = "com.mysql.cj.jdbc.Driver";      // MySQL JDBC driver
+        String url = "jdbc:mysql://localhost:3306/mydb"; // Database URL (adjust accordingly)
+        String username = "root";                        // Database username
+        String password = "manjit";                    // Database password
+
+        try {
+            // Attempt to connect to the database
+            connectToDatabase(driver, url, username, password);
+        } catch (DatabaseConnectionException e) {
+            // Catch and handle the custom exception
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+
 
 `,
               output: `
-             output//
+Connection established successfully!
+Connection closed.
+
               `
     },
     "throw the SQL Query, insert, delete, update, if not successful then throw an exception": {
         description: "Program to throw the SQL Query, insert, delete, update, if not successful then throw an exception",
         code: `
-      code//
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+// Custom exception for SQL query failure
+class SQLQueryException extends Exception {
+    public SQLQueryException(String message) {
+        super(message);
+    }
+}
+
+public class SQLQueryHandler {
+
+    // Method to establish database connection
+    public static Connection connectToDatabase() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/mydb"; // Database URL
+        String username = "root";                        // Database username
+        String password = "password";                    // Database password
+        return DriverManager.getConnection(url, username, password);
+    }
+
+    // Method to insert data into a table
+    public static void insertData(Connection connection, String query, String[] params) throws SQLQueryException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            for (int i = 0; i < params.length; i++) {
+                preparedStatement.setString(i + 1, params[i]);
+            }
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Insert successful.");
+            } else {
+                throw new SQLQueryException("Insert failed.");
+            }
+        } catch (SQLException e) {
+            throw new SQLQueryException("Insert operation failed: " + e.getMessage());
+        }
+    }
+
+    // Method to update data in a table
+    public static void updateData(Connection connection, String query, String[] params) throws SQLQueryException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            for (int i = 0; i < params.length; i++) {
+                preparedStatement.setString(i + 1, params[i]);
+            }
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Update successful.");
+            } else {
+                throw new SQLQueryException("Update failed.");
+            }
+        } catch (SQLException e) {
+            throw new SQLQueryException("Update operation failed: " + e.getMessage());
+        }
+    }
+
+    // Method to delete data from a table
+    public static void deleteData(Connection connection, String query, String[] params) throws SQLQueryException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            for (int i = 0; i < params.length; i++) {
+                preparedStatement.setString(i + 1, params[i]);
+            }
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Delete successful.");
+            } else {
+                throw new SQLQueryException("Delete failed.");
+            }
+        } catch (SQLException e) {
+            throw new SQLQueryException("Delete operation failed: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            // Connect to the database
+            Connection connection = connectToDatabase();
+
+            // Example 1: Insert Operation
+            String insertQuery = "INSERT INTO users (name, email) VALUES (?, ?)";
+            String[] insertParams = {"Manjit", "manjitit33@gmail.com"};
+            insertData(connection, insertQuery, insertParams);
+
+            // Example 2: Update Operation
+            String updateQuery = "UPDATE users SET email = ? WHERE name = ?";
+            String[] updateParams = {"newemail@example.com", "John Doe"};
+            updateData(connection, updateQuery, updateParams);
+
+            // Example 3: Delete Operation
+            String deleteQuery = "DELETE FROM users WHERE name = ?";
+            String[] deleteParams = {"Manjit"};
+            deleteData(connection, deleteQuery, deleteParams);
+
+            // Close the connection after operations
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println("Database connection failed: " + e.getMessage());
+        } catch (SQLQueryException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+
 
 `,
               output: `
-             output//
+Insert successful.
+Update successful.
+Delete successful.
+
               `
     },
     "show an example of throws Keyword.": {
@@ -5634,48 +5842,17 @@ class Exception13
 
 `,
               output: `
-C:\&gt;java exception13.Exception13 a
+C:\\&gt;java exception13.Exception13 a
 Please Enter an Integer value!
               `
     },
       
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
     
-                `
-      },
-
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+     
   }
 },
 "FUNCTIONS": {
