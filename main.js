@@ -889,28 +889,71 @@ public class Arc extends Applet{
           "Create an applet in Java to change the background color.": {
               description: "Create an applet in Java to change the background color.",
               code: `
-            code//
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+public class BgColor extends Applet{
+    public void init()
+    {
+        setBackground(Color.red);
+        Button r = new Button("red");
+        Button g = new Button("green");
+        Button b = new Button("blue");
+        add(b);
+        add(g);
+        add(r);
+        r.addMouseListener(new MouseAdapter()
+        {
+            public void mouseClicked(MouseEvent e)
+            {
+                setBackground(Color.red);
+            }
+        });
+        g.addMouseListener(new MouseAdapter()
+        {
+            public void mouseClicked(MouseEvent e)
+            {
+                setBackground(Color.green);
+            }
+        });
+        b.addMouseListener(new MouseAdapter()
+        {
+            public void mouseClicked(MouseEvent e)
+            {
+                setBackground(Color.blue);
+            }
+        });
+    }
+}
+/*
+ &lt;applet code = "BgColor.class" width = "300" height= "300"&gt;&lt;/applet&gt;
+ */
+
 `,
                 output: `
-                output//
+<img src="AppletImg/bgcolor.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to draw rounded rectangle.": {
               description: "Create an applet in Java to draw rounded rectangle.",
               code: `
 import java.applet.Applet;
-import java.awt.Color;
 import java.awt.Graphics;
 
-public class RoundedRectangleApplet extends Applet {
+public class RoundedRect extends Applet {
 
     public void paint(Graphics g) {
-        g.RoundRect(50, 50, 200, 100, 30, 30);  
+        g.drawRoundRect(50, 50, 200, 100, 30, 30);  
 }
+}
+/*
+ &lt;applet code = "RoundedRect.class" width = "300" height= "300"&gt;&lt;/applet&gt;
+ */
 
 `,
                 output: `
-                output//
+<img src="AppletImg/roundrect.png" alt="polygon" loading="lazy">
                 `
           },
           "Create an applet in Java to set font.": {
@@ -925,10 +968,69 @@ public class RoundedRectangleApplet extends Applet {
           "Create an applet to display a digital clock.": {
               description: "Create an applet to display a digital clock.",
               code: `
-            code//
+import java.applet.*;
+import java.awt.*;
+public class DigitalClock2 extends Applet implements Runnable{
+Label hh;
+Label mm;
+Label ss;
+Thread t;
+    public void init()
+    {
+        int x=20,y=150;
+        setLayout(null);
+         hh = new Label("00");
+         mm = new Label("00");
+         ss = new Label("00");
+         hh.setBounds(x, y, 30, 50);
+         mm.setBounds(x += 40, y, 30, 50);
+         ss.setBounds(x += 40, y, 30, 50);
+        add(hh);
+        add(mm);
+        add(ss);
+        t = new Thread(this);
+        t.start();
+       }
+    public void paint(Graphics g)
+    {
+        g.drawRect(10, 130, 150, 70);
+        
+    }
+    public void run()
+    {
+        int h=12,m=34,s=45;
+        while (true) {
+            s++;
+            if (s==60) {
+                s=0;
+                m++;
+            }
+            if (m==60) {
+                m=0;
+                h++;
+            }
+            hh.setText(String.format("%02d", h));
+            mm.setText(String.format("%02d", m));
+            ss.setText(String.format("%02d", s));
+            try
+            {
+                Thread.sleep(1000);
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+}
+
+/*
+ <applet code = "digitalclock/DigitalClock2.class" width = "300" height= "300"></applet>
+ */
+
 `,
                 output: `
-                output//
+<img src="AppletImg/clock.png" alt="clock" loading="lazy">
                 `
           },
           "Java Program to Draw a Smiling Face using Graphics Class Methods": {
@@ -4603,311 +4705,519 @@ Rounded float: 13.0
       "How to convert String to int": {
           description: "Program to convert String to int",
           code: `
-        code//
+public class StringToInt {
+    public static void main(String[] args) {
+       String str = "123";
+int num = Integer.parseInt(str);
+System.out.println(num);
+
+    }
+}
+
 `,
                 output: `
-                output//
+123
                 `
       },
       "How to convert int to String": {
           description: "Program to convert int to String",
           code: `
-        code//
+public class IntToString {
+    public static void main(String[] args) {
+        int num = 123;
+String str = Integer.toString(num);
+System.out.println(str);
+
+    }
+}
 `,
                 output: `
-                output//
+123
                 `
       },
 
       "How to convert String to long": {
           description: "Program to convert String to long",
           code: `
-        code//
+public class StringToLong {
+    public static void main(String[] args) {
+String str = "123456789";
+long num = Long.parseLong(str);
+
+System.out.println(num);
+
+    }
+}
 `,
                 output: `
-                output//
+123456789
                 `
       },
 "How to convert long to String": {
           description: "Program to convert long to String",
           code: `
-        code//
+public class LongToString {
+    public static void main(String[] args) {
+long num = 123456789L;
+String str = Long.toString(num);
+
+System.out.println(str);
+
+    }
+}
 `,
                 output: `
-                output//
+123456789
                 `
       },
 "How to convert String to float": {
           description: "Program to convert String to float",
           code: `
-        code//
+public class StringToFloat {
+    public static void main(String[] args) {
+  String str = "12.34";
+float num = Float.parseFloat(str);
+System.out.println(num);
+
+    }
+}
+
 `,
                 output: `
-                output//
+12.34
                 `
       },
 "How to convert float to String": {
           description: "Program to convert float to String",
           code: `
-        code//
+public class FloatToString {
+    public static void main(String[] args) {
+ float num = 12.34f;
+String str = Float.toString(num);
+System.out.println(str);
+
+    }
+}
+
 `,
                 output: `
-                output//
+12.34
                 `
       },
 "How to convert String to double": {
           description: "Program to convert String to double",
           code: `
-        code//
+public class StringToDouble {
+    public static void main(String[] args) {
+String str = "123.456";
+double num = Double.parseDouble(str);
+
+System.out.println(num);
+
+    }
+}
+
 `,
                 output: `
-                output//
+123.456
                 `
       },
 "How to convert double to String": {
           description: "Program to convert double to String",
           code: `
-        code//
+public class DoubleToString {
+    public static void main(String[] args) {
+       double num = 123.456;
+String str = Double.toString(num);
+
+System.out.println(str);
+
+    }
+}
+
 `,
                 output: `
-                output//
+123.456
                 `
       },
 "How to convert String to Date": {
           description: "Program to convert String to Date",
           code: `
-        code//
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class StringToDate {
+    public static void main(String[] args) throws java.text.ParseException {
+String str = "2024-10-23";
+SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+Date date = formatter.parse(str);
+System.out.println(date);
+    }
+}
 `,
                 output: `
-                output//
+Wed Oct 23 00:00:00 IST 2024
                 `
       },
 "How to convert Date to String": {
           description: "Program to convert Date to String",
           code: `
-        code//
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class DateToString {
+    public static void main(String[] args) {
+        
+SimpleDateFormat formatter = new SimpleDateFormat("2024-10-29");
+String str = formatter.format(new Date());
+System.out.println(str);
+
+}
+}
 `,
                 output: `
-                output//
+2024-10-29
                 `
       },
 "How to convert String to char": {
           description: "Program to convert String to char",
           code: `
-        code//
+public class StringToChar {
+    public static void main(String[] args) {
+        String str = "Hello";
+char ch = str.charAt(0);  // First character 'H'
+System.out.println(ch);
+
+
+    }
+}
 `,
                 output: `
-                output//
+H
                 `
       },
 "How to convert char to String": {
           description: "Program to convert char to String",
           code: `
-        code//
+public class CharToString {
+    public static void main(String[] args) {
+        char ch = 'H';
+        String str = Character.toString(ch);        
+        System.out.println(str);
+
+    }
+}
 `,
                 output: `
-                output//
+H
                 `
       },
 "How to convert String to Object": {
           description: "Program to convert String to Object",
           code: `
-        code//
+public class StringToObject {
+    public static void main(String[] args) {
+        String str = "Some text";
+Object obj = str;
+System.out.println(obj);
+
+    }
+}
 `,
                 output: `
-                output//
+Some text
                 `
       },
 "How to convert Object to String": {
           description: "Program to convert Object to String",
           code: `
-        code//
+public class ObjectToString {
+   public static void main(String[] args) {
+      Object obj = "Some text";
+      String str = obj.toString();
+      System.out.println(str);
+      
+   } 
+}
 `,
                 output: `
-                output//
+Some text
                 `
       },
 "How to convert int to long": {
           description: "Program to convert int to long",
           code: `
-        code//
+public class IntToLong {
+public static void main(String[] args) {
+        int num = 123;
+        long lnum = num;  // Implicit casting
+        System.out.println(lnum);
+        
+            }
+        }
 `,
                 output: `
-                output//
+123
                 `
       },
 "How to convert long to int": {
           description: "Program to convert long to int",
           code: `
-        code//
+public class LongToInt {
+   public static void main(String[] args) {
+      long lnum = 123456789L;
+      int num = (int) lnum;  // Explicit casting
+      System.out.println(num);
+      
+   } 
+}
 `,
                 output: `
-                output//
+123456789
                 `
       },
 "How to convert int to double": {
           description: "Program to convert int to double",
           code: `
-        code//
+public class IntToDouble {
+    public static void main(String[] args) {
+        int num = 123;
+double dnum = num;  // Implicit casting
+System.out.println(dnum);
+
+    }
+}
+
 `,
                 output: `
-                output//
+123
                 `
       },
 "How to convert double to int": {
           description: "Program to convert double to int",
           code: `
-        code//
+public class DoubleToInt {
+    public static void main(String[] args) {
+        double dnum = 123.456;
+int num = (int) dnum;  // Fraction part lost
+System.out.println(num);
+
+    }
+}
 `,
                 output: `
-                output//
+123
                 `
       },
 "How to convert char to int": {
           description: "Program to convert char to int",
           code: `
-        code//
+public class CharToInt {
+    public static void main(String[] args) {
+        char ch = 'A';
+int num = ch;  // Implicit ASCII value conversion
+System.out.println(num);
+
+    }
+}
+
 `,
                 output: `
-                output//
+65
                 `
       },
 "How to convert int to char": {
           description: "Program to convert int to char",
           code: `
-        code//
+public class IntToChar {
+    public static void main(String[] args) {
+        int num = 65;
+char ch = (char) num;
+System.out.println(ch);
+
+    }
+}
+
 `,
                 output: `
-                output//
+A
                 `
       },
 "How to convert String to boolean": {
           description: "Program to convert String to boolean",
           code: `
-        code//
+public class StringToBoolean {
+    public static void main(String[] args) {
+        String str = "true";
+boolean bool = str.equalsIgnoreCase("true");
+System.out.println(bool);
+
+    }
+}
+
 `,
                 output: `
-                output//
+true
                 `
       },
 "How to convert boolean to String": {
           description: "Program to convert boolean to String",
           code: `
-        code//
+public class BooleanToString {
+    public static void main(String[] args) {
+        boolean bool = true;
+String str = bool ? "true" : "false";
+System.out.println(str);
+
+    }
+}
 `,
                 output: `
-                output//
+true
                 `
       },
 "How to convert Date to Timestamp": {
           description: "Program to convert Date to Timestamp",
           code: `
-        code//
+public class DateToTimestamp {
+    public static void main(String[] args) {
+        long millis = System.currentTimeMillis();
+System.out.println("Timestamp: " + millis);
+
+    }
+}
 `,
                 output: `
-                output//
+Timestamp: 1730205862689
                 `
       },
 "How to convert Timestamp to Date": {
           description: "Program to convert Timestamp to Date",
           code: `
-        code//
+public class TimestampToDate {
+    public static void main(String[] args) {
+        long millis = System.currentTimeMillis();
+java.util.Date date = new java.util.Date(millis);
+System.out.println("Date: " + date);
+
+    }
+}
+
 `,
                 output: `
-                output//
+Date: Tue Oct 29 18:15:04 IST 2024
                 `
       },
 "How to convert Binary to Decimal": {
           description: "Program to convert Binary to Decimal",
           code: `
-        code//
+public class BinaryToDecimal {
+    public static void main(String[] args) {
+        String binary = "1010";  // Binary representation of 10
+        int decimal = Integer.parseInt(binary, 2);
+        System.out.println(decimal);
+
+    }
+}
 `,
                 output: `
-                output//
+10
                 `
       },
 "How to convert Decimal to Binary": {
           description: "Program to convert Decimal to Binary",
           code: `
-        code//
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        int decimal = 10;
+        StringBuilder binary = new StringBuilder();
+        
+        while (decimal > 0) {
+            binary.insert(0, decimal % 2);
+            decimal /= 2;
+        }
+        System.out.println(binary.toString());
+         
+    }
+}
 `,
                 output: `
-                output//
+1010
                 `
       },
 "How to convert Hex to Decimal": {
           description: "Program to convert Hex to Decimal",
           code: `
-        code//
+public class HexToDecimal {
+    public static void main(String[] args) {
+        String hex = "A";  // Hexadecimal representation of 10
+        int decimal = Integer.parseInt(hex, 16);
+System.out.println(decimal);
+
+    }
+}
 `,
                 output: `
-                output//
+10
                 `
       },
 "How to convert Decimal to Hex": {
           description: "Program to convert Decimal to Hex",
           code: `
-        code//
+
+          public class DecimalToHex {
+            public static void main(String[] args) {
+                int decimal = 10;
+                String hex = Integer.toHexString(decimal);
+        System.out.println(hex);
+        
+            }
+        }
 `,
                 output: `
-                output//
+A
                 `
       },
 "How to convert Octal to Decimal": {
           description: "Program to convert Octal to Decimal",
           code: `
-        code//
+public class OctalToDecimal {
+    public static void main(String[] args) {
+        String octal = "12";  // Octal representation of 10
+        int decimal = Integer.parseInt(octal, 8);
+System.out.println(decimal);
+
+    }
+}
 `,
                 output: `
-                output//
+10
                 `
       },
 "How to convert Decimal to Octal": {
           description: "Program to convert Decimal to Octal",
           code: `
-        code//
+public class DecimalToOctal {
+  public static void main(String[] args) {
+    int decimal = 10;
+    String octal = Integer.toOctalString(decimal);
+System.out.println(octal);
+
+  }
+}
 `,
                 output: `
-                output//
+12
                 `
       },
 
 
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-        code//
-
-`,
-                output: `
-                output//
-                `
-      },
+     
 
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-        code//
-`,
-                output: `
-                output//
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
+      
     
-                `
-      }
   }
 },
 " DELEGATION EVENT MODEL": {
@@ -6278,7 +6588,7 @@ class MyFrame extends Frame
     Button b1 = new Button("Click me");
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(new FlowLayout(FlowLayout.CENTER));
         add(b1);
         setVisible(true);
@@ -6299,7 +6609,7 @@ class MyFrame extends Frame
 
 `,
                 output: `
-                output//
+<img src="AWTimg/FButton.png" alt="polygon" loading="lazy">
     
                 `
       },
@@ -6314,7 +6624,7 @@ class MyFrame extends Frame
     Button b1 = new Button("Click me");
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(null);
         b1.setBounds(100,100,50,30);
         add(b1);
@@ -6336,7 +6646,7 @@ class MyFrame extends Frame
 
 `,
               output: `
-              output//
+<img src="AWTimg/CButton.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6347,14 +6657,14 @@ import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
 {
-    Button b1 = new Button("Click me");
-    Button b2 = new Button("Click me");
-    Button b3 = new Button("Click me");
-    Button b4 = new Button("Click me");
-    Button b5 = new Button("Click me");
+    Button b1 = new Button("EAST");
+    Button b2 = new Button("NORTH");
+    Button b3 = new Button("WEST");
+    Button b4 = new Button("SOUTH");
+    Button b5 = new Button("CENTER");
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(new BorderLayout(10,10));
         
         //b1.setBounds(100,100,50,30);
@@ -6380,7 +6690,7 @@ class MyFrame extends Frame
 
 `,
               output: `
-              output//
+<img src="AWTimg/Border.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6394,7 +6704,7 @@ class MyFrame extends Frame
     TextField tf = new TextField();
     MyFrame()
     {
-        setBounds(100,100,500,400);
+        setBounds(100,100,400,400);
         setLayout(new FlowLayout(FlowLayout.CENTER));
         tf.setBounds(100, 100, 500, 50);;
         add(tf);
@@ -6414,7 +6724,7 @@ class MyFrame extends Frame
 }
 `,
               output: `
-              output//
+<img src="AWTimg/TextField.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6428,7 +6738,7 @@ class MyFrame extends Frame
     TextField tf = new TextField();
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(null);
         tf.setBounds(100,100,500,100);
         add(tf);
@@ -6448,7 +6758,7 @@ class MyFrame extends Frame
 }
 `,
               output: `
-              output//
+<img src="AWTimg/TextFieldC.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6462,7 +6772,7 @@ class MyFrame extends Frame
     Checkbox cb = new Checkbox();
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(new FlowLayout(FlowLayout.LEFT));
         add(cb);
         addWindowListener(new WindowAdapter() {
@@ -6483,7 +6793,7 @@ class MyFrame extends Frame
 
 `,
               output: `
-              output//
+<img src="AWTimg/Checkbox.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6497,7 +6807,7 @@ class MyFrame extends Frame
     Checkbox cb = new Checkbox();
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(null);
         cb.setBounds(100, 100, 50, 50);
         add(cb);
@@ -6518,7 +6828,7 @@ class MyFrame extends Frame
 
 `,
               output: `
-              output//
+<img src="AWTimg/CheckboxC.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6532,7 +6842,7 @@ class MyFrame extends Frame
     Label l1 = new Label("This is Label");
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(new FlowLayout(FlowLayout.LEFT));
         add(l1);
         addWindowListener(new WindowAdapter() {
@@ -6553,7 +6863,7 @@ class MyFrame extends Frame
 
 `,
               output: `
-              output//
+<img src="AWTimg/Label.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6567,7 +6877,7 @@ class MyFrame extends Frame
     Label l1 = new Label("This is Label");
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(null);
         l1.setBounds(100,100,100,50);
         add(l1);
@@ -6589,7 +6899,7 @@ class MyFrame extends Frame
 
 `,
               output: `
-              output//
+<img src="AWTimg/LabelC.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6603,7 +6913,7 @@ class MyFrame extends Frame
     Choice ch = new Choice();
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(new FlowLayout(FlowLayout.LEFT));
         ch.setBounds(100,100,100,50);
         ch.addItem("Apple");
@@ -6632,7 +6942,7 @@ class MyFrame extends Frame
 
 `,
               output: `
-              output//
+<img src="AWTimg/Choice.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6647,7 +6957,7 @@ class MyFrame extends Frame
     Choice ch = new Choice();
     MyFrame()
     {
-        setBounds(100,100,200,400);
+        setBounds(100,100,400,400);
         setLayout(null);
         ch.setBounds(100,100,100,50);
         ch.addItem("Apple");
@@ -6676,84 +6986,398 @@ class MyFrame extends Frame
 
 `,
               output: `
-              output//
+<img src="AWTimg/ChoiceC.png" alt="polygon" loading="lazy">
   
               `
     },
     "Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.": {
         description: "Program to Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Checkbox cb1 = new Checkbox();
+    Checkbox cb2 = new Checkbox();
+    CheckboxGroup cbg = new CheckboxGroup();
+    MyFrame()
+    {
+        setBounds(100,100,400,400);
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        cb1.setLabel("Male");
+        cb2.setLabel("Female");
+        cb1.setCheckboxGroup(cbg);
+        cb2.setCheckboxGroup(cbg);
+        add(cb1);
+        add(cb2);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 
 `,
               output: `
-              output//
+<img src="AWTimg/Checkbox.png" alt="polygon" loading="lazy">
   
               `
     },
     "Create a simple AWT application that displays a CheckboxGroup with Custom Layout.": {
         description: "Program to Create a simple AWT application that displays a CheckboxGroup with Custom Layout.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    Checkbox cb1 = new Checkbox();
+    Checkbox cb2 = new Checkbox();
+    CheckboxGroup cbg = new CheckboxGroup();
+    MyFrame()
+    {
+        setBounds(100,100,400,400);
+        setLayout(null);
+        cb1.setBounds(100,100,50,20);
+        cb2.setBounds(150,100,50,20);
+        cb1.setLabel("Male");
+        cb2.setLabel("Female");
+        cb1.setCheckboxGroup(cbg);
+        cb2.setCheckboxGroup(cbg);
+        add(cb1);
+        add(cb2);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
 
 `,
               output: `
-              output//
+<img src="AWTimg/CheckBox.png" alt="polygon" loading="lazy">
   
               `
     },
     "Create a simple AWT application that displays a List with FlowLayout manager.": {
         description: "Program to Create a simple AWT application that displays a List with FlowLayout manager.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    List li = new List();
+    MyFrame()
+    {
+        setBounds(100,100,400,400);
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        
+        li.add("Apple");
+        li.add("Mango");
+        li.add("Orange");
+        li.add("Grapes");
+        li.add("Pear");
+        li.add("Coconut");
+        add(li);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
 
 `,
               output: `
-              output//
+              <img src="AWTimg/List.png" alt="polygon" loading="lazy">
   
               `
     },
-    "Create a simple AWT application that displays a List with Custom": {
-        description: "Program to Create a simple AWT application that displays a List with Custom",
+    "Create a simple AWT application that displays a List with Custom Layout": {
+        description: "Program to Create a simple AWT application that displays a List with Custom Layout",
         code: `
-code//
-
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    List li = new List();
+    MyFrame()
+    {
+        setBounds(100,100,400,400);
+        setLayout(null);
+        li.setBounds(100,100,100,50);
+        li.add("Apple");
+        li.add("Mango");
+        li.add("Orange");
+        li.add("Grapes");
+        li.add("Pear");
+        li.add("Coconut");
+        add(li);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 `,
               output: `
-              output//
+              <img src="AWTimg/ListC.png" alt="polygon" loading="lazy">
   
               `
     },
     "Create a simple AWT application that displays a TextArea with FlowLayout manager.": {
         description: "Program to Create a simple AWT application that displays a TextArea with FlowLayout manager.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    TextArea ta = new TextArea(5, 20);
+    MyFrame()
+    {
+        setBounds(100,100,400,400);
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+        
+        add(ta);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 
 `,
               output: `
-              output//
+              <img src="AWTimg/TextArea.png" alt="polygon" loading="lazy">
   
               `
     },
     "Create a simple AWT application that displays a TextArea with Custom Layout.": {
         description: "Program to Create a simple AWT application that displays a TextArea with Custom Layout.",
         code: `
-code//
-
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends Frame
+{
+    TextArea ta = new TextArea(5, 20);
+    MyFrame()
+    {
+        setBounds(100,100,400,400);
+        setLayout(null);
+        ta.setBounds(100,100,100,50);
+        add(ta);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(1);
+            }
+        });
+        setVisible(true);
+    }
+} 
+ class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
 `,
               output: `
-              output//
+              <img src="AWTimg/TextAreaC.png" alt="polygon" loading="lazy">
   
               `
     },
     "Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.": {
         description: "Program to Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.",
         code: `
-code//
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends Frame {
+    TextField tf = new TextField();       
+      TextField tf2 = new TextField();      
+      TextField selectedTextField;          
+    TextField display = new TextField();  
+      double num1 = 0, num2 = 0, result = 0;
+    char operator = ' ';
+
+    MyFrame() {
+        setBounds(100, 100, 400, 400);
+        setLayout(null);
+        int x=0,y=0,tfw=200,tfh=20;
+        tf.setBounds((x+=50),(y+=100), tfw, tfh);
+        //System.out.println(x +" "+y);
+        tf2.setBounds((x+=250),(y), tfw, tfh);
+        display.setBounds((x+=250), (y), tfw, tfh);
+        // Set up independent text fields (tf and tf2)
+        tf.setColumns(10);
+        tf.setEditable(true);
+        add(tf);
+
+        tf2.setColumns(10);
+        tf2.setEditable(true);
+        add(tf2);
+
+        // Set up calculator display field
+        display.setColumns(20);
+        display.setEditable(false);
+        add(display);
+
+        // Focus listener for text fields to detect selected text field
+        tf.addFocusListener(new FocusAdapter() {
+            public void focusGained(FocusEvent e) {
+                selectedTextField = tf;
+            }
+        });
+
+        tf2.addFocusListener(new FocusAdapter() {
+            public void focusGained(FocusEvent e) {
+                selectedTextField = tf2;
+            }
+        });
+
+        // Create number buttons (0-9) and add them to the frame
+        int bx=0,by=150,w=50,h=50;
+        for (int i = 0; i <10; i++) {
+
+            Button btn=new Button(" "+i);
+            btn.setBounds((bx+=50), by, w, h);
+            System.out.println(bx);
+            add(btn);
+             if (i%3==0) {
+                by+=50;
+                bx=0;
+             }
+            
+            btn.addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e) {
+                    if (selectedTextField != null) {
+                        // Update the selected text field
+                        selectedTextField.setText(selectedTextField.getText() + btn.getLabel().trim());
+                    } else {
+                        // Update the calculator display
+                        display.setText(display.getText() + btn.getLabel().trim());
+                    }
+                }
+            });
+        }
+
+        // Create operation buttons (+, -, *, /, ., =) and add them to the frame
+     String[] operations = {"+", "-", "*", "/", ".", "="};
+     int i=1;
+     for (String op : operations) {
+        
+          Button btnop = new Button(op);
+          btnop.setBounds((bx+=50), by, w, h);
+         btnop.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                System.out.println(op);
+                 handleOperation(op);
+             }
+         });
+         add(btnop);
+         System.out.println(i);
+         
+         if(i%3==0)
+         {
+            by+=50;
+            bx=0;
+         }
+         i++;
+     }
+
+        // Close window on exit
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(1);
+            }
+        });
+
+        setVisible(true);
+    }
+
+    // Handle operation and equals button clicks for calculator
+    private void handleOperation(String op) {
+        // System.out.println(op);
+        // System.out.println(tf.getText());
+        // System.out.println(tf2.getText());
+        switch (op) {
+            case "+": case "-": case "*": case "/":
+                num1 = Double.parseDouble(tf.getText());
+                operator = op.charAt(0);
+                display.setText("");
+                break;
+            case ".":
+                if (!display.getText().contains(".")) {
+                    display.setText(display.getText() + ".");
+                }
+                break;
+            case "=":
+                num2 = Double.parseDouble(tf2.getText());
+                calculateResult();
+                display.setText(String.valueOf(result));
+                break;
+        }
+    }
+    private void calculateResult() {
+        switch (operator) {
+            case '+': result = num1 + num2; break;
+            case '-': result = num1 - num2; break;
+            case '*': result = num1 * num2; break;
+            case '/': result = num2 != 0 ? num1 / num2 : Double.POSITIVE_INFINITY; break;
+        }
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+
 
 `,
               output: `
-              output//
+<img src="AWTimg/Calculator.png" alt="polygon" loading="lazy">
   
               `
     },
@@ -6761,41 +7385,10 @@ code//
     
   },
   "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
-     
+      
   },
   "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      }
+      
   }
 },
 "INHERITANCE": {
@@ -10594,22 +11187,138 @@ I am Thread 3
     "create multiple threads, set its name and its priority.": {
         description: "Program to create multiple threads, set its name and its priority.",
         code: `
-code//
+class MyThread extends Thread
+    {
+        MyThread(String name , int prior)
+        {
+            setName(name);
+            setPriority(prior);
+        }
+        public void run()
+        {
+            System.out.println("Thread Name : "+getName());
+            System.out.println("Thread Priority : "+getPriority());
+        }
+    }
+ class Main {
+    public static void main(String[] args) {
+    MyThread t1 = new MyThread("Thread 1",2);
+    MyThread t2 = new MyThread("Thread 2",2);
+    MyThread t3 = new MyThread("Thread 3",2);
+    MyThread t4 = new MyThread("Thread 4",2);
+    t1.start();
+    t2.start();
+    t3.start();
+    t4.start();
+    }
+    
+    
+}
+
 
 `,
               output: `
-              output//
+Thread Name : Thread 2
+Thread Priority : 2
+Thread Name : Thread 1
+Thread Priority : 2
+Thread Name : Thread 4
+Thread Priority : 2
+Thread Name : Thread 3
+Thread Priority : 2
   
               `
     },
     "create multiple threads, show an example of synchronization keyword.": {
         description: "Program to create multiple threads, show an example of synchronization keyword.",
         code: `
-code//
+class Display
+    {
+       synchronized void display()
+        {
+            for (int i = 1; i <= 10; i++) {
+                System.out.println(i);
+            }
+        }
+    }
+class MyThread extends Thread
+{
+    Display obj=new Display();
+    MyThread(String n)
+    {
+        super(n);
+    }
+    public void run()
+    {
+        System.out.println("Start :"+getName());
+        obj.display();
+        System.out.println("End :"+getName());
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread("T1");
+        MyThread t2 = new MyThread("T2");
+        MyThread t3 = new MyThread("T3");
+        MyThread t4 = new MyThread("T4");
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}
+
 
 `,
               output: `
-              output//
+Start :T1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Start :T3
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+End :T3
+Start :T2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+End :T1
+Start :T4
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+End :T4
+End :T2
   
               `
     },
