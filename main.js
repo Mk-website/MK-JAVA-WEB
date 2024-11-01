@@ -1,11 +1,10 @@
 console.log("hello");
 
-  function close()
-  {
+function close() {
     alert("comming soon");
-  }
-  
-  const programData = {
+}
+
+const programData = {
     "2D ARRAYS": {
         "Easy": {
             "Enter the Matrix of rows and columns entered by the user and print in matrix format": {
@@ -58,7 +57,7 @@ class matrix1
             }
         }
 `,
-output: `
+                output: `
 Enter rows :
 2
 Enter columns :
@@ -136,7 +135,7 @@ Addition of Matrix A and Matrix B :
 10 12
                 `
             },
-"Multiply Two Matrices": {
+            "Multiply Two Matrices": {
                 description: "Program to Multiply Two Matrices",
                 code: `
 package multiplymatrix;
@@ -187,7 +186,7 @@ class MultiplyMatrix
         }
     }
 `,
-output: `
+                output: `
 Matrix A
 1 2
 3 4
@@ -266,7 +265,7 @@ Subtraction of Matrix A and Matrix B :
                 code: `
                code//
 `,
-output: `
+                output: `
                 output//
                 `
             },
@@ -327,14 +326,14 @@ class UpperTriangle
         }
     }
 `,
-output: `
+                output: `
 1 2 3
   5 6
     9
                 `
             },
-            
-           
+
+
             "Find the transpose of a given matrix": {
                 description: "Program to find the transpose of a given matrix",
                 code: `
@@ -431,10 +430,10 @@ Transpose of MatrixA :
 2 4
                 `
             },
-           
-            
+
+
         },
-            
+
         "Medium": {
             "Determine whether a given matrix is an identity matrix": {
                 description: "Program to determine whether a given matrix is an identity matrix",
@@ -481,7 +480,7 @@ public class IdentityMatrix {
 }
 
 `,
-output: `
+                output: `
 Enter the size of the matrix: 3
 Enter the elements of the matrix:
 1
@@ -541,7 +540,7 @@ class SumRowCol
         }
     }
 `,
-output: `
+                output: `
 Matrix
 1 2 3
 4 5 6
@@ -553,7 +552,7 @@ Sum of col 1 12
 Sum of col 2 15
 Sum of col 3 18
                 `
-            },  
+            },
         },
         "Hard": {
             "Find the frequency of odd & even numbers in the given matrix": {
@@ -655,7 +654,7 @@ public class SparseMatrix {
 }
 
 `,
-output: `
+                output: `
 Enter the number of rows: 3
 Enter the number of columns: 3
 Enter the elements of the matrix:
@@ -672,17 +671,17 @@ The matrix is a sparse matrix.
 
                 `
             },
-           
+
         }
-        
+
 
     },
     // Add similar data for String, Inheritance, and OOP...
     "APPLETS": {
-      "Easy": {
-          "Create an applet showing the string \"Hello World\" which is embedded in the HTML page": {
-              description: "Program to Create an applet showing the string \"Hello World\" which is embedded in the HTML page.",
-              code: `
+        "Easy": {
+            "Create an applet showing the string \"Hello World\" which is embedded in the HTML page": {
+                description: "Program to Create an applet showing the string \"Hello World\" which is embedded in the HTML page.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class HelloWorld extends Applet{
@@ -696,13 +695,13 @@ public class HelloWorld extends Applet{
  */
 
 `,
- output: `
-<img src="AppletImg/HW.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AppletImg/HW.png" alt="Hello World" loading="lazy">
                 `
-          },
-          "Create an applet showing the string \"Hello World\" which is executed by an appletviewer": {
-              description: "Program to Create an applet showing the string \"Hello World\" which is executed by an appletviewer.",
-              code: `
+            },
+            "Create an applet showing the string \"Hello World\" which is executed by an appletviewer": {
+                description: "Program to Create an applet showing the string \"Hello World\" which is executed by an appletviewer.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class HelloWorld extends Applet{
@@ -716,13 +715,13 @@ public class HelloWorld extends Applet{
  */
 
 `,
- output: `
-<img src="AppletImg/HW.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AppletImg/HW.png" alt="Hello World" loading="lazy">
                 `
-          },
-         "Create an applet in Java to draw a circle": {
-              description: "Program to Create an applet in Java to draw a circle.",
-              code: `
+            },
+            "Create an applet in Java to draw a circle": {
+                description: "Program to Create an applet in Java to draw a circle.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class Circle extends Applet{
@@ -736,13 +735,13 @@ public class Circle extends Applet{
  */
 
 `,
- output: `
-<img src="AppletImg/circle.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AppletImg/circle.png" alt="circle" loading="lazy">
                 `
-          },
-          "Create an applet in Java to draw a polygon": {
-              description: "Program to Create an applet in Java to draw a polygon.",
-              code: `
+            },
+            "Create an applet in Java to draw a polygon": {
+                description: "Program to Create an applet in Java to draw a polygon.",
+                code: `
 import java.applet.Applet;
 import java.awt.*;
 public class polygon extends Applet {
@@ -758,13 +757,13 @@ public class polygon extends Applet {
  */
 
 `,
- output: `
+                output: `
 <img src="AppletImg/polygon.png" alt="polygon" loading="lazy">
                 `
-          },
-          "Create an applet in Java to draw a rectangle": {
-              description: "Program to Create an applet in Java to draw a rectangle.",
-              code: `
+            },
+            "Create an applet in Java to draw a rectangle": {
+                description: "Program to Create an applet in Java to draw a rectangle.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class Rectangle extends Applet{
@@ -779,13 +778,13 @@ public class Rectangle extends Applet{
 
 
 `,
- output: `
-<img src="AppletImg/Rectangle.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AppletImg/Rectangle.png" alt="Rectangle" loading="lazy">
                 `
-          },
-          "Create an applet in Java to draw a square": {
-              description: "Program to Create an applet in Java to draw a square.",
-              code: `
+            },
+            "Create an applet in Java to draw a square": {
+                description: "Program to Create an applet in Java to draw a square.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class Square extends Applet{
@@ -801,13 +800,13 @@ public class Square extends Applet{
 
 
 `,
- output: `
-<img src="AppletImg/square.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AppletImg/square.png" alt="square" loading="lazy">
                 `
-          },
-        "Create an applet in Java to draw a 4 concentric circles.": {
-              description: "Create an applet in Java to draw a 4 concentric circles.",
-              code: `
+            },
+            "Create an applet in Java to draw a 4 concentric circles.": {
+                description: "Create an applet in Java to draw a 4 concentric circles.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class Circles extends Applet{
@@ -824,12 +823,12 @@ public class Circles extends Applet{
  */
 `,
                 output: `
-<img src="AppletImg/circles.png" alt="polygon" loading="lazy">
+<img src="AppletImg/circles.png" alt="circles" loading="lazy">
                 `
-          },
-          "Create an applet in Java to draw a line.": {
-              description: "Create an applet in Java to draw a line.",
-              code: `
+            },
+            "Create an applet in Java to draw a line.": {
+                description: "Create an applet in Java to draw a line.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class Line extends Applet{
@@ -843,12 +842,12 @@ public class Line extends Applet{
  */
 `,
                 output: `
-<img src="AppletImg/line.png" alt="polygon" loading="lazy">
+<img src="AppletImg/line.png" alt="line" loading="lazy">
                 `
-          },
-          "Create an applet in Java to draw a oval.": {
-              description: "Create an applet in Java to draw a oval.",
-              code: `
+            },
+            "Create an applet in Java to draw a oval.": {
+                description: "Create an applet in Java to draw a oval.",
+                code: `
 import java.applet.Applet;
 import java.awt.Graphics;
 
@@ -863,12 +862,12 @@ public class Oval extends Applet {
  */
 `,
                 output: `
-<img src="AppletImg/oval.png" alt="polygon" loading="lazy">
+<img src="AppletImg/oval.png" alt="oval" loading="lazy">
                 `
-          },
-          "Create an applet in Java to draw a arc.": {
-              description: "Create an applet in Java to draw a arc.",
-              code: `
+            },
+            "Create an applet in Java to draw a arc.": {
+                description: "Create an applet in Java to draw a arc.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class Arc extends Applet{
@@ -883,12 +882,12 @@ public class Arc extends Applet{
  */
 `,
                 output: `
-<img src="AppletImg/Arc.png" alt="polygon" loading="lazy">
+<img src="AppletImg/Arc.png" alt="Arc" loading="lazy">
                 `
-          },
-          "Create an applet in Java to change the background color.": {
-              description: "Create an applet in Java to change the background color.",
-              code: `
+            },
+            "Create an applet in Java to change the background color.": {
+                description: "Create an applet in Java to change the background color.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -932,12 +931,12 @@ public class BgColor extends Applet{
 
 `,
                 output: `
-<img src="AppletImg/bgcolor.png" alt="polygon" loading="lazy">
+<img src="AppletImg/bgcolor.png" alt="bgcolor" loading="lazy">
                 `
-          },
-          "Create an applet in Java to draw rounded rectangle.": {
-              description: "Create an applet in Java to draw rounded rectangle.",
-              code: `
+            },
+            "Create an applet in Java to draw rounded rectangle.": {
+                description: "Create an applet in Java to draw rounded rectangle.",
+                code: `
 import java.applet.Applet;
 import java.awt.Graphics;
 
@@ -953,21 +952,97 @@ public class RoundedRect extends Applet {
 
 `,
                 output: `
-<img src="AppletImg/roundrect.png" alt="polygon" loading="lazy">
+<img src="AppletImg/roundrect.png" alt="roundrect" loading="lazy">
                 `
-          },
-          "Create an applet in Java to set font.": {
-              description: "Create an applet in Java to set font.",
-              code: `
-            code//
+            },
+            "Create an applet in Java to set font.": {
+                description: "Create an applet in Java to set font.",
+                code: `
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+
+public class FontApplet extends Applet implements ItemListener {
+    private String fontName = "Serif";
+    private int fontStyle = Font.PLAIN;
+    private int fontSize = 20;
+
+    private Label sampleText;
+    private Choice fontNameChoice, fontStyleChoice, fontSizeChoice;
+
+    public void init() {
+        // Set layout
+        setLayout(new FlowLayout());
+
+        // Sample text label
+        sampleText = new Label("Sample Text");
+        sampleText.setFont(new Font(fontName, fontStyle, fontSize));
+        add(sampleText);
+
+        // Font name choice
+        fontNameChoice = new Choice();
+        fontNameChoice.add("Serif");
+        fontNameChoice.add("SansSerif");
+        fontNameChoice.add("Monospaced");
+        fontNameChoice.add("Dialog");
+        fontNameChoice.add("DialogInput");
+        fontNameChoice.addItemListener(this);
+        add(new Label("Font:"));
+        add(fontNameChoice);
+
+        // Font style choice
+        fontStyleChoice = new Choice();
+        fontStyleChoice.add("Plain");
+        fontStyleChoice.add("Bold");
+        fontStyleChoice.add("Italic");
+        fontStyleChoice.addItemListener(this);
+        add(new Label("Style:"));
+        add(fontStyleChoice);
+
+        // Font size choice
+        fontSizeChoice = new Choice();
+        for (int i = 12; i <= 36; i += 2) {
+            fontSizeChoice.add(String.valueOf(i));
+        }
+        fontSizeChoice.select("20");  // Default selection
+        fontSizeChoice.addItemListener(this);
+        add(new Label("Size:"));
+        add(fontSizeChoice);
+    }
+
+    public void itemStateChanged(ItemEvent e) {
+        // Update font based on selections
+        fontName = fontNameChoice.getSelectedItem();
+
+        String style = fontStyleChoice.getSelectedItem();
+        switch (style) {
+            case "Bold":
+                fontStyle = Font.BOLD;
+                break;
+            case "Italic":
+                fontStyle = Font.ITALIC;
+                break;
+            default:
+                fontStyle = Font.PLAIN;
+                break;
+        }
+
+        fontSize = Integer.parseInt(fontSizeChoice.getSelectedItem());
+
+        // Apply new font to sample text
+        sampleText.setFont(new Font(fontName, fontStyle, fontSize));
+        repaint();
+    }
+}
+
 `,
                 output: `
-                output//
+<applet code = "FontApplet.class" width = "300" height= "300"></applet>
                 `
-          },
-          "Create an applet to display a digital clock.": {
-              description: "Create an applet to display a digital clock.",
-              code: `
+            },
+            "Create an applet to display a digital clock.": {
+                description: "Create an applet to display a digital clock.",
+                code: `
 import java.applet.*;
 import java.awt.*;
 public class DigitalClock2 extends Applet implements Runnable{
@@ -1032,10 +1107,10 @@ Thread t;
                 output: `
 <img src="AppletImg/clock.png" alt="clock" loading="lazy">
                 `
-          },
-          "Java Program to Draw a Smiling Face using Graphics Class Methods": {
-              description: "Java Program to Draw a Smiling Face using Graphics Class Methods",
-              code: `
+            },
+            "Java Program to Draw a Smiling Face using Graphics Class Methods": {
+                description: "Java Program to Draw a Smiling Face using Graphics Class Methods",
+                code: `
 import java.applet.Applet;
 import java.awt.Graphics;
 
@@ -1056,23 +1131,23 @@ public class SmileFace extends Applet{
  */
 `,
                 output: `
-<img src="AppletImg/smile.png" alt="polygon" loading="lazy">
+<img src="AppletImg/smile.png" alt="smile" loading="lazy">
                 `
-          },
-         
+            },
+
         },
-      "Medium": {
-         
-      },
-      "Hard": {
-          
-      }
-  },
-  "BASIC PROGRAMMING CONSTRUCTS": {
-    "Easy": {
-        " Hello World!": {
-            description: "Write a Java program to print ‘Hello World!’ on screen",
-            code: `
+        "Medium": {
+
+        },
+        "Hard": {
+
+        }
+    },
+    "BASIC PROGRAMMING CONSTRUCTS": {
+        "Easy": {
+            " Hello World!": {
+                description: "Write a Java program to print ‘Hello World!’ on screen",
+                code: `
 package hello;
 class hello
 	{
@@ -1087,10 +1162,10 @@ class hello
                 output: `
                 Hello World!
                 `
-        },
-        " Sum of two numbers": {
-            description: "Write a Java program to print the sum of two numbers",
-            code: `
+            },
+            " Sum of two numbers": {
+                description: "Write a Java program to print the sum of two numbers",
+                code: `
 package Sum;
 class Sum
             {
@@ -1103,10 +1178,10 @@ class Sum
 `,
                 output: `
                 Sum of 5,10 = 15`
-        },
-        " Product of two numbers": {
-            description: "Write a Java program that takes two numbers and display the product of two numbers",
-            code: `
+            },
+            " Product of two numbers": {
+                description: "Write a Java program that takes two numbers and display the product of two numbers",
+                code: `
 package product;
 class product
             {
@@ -1120,10 +1195,10 @@ class product
                 output: `
                 Product of 5,10=50
                 `
-        }, 
-        " Arithmetic Operators": {
-            description: "Write a Java program to print the sum, multiply, subtract, divide and remainder of two numbers",
-            code: `
+            },
+            " Arithmetic Operators": {
+                description: "Write a Java program to print the sum, multiply, subtract, divide and remainder of two numbers",
+                code: `
 package multiop;
 class multiop
 	{
@@ -1146,10 +1221,10 @@ Subtraction of  10-5=5
 Divisio of 10/5=2
 Reminder of 10%5=0
                 `
-        },
-        " Average of the numbers": {
-            description: "Write a Java program that takes five numbers as input to calculate and print the average of the numbers",
-            code: `
+            },
+            " Average of the numbers": {
+                description: "Write a Java program that takes five numbers as input to calculate and print the average of the numbers",
+                code: `
 package avg;
 class avg{
 public static void main(String[] st)
@@ -1165,10 +1240,10 @@ System.out.println("Average of 5 number is :-"+avg);
 Average of 5 number is :- 5
 
                 `
-        },
-        " Swap two variables": {
-            description: "Write a Java program to swap two variables",
-            code: `
+            },
+            " Swap two variables": {
+                description: "Write a Java program to swap two variables",
+                code: `
 package swap;
 class swap
 {
@@ -1190,10 +1265,10 @@ System.out.println("After Swap : a = "+a+" b = "+b);
 Before Swap : a = 45 b = 50
 After Swap : a = 50 b = 45
                 `
-        },
-        " convert a decimal number to binary numbers": {
-            description: "Write a Java program to convert a decimal number to binary numbers",
-            code: `
+            },
+            " convert a decimal number to binary numbers": {
+                description: "Write a Java program to convert a decimal number to binary numbers",
+                code: `
 package decimalToBinary;
 class decimalToBinary
 	{
@@ -1221,10 +1296,10 @@ class decimalToBinary
             Binary no. of 12
 0000001100
                 `
-        },
-        "8. Convert a binary number to decimal number": {
-            description: "Write a Java program to convert a binary number to decimal number",
-            code: `
+            },
+            "8. Convert a binary number to decimal number": {
+                description: "Write a Java program to convert a binary number to decimal number",
+                code: `
 package binaryToDecimal;
 class  BinaryToDecimal
 		{
@@ -1248,19 +1323,19 @@ class  BinaryToDecimal
                 output: `
                 Decimal number is :3
                 `
-        },
-        " is Java installed ?": {
-            description: "Write a Java program to check whether Java is installed on your computer or not",
-            code: `
+            },
+            " is Java installed ?": {
+                description: "Write a Java program to check whether Java is installed on your computer or not",
+                code: `
             code//
 `,
                 output: `
                output//
                 `
-        },
-        " Sum of the digits of an integer": {
-            description: "Write a Java program and compute the sum of the digits of an integer",
-            code: `
+            },
+            " Sum of the digits of an integer": {
+                description: "Write a Java program and compute the sum of the digits of an integer",
+                code: `
             package sumofdigit;
 class SumOfDigit
 		{
@@ -1282,10 +1357,10 @@ class SumOfDigit
                 output: `
                 Sum of digit 20
                 `
-        },
-        " Compare two numbers": {
-            description: "Write a Java program to compare two numbers",
-            code: `
+            },
+            " Compare two numbers": {
+                description: "Write a Java program to compare two numbers",
+                code: `
 package compare;
 class Compare
 	{
@@ -1304,10 +1379,10 @@ class Compare
                 output: `
                 Number are Not equel
                 `
-        },
-        " Count the letters, spaces, numbers and other characters ": {
-            description: "Write a Java program to count the letters, spaces, numbers and other characters of an input strings",
-            code: `
+            },
+            " Count the letters, spaces, numbers and other characters ": {
+                description: "Write a Java program to count the letters, spaces, numbers and other characters of an input strings",
+                code: `
 package countstring;
 class CountString
 		{
@@ -1374,10 +1449,10 @@ No of Character :- 17
 No of Space :-3
 No of Line :-1
                 `
-        },
-        " Ascii value": {
-            description: "Write a Java program to print the ascii value of a given character",
-            code: `
+            },
+            " Ascii value": {
+                description: "Write a Java program to print the ascii value of a given character",
+                code: `
 package ascii;
 class Ascii
 	{
@@ -1394,10 +1469,10 @@ class Ascii
                 output: `
                 ASCII value of A is 65
                 `
-        },
-        " Computes the value of n+nn+nnn": {
-            description: "Write a Java program that accepts an integer (n) and computes the value of n+nn+nnn",
-            code: `
+            },
+            " Computes the value of n+nn+nnn": {
+                description: "Write a Java program that accepts an integer (n) and computes the value of n+nn+nnn",
+                code: `
 package computen;
 class ComputeN
 	{
@@ -1414,10 +1489,10 @@ class ComputeN
                 output: `
               n = 2 Value of (n+(nn)+(nnn)) :- 14  
                 `
-        },
-        " Display the system time": {
-            description: "Write a Java program to display the system time",
-            code: `
+            },
+            " Display the system time": {
+                description: "Write a Java program to display the system time",
+                code: `
 package systemtime;
 class SystemTime
 	{
@@ -1433,10 +1508,10 @@ class SystemTime
                 output: `
 Sun Sep 15 11:42:11 IST 2024
                 `
-        },
-        " Odd numbers from 1 to 20": {
-            description: "Write a Java program to print the odd numbers from 1 to 20",
-            code: `
+            },
+            " Odd numbers from 1 to 20": {
+                description: "Write a Java program to print the odd numbers from 1 to 20",
+                code: `
 package odd;
 class Odd
 	{
@@ -1467,10 +1542,10 @@ class Odd
 17
 19
                 `
-        },
-        " Even numbers from 1 to 20": {
-            description: "Write a Java program to print the even numbers from 1 to 20",
-            code: `
+            },
+            " Even numbers from 1 to 20": {
+                description: "Write a Java program to print the even numbers from 1 to 20",
+                code: `
 package even;
 class Even
         {
@@ -1500,10 +1575,10 @@ class Even
 18
 20
                 `
-        },
-        " Convert a string to an integer": {
-            description: "Write a Java program to convert a string to an integer",
-            code: `
+            },
+            " Convert a string to an integer": {
+                description: "Write a Java program to convert a string to an integer",
+                code: `
 package stringtoint;
 class StringToInt
 	{
@@ -1538,10 +1613,10 @@ class StringToInt
                 output: `
                 String to integer 1234
                 `
-        },
-        " Convert seconds to hour, minute and seconds": {
-            description: "Write a Java program to convert seconds to hour, minute and seconds",
-            code: `
+            },
+            " Convert seconds to hour, minute and seconds": {
+                description: "Write a Java program to convert seconds to hour, minute and seconds",
+                code: `
 package convertsecondtohhmmss;
 class ConvertSecondToHhMmSs
 		{
@@ -1561,10 +1636,10 @@ class ConvertSecondToHhMmSs
                 output: `
                Seconds to hh:mm:ss 1:0:0
                 `
-        },
-        " Sum of the first 100 prime number": {
-            description: "Write a Java program to compute the sum of the first 100 prime numbers",
-            code: `
+            },
+            " Sum of the first 100 prime number": {
+                description: "Write a Java program to compute the sum of the first 100 prime numbers",
+                code: `
 package sumprimenum;
 class SumPrimeNum
 	{
@@ -1596,10 +1671,10 @@ class SumPrimeNum
                 output: `
                 Sum of First 100 prime Number : 1060
                 `
-        },
-        " Swap the first and last elements of an array": {
-            description: "Write a Java program to swap the first and last elements of an array and create a new array",
-            code: `
+            },
+            " Swap the first and last elements of an array": {
+                description: "Write a Java program to swap the first and last elements of an array and create a new array",
+                code: `
 package swaparr;
 class SwapArr
 	{
@@ -1644,10 +1719,10 @@ Before Swaping
 After Swaping
  4 2 3 1
                 `
-        },
-        " Count the number of even and odd elements in a given array": {
-            description: "Write a Java program to count the number of even and odd elements in a given array",
-            code: `
+            },
+            " Count the number of even and odd elements in a given array": {
+                description: "Write a Java program to count the number of even and odd elements in a given array",
+                code: `
 package countevenodd;
 class CountEvenOdd
 	{
@@ -1681,10 +1756,10 @@ class CountEvenOdd
 No of Even elements :2
 No of Odd elements:3
                 `
-        },
-        "square root": {
-            description: "Write a Java program to compute the square root of an given integer",
-            code: `
+            },
+            "square root": {
+                description: "Write a Java program to compute the square root of an given integer",
+                code: `
 package squreroot;
 class Squreroot	
 	{
@@ -1700,10 +1775,10 @@ class Squreroot
                 output: `
                 Squreroot of 36 is 6
                 `
-        },
-        "palindrome or not": {
-            description: "Write a Java program to check if a positive number is a palindrome or nots",
-            code: `
+            },
+            "palindrome or not": {
+                description: "Write a Java program to check if a positive number is a palindrome or nots",
+                code: `
 package palindromenum;
 
 class PalindromeNum
@@ -1732,19 +1807,19 @@ class PalindromeNum
                 output: `
                 Number is Palindrome 121
                 `
-        },
-        "add two numbers without using any arithmetic operators": {
-            description: "Write a Java program to add two numbers without using any arithmetic operators",
-            code: `
+            },
+            "add two numbers without using any arithmetic operators": {
+                description: "Write a Java program to add two numbers without using any arithmetic operators",
+                code: `
             code//
 `,
                 output: `
                 output//
                 `
-        },
-        "Add all the digits of a given positive integer": {
-            description: "Write a Java program to add all the digits of a given positive integer",
-            code: `
+            },
+            "Add all the digits of a given positive integer": {
+                description: "Write a Java program to add all the digits of a given positive integer",
+                code: `
 package addofdigit;
 class AddOfDigit
 		{
@@ -1766,10 +1841,10 @@ class AddOfDigit
                 output: `
                 Sum of digit 20
                 `
-        },
-        "Area of circle": {
-            description: "Java program to find area of circle",
-            code: `
+            },
+            "Area of circle": {
+                description: "Java program to find area of circle",
+                code: `
 package areaofcircle;
 class AreaOfCircle
 	{
@@ -1787,10 +1862,10 @@ class AreaOfCircle
                 output: `
                 Area of Circle is : 153.86002
                 `
-        },
-        "Area of rectangle": {
-            description: "Java Program to find area of rectangle",
-            code: `
+            },
+            "Area of rectangle": {
+                description: "Java Program to find area of rectangle",
+                code: `
 package areaofrectangle;
 class AreaOfRectangle
 		{
@@ -1807,10 +1882,10 @@ class AreaOfRectangle
                 output: `
                Area of Rectangle is :- 60.0
                 `
-        },
-        "area of triangle": {
-            description: "Java Program to find area of triangle",
-            code: `
+            },
+            "area of triangle": {
+                description: "Java Program to find area of triangle",
+                code: `
 package areaoftriangle;
 class AreaOfTriangle
 		{
@@ -1828,10 +1903,10 @@ class AreaOfTriangle
                 output//
     
                 `
-        },
-        "Area of equilateral triangle": {
-            description: "Java Program to find area of equilateral triangle",
-            code: `
+            },
+            "Area of equilateral triangle": {
+                description: "Java Program to find area of equilateral triangle",
+                code: `
 class AreaEquilateralTriangle {
     public static void main(String[] args) {
         double side = 5.0;
@@ -1847,10 +1922,10 @@ Area of Equilateral Triangle: 10.825317547305486
 
     
                 `
-        },
-        "Area of rhombus": {
-            description: "Java Program to find area of rhombus",
-            code: `
+            },
+            "Area of rhombus": {
+                description: "Java Program to find area of rhombus",
+                code: `
 class AreaRhombus {
     public static void main(String[] args) {
         double diagonal1 = 8.0, diagonal2 = 6.0;
@@ -1862,10 +1937,10 @@ class AreaRhombus {
                 output: `
 Area of Rhombus: 24.0
       `
-        },
-        "Area of parallelogram": {
-            description: "Java Program to find area of parallelogram",
-            code: `
+            },
+            "Area of parallelogram": {
+                description: "Java Program to find area of parallelogram",
+                code: `
 class AreaParallelogram {
     public static void main(String[] args) {
         double base = 10.0, height = 5.0;
@@ -1880,10 +1955,10 @@ Area of Parallelogram: 50.0
 
     
                 `
-        },
-        "Area of Prism": {
-            description: "Java Program to find area of Prism",
-            code: `
+            },
+            "Area of Prism": {
+                description: "Java Program to find area of Prism",
+                code: `
 class AreaPrism {
     public static void main(String[] args) {
         double baseArea = 20.0, height = 10.0;
@@ -1898,10 +1973,10 @@ class AreaPrism {
 Area of Prism: 200.0
 
                 `
-        },
-        "Volume of sphere": {
-            description: "Java Program to find volume of sphere",
-            code: `
+            },
+            "Volume of sphere": {
+                description: "Java Program to find volume of sphere",
+                code: `
 class VolumeSphere {
     public static void main(String[] args) {
         double radius = 7.0;
@@ -1917,10 +1992,10 @@ Volume of Sphere: 1436.7550402417319
 
     
                 `
-        },
-        "Volume of cylinder": {
-            description: "Java Program to find volume of cylinder",
-            code: `
+            },
+            "Volume of cylinder": {
+                description: "Java Program to find volume of cylinder",
+                code: `
 Volume of Sphere: 1436.7550402417319
 class VolumeCylinder {
     public static void main(String[] args) {
@@ -1937,10 +2012,10 @@ Volume of Cylinder: 785.3981633974483
 
     
                 `
-        },
-        "Volume of cuboid": {
-            description: "Java Program to find volume of cuboid",
-            code: `
+            },
+            "Volume of cuboid": {
+                description: "Java Program to find volume of cuboid",
+                code: `
 class VolumeCuboid {
     public static void main(String[] args) {
         double length = 10.0, width = 5.0, height = 4.0;
@@ -1956,10 +2031,10 @@ Volume of Cuboid: 200.0
 
     
                 `
-        },
-        "Volume of cone": {
-            description: "Java Program to find volume of cone",
-            code: `
+            },
+            "Volume of cone": {
+                description: "Java Program to find volume of cone",
+                code: `
 class VolumeCone {
     public static void main(String[] args) {
         double radius = 3.0, height = 9.0;
@@ -1975,10 +2050,10 @@ Volume of Cone: 84.82300164692441
 
     
                 `
-        },
-        "Surface area of cuboids": {
-            description: " Java program to find surface area of cuboids",
-            code: `
+            },
+            "Surface area of cuboids": {
+                description: " Java program to find surface area of cuboids",
+                code: `
 class SurfaceAreaCuboid {
     public static void main(String[] args) {
         double length = 10.0, width = 5.0, height = 4.0;
@@ -1992,10 +2067,10 @@ class SurfaceAreaCuboid {
                 output: `
 Surface Area of Cuboid: 220.0
         `
-        },
-        "Surface area of cylinder": {
-            description: "Java program to find surface area of cylinder",
-            code: `
+            },
+            "Surface area of cylinder": {
+                description: "Java program to find surface area of cylinder",
+                code: `
 class SurfaceAreaCylinder {
     public static void main(String[] args) {
         double radius = 5.0, height = 10.0;
@@ -2011,10 +2086,10 @@ Surface Area of Cylinder: 471.23889803846896
 
     
                 `
-        },
-        "Surface area of cube": {
-            description: "Java program to find surface area of cubes",
-            code: `
+            },
+            "Surface area of cube": {
+                description: "Java program to find surface area of cubes",
+                code: `
 class SurfaceAreaCube {
     public static void main(String[] args) {
         double side = 6.0;
@@ -2030,10 +2105,10 @@ Surface Area of Cube: 216.0
 
     
                 `
-        },
-        "Calculate average marks": {
-            description: "Java program to calculate average marks",
-            code: `
+            },
+            "Calculate average marks": {
+                description: "Java program to calculate average marks",
+                code: `
 class AverageMarks {
     public static void main(String[] args) {
         double marks1 = 78.0, marks2 = 85.0, marks3 = 90.0;
@@ -2049,10 +2124,10 @@ Average Marks: 84.33333333333333
 
     
                 `
-        },
-        "Check vowel or consonant": {
-            description: "Java program to check vowel or consonant",
-            code: `
+            },
+            "Check vowel or consonant": {
+                description: "Java program to check vowel or consonant",
+                code: `
 class VowelOrConsonant {
     public static void main(String[] args) {
         char ch = 'a';
@@ -2072,10 +2147,10 @@ a is a vowel.
 
     
                 `
-        },
-        "Sum of N numbers": {
-            description: "Java program to sum of N numbers",
-            code: `
+            },
+            "Sum of N numbers": {
+                description: "Java program to sum of N numbers",
+                code: `
 class SumOfNNumbers {
     public static void main(String[] args) {
         int n = 5;
@@ -2094,10 +2169,10 @@ Sum of first 5 numbers: 15
 
     
                 `
-        },
-        "Factorial of any number": {
-            description: "Java program to find factorial of any number",
-            code: `
+            },
+            "Factorial of any number": {
+                description: "Java program to find factorial of any number",
+                code: `
 class Factorial {
     public static void main(String[] args) {
         int number = 5;
@@ -2116,10 +2191,10 @@ Factorial of 5 is: 120
 
     
                 `
-        },
-        "Calculate electricity bill": {
-            description: "Java Program to calculate electricity bill",
-            code: `
+            },
+            "Calculate electricity bill": {
+                description: "Java Program to calculate electricity bill",
+                code: `
 class ElectricityBill {
     public static void main(String[] args) {
         int units = 150;
@@ -2142,10 +2217,10 @@ Electricity Bill: 240.0
 
     
                 `
-        },
-        "Calculate CGPA Percentage": {
-            description: "Java Program To Calculate CGPA Percentage",
-            code: `
+            },
+            "Calculate CGPA Percentage": {
+                description: "Java Program To Calculate CGPA Percentage",
+                code: `
 class CGPAPercentage {
     public static void main(String[] args) {
         double cgpa = 8.5;
@@ -2161,10 +2236,10 @@ CGPA Percentage: 80.75
 
     
                 `
-        },
-        "Calculate compound interest": {
-            description: "Java Program to calculate compound interestn",
-            code: `
+            },
+            "Calculate compound interest": {
+                description: "Java Program to calculate compound interestn",
+                code: `
 class CompoundInterest {
     public static void main(String[] args) {
         double principal = 10000, rate = 5, time = 2;
@@ -2181,10 +2256,10 @@ Compound Interest: 1025.0000000000018
 
     
                 `
-        },
-        "Calculate Batting Average": {
-            description: "Java Program To Calculate Batting Average",
-            code: `
+            },
+            "Calculate Batting Average": {
+                description: "Java Program To Calculate Batting Average",
+                code: `
 class BattingAverage {
     public static void main(String[] args) {
         int runs = 800, innings = 10, notOut = 2;
@@ -2200,10 +2275,10 @@ Batting Average: 100.0
 
     
                 `
-        },
-        "Calculate Commission Percentage": {
-            description: "Java Pogram to Calculate Commission Percentage",
-            code: `
+            },
+            "Calculate Commission Percentage": {
+                description: "Java Pogram to Calculate Commission Percentage",
+                code: `
 class CommissionPercentage {
     public static void main(String[] args) {
         double salesAmount = 20000.0, commissionRate = 10.0;
@@ -2219,10 +2294,10 @@ Commission Percentage: 2000.0
 
     
                 `
-        },
-        "Find Distance Between Two Points": {
-            description: "Java Pogram To Find Distance Between Two Points",
-            code: `
+            },
+            "Find Distance Between Two Points": {
+                description: "Java Pogram To Find Distance Between Two Points",
+                code: `
 class DistanceBetweenPoints {
     public static void main(String[] args) {
         double x1 = 3.0, y1 = 4.0, x2 = 7.0, y2 = 1.0;
@@ -2238,10 +2313,10 @@ Distance between the points: 5.0
 
     
                 `
-        },
-        "Power Of Number": {
-            description: "Java Program To Calculate Power Of Number",
-            code: `
+            },
+            "Power Of Number": {
+                description: "Java Program To Calculate Power Of Number",
+                code: `
 class PowerOfNumber {
     public static void main(String[] args) {
         double base = 2.0, exponent = 3.0;
@@ -2257,10 +2332,10 @@ Power of 2.0 raised to 3.0 is: 8.0
 
     
                 `
-        },
-        "take three numbers from the user and print the greatest number": {
-            description: "Write a Java program to take three numbers from the user and print the greatest number",
-            code: `
+            },
+            "take three numbers from the user and print the greatest number": {
+                description: "Write a Java program to take three numbers from the user and print the greatest number",
+                code: `
 import java.util.Scanner;
 
 class GreatestOfThree {
@@ -2299,10 +2374,10 @@ Enter second number: 45
 Enter third number: 30
 The greatest number is: 45
             `
-        },
-        "find the number of days in a month": {
-            description: "Write a Java program to find the number of days in a month",
-            code: `
+            },
+            "find the number of days in a month": {
+                description: "Write a Java program to find the number of days in a month",
+                code: `
 class DaysInMonth {
     public static void main(String[] args) {
         int month = 2, year = 2024;
@@ -2324,10 +2399,10 @@ Number of days: 29
 
     
                 `
-        },
-        "test a number is positive or negative": {
-            description: "Write a Java program to test a number is positive or negative",
-            code: `
+            },
+            "test a number is positive or negative": {
+                description: "Write a Java program to test a number is positive or negative",
+                code: `
 class PositiveOrNegative {
     public static void main(String[] args) {
         int number = -5;
@@ -2348,10 +2423,10 @@ class PositiveOrNegative {
 
     
                 `
-        },
-        "print name of the day": {
-            description: " Write a Java Program to accept number of week’s day (1-7) and print name of the day",
-            code: `
+            },
+            "print name of the day": {
+                description: " Write a Java Program to accept number of week’s day (1-7) and print name of the day",
+                code: `
 class DayOfWeek {
     public static void main(String[] args) {
         int day = 3;
@@ -2377,10 +2452,10 @@ Day: Wednesday
 
     
                 `
-        },
-        "print whether that year is a leap year or not": {
-            description: "Write a Java program that takes a year from user and print whether that year is a leap year or not",
-            code: `
+            },
+            "print whether that year is a leap year or not": {
+                description: "Write a Java program that takes a year from user and print whether that year is a leap year or not",
+                code: `
 class LeapYearCheck {
     public static void main(String[] args) {
         int year = 2024;
@@ -2396,10 +2471,10 @@ class LeapYearCheck {
 
     
                 `
-        },
-        "Input 5 numbers from keyboard and find their sum and average": {
-            description: "Write a program in Java to display the Java program to input 5 numbers from keyboard and find their sum and average",
-            code: `
+            },
+            "Input 5 numbers from keyboard and find their sum and average": {
+                description: "Write a program in Java to display the Java program to input 5 numbers from keyboard and find their sum and average",
+                code: `
 class SumAndAverage {
     public static void main(String[] args) {
         int[] numbers = {10, 20, 30, 40, 50};
@@ -2419,10 +2494,10 @@ class SumAndAverage {
 Sum: 150
 Average: 30.0
                 `
-        },
-        "first 5 natural numbersn": {
-            description: "Write a program in Java to display the first 5 natural numbers",
-            code: `
+            },
+            "first 5 natural numbersn": {
+                description: "Write a program in Java to display the first 5 natural numbers",
+                code: `
 class First5NaturalNumbers {
     public static void main(String[] args) {
         for (int i = 1; i &lt;= 5; i++) {
@@ -2442,10 +2517,10 @@ class First5NaturalNumbers {
 
     
                 `
-        },
-        "check vowel or consonant": {
-            description: "Write a java program to check vowel or consonant",
-            code: `
+            },
+            "check vowel or consonant": {
+                description: "Write a java program to check vowel or consonant",
+                code: `
 code//
 
 `,
@@ -2453,10 +2528,10 @@ code//
                 output//
     
                 `
-        },
-        "Cube of the number upto given an integer": {
-            description: " Write a Java program to display the cube of the number upto given an integer",
-            code: `
+            },
+            "Cube of the number upto given an integer": {
+                description: " Write a Java program to display the cube of the number upto given an integer",
+                code: `
 class CubeOfNumbers {
     public static void main(String[] args) {
         int n = 4;
@@ -2476,10 +2551,10 @@ Cube of 4 is: 64
 
     
                 `
-        },
-        "display the n terms of odd natural number and their sum": {
-            description: "Write a Java program to display the n terms of odd natural number and their sum",
-            code: `
+            },
+            "display the n terms of odd natural number and their sum": {
+                description: "Write a Java program to display the n terms of odd natural number and their sum",
+                code: `
 class OddNaturalNumbers {
     public static void main(String[] args) {
         int n = 5;
@@ -2505,10 +2580,10 @@ Sum: 25
 
     
                 `
-        },
-        "display the multiplication table of a given integer": {
-            description: "Write a Java program to display the multiplication table of a given integer",
-            code: `
+            },
+            "display the multiplication table of a given integer": {
+                description: "Write a Java program to display the multiplication table of a given integer",
+                code: `
 class MultiplicationTable {
     public static void main(String[] args) {
         int number = 6;
@@ -2534,10 +2609,10 @@ class MultiplicationTable {
 
     
                 `
-        },
-        "reads an integer and check whether it is negative, zero, or positive": {
-            description: "Write a Java program that reads an integer and check whether it is negative, zero, or positive",
-            code: `
+            },
+            "reads an integer and check whether it is negative, zero, or positive": {
+                description: "Write a Java program that reads an integer and check whether it is negative, zero, or positive",
+                code: `
 class CheckInteger {
     public static void main(String[] args) {
         int number = 0;
@@ -2558,10 +2633,10 @@ class CheckInteger {
 
     
                 `
-        },
-        "reads an positive integer and count the number of digits": {
-            description: "Write a Java program that reads an positive integer and count the number of digits",
-            code: `
+            },
+            "reads an positive integer and count the number of digits": {
+                description: "Write a Java program that reads an positive integer and count the number of digits",
+                code: `
 class CountDigits {
     public static void main(String[] args) {
         int number = 12345;
@@ -2581,10 +2656,10 @@ Number of digits: 5
 
     
                 `
-        },
-        "three numbers and check All numbers are equal or not": {
-            description: "Write a Java program that accepts three numbers and check All numbers are equal or not",
-            code: `
+            },
+            "three numbers and check All numbers are equal or not": {
+                description: "Write a Java program that accepts three numbers and check All numbers are equal or not",
+                code: `
 class CheckEqualNumbers {
     public static void main(String[] args) {
         int num1 = 10, num2 = 10, num3 = 10;
@@ -2603,10 +2678,10 @@ All numbers are equal.
 
     
                 `
-        },
-        "Accepts three numbers from the user and check if numbers are in “increasing” or “decreasing” order.": {
-            description: "Write a Java program to print ‘Hello World!’ on screen",
-            code: `
+            },
+            "Accepts three numbers from the user and check if numbers are in “increasing” or “decreasing” order.": {
+                description: "Write a Java program to print ‘Hello World!’ on screen",
+                code: `
 class IncreasingOrDecreasing {
     public static void main(String[] args) {
         int num1 = 10, num2 = 20, num3 = 30;
@@ -2627,10 +2702,10 @@ Numbers are in increasing order.
 
     
                 `
-        },
-        "determines a student’s grade": {
-            description: "Write a Java program that determines a student’s grades",
-            code: `
+            },
+            "determines a student’s grade": {
+                description: "Write a Java program that determines a student’s grades",
+                code: `
 class StudentGrade {
     public static void main(String[] args) {
         int marks = 85;
@@ -2657,10 +2732,10 @@ Grade: B
 
     
                 `
-        },
-        "create a simple calculator": {
-            description: "Write a Java program to create a simple calculator",
-            code: `
+            },
+            "create a simple calculator": {
+                description: "Write a Java program to create a simple calculator",
+                code: `
 class Calculator {
     
     public static void main(String[] args) {
@@ -2760,10 +2835,10 @@ Result : 11.0
 
     
                 `
-        },
-        "concatenate two string": {
-            description: "Write a Java program to concatenate two string",
-            code: `
+            },
+            "concatenate two string": {
+                description: "Write a Java program to concatenate two string",
+                code: `
 class ConcatenateStrings {
     public static void main(String[] args) {
         String str1 = "Hello ", str2 = "World!";
@@ -2779,10 +2854,10 @@ Concatenated String: Hello World!
 
     
                 `
-        },
-        "convert all characters in a string to lowercase": {
-            description: "Write a Java program to convert all characters in a string to lowercase",
-            code: `
+            },
+            "convert all characters in a string to lowercase": {
+                description: "Write a Java program to convert all characters in a string to lowercase",
+                code: `
 class ToLowerCase {
     public static void main(String[] args) {
         String str = "HELLO WORLD";
@@ -2798,10 +2873,10 @@ Lowercase: hello world
 
     
                 `
-        },
-        "convert all characters in a string to uppercase": {
-            description: "Write a Java program to convert all characters in a string to uppercase",
-            code: `
+            },
+            "convert all characters in a string to uppercase": {
+                description: "Write a Java program to convert all characters in a string to uppercase",
+                code: `
 class ToUpperCase {
     public static void main(String[] args) {
         String str = "hello world";
@@ -2817,10 +2892,10 @@ Uppercase: HELLO WORLD
 
     
                 `
-        },
-        "trim a string(remove whitespaces)": {
-            description: "Write a Java program to trim a string(remove whitespaces)",
-            code: `
+            },
+            "trim a string(remove whitespaces)": {
+                description: "Write a Java program to trim a string(remove whitespaces)",
+                code: `
 class TrimString {
     public static void main(String[] args) {
         String str = "   Hello World!   ";
@@ -2836,10 +2911,10 @@ Trimmed String: 'Hello World!'
 
     
                 `
-        },
-        "get a substring of a given string between two specified positions": {
-            description: "Write a Java program to get a substring of a given string between two specified positions",
-            code: `
+            },
+            "get a substring of a given string between two specified positions": {
+                description: "Write a Java program to get a substring of a given string between two specified positions",
+                code: `
 class SubstringExample {
     public static void main(String[] args) {
         String str = "Hello World!";
@@ -2855,10 +2930,10 @@ Substring: Hello
 
     
                 `
-        },
-        "replace all the ‘d’ characters with ‘f’ characters": {
-            description: "Write a Java program to replace all the ‘d’ characters with ‘f’ characters",
-            code: `
+            },
+            "replace all the ‘d’ characters with ‘f’ characters": {
+                description: "Write a Java program to replace all the ‘d’ characters with ‘f’ characters",
+                code: `
 class ReplaceCharacter {
     public static void main(String[] args) {
         String str = "Hello World!";
@@ -2874,10 +2949,10 @@ Modified String: Hello Worlf!
 
     
                 `
-        },
-        "get the length of a given string": {
-            description: "Write a Java program to get the length of a given string",
-            code: `
+            },
+            "get the length of a given string": {
+                description: "Write a Java program to get the length of a given string",
+                code: `
 class StringLength {
     public static void main(String[] args) {
         String str = "Hello World!";
@@ -2893,10 +2968,10 @@ Length of the String: 12
 
     
                 `
-        },
-        "print current date and time in the specified format": {
-            description: "Write a Java program to print current date and time in the specified format",
-            code: `
+            },
+            "print current date and time in the specified format": {
+                description: "Write a Java program to print current date and time in the specified format",
+                code: `
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -2916,10 +2991,10 @@ Current Date and Time: 03-10-2024 10:20:30
 
     
                 `
-        },
-        "get the character at the given index within the String": {
-            description: "Write a Java program to get the character at the given index within the String",
-            code: `
+            },
+            "get the character at the given index within the String": {
+                description: "Write a Java program to get the character at the given index within the String",
+                code: `
 class CharacterAtIndex {
     public static void main(String[] args) {
         String str = "Hello World!";
@@ -2935,10 +3010,10 @@ Character at index 6: W
 
     
                 `
-        },
-        "remove a particular character from a string": {
-            description: "Write a Java program to remove a particular character from a string",
-            code: `
+            },
+            "remove a particular character from a string": {
+                description: "Write a Java program to remove a particular character from a string",
+                code: `
 class RemoveCharacter {
     public static void main(String[] args) {
         String str = "Hello World!";
@@ -2954,10 +3029,10 @@ String after removing 'o': Hell Wrld!
 
     
                 `
-        },
-        "reverse a String": {
-            description: "Write a Java program to reverse a String",
-            code: `
+            },
+            "reverse a String": {
+                description: "Write a Java program to reverse a String",
+                code: `
 class ReverseString {
     public static void main(String[] args) {
         String str = "Hello World!";
@@ -2973,10 +3048,10 @@ Reversed String: !dlroW olleH
 
     
                 `
-        },
-        "remove html tags from a string": {
-            description: "Write a Java program to remove html tags from a string",
-            code: `
+            },
+            "remove html tags from a string": {
+                description: "Write a Java program to remove html tags from a string",
+                code: `
 class RemoveHTMLTags {
     public static void main(String[] args) {
         String str = "&lt;h1&lt;Hello World!&lt;/h1&lt;";
@@ -2992,10 +3067,10 @@ String after removing HTML tags: Hello World!
 
     
                 `
-        },
-        "count total number of lines from a string": {
-            description: "Write a Java program to count total number of lines from a string",
-            code: `
+            },
+            "count total number of lines from a string": {
+                description: "Write a Java program to count total number of lines from a string",
+                code: `
 class CountLines {
     public static void main(String[] args) {
         String str = "Hello&bsol;nWorld&bsol;nThis is a test";
@@ -3011,12 +3086,12 @@ Total number of lines: 3
 
     
                 `
-        },
-        "sum values of an array!!":
-        {
-            description:"Write a Java program to sum values of an array",
-            code : 
-            `
+            },
+            "sum values of an array!!":
+            {
+                description: "Write a Java program to sum values of an array",
+                code:
+                    `
  class SumArray {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5};
@@ -3029,17 +3104,17 @@ Total number of lines: 3
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Sum of array elements: 15
 
             `
-        },
-        "find the index of an array element!!":
-        {
-            description:"Write a Java program to find the index of an array element",
-            code : 
-            `
+            },
+            "find the index of an array element!!":
+            {
+                description: "Write a Java program to find the index of an array element",
+                code:
+                    `
 class IndexOfElement {
     public static void main(String[] args) {
         int[] array = {10, 20, 30, 40, 50};
@@ -3056,17 +3131,17 @@ class IndexOfElement {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
  Index of 30: 2
 
             `
-        },
-        "calculate the average value of array elements!!":
-        {
-            description:"Write a Java program to calculate the average value of array elements",
-            code : 
-            `
+            },
+            "calculate the average value of array elements!!":
+            {
+                description: "Write a Java program to calculate the average value of array elements",
+                code:
+                    `
 class AverageArray {
     public static void main(String[] args) {
         int[] array = {5, 10, 15, 20, 25};
@@ -3080,17 +3155,17 @@ class AverageArray {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Average value: 15.0
 
             `
-        },
-        "test if an array contains a specific value!!":
-        {
-            description:"Write a Java program to test if an array contains a specific value",
-            code : 
-            `
+            },
+            "test if an array contains a specific value!!":
+            {
+                description: "Write a Java program to test if an array contains a specific value",
+                code:
+                    `
 class ContainsValue {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5};
@@ -3107,17 +3182,17 @@ class ContainsValue {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Array contains 3: true
 
             `
-        },
-        "find the maximum and minimum value of an array!!":
-        {
-            description:"Write a Java program to find the maximum and minimum value of an array",
-            code : 
-            `
+            },
+            "find the maximum and minimum value of an array!!":
+            {
+                description: "Write a Java program to find the maximum and minimum value of an array",
+                code:
+                    `
 class MaxMinArray {
     public static void main(String[] args) {
         int[] array = {5, 2, 8, 1, 9};
@@ -3137,18 +3212,18 @@ class MaxMinArray {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Maximum: 9
 Minimum: 1
 
             `
-        },
-        "insert an element (specific position) into an array!!":
-        {
-            description:"Write a Java program to insert an element (specific position) into an array",
-            code : 
-            `
+            },
+            "insert an element (specific position) into an array!!":
+            {
+                description: "Write a Java program to insert an element (specific position) into an array",
+                code:
+                    `
 import java.util.Arrays;
 
 class InsertElement {
@@ -3169,17 +3244,17 @@ class InsertElement {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
  Array after insertion: [1, 2, 3, 4, 5]
 
             `
-        },
-        "reverse an array of integer values!!":
-        {
-            description:"Write a Java program to reverse an array of integer values",
-            code : 
-            `
+            },
+            "reverse an array of integer values!!":
+            {
+                description: "Write a Java program to reverse an array of integer values",
+                code:
+                    `
 import java.util.Arrays;
 
 class ReverseArray {
@@ -3195,17 +3270,17 @@ class ReverseArray {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
  Reversed array: [5, 4, 3, 2, 1]
 
             `
-        },
-        "find the common elements between two arrays!!":
-        {
-            description:"Write a Java program to find the common elements between two arrays",
-            code : 
-            `
+            },
+            "find the common elements between two arrays!!":
+            {
+                description: "Write a Java program to find the common elements between two arrays",
+                code:
+                    `
 import java.util.HashSet;
 
 class CommonElements {
@@ -3225,17 +3300,17 @@ class CommonElements {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Common elements: [4, 5]
 
             `
-        },
-        "find the duplicate values of an array of integer values!!":
-        {
-            description:"Write a Java program to find the duplicate values of an array of integer values",
-            code : 
-            `
+            },
+            "find the duplicate values of an array of integer values!!":
+            {
+                description: "Write a Java program to find the duplicate values of an array of integer values",
+                code:
+                    `
 import java.util.HashSet;
 
 class DuplicateValues {
@@ -3253,17 +3328,17 @@ class DuplicateValues {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Duplicate values: [2, 4]
 
             `
-        },
-        "convert an array to ArrayList!!":
-        {
-            description:"Write a Java program to convert an array to ArrayList",
-            code : 
-            `
+            },
+            "convert an array to ArrayList!!":
+            {
+                description: "Write a Java program to convert an array to ArrayList",
+                code:
+                    `
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -3276,17 +3351,17 @@ class ArrayToArrayList {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 ArrayList: [1, 2, 3, 4, 5]
 
             `
-        },
-        "add two matrices of the same size!!":
-        {
-            description:"Write a Java program to add two matrices of the same size",
-            code : 
-            `
+            },
+            "add two matrices of the same size!!":
+            {
+                description: "Write a Java program to add two matrices of the same size",
+                code:
+                    `
 class AddMatrices {
     public static void main(String[] args) {
         int[][] matrix1 = { {1, 2}, {3, 4} };
@@ -3310,19 +3385,19 @@ class AddMatrices {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Resultant Matrix:
 6 8 
 10 12 
 
             `
-        },
-        "find second largest number from the array!!":
-        {
-            description:"Write a Java program to find second largest number from the array",
-            code : 
-            `
+            },
+            "find second largest number from the array!!":
+            {
+                description: "Write a Java program to find second largest number from the array",
+                code:
+                    `
 import java.util.Arrays;
 
 class SecondLargest {
@@ -3335,17 +3410,17 @@ class SecondLargest {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Second Largest: 4
 
             `
-        },
-        "find second lowest number from the array!!":
-        {
-            description:"Write a Java program to find second lowest number from the array",
-            code : 
-            `
+            },
+            "find second lowest number from the array!!":
+            {
+                description: "Write a Java program to find second lowest number from the array",
+                code:
+                    `
 import java.util.Arrays;
 
 class SecondLowest {
@@ -3358,17 +3433,17 @@ class SecondLowest {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Second Lowest: 2
 
             `
-        },
-        "find the number of even and odd integers in a given array of integers!!":
-        {
-            description:"Write a Java program to find the number of even and odd integers in a given array of integers",
-            code : 
-            `
+            },
+            "find the number of even and odd integers in a given array of integers!!":
+            {
+                description: "Write a Java program to find the number of even and odd integers in a given array of integers",
+                code:
+                    `
 class CountEvenOdd {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5, 6};
@@ -3388,18 +3463,18 @@ class CountEvenOdd {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Even numbers: 3
 Odd numbers: 3
 
             `
-        },
-        "get the difference between the largest and smallest values in an array of integers!!":
-        {
-            description:"Write a Java program to get the difference between the largest and smallest values in an array of integers",
-            code : 
-            `
+            },
+            "get the difference between the largest and smallest values in an array of integers!!":
+            {
+                description: "Write a Java program to get the difference between the largest and smallest values in an array of integers",
+                code:
+                    `
 class DifferenceMaxMin {
     public static void main(String[] args) {
         int[] array = {5, 1, 9, 2, 8};
@@ -3416,17 +3491,17 @@ class DifferenceMaxMin {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Difference: 8
 
             `
-        },
-        "get the difsegregate all 0s on left side and all 1s on right side of a given array of 0s and 1sference between the largest and smallest values in an array of integers!!":
-        {
-            description:"Write a Java program to get the difsegregate all 0s on left side and all 1s on right side of a given array of 0s and 1sference between the largest and smallest values in an array of integers",
-            code : 
-            `
+            },
+            "get the difsegregate all 0s on left side and all 1s on right side of a given array of 0s and 1sference between the largest and smallest values in an array of integers!!":
+            {
+                description: "Write a Java program to get the difsegregate all 0s on left side and all 1s on right side of a given array of 0s and 1sference between the largest and smallest values in an array of integers",
+                code:
+                    `
 import java.util.Arrays;
 
 class SegregateZeroesOnes {
@@ -3438,17 +3513,17 @@ class SegregateZeroesOnes {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Array after segregation: [0, 0, 0, 1, 1, 1]
 
             `
-        },
-        "cyclically rotate a given array clockwise by one!!":
-        {
-            description:"Write a Java program to cyclically rotate a given array clockwise by one",
-            code : 
-            `
+            },
+            "cyclically rotate a given array clockwise by one!!":
+            {
+                description: "Write a Java program to cyclically rotate a given array clockwise by one",
+                code:
+                    `
 import java.util.Arrays;
 
 class RotateArray {
@@ -3466,17 +3541,17 @@ class RotateArray {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Array after rotation: [5, 1, 2, 3, 4]
 
             `
-        },
-        "print all unique element in an array!!":
-        {
-            description:"Write a Java program to print all unique element in an array",
-            code : 
-            `
+            },
+            "print all unique element in an array!!":
+            {
+                description: "Write a Java program to print all unique element in an array",
+                code:
+                    `
 import java.util.HashSet;
 
 class UniqueElements {
@@ -3493,17 +3568,17 @@ class UniqueElements {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Unique elements: [1, 2, 3, 4, 5]
 
             `
-        },
-        "Sort the Array in an Ascending Order!!":
-        {
-            description:"Write a Java program to Sort the Array in an Ascending Order",
-            code : 
-            `
+            },
+            "Sort the Array in an Ascending Order!!":
+            {
+                description: "Write a Java program to Sort the Array in an Ascending Order",
+                code:
+                    `
 import java.util.Arrays;
 
 class SortArrayAscending {
@@ -3515,17 +3590,17 @@ class SortArrayAscending {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Array in ascending order: [1, 2, 3, 5, 8]
 
             `
-        },
-        "Sort the Array in an Descending Order!!":
-        {
-            description:"Write a Java program to Sort the Array in an Descending Order",
-            code : 
-            `
+            },
+            "Sort the Array in an Descending Order!!":
+            {
+                description: "Write a Java program to Sort the Array in an Descending Order",
+                code:
+                    `
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -3538,17 +3613,17 @@ class SortArrayDescending {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Array in descending order: [8, 5, 3, 2, 1]
 
             `
-        },
-        "Sort Names in an Alphabetical Order!!":
-        {
-            description:"Write a Java program to Sort Names in an Alphabetical Order",
-            code : 
-            `
+            },
+            "Sort Names in an Alphabetical Order!!":
+            {
+                description: "Write a Java program to Sort Names in an Alphabetical Order",
+                code:
+                    `
 import java.util.Arrays;
 
 class SortNames {
@@ -3560,17 +3635,17 @@ class SortNames {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Names in alphabetical order: [Manjit, Bob, Charlie, David, Eve]
 
             `
-        },
-        "Display Transpose Matrix!!":
-        {
-            description:"Write a Java program to Display Transpose Matrix",
-            code : 
-            `
+            },
+            "Display Transpose Matrix!!":
+            {
+                description: "Write a Java program to Display Transpose Matrix",
+                code:
+                    `
 class TransposeMatrix {
     public static void main(String[] args) {
         int[][] matrix = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
@@ -3593,20 +3668,20 @@ class TransposeMatrix {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Transpose of the matrix:
 1 4 7 
 2 5 8 
 3 6 9 
 
             `
-        },
-        "Search Key Elements in an Array!!":
-        {
-            description:"Write a Java program to Search Key Elements in an Array",
-            code : 
-            `
+            },
+            "Search Key Elements in an Array!!":
+            {
+                description: "Write a Java program to Search Key Elements in an Array",
+                code:
+                    `
 class SearchElement {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5};
@@ -3625,17 +3700,17 @@ class SearchElement {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Element 3 found: true
 
             `
-        },
-        "Accept the Marks of a Student and find Total Marks and Percentage!!":
-        {
-            description:"Write a Java program to Accept the Marks of a Student and find Total Marks and Percentage",
-            code : 
-            `
+            },
+            "Accept the Marks of a Student and find Total Marks and Percentage!!":
+            {
+                description: "Write a Java program to Accept the Marks of a Student and find Total Marks and Percentage",
+                code:
+                    `
 class TotalMarksPercentage {
     public static void main(String[] args) {
         int[] marks = {80, 90, 85, 75, 95};
@@ -3652,18 +3727,18 @@ class TotalMarksPercentage {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Total Marks: 425
 Percentage: 85.0%
 
             `
-        },
-        "print numbers from 1 to 10 using loop!!":
-        {
-            description:"Write a Java program to print numbers from 1 to 10 using loop",
-            code : 
-            `
+            },
+            "print numbers from 1 to 10 using loop!!":
+            {
+                description: "Write a Java program to print numbers from 1 to 10 using loop",
+                code:
+                    `
 class PrintNumbers {
     public static void main(String[] args) {
         for (int i = 1; i &lt;= 10; i++) {
@@ -3673,8 +3748,8 @@ class PrintNumbers {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 1
 2
 3
@@ -3687,12 +3762,12 @@ class PrintNumbers {
 10
 
             `
-        },
-        "calculate the sum of first 10 natural number using loop!!":
-        {
-            description:"Write a Java program to calculate the sum of first 10 natural number using loop",
-            code : 
-            `
+            },
+            "calculate the sum of first 10 natural number using loop!!":
+            {
+                description: "Write a Java program to calculate the sum of first 10 natural number using loop",
+                code:
+                    `
 class SumOfNaturalNumbers {
     public static void main(String[] args) {
         int sum = 0;
@@ -3704,17 +3779,17 @@ class SumOfNaturalNumbers {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Sum of first 10 natural numbers: 55
 
             `
-        },
-        "print multiplication table of given number!!":
-        {
-            description:"Write a Java program to print multiplication table of given number",
-            code : 
-            `
+            },
+            "print multiplication table of given number!!":
+            {
+                description: "Write a Java program to print multiplication table of given number",
+                code:
+                    `
 class MultiplicationTable {
     public static void main(String[] args) {
         int number = 5;
@@ -3725,8 +3800,8 @@ class MultiplicationTable {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 5 x 1 = 5
 5 x 2 = 10
 5 x 3 = 15
@@ -3739,12 +3814,12 @@ class MultiplicationTable {
 5 x 10 = 50
 
             `
-        },
-        "find the factorial value of any number entered through the keyboard!!":
-        {
-            description:"Write a Java program to find the factorial value of any number entered through the keyboard",
-            code : 
-            `
+            },
+            "find the factorial value of any number entered through the keyboard!!":
+            {
+                description: "Write a Java program to find the factorial value of any number entered through the keyboard",
+                code:
+                    `
 class Factorial {
     public static void main(String[] args) {
         int number = 5;
@@ -3757,17 +3832,17 @@ class Factorial {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Factorial of 5 is: 120
 
             `
-        },
-        "that prompts the user to input an integer and then outputs the number with the digits reversed order!!":
-        {
-            description:"Write a Java program to that prompts the user to input an integer and then outputs the number with the digits reversed order",
-            code : 
-            `
+            },
+            "that prompts the user to input an integer and then outputs the number with the digits reversed order!!":
+            {
+                description: "Write a Java program to that prompts the user to input an integer and then outputs the number with the digits reversed order",
+                code:
+                    `
 class ReverseDigits {
     public static void main(String[] args) {
         int number = 1234;
@@ -3784,17 +3859,17 @@ class ReverseDigits {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Reversed number: 4321
 
             `
-        },
-        "that reads a set of integers, and then prints the sum of the even and odd integers using loop!!":
-        {
-            description:"Write a Java program to that reads a set of integers, and then prints the sum of the even and odd integers using loop",
-            code : 
-            `
+            },
+            "that reads a set of integers, and then prints the sum of the even and odd integers using loop!!":
+            {
+                description: "Write a Java program to that reads a set of integers, and then prints the sum of the even and odd integers using loop",
+                code:
+                    `
 class SumEvenOdd {
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -3814,18 +3889,18 @@ class SumEvenOdd {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Sum of even numbers: 30
 Sum of odd numbers: 25
 
             `
-        },
-        "to check whether the number is a prime number or not!!":
-        {
-            description:"Write a Java program to to check whether the number is a prime number or not",
-            code : 
-            `
+            },
+            "to check whether the number is a prime number or not!!":
+            {
+                description: "Write a Java program to to check whether the number is a prime number or not",
+                code:
+                    `
 class PrimeNumber {
     public static void main(String[] args) {
         int number = 29;
@@ -3843,17 +3918,17 @@ class PrimeNumber {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 29 is prime: true
 
             `
-        },
-        "to calculate HCF of Two given numbers using loop!!":
-        {
-            description:"Write a Java program to to calculate HCF of Two given numbers using loop",
-            code : 
-            `
+            },
+            "to calculate HCF of Two given numbers using loop!!":
+            {
+                description: "Write a Java program to to calculate HCF of Two given numbers using loop",
+                code:
+                    `
 class HCF {
     public static void main(String[] args) {
         int num1 = 12, num2 = 15;
@@ -3870,17 +3945,17 @@ class HCF {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 HCF of 12 and 15 is: 3
 
             `
-        },
-        "enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros!!":
-        {
-            description:"Write a Java program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros",
-            code : 
-            `
+            },
+            "enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros!!":
+            {
+                description: "Write a Java program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros",
+                code:
+                    `
 import java.util.Scanner;
 
 class CountPosNegZeros {
@@ -3911,8 +3986,8 @@ class CountPosNegZeros {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Enter numbers (0 to stop):
 5
 -2
@@ -3925,12 +4000,12 @@ Negative numbers: 2
 Zeros: 0
 
             `
-        },
-        "enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered!!":
-        {
-            description:"Write a Java program to enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered",
-            code : 
-            `
+            },
+            "enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered!!":
+            {
+                description: "Write a Java program to enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered",
+                code:
+                    `
 import java.util.Scanner;
 
 class LargestSmallest {
@@ -3960,8 +4035,8 @@ class LargestSmallest {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Enter numbers (0 to stop):
 5
 -2
@@ -3973,12 +4048,12 @@ Largest number: 5
 Smallest number: -2
 
             `
-        },
-        "print out all Armstrong numbers between 1 to 600 using loop!!":
-        {
-            description:"Write a Java program to print out all Armstrong numbers between 1 to 600 using loop",
-            code : 
-            `
+            },
+            "print out all Armstrong numbers between 1 to 600 using loop!!":
+            {
+                description: "Write a Java program to print out all Armstrong numbers between 1 to 600 using loop",
+                code:
+                    `
 class ArmstrongNumbers {
     public static void main(String[] args) {
         System.out.println("Armstrong numbers between 1 and 600:");
@@ -3999,8 +4074,8 @@ class ArmstrongNumbers {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Armstrong numbers between 1 and 600:
 1
 2
@@ -4017,12 +4092,12 @@ Armstrong numbers between 1 and 600:
 407
 
             `
-        },
-        "count total number of notes in entered amount using loop!!":
-        {
-            description:"Write a Java program to count total number of notes in entered amount using loop",
-            code : 
-            `
+            },
+            "count total number of notes in entered amount using loop!!":
+            {
+                description: "Write a Java program to count total number of notes in entered amount using loop",
+                code:
+                    `
 class CountNotes {
     public static void main(String[] args) {
         int amount = 567; // Example amount
@@ -4042,8 +4117,8 @@ class CountNotes {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Count of notes:
 200 : 2
 100 : 1
@@ -4053,12 +4128,12 @@ Count of notes:
 1 : 2
 
             `
-        },
-        "print Fibonacci series of n terms where n is input by user using loop!!":
-        {
-            description:"Write a Java program to print Fibonacci series of n terms where n is input by user using loop",
-            code : 
-            `
+            },
+            "print Fibonacci series of n terms where n is input by user using loop!!":
+            {
+                description: "Write a Java program to print Fibonacci series of n terms where n is input by user using loop",
+                code:
+                    `
 import java.util.Scanner;
 
 class FibonacciSeries {
@@ -4080,18 +4155,18 @@ class FibonacciSeries {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Enter the number of terms: 5
 Fibonacci Series: 0 1 1 2 3
 
             `
-        },
-        "calculate the sum of following series where n is input by user!!":
-        {
-            description:"Write a Java program to calculate the sum of following series where n is input by user",
-            code : 
-            `
+            },
+            "calculate the sum of following series where n is input by user!!":
+            {
+                description: "Write a Java program to calculate the sum of following series where n is input by user",
+                code:
+                    `
 import java.util.Scanner;
 
 class SumOfSeries {
@@ -4112,19 +4187,19 @@ class SumOfSeries {
 
 
             `,
-            output:
-            `
+                output:
+                    `
 Enter the number of terms: 5
 Sum of the series: 2.283333333333333
 
 
             `
-        },
-        "Java method to compute the average of three numbers!!":
-        {
-            description:"Write a Java method to compute the average of three numbers",
-            code : 
-            `
+            },
+            "Java method to compute the average of three numbers!!":
+            {
+                description: "Write a Java method to compute the average of three numbers",
+                code:
+                    `
 class AverageOfThree {
     public static void main(String[] args) {
         double avg = computeAverage(5, 10, 15);
@@ -4136,16 +4211,16 @@ class AverageOfThree {
     }
 }
             `,
-            output:
-            `
+                output:
+                    `
 Average: 10.0
             `
-        },
-        "Java method to find the smallest number among three numbers!!":
-        {
-            description:"Write a Java method to find the smallest number among three numbers",
-            code : 
-            `
+            },
+            "Java method to find the smallest number among three numbers!!":
+            {
+                description: "Write a Java method to find the smallest number among three numbers",
+                code:
+                    `
 class SmallestOfThree {
     public static void main(String[] args) {
         int smallest = findSmallest(10, 20, 5);
@@ -4158,18 +4233,18 @@ class SmallestOfThree {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Smallest number: 5
 
 
             `
-        },
-        "Java method to count all words in a string!!":
-        {
-            description:"Write a Java method to count all words in a string",
-            code : 
-            `
+            },
+            "Java method to count all words in a string!!":
+            {
+                description: "Write a Java method to count all words in a string",
+                code:
+                    `
 class CountVowels {
     public static void main(String[] args) {
         String text = "Hello World!";
@@ -4189,18 +4264,18 @@ class CountVowels {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Number of words: 7
 
 
             `
-        },
-        "Java method to count all vowels in a string!!":
-        {
-            description:"Write a Java method to count all vowels in a string",
-            code : 
-            `
+            },
+            "Java method to count all vowels in a string!!":
+            {
+                description: "Write a Java method to count all vowels in a string",
+                code:
+                    `
 class CountVowels {
     public static void main(String[] args) {
         String text = "Hello World!";
@@ -4220,17 +4295,17 @@ class CountVowels {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Number of vowels: 3
 
             `
-        },
-        "Java method to compute the sum of the digits in an integer":
-        {
-            description:"Write a Java method to compute the sum of the digits in an integer",
-            code : 
-            `
+            },
+            "Java method to compute the sum of the digits in an integer":
+            {
+                description: "Write a Java method to compute the sum of the digits in an integer",
+                code:
+                    `
 class SumOfDigits {
     public static void main(String[] args) {
         int number = 12345;
@@ -4249,17 +4324,17 @@ class SumOfDigits {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Sum of digits: 15
 
             `
-        },
-        "Java method to check whether an year entered by the user is a leap year or not!!":
-        {
-            description:"Write a Java method to check whether an year entered by the user is a leap year or not",
-            code : 
-            `
+            },
+            "Java method to check whether an year entered by the user is a leap year or not!!":
+            {
+                description: "Write a Java method to check whether an year entered by the user is a leap year or not",
+                code:
+                    `
 class LeapYear {
     public static void main(String[] args) {
         int year = 2024;
@@ -4273,17 +4348,17 @@ class LeapYear {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 2024 is a leap year: true
 
             `
-        },
-        "Java method to calculate the area of a triangle!!":
-        {
-            description:"Write a Java method to calculate the area of a triangle",
-            code : 
-            `
+            },
+            "Java method to calculate the area of a triangle!!":
+            {
+                description: "Write a Java method to calculate the area of a triangle",
+                code:
+                    `
 class AreaOfTriangle {
     public static void main(String[] args) {
         double area = calculateArea(5, 10);
@@ -4296,17 +4371,17 @@ class AreaOfTriangle {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Area of triangle: 25.0
 
             `
-        },
-        "Java method to find the area of a pentagon!!":
-        {
-            description:"Write a Java method to find the area of a pentagon",
-            code : 
-            `
+            },
+            "Java method to find the area of a pentagon!!":
+            {
+                description: "Write a Java method to find the area of a pentagon",
+                code:
+                    `
 class AreaOfPentagon {
     public static void main(String[] args) {
         double area = calculateArea(5);
@@ -4319,17 +4394,17 @@ class AreaOfPentagon {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Area of pentagon: 43.011925
 
             `
-        },
-        "Java method to find number is even number or not!!":
-        {
-            description:"Write a Java method to find number is even number or not",
-            code : 
-            `
+            },
+            "Java method to find number is even number or not!!":
+            {
+                description: "Write a Java method to find number is even number or not",
+                code:
+                    `
 class EvenNumberCheck {
     public static void main(String[] args) {
         int number = 10;
@@ -4343,17 +4418,17 @@ class EvenNumberCheck {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 10 is even: true
 
             `
-        },
-        "Java method to check numbers is palindrome number or not!!":
-        {
-            description:"Write a Java method to check numbers is palindrome number or not",
-            code : 
-            `
+            },
+            "Java method to check numbers is palindrome number or not!!":
+            {
+                description: "Write a Java method to check numbers is palindrome number or not",
+                code:
+                    `
 class PalindromeCheck {
     public static void main(String[] args) {
         int number = 121;
@@ -4373,17 +4448,17 @@ class PalindromeCheck {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 121 is a palindrome: true
 
             `
-        },
-        "Java method to displays prime numbers between 1 to 20!!":
-        {
-            description:"Write a Java method to displays prime numbers between 1 to 20",
-            code : 
-            `
+            },
+            "Java method to displays prime numbers between 1 to 20!!":
+            {
+                description: "Write a Java method to displays prime numbers between 1 to 20",
+                code:
+                    `
 class PrimeNumbersBetween {
     public static void main(String[] args) {
         System.out.println("Prime numbers between 1 and 20:");
@@ -4407,18 +4482,18 @@ class PrimeNumbersBetween {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Prime numbers between 1 and 20:
 2 3 5 7 11 13 17 19 
 
             `
-        },
-        "Java method to find GCD and LCM of Two Numbers!!":
-        {
-            description:"Write a Java program to Java method to find GCD and LCM of Two Numbers",
-            code : 
-            `
+            },
+            "Java method to find GCD and LCM of Two Numbers!!":
+            {
+                description: "Write a Java program to Java method to find GCD and LCM of Two Numbers",
+                code:
+                    `
 class GCDLCM {
     public static void main(String[] args) {
         int a = 12, b = 18;
@@ -4443,18 +4518,18 @@ class GCDLCM {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 GCD of 12 and 18 is: 6
 LCM of 12 and 18 is: 36
 
             `
-        },
-        "Java method to find factorial using recursion in java!!":
-        {
-            description:"Write a Java program to Java method to find factorial using recursion in java",
-            code : 
-            `
+            },
+            "Java method to find factorial using recursion in java!!":
+            {
+                description: "Write a Java program to Java method to find factorial using recursion in java",
+                code:
+                    `
 class FactorialRecursion {
     public static void main(String[] args) {
         int number = 5;
@@ -4471,17 +4546,17 @@ class FactorialRecursion {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Factorial of 5 is: 120
 
             `
-        },
-        "reverse an integer number!!":
-        {
-            description:"Write a Java program to reverse an integer number",
-            code : 
-            `
+            },
+            "reverse an integer number!!":
+            {
+                description: "Write a Java program to reverse an integer number",
+                code:
+                    `
 class ReverseInteger {
     public static void main(String[] args) {
         int number = 12345;
@@ -4501,17 +4576,17 @@ class ReverseInteger {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Reversed number: 54321
 
             `
-        },
-        "round a float number to specified decimals!!":
-        {
-            description:"Write a Java program to round a float number to specified decimals",
-            code : 
-            `
+            },
+            "round a float number to specified decimals!!":
+            {
+                description: "Write a Java program to round a float number to specified decimals",
+                code:
+                    `
 class RoundFloat {
     public static void main(String[] args) {
         float number = 12.34567f;
@@ -4525,17 +4600,17 @@ class RoundFloat {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Rounded number: 12.35
 
             `
-        },
-        "test if a double number is an integer!!":
-        {
-            description:"Write a Java program to test if a double number is an integer",
-            code : 
-            `
+            },
+            "test if a double number is an integer!!":
+            {
+                description: "Write a Java program to test if a double number is an integer",
+                code:
+                    `
 class TestDoubleInteger {
     public static void main(String[] args) {
         double number = 10.0;
@@ -4549,17 +4624,17 @@ class TestDoubleInteger {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 10.0 is an integer: true
 
             `
-        },
-        "round up the result of integer division!!":
-        {
-            description:"Write a Java program to round up the result of integer division",
-            code : 
-            `
+            },
+            "round up the result of integer division!!":
+            {
+                description: "Write a Java program to round up the result of integer division",
+                code:
+                    `
 class RoundUpDivision {
     public static void main(String[] args) {
         int dividend = 7;
@@ -4574,17 +4649,17 @@ class RoundUpDivision {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Rounded up result of 7 / 3 is: 3
 
             `
-        },
-        "convert Roman number to an integer number!!":
-        {
-            description:"Write a Java program to convert Roman number to an integer number",
-            code : 
-            `
+            },
+            "convert Roman number to an integer number!!":
+            {
+                description: "Write a Java program to convert Roman number to an integer number",
+                code:
+                    `
  class RomanToInteger {
     public static void main(String[] args) {
         String roman = "XIV";
@@ -4621,17 +4696,17 @@ Rounded up result of 7 / 3 is: 3
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Roman numeral XIV is equal to 14
 
             `
-        },
-        "convert a float value to absolute value!!":
-        {
-            description:"Write a Java program to convert a float value to absolute value",
-            code : 
-            `
+            },
+            "convert a float value to absolute value!!":
+            {
+                description: "Write a Java program to convert a float value to absolute value",
+                code:
+                    `
 class AbsoluteValue {
     public static void main(String[] args) {
         float number = -15.5f;
@@ -4645,17 +4720,17 @@ class AbsoluteValue {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Absolute value of -15.5 is: 15.5
 
             `
-        },
-        "accept a float value of number and return a rounded float value":
-        {
-            description:"Write a Java program to accept a float value of number and return a rounded float value",
-            code : 
-            `
+            },
+            "accept a float value of number and return a rounded float value":
+            {
+                description: "Write a Java program to accept a float value of number and return a rounded float value",
+                code:
+                    `
 class RoundedFloat {
     public static void main(String[] args) {
         float number = 12.6789f;
@@ -4669,42 +4744,25 @@ class RoundedFloat {
 }
 
             `,
-            output:
-            `
+                output:
+                    `
 Rounded float: 13.0
 
             `
+            },
         },
-    },
-    "Medium": {
-        "comming soon": {
-            description: "comming soon",
-            code: `
-            code//
-            `,
-        output:
-        `
-        output//
-        `
+        "Medium": {
+
         },
-    },
-    "Hard": {
-        "comming soon": {
-            description: "comming soon",
-            code: `
-            code//
-            `,
-            output: `
-            output//
-            `
+        "Hard": {
+
         }
-    }
-},
-"DATA CONVERSION": {
-  "Easy": {
-      "How to convert String to int": {
-          description: "Program to convert String to int",
-          code: `
+    },
+    "DATA CONVERSION": {
+        "Easy": {
+            "How to convert String to int": {
+                description: "Program to convert String to int",
+                code: `
 public class StringToInt {
     public static void main(String[] args) {
        String str = "123";
@@ -4718,10 +4776,10 @@ System.out.println(num);
                 output: `
 123
                 `
-      },
-      "How to convert int to String": {
-          description: "Program to convert int to String",
-          code: `
+            },
+            "How to convert int to String": {
+                description: "Program to convert int to String",
+                code: `
 public class IntToString {
     public static void main(String[] args) {
         int num = 123;
@@ -4734,11 +4792,11 @@ System.out.println(str);
                 output: `
 123
                 `
-      },
+            },
 
-      "How to convert String to long": {
-          description: "Program to convert String to long",
-          code: `
+            "How to convert String to long": {
+                description: "Program to convert String to long",
+                code: `
 public class StringToLong {
     public static void main(String[] args) {
 String str = "123456789";
@@ -4752,10 +4810,10 @@ System.out.println(num);
                 output: `
 123456789
                 `
-      },
-"How to convert long to String": {
-          description: "Program to convert long to String",
-          code: `
+            },
+            "How to convert long to String": {
+                description: "Program to convert long to String",
+                code: `
 public class LongToString {
     public static void main(String[] args) {
 long num = 123456789L;
@@ -4769,10 +4827,10 @@ System.out.println(str);
                 output: `
 123456789
                 `
-      },
-"How to convert String to float": {
-          description: "Program to convert String to float",
-          code: `
+            },
+            "How to convert String to float": {
+                description: "Program to convert String to float",
+                code: `
 public class StringToFloat {
     public static void main(String[] args) {
   String str = "12.34";
@@ -4786,10 +4844,10 @@ System.out.println(num);
                 output: `
 12.34
                 `
-      },
-"How to convert float to String": {
-          description: "Program to convert float to String",
-          code: `
+            },
+            "How to convert float to String": {
+                description: "Program to convert float to String",
+                code: `
 public class FloatToString {
     public static void main(String[] args) {
  float num = 12.34f;
@@ -4803,10 +4861,10 @@ System.out.println(str);
                 output: `
 12.34
                 `
-      },
-"How to convert String to double": {
-          description: "Program to convert String to double",
-          code: `
+            },
+            "How to convert String to double": {
+                description: "Program to convert String to double",
+                code: `
 public class StringToDouble {
     public static void main(String[] args) {
 String str = "123.456";
@@ -4821,10 +4879,10 @@ System.out.println(num);
                 output: `
 123.456
                 `
-      },
-"How to convert double to String": {
-          description: "Program to convert double to String",
-          code: `
+            },
+            "How to convert double to String": {
+                description: "Program to convert double to String",
+                code: `
 public class DoubleToString {
     public static void main(String[] args) {
        double num = 123.456;
@@ -4839,10 +4897,10 @@ System.out.println(str);
                 output: `
 123.456
                 `
-      },
-"How to convert String to Date": {
-          description: "Program to convert String to Date",
-          code: `
+            },
+            "How to convert String to Date": {
+                description: "Program to convert String to Date",
+                code: `
 import java.text.SimpleDateFormat;
 import java.util.Date;
 public class StringToDate {
@@ -4857,10 +4915,10 @@ System.out.println(date);
                 output: `
 Wed Oct 23 00:00:00 IST 2024
                 `
-      },
-"How to convert Date to String": {
-          description: "Program to convert Date to String",
-          code: `
+            },
+            "How to convert Date to String": {
+                description: "Program to convert Date to String",
+                code: `
 import java.text.SimpleDateFormat;
 import java.util.Date;
 public class DateToString {
@@ -4876,10 +4934,10 @@ System.out.println(str);
                 output: `
 2024-10-29
                 `
-      },
-"How to convert String to char": {
-          description: "Program to convert String to char",
-          code: `
+            },
+            "How to convert String to char": {
+                description: "Program to convert String to char",
+                code: `
 public class StringToChar {
     public static void main(String[] args) {
         String str = "Hello";
@@ -4893,10 +4951,10 @@ System.out.println(ch);
                 output: `
 H
                 `
-      },
-"How to convert char to String": {
-          description: "Program to convert char to String",
-          code: `
+            },
+            "How to convert char to String": {
+                description: "Program to convert char to String",
+                code: `
 public class CharToString {
     public static void main(String[] args) {
         char ch = 'H';
@@ -4909,10 +4967,10 @@ public class CharToString {
                 output: `
 H
                 `
-      },
-"How to convert String to Object": {
-          description: "Program to convert String to Object",
-          code: `
+            },
+            "How to convert String to Object": {
+                description: "Program to convert String to Object",
+                code: `
 public class StringToObject {
     public static void main(String[] args) {
         String str = "Some text";
@@ -4925,10 +4983,10 @@ System.out.println(obj);
                 output: `
 Some text
                 `
-      },
-"How to convert Object to String": {
-          description: "Program to convert Object to String",
-          code: `
+            },
+            "How to convert Object to String": {
+                description: "Program to convert Object to String",
+                code: `
 public class ObjectToString {
    public static void main(String[] args) {
       Object obj = "Some text";
@@ -4941,10 +4999,10 @@ public class ObjectToString {
                 output: `
 Some text
                 `
-      },
-"How to convert int to long": {
-          description: "Program to convert int to long",
-          code: `
+            },
+            "How to convert int to long": {
+                description: "Program to convert int to long",
+                code: `
 public class IntToLong {
 public static void main(String[] args) {
         int num = 123;
@@ -4957,10 +5015,10 @@ public static void main(String[] args) {
                 output: `
 123
                 `
-      },
-"How to convert long to int": {
-          description: "Program to convert long to int",
-          code: `
+            },
+            "How to convert long to int": {
+                description: "Program to convert long to int",
+                code: `
 public class LongToInt {
    public static void main(String[] args) {
       long lnum = 123456789L;
@@ -4973,10 +5031,10 @@ public class LongToInt {
                 output: `
 123456789
                 `
-      },
-"How to convert int to double": {
-          description: "Program to convert int to double",
-          code: `
+            },
+            "How to convert int to double": {
+                description: "Program to convert int to double",
+                code: `
 public class IntToDouble {
     public static void main(String[] args) {
         int num = 123;
@@ -4990,10 +5048,10 @@ System.out.println(dnum);
                 output: `
 123
                 `
-      },
-"How to convert double to int": {
-          description: "Program to convert double to int",
-          code: `
+            },
+            "How to convert double to int": {
+                description: "Program to convert double to int",
+                code: `
 public class DoubleToInt {
     public static void main(String[] args) {
         double dnum = 123.456;
@@ -5006,10 +5064,10 @@ System.out.println(num);
                 output: `
 123
                 `
-      },
-"How to convert char to int": {
-          description: "Program to convert char to int",
-          code: `
+            },
+            "How to convert char to int": {
+                description: "Program to convert char to int",
+                code: `
 public class CharToInt {
     public static void main(String[] args) {
         char ch = 'A';
@@ -5023,10 +5081,10 @@ System.out.println(num);
                 output: `
 65
                 `
-      },
-"How to convert int to char": {
-          description: "Program to convert int to char",
-          code: `
+            },
+            "How to convert int to char": {
+                description: "Program to convert int to char",
+                code: `
 public class IntToChar {
     public static void main(String[] args) {
         int num = 65;
@@ -5040,10 +5098,10 @@ System.out.println(ch);
                 output: `
 A
                 `
-      },
-"How to convert String to boolean": {
-          description: "Program to convert String to boolean",
-          code: `
+            },
+            "How to convert String to boolean": {
+                description: "Program to convert String to boolean",
+                code: `
 public class StringToBoolean {
     public static void main(String[] args) {
         String str = "true";
@@ -5057,10 +5115,10 @@ System.out.println(bool);
                 output: `
 true
                 `
-      },
-"How to convert boolean to String": {
-          description: "Program to convert boolean to String",
-          code: `
+            },
+            "How to convert boolean to String": {
+                description: "Program to convert boolean to String",
+                code: `
 public class BooleanToString {
     public static void main(String[] args) {
         boolean bool = true;
@@ -5073,10 +5131,10 @@ System.out.println(str);
                 output: `
 true
                 `
-      },
-"How to convert Date to Timestamp": {
-          description: "Program to convert Date to Timestamp",
-          code: `
+            },
+            "How to convert Date to Timestamp": {
+                description: "Program to convert Date to Timestamp",
+                code: `
 public class DateToTimestamp {
     public static void main(String[] args) {
         long millis = System.currentTimeMillis();
@@ -5088,10 +5146,10 @@ System.out.println("Timestamp: " + millis);
                 output: `
 Timestamp: 1730205862689
                 `
-      },
-"How to convert Timestamp to Date": {
-          description: "Program to convert Timestamp to Date",
-          code: `
+            },
+            "How to convert Timestamp to Date": {
+                description: "Program to convert Timestamp to Date",
+                code: `
 public class TimestampToDate {
     public static void main(String[] args) {
         long millis = System.currentTimeMillis();
@@ -5105,10 +5163,10 @@ System.out.println("Date: " + date);
                 output: `
 Date: Tue Oct 29 18:15:04 IST 2024
                 `
-      },
-"How to convert Binary to Decimal": {
-          description: "Program to convert Binary to Decimal",
-          code: `
+            },
+            "How to convert Binary to Decimal": {
+                description: "Program to convert Binary to Decimal",
+                code: `
 public class BinaryToDecimal {
     public static void main(String[] args) {
         String binary = "1010";  // Binary representation of 10
@@ -5121,10 +5179,10 @@ public class BinaryToDecimal {
                 output: `
 10
                 `
-      },
-"How to convert Decimal to Binary": {
-          description: "Program to convert Decimal to Binary",
-          code: `
+            },
+            "How to convert Decimal to Binary": {
+                description: "Program to convert Decimal to Binary",
+                code: `
 public class DecimalToBinary {
     public static void main(String[] args) {
         int decimal = 10;
@@ -5142,10 +5200,10 @@ public class DecimalToBinary {
                 output: `
 1010
                 `
-      },
-"How to convert Hex to Decimal": {
-          description: "Program to convert Hex to Decimal",
-          code: `
+            },
+            "How to convert Hex to Decimal": {
+                description: "Program to convert Hex to Decimal",
+                code: `
 public class HexToDecimal {
     public static void main(String[] args) {
         String hex = "A";  // Hexadecimal representation of 10
@@ -5158,10 +5216,10 @@ System.out.println(decimal);
                 output: `
 10
                 `
-      },
-"How to convert Decimal to Hex": {
-          description: "Program to convert Decimal to Hex",
-          code: `
+            },
+            "How to convert Decimal to Hex": {
+                description: "Program to convert Decimal to Hex",
+                code: `
 
           public class DecimalToHex {
             public static void main(String[] args) {
@@ -5175,10 +5233,10 @@ System.out.println(decimal);
                 output: `
 A
                 `
-      },
-"How to convert Octal to Decimal": {
-          description: "Program to convert Octal to Decimal",
-          code: `
+            },
+            "How to convert Octal to Decimal": {
+                description: "Program to convert Octal to Decimal",
+                code: `
 public class OctalToDecimal {
     public static void main(String[] args) {
         String octal = "12";  // Octal representation of 10
@@ -5191,10 +5249,10 @@ System.out.println(decimal);
                 output: `
 10
                 `
-      },
-"How to convert Decimal to Octal": {
-          description: "Program to convert Decimal to Octal",
-          code: `
+            },
+            "How to convert Decimal to Octal": {
+                description: "Program to convert Decimal to Octal",
+                code: `
 public class DecimalToOctal {
   public static void main(String[] args) {
     int decimal = 10;
@@ -5207,288 +5265,1140 @@ System.out.println(octal);
                 output: `
 12
                 `
-      },
+            },
 
 
-  },
-  "Medium": {
-     
+        },
+        "Medium": {
 
-  },
-  "Hard": {
-      
+
+        },
+        "Hard": {
+
+
+        }
+    },
+    " DELEGATION EVENT MODEL": {
+        "Easy": {
+            "Display Some Text in the Frame using Labels": {
+                description: "Program to display Some Text in the Frame using Labels",
+                code: `
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+class MyLabel extends Frame{
+    Label l= new Label("Hello AWT");
+    Label l1= new Label("Name");
+    Label l2= new Label("Class");
+    Label l3= new Label("Roll No");
+    MyLabel()
+    {
+        super("Label");
+        setBounds(100,100,400,400);
+        setLayout(new FlowLayout(FlowLayout.LEFT,10,10));
+        add(l);
+        add(l3);
+        add(l1);
+        add(l2);
+
+        addWindowListener(new WindowAdapter() {
+           public void windowClosing(WindowEvent e)
+           {
+            System.exit(1);
+           }
+        });
+        setVisible(true);
+    }
+}
+
+ class Main {
+
+    public static void main(String[] args) {
+        new MyLabel();
+    }
+
+}
+`,
+                output: `
+<img src="DEMimg/Label.png" alt="Label" loading="lazy">
     
-  }
-},
-" DELEGATION EVENT MODEL": {
-  "Easy": {
-      "Display Some Text in the Frame using Labels": {
-          description: "Program to display Some Text in the Frame using Labels",
-          code: `
-code//
+                `
+            },
+            "Create Text Area and Password Field": {
+                description: "Program to create Text Area and Password Field",
+                code: `
+import java.awt.*;
+import java.awt.event.*;
+
+public class TextAreaPassword extends Frame {
+
+    private TextArea textArea;
+    private TextField passwordField;
+
+    public TextAreaPassword() {
+        setTitle("Text Area and Password Field");
+        setSize(400, 400);
+        setLayout(new FlowLayout(FlowLayout.LEFT));
+
+        textArea = new TextArea("Enter text here...", 5, 30);
+        add(textArea);
+
+        passwordField = new TextField(20);
+        passwordField.setEchoChar('*');  // Mask input with '*'
+        add(passwordField);
+
+        // Set up a window listener to close the application
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        // Create and show the frame
+        TextAreaPassword app = new TextAreaPassword();
+        app.setVisible(true);
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/textpass.png" alt="TextAreaAndPassword" loading="lazy">
     
                 `
-      },
-      "Create Text Area and Password Field": {
-          description: "Program to create Text Area and Password Field",
-          code: `
-code//
+            },
+            "Create a Button and Display Image in the Frame when Clicked": {
+                description: "Program to Create a Button and Display Image in the Frame when Clicked",
+                code: `
+package image;
+
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+
+class MyLabel extends Frame{
+    private Button btn = new Button("Show Image");
+    private Image image;
+    private boolean showImage = false;
+   
+    MyLabel()
+    {
+        super("Label");
+        setBounds(100,100,400,400);
+        setLayout(new FlowLayout(FlowLayout.LEFT,10,10));
+        image = Toolkit.getDefaultToolkit().getImage("../../JAVAWEB/img/java.webp");
+        add(btn);
+        btn.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e)
+            {
+                showImage = true;
+                repaint(); 
+            }
+        });
+        
+        addWindowListener(new WindowAdapter() {
+           public void windowClosing(WindowEvent e)
+           {
+            System.exit(1);
+           }
+        });
+        setVisible(true);
+    }
+    public void paint(Graphics g) {
+        super.paint(g);
+        // Draw the image if showImage is true
+        if (showImage && image != null) {
+            // Scale the image to fit the frame
+            g.drawImage(image, 50, 100, getWidth() - 100, getHeight() - 150, this);
+        }
+    }
+}
+
+ class Main {
+
+    public static void main(String[] args) {
+        new MyLabel();
+    }
+
+}
 
 `,
                 output: `
-                output//
+<img src="DEMimg/img.png" alt="img" loading="lazy">
     
                 `
-      },
-      "Create a Button and Display Image in the Frame when Clicked": {
-          description: "Program to Create a Button and Display Image in the Frame when Clicked",
-          code: `
-code//
+            },
+            "Create 2 Radio Buttons and Display Selected Button Label": {
+                description: "Program to Create 2 Radio Buttons and Display Selected Button Label",
+                code: `
+package radio;
+import java.awt.*;
+import java.awt.event.*;
+class Radio extends Frame
+    {
+        private Label l = new Label("Gender");
+        private Checkbox cb1 = new Checkbox("Male");
+        private Checkbox cb2 = new Checkbox("Female");
+        private CheckboxGroup cbg = new CheckboxGroup();
+        Radio()
+        {
+            setBounds(100,100,400,400);
+            setLayout(new FlowLayout(FlowLayout.LEFT));
+            add(l);
+            cb1.setCheckboxGroup(cbg);
+            cb2.setCheckboxGroup(cbg);
+            add(cb1);
+            add(cb2);
+            setVisible(true);
+            addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e)
+                {
+                    System.exit(0);
+                }
+            });
+        }
+    }
+class Main
+    {
+        public static void main(String[] args) {
+            new Radio();
+        }
+    }
 
 `,
                 output: `
-                output//
+<img src="DEMimg/radio.png" alt="radio" loading="lazy">
     
                 `
-      },
-      "Create 2 Radio Buttons and Display Selected Button Label": {
-          description: "Program to Create 2 Radio Buttons and Display Selected Button Label",
-          code: `
-code//
+            },
+            "Handle KeyBoardEvent": {
+                description: "Program to Handle KeyBoardEvent",
+                code: `
+import java.awt.*;
+import java.awt.event.*;
+class KeyBoardEvent extends Frame
+    {
+        TextField tf = new TextField(10);
+        private Label l = new Label();
+        KeyBoardEvent()
+        {
+            setBounds(100,100,400,400);
+            setLayout(new FlowLayout(FlowLayout.LEFT));
+            add(tf);
+            add(l);
+            tf.addKeyListener(new KeyListener() {
+                public  void keyTyped(java.awt.event.KeyEvent e)
+                {
+                    l.setText("Key Typed");
+                }
+                public  void keyPressed(java.awt.event.KeyEvent e)
+                {
+                    l.setText("Key Pressed");
+                }
+                public  void keyReleased(java.awt.event.KeyEvent e)
+                {
+                    l.setText("Key Released");
+                }
+            });
+            addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e)
+                {
+                    System.exit(0);
+                }
+            });
+            setVisible(true);
+        }
+    }
+class Main
+    {
+        public static void main(String[] args) {
+            new KeyBoardEvent();
+        }
+    }
 
 `,
                 output: `
-                output//
+<img src="DEMimg/KeyboardEvent.png" alt="radio" loading="lazy">
     
                 `
-      },
-      "Handle KeyBoardEvent": {
-          description: "Program to Handle KeyBoardEvent",
-          code: `
-code//
+            },
+            "Handle MouseEvent": {
+                description: "Program to Handle MouseEvent",
+                code: `
+import java.awt.*;
+import java.awt.event.*;
+class DEM6 extends Frame
+    {
+        Button btn = new Button("Click me");
+        Label l = new Label();
+        DEM6()
+        {
+            setBounds(100,100,400,400);
+            setLayout(new FlowLayout(FlowLayout.LEFT));
+            add(btn);
+            l.setSize(100, 50);
+            add(l);
+            btn.addMouseListener(new MouseListener() {
+  public  void mouseClicked(MouseEvent e)
+                {
+                    l.setText("Mouse Clicked");
+                }
+  public  void mousePressed(MouseEvent e)
+                {
+                    l.setText("MousePressed");
+                }
+  public  void mouseReleased(MouseEvent e)
+                {
+                    l.setText("Mouse Relased");
+                }
+  public  void mouseEntered(MouseEvent e)
+                {
+                    l.setText("Mouse Eneted");
+                }
+  public  void mouseExited(MouseEvent e)
+                {
+                    l.setText("Mouse Exited");
+                }
+
+            });
+            setVisible(true);
+            addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e)
+                {
+                    System.exit(0);
+                }
+            });
+        }
+    }
+class Main
+    {
+        public static void main(String[] args) {
+            new DEM6();
+        }
+    }
 
 `,
                 output: `
-                output//
+<img src="DEMimg/MouseEvent.png" alt="radio" loading="lazy">
     
                 `
-      },
-      "Handle MouseEvent": {
-          description: "Program to Handle MouseEvent",
-          code: `
-code//
+            },
+
+            "Get and Set State and Get Label of a Check Box": {
+                description: "Program to Get and Set State and Get Label of a Check Box",
+                code: `
+package checkbox;
+//Get and Set State and Get Label of a Check Box
+import java.awt.*;
+import java.awt.event.*;
+class SetCheckbox extends Frame
+    {
+        TextField tf = new TextField(10);
+        private Checkbox cb = new Checkbox();
+        private Button btn = new Button("Set Label");
+        SetCheckbox()
+        {
+            setBounds(100,100,400,400);
+            setLayout(new FlowLayout(FlowLayout.LEFT));
+            add(tf);
+            add(btn);
+            add(cb);
+            btn.addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e)
+                {
+                    String label = tf.getText();
+                    cb.setLabel(label);
+                }
+            });
+            addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e)
+                {
+                    System.exit(0);
+                }
+            });
+            setVisible(true);
+        }
+    }
+class Main
+    {
+        public static void main(String[] args) {
+            new SetCheckbox();
+        }
+    }
 
 `,
                 output: `
-                output//
+<img src="DEMimg/checkbox.png" alt="img" loading="lazy">
     
                 `
-      },
-
-      "Get and Set State and Get Label of a Check Box": {
-          description: "Program to Get and Set State and Get Label of a Check Box",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "Create Check Boxes and Radio Buttons": {
-          description: "Program to Create Check Boxes and Radio Buttons",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "Create and Switch between Frames using Buttons": {
-          description: "Program to Create and Switch between Frames using Buttons",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "Create and Set Border to Push Buttons": {
-          description: "Program to Create and Set Border to Push Buttons",
-          code: `
-code//
-
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "Create a List Box to Select Multiple Items and Display it in the Frame": {
-          description: "Program to Create a List Box to Select Multiple Items and Display it in the Frame",
-          code: `
-code//
+            },
+            "Create Check Boxes and Radio Buttons": {
+                description: "Program to Create Check Boxes and Radio Buttons",
+                code: `
+//Get and Set State and Get Label of a Check Box
+import java.awt.*;
+import java.awt.event.*;
+class CheckboxRadio extends Frame
+    {
+        private Label l = new Label("Select Subjects");
+        private Label l2 = new Label("Confirm");
+        private Checkbox cb = new Checkbox("C");
+        private Checkbox cb1 = new Checkbox("C++");
+        private Checkbox cb2 = new Checkbox("Java");
+        private Checkbox cb3 = new Checkbox("Yes");
+        private Checkbox cb4 = new Checkbox("No");
+        private CheckboxGroup cbg = new CheckboxGroup();
+        CheckboxRadio()
+        {
+            setBounds(100,100,400,400);
+            setLayout(new FlowLayout(FlowLayout.LEFT));
+            cb3.setCheckboxGroup(cbg);
+            cb4.setCheckboxGroup(cbg);
+            add(l);
+            add(cb);
+            add(cb1);
+            add(cb2);
+            add(cb3);
+            add(cb4);
+            addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e)
+                {
+                    System.exit(0);
+                }
+            });
+            setVisible(true);
+        }
+    }
+class Main
+    {
+        public static void main(String[] args) {
+            new CheckboxRadio();
+        }
+    }
 
 `,
                 output: `
-                output//
+<img src="DEMimg/checkboxRadio.png" alt="img" loading="lazy">
     
                 `
-      },
-      "Display a Message in a New Frame": {
-          description: "Program to Display a Message in a New Frame",
-          code: `
-code//
+            },
+            "Create and Switch between Frames using Buttons": {
+                description: "Program to Create and Switch between Frames using Buttons",
+                code: `
+import java.awt.*;
+import java.awt.event.*;
+class Frame1 extends Frame
+    {
+        private Button btn = new Button("Change Frame");
+        Label l = new Label("This is 1st Frame.");
+        Frame1()
+        {
+            setBounds(100,100,400,400);
+            setLayout(new FlowLayout(FlowLayout.LEFT));
+            add(l);
+            add(btn);
+            btn.addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e)
+                {
+                    new Frame2();
+                }
+            });
+            addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e)
+                {
+                    System.exit(0);
+                }
+            });
+            setVisible(true);
+        }
+    }
+    class Frame2 extends Frame
+    {
+        private Button btn = new Button("Change Frame");
+        Label l = new Label("This is 2nd Frame.");
+        Frame2()
+        {
+            setBounds(100,100,400,400);
+            setLayout(new FlowLayout(FlowLayout.LEFT));
+            add(l);
+            add(btn);
+            btn.addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e)
+                {
+                    new Frame1();
+                }
+            });
+            addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e)
+                {
+                    System.exit(0);
+                }
+            });
+            setVisible(true);
+        }
+    }
+class Main
+    {
+        public static void main(String[] args) {
+            new Frame1();
+        }
+    }
 
 `,
                 output: `
-                output//
+<img src="DEMimg/changeframe.png" alt="img" loading="lazy">
     
                 `
-      },
-      "Close the Frame using WindowAdapter Class": {
-          description: "Program to Close the Frame using WindowAdapter Class",
-          code: `
-code//
+            },
+            "Create and Set Border to Push Buttons": {
+                description: "Program to Create and Set Border to Push Buttons",
+                code: `
+import java.awt.*;
+public class ButtonWithBorderApp extends Frame {
+
+    public ButtonWithBorderApp() {
+        // Set up the frame
+        setTitle("Button with Border Example");
+        setSize(300, 200);
+        setLayout(new FlowLayout());
+
+        // Create a Panel to act as a border for the button
+        Panel buttonPanel = new Panel();
+        buttonPanel.setLayout(new FlowLayout());
+        buttonPanel.setBackground(Color.BLACK); // Border color
+        buttonPanel.setSize(100, 50);
+
+        // Create the Button
+        Button button = new Button("Push Me");
+        button.setBackground(Color.LIGHT_GRAY);
+        button.setPreferredSize(new Dimension(80, 30)); // Inner button size
+
+        // Add the button to the panel (creates a border effect)
+        buttonPanel.add(button);
+
+        // Add the panel (with button inside) to the frame
+        add(buttonPanel);
+
+        // Set up close operation
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        // Create and show the frame
+        ButtonWithBorderApp app = new ButtonWithBorderApp();
+        app.setVisible(true);
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/push.png" alt="img" loading="lazy">
     
                 `
-      },
-      "Check Which Fonts are Available in a Local System": {
-          description: "Program to Check Which Fonts are Available in a Local System",
-          code: `
-code//
+            },
+            "Create a List Box to Select Multiple Items and Display it in the Frame": {
+                description: "Program to Create a List Box to Select Multiple Items and Display it in the Frame",
+                code: `
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MultiSelectListBoxApp extends Frame {
+
+    private List itemList;
+    private TextArea displayArea;
+
+    public MultiSelectListBoxApp() {
+        // Set up the frame
+        setTitle("Multi-Select List Box Example");
+        setSize(400, 400);
+        setLayout(new FlowLayout());
+
+        // Initialize the List with multiple selection enabled
+        itemList = new List(5, true); // 5 visible rows, multiple selection enabled
+        itemList.add("Item 1");
+        itemList.add("Item 2");
+        itemList.add("Item 3");
+        itemList.add("Item 4");
+        itemList.add("Item 5");
+
+        // Add a button to display selected items
+        Button displayButton = new Button("Display Selected Items");
+        displayButton.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent e) {
+                displaySelectedItems();
+            }
+        });
+
+        // TextArea to show selected items
+        displayArea = new TextArea(5, 30);
+        displayArea.setEditable(false);
+
+        // Add components to the frame
+        add(itemList);
+        add(displayButton);
+        add(displayArea);
+
+        // Set up close operation
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    private void displaySelectedItems() {
+        // Get selected items and display them in the TextArea
+        String[] selectedItems = itemList.getSelectedItems();
+        StringBuilder sb = new StringBuilder("Selected Items:\n");
+        for (String item : selectedItems) {
+            sb.append(item).append("\n");
+        }
+        displayArea.setText(sb.toString());
+    }
+
+    public static void main(String[] args) {
+        // Create and show the frame
+        MultiSelectListBoxApp app = new MultiSelectListBoxApp();
+        app.setVisible(true);
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/MultiList.png" alt="radio" loading="lazy">
     
                 `
-      },
-      "Display Text in Different Fonts": {
-          description: "Program to Display Text in Different Fonts",
-          code: `
-code//
+            },
+            "Display a Message in a New Frame": {
+                description: "Program to Display a Message in a New Frame",
+                code: `
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MessageFrameApp extends Frame {
+
+    public MessageFrameApp() {
+        // Set up the main frame
+        setTitle("Main Frame");
+        setSize(300, 200);
+        setLayout(new FlowLayout());
+
+        // Button to open the message frame
+        Button showMessageButton = new Button("Show Message");
+        showMessageButton.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent e) {
+                openMessageFrame();
+            }
+        });
+
+        // Add button to the main frame
+        add(showMessageButton);
+
+        // Set up close operation
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    private void openMessageFrame() {
+        // Create a new frame to display the message
+        Frame messageFrame = new Frame("Message Frame");
+        messageFrame.setSize(250, 150);
+        messageFrame.setLayout(new FlowLayout());
+
+        // Label to display the message
+        Label messageLabel = new Label("Hello, this is your message!");
+        messageFrame.add(messageLabel);
+
+        // Set up close operation for the message frame
+        messageFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+            
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                messageFrame.dispose();  // Close only the message frame
+            }
+        });
+
+        // Make the message frame visible
+        messageFrame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        // Create and show the main frame
+        MessageFrameApp app = new MessageFrameApp();
+        app.setVisible(true);
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/message.png" alt="message" loading="lazy">
     
                 `
-      },
-      "Change Frame Background Color as Cyan": {
-          description: "Program to Change Frame Background Color as Cyan",
-          code: `
-code//
+            },
+            "Close the Frame using WindowAdapter Class": {
+                description: "Program to Close the Frame using WindowAdapter Class",
+                code: `
+package close;
+//Get and Set State and Get Label of a Check Box
+import java.awt.*;
+import java.awt.event.*;
+class Close extends Frame
+    {
+       Label l = new Label("Close frame using Window Adaptor!");
+        Close()
+        {
+            setBounds(100,100,400,400);
+            setLayout(new FlowLayout(FlowLayout.LEFT));
+            add(l);
+            addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e)
+                {
+                    System.exit(0);
+                }
+            });
+            setVisible(true);
+        }
+    }
+class Main
+    {
+        public static void main(String[] args) {
+            new Close();
+        }
+    }
 
 `,
                 output: `
-                output//
+<img src="DEMimg/close.png" alt="radio" loading="lazy">
     
                 `
-      },
-      "Change the Applet Background Colour when Button Clicked": {
-          description: "Program to Change the Applet Background Colour when Button Clicked",
-          code: `
-code//
+            },
+            "Check Which Fonts are Available in a Local System": {
+                description: "Program to Check Which Fonts are Available in a Local System",
+                code: `
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.GraphicsEnvironment;
+
+public class AvailableFontsApp extends Frame {
+
+    public AvailableFontsApp() {
+        // Set up the frame
+        setTitle("Available Fonts");
+        setSize(400, 300);
+        setLayout(new BorderLayout());
+
+        // TextArea to display the available fonts
+        TextArea fontDisplayArea = new TextArea();
+        fontDisplayArea.setEditable(false);
+
+        // Retrieve available font family names
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        String[] fontNames = ge.getAvailableFontFamilyNames();
+
+        // Display font names in the TextArea
+        for (String fontName : fontNames) {
+            fontDisplayArea.append(fontName + "\n");
+        }
+
+        // Add TextArea to the frame
+        add(fontDisplayArea, BorderLayout.CENTER);
+
+        // Set up close operation
+        addWindowListener(new WindowAdapter() {
+            
+            public void windowClosing(WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        // Create and show the frame
+        AvailableFontsApp app = new AvailableFontsApp();
+        app.setVisible(true);
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/AvlFont.png" alt="img" loading="lazy">
     
                 `
-      },
-      "Display Several Dots on the Screen Continuously": {
-          description: "Program to Display Several Dots on the Screen Continuously",
-          code: `
-code//
+            },
+            "Display Text in Different Fonts": {
+                description: "Program to Display Text in Different Fonts",
+                code: `
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.GraphicsEnvironment;
+
+public class FontDisplayApp extends Frame {
+
+    private String[] fontNames;
+
+    public FontDisplayApp() {
+        // Set up the frame
+        setTitle("Display Text in Different Fonts");
+        setSize(500, 600);
+        setLayout(new FlowLayout());
+
+        // Retrieve available font family names
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        fontNames = ge.getAvailableFontFamilyNames();
+
+        // Set up close operation
+        addWindowListener(new WindowAdapter() {
+            
+            public void windowClosing(WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    
+    public void paint(Graphics g) {
+        super.paint(g);
+
+        // Starting coordinates for text
+        int y = 60;
+        String text = "Sample Text in Different Fonts";
+
+        // Display the text in each available font
+        for (int i = 0; i < fontNames.length && i < 10; i++) {  // Limiting to 10 fonts for display
+            g.setFont(new Font(fontNames[i], Font.PLAIN, 16));
+            g.drawString(text + " - " + fontNames[i], 50, y);
+            y += 30;  // Move down for the next line
+        }
+    }
+
+    public static void main(String[] args) {
+        // Create and show the frame
+        FontDisplayApp app = new FontDisplayApp();
+        app.setVisible(true);
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/font.png" alt="img" loading="lazy">
     
                 `
-      },
-      "Validate the TextField for only entering numbers using KeyListener": {
-          description: "Program to Validate the TextField for only entering numbers using KeyListener",
-          code: `
-code//
+            },
+            "Change Frame Background Color as Cyan": {
+                description: "Program to Change Frame Background Color as Cyan",
+                code: `
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class CyanBackgroundFrame extends Frame {
+
+    public CyanBackgroundFrame() {
+        // Set up the frame
+        setTitle("Cyan Background Frame");
+        setSize(400, 300);
+
+        // Set the background color to cyan
+        setBackground(Color.CYAN);
+
+        // Set up close operation
+        addWindowListener(new WindowAdapter() {
+            
+            public void windowClosing(WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        // Create and show the frame
+        CyanBackgroundFrame app = new CyanBackgroundFrame();
+        app.setVisible(true);
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/cyan.png" alt="cyan" loading="lazy">
     
                 `
-      },
-      "Validate the TextField for only entering email id using KeyAdapter": {
-          description: "Program to Validate the TextField for only entering email id using KeyAdapter",
-          code: `
-code//
+            },
+            "Change the Applet Background Colour when Button Clicked": {
+                description: "Program to Change the Applet Background Colour when Button Clicked",
+                code: `
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
+
+/* 
+<applet code="ColorChangeApplet" width=300 height=200>
+</applet> 
+*/
+
+public class ColorChangeApplet extends Applet {
+
+    private Button colorButton;
+    private Random random;
+
+    
+    public void init() {
+        // Initialize button and random generator
+        colorButton = new Button("Change Background Color");
+        random = new Random();
+
+        // Set layout and add button
+        setLayout(new FlowLayout());
+        add(colorButton);
+
+        // Add action listener to button
+        colorButton.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent e) {
+                changeBackgroundColor();
+            }
+        });
+    }
+
+    private void changeBackgroundColor() {
+        // Generate random color
+        Color randomColor = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+        
+        // Set the applet's background color
+        setBackground(randomColor);
+
+        // Repaint to apply the color change immediately
+        repaint();
+    }
+}
+/*<applet code="ColorChangeApplet.class" width="300" height="200"></applet> */
 
 `,
                 output: `
-                output//
+<img src="DEMimg/color.png" alt="radio" loading="lazy">
     
                 `
-      },
-     
-     
-  },
-  "Medium": {
-      "comming soon": {
-          description: "Program to comming soon",
-          code: `
-code//
+            },
+            "Display Several Dots on the Screen Continuously": {
+                description: "Program to Display Several Dots on the Screen Continuously",
+                code: `
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
+/*
+<applet code="ContinuousDotsApplet" width=400 height=300>
+</applet>
+*/
+
+public class ContinuousDotsApplet extends Applet {
+
+    private Random random;
+    private int dotCount = 50; // Number of dots to display
+    private int[][] dotPositions; // Array to store dot positions
+
+    
+    public void init() {
+        // Initialize random generator and dot positions array
+        random = new Random();
+        dotPositions = new int[dotCount][2];
+
+        // Set a timer to update dot positions and repaint periodically
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            
+            public void run() {
+                updateDots();
+                repaint();
+            }
+        }, 0, 200); // Update every 200 milliseconds (5 times per second)
+    }
+
+    private void updateDots() {
+        // Update positions of each dot to random coordinates within the applet
+        for (int i = 0; i < dotCount; i++) {
+            dotPositions[i][0] = random.nextInt(getWidth()); // X position
+            dotPositions[i][1] = random.nextInt(getHeight()); // Y position
+        }
+    }
+
+    
+    public void paint(Graphics g) {
+        // Draw each dot as a small filled circle at its random position
+        g.setColor(Color.BLUE);
+        for (int i = 0; i < dotCount; i++) {
+            int x = dotPositions[i][0];
+            int y = dotPositions[i][1];
+            g.fillOval(x, y, 5, 5); // Draw dot with 5x5 size
+        }
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/dots.png" alt="dots" loading="lazy">
     
                 `
-      },
-     
-  },
-  "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-                output: `
-                output//
-    
-                `
-      },
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
+            },
+            "Validate the TextField for only entering numbers using KeyListener": {
+                description: "Program to Validate the TextField for only entering numbers using KeyListener",
+                code: `
+import java.awt.*;
+import java.awt.event.*;
+
+public class NumericTextFieldApp extends Frame {
+
+    private TextField numberField;
+
+    public NumericTextFieldApp() {
+        // Set up the frame
+        setTitle("Numeric Text Field Validation");
+        setSize(300, 150);
+        setLayout(new FlowLayout());
+
+        // Create a TextField
+        numberField = new TextField(20);
+        
+        // Add KeyListener to the TextField
+        numberField.addKeyListener(new KeyAdapter() {
+            
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                // Check if the input is not a digit and is not a control character
+                if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+                    e.consume(); // Consume the event to prevent the character from being typed
+                }
+            }
+        });
+
+        // Add components to the frame
+        add(new Label("Enter numbers only:"));
+        add(numberField);
+
+        // Set up close operation
+        addWindowListener(new WindowAdapter() {
+            
+            public void windowClosing(WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        // Create and show the frame
+        NumericTextFieldApp app = new NumericTextFieldApp();
+        app.setVisible(true);
+    }
+}
+
 
 `,
                 output: `
-                output//
+<img src="DEMimg/number.png" alt="radio" loading="lazy">
     
                 `
-      }
-  }
-},
-"EXCEPTION HANDLING": {
-  "Easy": {
-      "Java program that throws an exception and catch it using a try-catch block.": {
-          description: "Java program that throws an exception and catch it using a try-catch block.",
-          code: `
+            },
+            "Validate the TextField for only entering email id using KeyAdapter": {
+                description: "Program to Validate the TextField for only entering email id using KeyAdapter",
+                code: `
+import java.awt.*;
+import java.awt.event.*;
+
+public class EmailTextFieldApp extends Frame {
+
+    private TextField emailField;
+
+    public EmailTextFieldApp() {
+        // Set up the frame
+        setTitle("Email Text Field Validation");
+        setSize(300, 150);
+        setLayout(new FlowLayout());
+
+        // Create a TextField for email input
+        emailField = new TextField(20);
+
+        // Add KeyAdapter to validate email input
+        emailField.addKeyListener(new KeyAdapter() {
+            
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                // Allowed characters for email addresses
+                if (!(Character.isLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-')) {
+                    e.consume(); // Consume the event to prevent the character from being typed
+                }
+            }
+        });
+
+        // Add components to the frame
+        add(new Label("Enter your email:"));
+        add(emailField);
+
+        // Set up close operation
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        // Create and show the frame
+        EmailTextFieldApp app = new EmailTextFieldApp();
+        app.setVisible(true);
+    }
+}
+
+`,
+                output: `
+<img src="DEMimg/email.png" alt="radio" loading="lazy">
+    
+                `
+            },
+
+
+        },
+        "Medium": {
+
+        },
+        "Hard": {
+
+        }
+    },
+    "EXCEPTION HANDLING": {
+        "Easy": {
+            "Java program that throws an exception and catch it using a try-catch block.": {
+                description: "Java program that throws an exception and catch it using a try-catch block.",
+                code: `
 class Excep1
         {
         public static void main(String st[])
@@ -5507,10 +6417,10 @@ class Excep1
                 output: `
 kindly please give some argument
                 `
-      },
-      "create a method that takes an integer as a parameter and throws an exception if the number is odd.": {
-        description: "Program to create a method that takes an integer as a parameter and throws an exception if the number is odd.",
-        code: `
+            },
+            "create a method that takes an integer as a parameter and throws an exception if the number is odd.": {
+                description: "Program to create a method that takes an integer as a parameter and throws an exception if the number is odd.",
+                code: `
 // Custom exception class for Odd Number Exception
 class OddNumberException extends Exception {
     public OddNumberException(String message) {
@@ -5544,14 +6454,14 @@ public class OddNumberChecker {
 
 
 `,
-              output: `
+                output: `
 The number 5 is odd.
 
               `
-    },
-    "create a method that reads a file and throws an exception if the file is not found": {
-        description: "Program to create a method that reads a file and throws an exception if the file is not found",
-        code: `
+            },
+            "create a method that reads a file and throws an exception if the file is not found": {
+                description: "Program to create a method that reads a file and throws an exception if the file is not found",
+                code: `
 package exception3;
 class Exception3 
     {
@@ -5579,13 +6489,13 @@ class Exception3
 
 
 `,
-              output: `
+                output: `
 File Found : text.txt
               `
-    },
-    "reads a list of numbers from a file and throws an exception if any of the numbers are positive": {
-        description: "Program to reads a list of numbers from a file and throws an exception if any of the numbers are positive",
-        code: `
+            },
+            "reads a list of numbers from a file and throws an exception if any of the numbers are positive": {
+                description: "Program to reads a list of numbers from a file and throws an exception if any of the numbers are positive",
+                code: `
       package exception4;
 class NumberIsPositive extends Throwable
         {
@@ -5637,13 +6547,13 @@ class Exception4
         }
 
 `,
-              output: `
+                output: `
 File contain positive number
               `
-    },
-    "Reads a file and throws an exception if the file is empty.": {
-        description: "Program that reads a file and throws an exception if the file is empty.",
-        code: `
+            },
+            "Reads a file and throws an exception if the file is empty.": {
+                description: "Program that reads a file and throws an exception if the file is empty.",
+                code: `
      package exception5;
 class FileIsEmpty extends Throwable
         {
@@ -5681,13 +6591,13 @@ class Exception5
         }
 
 `,
-              output: `
+                output: `
 File is not Empty
               `
-    },
-    "reads a list of integers from the user and throws an exception if any numbers are duplicates": {
-        description: "Program to reads a list of integers from the user and throws an exception if any numbers are duplicates",
-        code: `
+            },
+            "reads a list of integers from the user and throws an exception if any numbers are duplicates": {
+                description: "Program to reads a list of integers from the user and throws an exception if any numbers are duplicates",
+                code: `
       package exception6;
 class NumberAreDuplicate extends Throwable
         {
@@ -5745,17 +6655,17 @@ class NumberAreDuplicate extends Throwable
             }
 
 `,
-              output: `
+                output: `
 1
 2
 3
 3
 Number are Duplicate
               `
-    },
-    "create a method that takes a string as input and throws an exception if the string does not contain vowels.": {
-        description: "Program to create a method that takes a string as input and throws an exception if the string does not contain vowels.",
-        code: `
+            },
+            "create a method that takes a string as input and throws an exception if the string does not contain vowels.": {
+                description: "Program to create a method that takes a string as input and throws an exception if the string does not contain vowels.",
+                code: `
 package exception7;
 class NotContainVowels extends Throwable
     {
@@ -5814,14 +6724,14 @@ class Exception7
     }
 
 ` ,
-              output: `
+                output: `
 Manjit
 String contain vowel
               `
-    },
-    "connect the Java API to Database, if connection not successful then throw an exception": {
-        description: "Program to connect the Java API to Database, if connection not successful then throw an exception",
-        code: `
+            },
+            "connect the Java API to Database, if connection not successful then throw an exception": {
+                description: "Program to connect the Java API to Database, if connection not successful then throw an exception",
+                code: `
       package exception8;
 class NotConnected extends Throwable 
         {
@@ -5865,13 +6775,13 @@ class Exception8
     }
 
 `,
-              output: `
+                output: `
    Database Connected Successfully
               `
-    },
-    "manage the driver with path, username and password, if not successful then throw an exception": {
-        description: "Program to manage the driver with path, username and password, if not successful then throw an exception",
-        code: `
+            },
+            "manage the driver with path, username and password, if not successful then throw an exception": {
+                description: "Program to manage the driver with path, username and password, if not successful then throw an exception",
+                code: `
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -5932,15 +6842,15 @@ public class DriverManagerExample {
 
 
 `,
-              output: `
+                output: `
 Connection established successfully!
 Connection closed.
 
               `
-    },
-    "throw the SQL Query, insert, delete, update, if not successful then throw an exception": {
-        description: "Program to throw the SQL Query, insert, delete, update, if not successful then throw an exception",
-        code: `
+            },
+            "throw the SQL Query, insert, delete, update, if not successful then throw an exception": {
+                description: "Program to throw the SQL Query, insert, delete, update, if not successful then throw an exception",
+                code: `
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -6047,16 +6957,16 @@ public class SQLQueryHandler {
 
 
 `,
-              output: `
+                output: `
 Insert successful.
 Update successful.
 Delete successful.
 
               `
-    },
-    "show an example of throws Keyword.": {
-        description: "Program to show an example of throws Keyword.",
-        code: `
+            },
+            "show an example of throws Keyword.": {
+                description: "Program to show an example of throws Keyword.",
+                code: `
       package exception11;
 class Exception11
         {
@@ -6069,14 +6979,14 @@ class Exception11
         }
 
 `,
-              output: `
+                output: `
              The main function throw io exception to JVM using thorws Keyword!
              97
               `
-    },
-    "show an example of multiple catch": {
-        description: "Program to show an example of multiple catch",
-        code: `
+            },
+            "show an example of multiple catch": {
+                description: "Program to show an example of multiple catch",
+                code: `
 package exception12;
 class Exception12
     {
@@ -6098,14 +7008,14 @@ class Exception12
     }
 
 `,
-              output: `
+                output: `
 C:\&gt;java exception12.Exception12
 Please Enter at least one Argument!
               `
-    },
-    "show an example of nested try block.": {
-        description: "Program to show an example of nested try block.",
-        code: `
+            },
+            "show an example of nested try block.": {
+                description: "Program to show an example of nested try block.",
+                code: `
 package exception13;
 
 class Exception13 
@@ -6132,25 +7042,25 @@ class Exception13
     }
 
 `,
-              output: `
+                output: `
 C:\\&gt;java exception13.Exception13 a
 Please Enter an Integer value!
               `
+            },
+
+        },
+        "Medium": {
+
+        },
+        "Hard": {
+
+        }
     },
-      
-  },
-  "Medium": {
-    
-  },
-  "Hard": {
-     
-  }
-},
-"FUNCTIONS": {
-  "Easy": {
-      "to find the smallest number among three numbers.": {
-          description: "Write a Java method to to find the smallest number among three numbers.",
-          code: `
+    "FUNCTIONS": {
+        "Easy": {
+            "to find the smallest number among three numbers.": {
+                description: "Write a Java method to to find the smallest number among three numbers.",
+                code: `
  package findsmallest;
 class FindSmallest 
         {
@@ -6220,15 +7130,15 @@ class FindSmallest
             }
         }
             `
-    ,
+                ,
                 output: `
  4 5 2
  Smallest Number is : 2
                 `
-      },
-      "compute the average of three numbers.": {
-          description: "Write a Java method to compute the average of three numbers.",
-          code: `
+            },
+            "compute the average of three numbers.": {
+                description: "Write a Java method to compute the average of three numbers.",
+                code: `
 package average;
 class Average 
         {
@@ -6271,15 +7181,15 @@ class Average
             }
         }
             `
-    ,
+                ,
                 output: `
  4 5 6
  Average is : 5.0
                 `
-      },
-      "display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.": {
-          description: "Write a Java method to display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.",
-          code: `
+            },
+            "display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.": {
+                description: "Write a Java method to display the middle character of a string. Note: a) If the length of the string is odd there will be two middle characters. b) If the length of the string is even there will be one middle character.",
+                code: `
 public class MidChar {
    static void midChar(String s)
     {
@@ -6303,15 +7213,15 @@ public class MidChar {
 }
 
             `
-    ,
+                ,
                 output: `
  n
  j
                 `
-      },
-      "count all the words in a string.": {
-          description: "Write a Java method to count all the words in a string.",
-          code: `
+            },
+            "count all the words in a string.": {
+                description: "Write a Java method to count all the words in a string.",
+                code: `
 package countwords;
 class CountWords 
         {
@@ -6354,25 +7264,42 @@ class CountWords
             }
         }
             `
-    ,
+                ,
                 output: `
 No of word in sentance : My name is Manjit
 4
                 `
-      },
-      "compute the future investment value at a given interest rate for a specified number of years.": {
-          description: "Write a Java method to compute the future investment value at a given interest rate for a specified number of years..",
-          code: `
-            code//
+            },
+            "compute the future investment value at a given interest rate for a specified number of years.": {
+                description: "Write a Java method to compute the future investment value at a given interest rate for a specified number of years..",
+                code: `
+public class InvestmentCalculator {
+
+    public static double computeFutureInvestmentValue(double principal, double rate, int years) {
+        double futureValue = principal * Math.pow((1 + rate / 100), years);
+        return futureValue;
+    }
+
+    public static void main(String[] args) {
+        double principal = 1000.0; // initial investment
+        double rate = 5.0;         // annual interest rate in percentage
+        int years = 10;            // investment period in years
+
+        double futureValue = computeFutureInvestmentValue(principal, rate, years);
+        System.out.printf("Future Investment Value: %.2f\n", futureValue);
+    }
+}
+
             `
-    ,
+                ,
                 output: `
-              output//
+Future Investment Value: 1628.89
+
                 `
-      },
-      "print characters between two characters (i.e. A to P)": {
-          description: "Write a Java method to print characters between two characters (i.e. A to P).",
-          code: `
+            },
+            "print characters between two characters (i.e. A to P)": {
+                description: "Write a Java method to print characters between two characters (i.e. A to P).",
+                code: `
 package printchar;
 class PrintChar
 {
@@ -6412,47 +7339,140 @@ class PrintChar
     }
 }
             `
-    ,
+                ,
                 output: `
 M
 N
 O
 P
                 `
-      },
-      "check whether a string is a valid password": {
-          description: "Write a Java method to check whether a string is a valid password.",
-          code: `
-            code//
+            },
+            "check whether a string is a valid password": {
+                description: "Write a Java method to check whether a string is a valid password.",
+                code: `
+public class PasswordValidator {
+
+    public static boolean isValidPassword(String password) {
+        if (password.length() < 8) {
+            return false;
+        }
+
+        boolean hasUppercase = false;
+        boolean hasLowercase = false;
+        boolean hasDigit = false;
+        boolean hasSpecialChar = false;
+
+        for (char ch : password.toCharArray()) {
+            if (Character.isUpperCase(ch)) {
+                hasUppercase = true;
+            } else if (Character.isLowerCase(ch)) {
+                hasLowercase = true;
+            } else if (Character.isDigit(ch)) {
+                hasDigit = true;
+            } else if (!Character.isLetterOrDigit(ch)) {
+                hasSpecialChar = true;
+            }
+
+            // If all conditions are met, no need to check further
+            if (hasUppercase && hasLowercase && hasDigit && hasSpecialChar) {
+                return true;
+            }
+        }
+
+        return hasUppercase && hasLowercase && hasDigit && hasSpecialChar;
+    }
+
+    public static void main(String[] args) {
+        String password = "M@njit00";
+        if (isValidPassword(password)) {
+            System.out.println("Valid password");
+        } else {
+            System.out.println("Invalid password");
+        }
+    }
+}
+
             `
-    ,
+                ,
                 output: `
-              output//
+Valid password
+
                 `
-      },
-      "display the current date and time": {
-          description: "Write a Java method to display the current date and time.",
-          code: `
-            code//
+            },
+            "display the current date and time": {
+                description: "Write a Java method to display the current date and time.",
+                code: `
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateTimeDisplay {
+
+    public static void displayCurrentDateTime() {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
+        System.out.println("Current Date and Time: " + formattedDateTime);
+    }
+
+    public static void main(String[] args) {
+        displayCurrentDateTime();
+    }
+}
+
             `
-    ,
+                ,
                 output: `
-              output//
+Current Date and Time: 2024-10-23 15:30:45
+
                 `
-      },
-      "find all twin prime numbers less than 100": {
-          description: "Write a Java method to find all twin prime numbers less than 100.",
-          code: `
-            code//
+            },
+            "find all twin prime numbers less than 100": {
+                description: "Write a Java method to find all twin prime numbers less than 100.",
+                code: `
+public class TwinPrimes {
+
+    // Method to check if a number is prime
+    public static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    // Method to find twin primes less than 100
+    public static void findTwinPrimes(int limit) {
+        for (int i = 2; i < limit - 2; i++) {
+            if (isPrime(i) && isPrime(i + 2)) {
+                System.out.println("(" + i + ", " + (i + 2) + ")");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Twin prime numbers less than 100:");
+        findTwinPrimes(100);
+    }
+}
+
             `
-    ,
+                ,
                 output: `
-              output//
+Twin prime numbers less than 100:
+(3, 5)
+(5, 7)
+(11, 13)
+(17, 19)
+(29, 31)
+(41, 43)
+(59, 61)
+(71, 73)
+
                 `
-      },
-      "count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative": {
-          description: "Write a Java method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative.",
-          code: `
+            },
+            "count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative": {
+                description: "Write a Java method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative.",
+                code: `
 public class NumDigit {
    static void numDigit(int num)
     {
@@ -6474,14 +7494,14 @@ public class NumDigit {
 }
 
             `
-    ,
+                ,
                 output: `
 count 3
                 `
-      },
-      "accepts three integers and checks whether they are consecutive or not. Returns true or false": {
-          description: "Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.",
-          code: `
+            },
+            "accepts three integers and checks whether they are consecutive or not. Returns true or false": {
+                description: "Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.",
+                code: `
 public class ThreeInt {
     boolean consecutive(int a,int b,int c)
     {
@@ -6502,14 +7522,14 @@ public class ThreeInt {
 }
 
             `
-    ,
+                ,
                 output: `
 true
                 `
-      },
-      "that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false": {
-          description: "Write a Java method to that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false.",
-          code: `
+            },
+            "that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false": {
+                description: "Write a Java method to that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false.",
+                code: `
 public class MidPoint {
      boolean midPoint(int a,int b,int c)
     {
@@ -6530,14 +7550,14 @@ public class MidPoint {
 }
 
             `
-    ,
+                ,
                 output: `
 true
                 `
-      },
-      "that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false": {
-          description: "Write a Java method to that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.",
-          code: `
+            },
+            "that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false": {
+                description: "Write a Java method to that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.",
+                code: `
 public class Vowel {
     boolean isVowel(String s)
     {
@@ -6562,25 +7582,25 @@ public class Vowel {
 }
 
             `
-    ,
+                ,
                 output: `
 true
                 `
-      },
-      
-  },
-  "Medium": {
-     
-  },
-  "Hard": {
-     
-  }
-},
-"GRAPHICAL USER INTERFACE (AWT)": {
-  "Easy": {
-      "Create a simple AWT application that displays a button with FlowLayout manager.": {
-          description: "Program to Create a simple AWT application that displays a button with FlowLayout manager.",
-          code: `
+            },
+
+        },
+        "Medium": {
+
+        },
+        "Hard": {
+
+        }
+    },
+    "GRAPHICAL USER INTERFACE (AWT)": {
+        "Easy": {
+            "Create a simple AWT application that displays a button with FlowLayout manager.": {
+                description: "Program to Create a simple AWT application that displays a button with FlowLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6609,13 +7629,13 @@ class MyFrame extends Frame
 
 `,
                 output: `
-<img src="AWTimg/FButton.png" alt="polygon" loading="lazy">
+<img src="AWTimg/FButton.png" alt="FButton" loading="lazy">
     
                 `
-      },
-      "Create a simple AWT application that displays a button with Custom Layout.": {
-        description: "Program to Create a simple AWT application that displays a button with Custom Layout.",
-        code: `
+            },
+            "Create a simple AWT application that displays a button with Custom Layout.": {
+                description: "Program to Create a simple AWT application that displays a button with Custom Layout.",
+                code: `
 
 import java.awt.*;
 import java.awt.event.*;
@@ -6645,14 +7665,14 @@ class MyFrame extends Frame
 }
 
 `,
-              output: `
-<img src="AWTimg/CButton.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/CButton.png" alt="CButton" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).": {
-        description: "Program to Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).",
-        code: `
+            },
+            "Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).": {
+                description: "Program to Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center).",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6689,14 +7709,14 @@ class MyFrame extends Frame
 }
 
 `,
-              output: `
-<img src="AWTimg/Border.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/Border.png" alt="Border" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a TextField with FlowLayout manager.": {
-        description: "Program to Create a simple AWT application that displays a TextField with FlowLayout manager.",
-        code: `
+            },
+            "Create a simple AWT application that displays a TextField with FlowLayout manager.": {
+                description: "Program to Create a simple AWT application that displays a TextField with FlowLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6723,14 +7743,14 @@ class MyFrame extends Frame
     }
 }
 `,
-              output: `
-<img src="AWTimg/TextField.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/TextField.png" alt="TextField" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a TextField with Custom Layout.": {
-        description: "Program to Create a simple AWT application that displays a TextField with Custom Layout.",
-        code: `
+            },
+            "Create a simple AWT application that displays a TextField with Custom Layout.": {
+                description: "Program to Create a simple AWT application that displays a TextField with Custom Layout.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6757,14 +7777,14 @@ class MyFrame extends Frame
     }
 }
 `,
-              output: `
-<img src="AWTimg/TextFieldC.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/TextFieldC.png" alt="TextFieldC" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a Checkbox with FlowLayout manager.": {
-        description: "Program to Create a simple AWT application that displays a Checkbox with FlowLayout manager.",
-        code: `
+            },
+            "Create a simple AWT application that displays a Checkbox with FlowLayout manager.": {
+                description: "Program to Create a simple AWT application that displays a Checkbox with FlowLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6792,14 +7812,14 @@ class MyFrame extends Frame
 
 
 `,
-              output: `
-<img src="AWTimg/Checkbox.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/Checkbox.png" alt="Checkbox" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a Checkbox with Custom Layout.": {
-        description: "Program to Create a simple AWT application that displays a Checkbox with Custom Layout.",
-        code: `
+            },
+            "Create a simple AWT application that displays a Checkbox with Custom Layout.": {
+                description: "Program to Create a simple AWT application that displays a Checkbox with Custom Layout.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6827,14 +7847,14 @@ class MyFrame extends Frame
 }
 
 `,
-              output: `
-<img src="AWTimg/CheckboxC.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/CheckboxC.png" alt="Checkbox" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a Label with FlowLayout manager.": {
-        description: "Program to Create a simple AWT application that displays a Label with FlowLayout manager.",
-        code: `
+            },
+            "Create a simple AWT application that displays a Label with FlowLayout manager.": {
+                description: "Program to Create a simple AWT application that displays a Label with FlowLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6862,14 +7882,14 @@ class MyFrame extends Frame
 
 
 `,
-              output: `
-<img src="AWTimg/Label.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/Label.png" alt="Label" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a Label with Custom Layout.": {
-        description: "Program to Create a simple AWT application that displays a Label with Custom Layout.",
-        code: `
+            },
+            "Create a simple AWT application that displays a Label with Custom Layout.": {
+                description: "Program to Create a simple AWT application that displays a Label with Custom Layout.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6898,14 +7918,14 @@ class MyFrame extends Frame
 
 
 `,
-              output: `
-<img src="AWTimg/LabelC.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/LabelC.png" alt="Label" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a Choice with FlowLayout manager.": {
-        description: "Program to Create a simple AWT application that displays a Choice with FlowLayout manager.",
-        code: `
+            },
+            "Create a simple AWT application that displays a Choice with FlowLayout manager.": {
+                description: "Program to Create a simple AWT application that displays a Choice with FlowLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -6941,14 +7961,14 @@ class MyFrame extends Frame
 
 
 `,
-              output: `
-<img src="AWTimg/Choice.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/Choice.png" alt="Choice" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a Choice with Custom Layout.": {
-        description: "Program to Create a simple AWT application that displays a Choice with Custom Layout.",
-        code: `
+            },
+            "Create a simple AWT application that displays a Choice with Custom Layout.": {
+                description: "Program to Create a simple AWT application that displays a Choice with Custom Layout.",
+                code: `
 package awt10;
 import java.awt.*;
 import java.awt.event.*;
@@ -6985,14 +8005,14 @@ class MyFrame extends Frame
 
 
 `,
-              output: `
-<img src="AWTimg/ChoiceC.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/ChoiceC.png" alt="Choice" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.": {
-        description: "Program to Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.",
-        code: `
+            },
+            "Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.": {
+                description: "Program to Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -7026,14 +8046,14 @@ class MyFrame extends Frame
 }
 
 `,
-              output: `
-<img src="AWTimg/Checkbox.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/Radio.png" alt="checkbox" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a CheckboxGroup with Custom Layout.": {
-        description: "Program to Create a simple AWT application that displays a CheckboxGroup with Custom Layout.",
-        code: `
+            },
+            "Create a simple AWT application that displays a CheckboxGroup with Custom Layout.": {
+                description: "Program to Create a simple AWT application that displays a CheckboxGroup with Custom Layout.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -7070,14 +8090,14 @@ class MyFrame extends Frame
 
 
 `,
-              output: `
-<img src="AWTimg/CheckBox.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/RadioC.png" alt="checkbox" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a List with FlowLayout manager.": {
-        description: "Program to Create a simple AWT application that displays a List with FlowLayout manager.",
-        code: `
+            },
+            "Create a simple AWT application that displays a List with FlowLayout manager.": {
+                description: "Program to Create a simple AWT application that displays a List with FlowLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -7112,14 +8132,14 @@ class MyFrame extends Frame
 
 
 `,
-              output: `
-              <img src="AWTimg/List.png" alt="polygon" loading="lazy">
+                output: `
+              <img src="AWTimg/List.png" alt="List" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a List with Custom Layout": {
-        description: "Program to Create a simple AWT application that displays a List with Custom Layout",
-        code: `
+            },
+            "Create a simple AWT application that displays a List with Custom Layout": {
+                description: "Program to Create a simple AWT application that displays a List with Custom Layout",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -7152,14 +8172,14 @@ class MyFrame extends Frame
     }
 }
 `,
-              output: `
-              <img src="AWTimg/ListC.png" alt="polygon" loading="lazy">
+                output: `
+              <img src="AWTimg/ListC.png" alt="List" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a TextArea with FlowLayout manager.": {
-        description: "Program to Create a simple AWT application that displays a TextArea with FlowLayout manager.",
-        code: `
+            },
+            "Create a simple AWT application that displays a TextArea with FlowLayout manager.": {
+                description: "Program to Create a simple AWT application that displays a TextArea with FlowLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -7187,14 +8207,14 @@ class MyFrame extends Frame
 }
 
 `,
-              output: `
-              <img src="AWTimg/TextArea.png" alt="polygon" loading="lazy">
+                output: `
+              <img src="AWTimg/TextArea.png" alt="TextArea" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application that displays a TextArea with Custom Layout.": {
-        description: "Program to Create a simple AWT application that displays a TextArea with Custom Layout.",
-        code: `
+            },
+            "Create a simple AWT application that displays a TextArea with Custom Layout.": {
+                description: "Program to Create a simple AWT application that displays a TextArea with Custom Layout.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 class MyFrame extends Frame
@@ -7221,14 +8241,14 @@ class MyFrame extends Frame
     }
 }
 `,
-              output: `
-              <img src="AWTimg/TextAreaC.png" alt="polygon" loading="lazy">
+                output: `
+              <img src="AWTimg/TextAreaC.png" alt="TextArea" loading="lazy">
   
               `
-    },
-    "Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.": {
-        description: "Program to Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.",
-        code: `
+            },
+            "Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.": {
+                description: "Program to Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.",
+                code: `
 import java.awt.*;
 import java.awt.event.*;
 
@@ -7376,26 +8396,26 @@ class Main {
 
 
 `,
-              output: `
-<img src="AWTimg/Calculator.png" alt="polygon" loading="lazy">
+                output: `
+<img src="AWTimg/Calculator.png" alt="Calculator" loading="lazy">
   
               `
+            },
+
+
+        },
+        "Medium": {
+
+        },
+        "Hard": {
+
+        }
     },
-   
-    
-  },
-  "Medium": {
-      
-  },
-  "Hard": {
-      
-  }
-},
-"INHERITANCE": {
-  "Easy": {
-      "Create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark.": {
-          description: "JAVA Program to create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark.",
-          code: `
+    "INHERITANCE": {
+        "Easy": {
+            "Create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark.": {
+                description: "JAVA Program to create a class called Animal with a method called makeSound(). Create a subclass called Cat that overrides the makeSound() method to bark.",
+                code: `
 package animal;
 class  Animal
 	{
@@ -7428,10 +8448,10 @@ class  Main
 Animal make Sounds
 Meow Meow
                 `
-      },
-      "Create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print Repairing a car.": {
-          description: "JAVA Program to create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print Repairing a car.",
-          code: `
+            },
+            "Create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print Repairing a car.": {
+                description: "JAVA Program to create a class called Vehicle with a method called drive(). Create a subclass called Car that overrides the drive() method to print Repairing a car.",
+                code: `
 package vehicle;
 
 class Vehicle
@@ -7465,10 +8485,10 @@ class Vehicle
 Drive Vehicle
 Repairing Car
                 `
-      },
-      "Create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.": {
-          description: "JAVA Program to create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.",
-          code: `
+            },
+            "Create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.": {
+                description: "JAVA Program to create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.",
+                code: `
 package shape;
 
 class Shape
@@ -7508,10 +8528,10 @@ class Shape
                 output: `
 Area of Rectangle is : 20.0
                 `
-      },
-      "Create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().": {
-          description: "JAVA Program to create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().",
-          code: `
+            },
+            "Create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().": {
+                description: "JAVA Program to create a class called Employee with methods called work() and getSalary(). Create a subclass called HRManager that overrides the work() method and adds a new method called addEmployee().",
+                code: `
 package employee;
 
 class Employee
@@ -7568,10 +8588,10 @@ HRManager is managing employee
 Salary : 10000.0
 HR Manager adding Employee
                 `
-      },
-      "Create a class known as BankAccount with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.": {
-          description: "JAVA Program to create a class known as 'BankAccount' with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.",
-          code: `
+            },
+            "Create a class known as BankAccount with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.": {
+                description: "JAVA Program to create a class known as 'BankAccount' with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.",
+                code: `
 package bankaccount;
 
 class BankAccount {
@@ -7638,10 +8658,10 @@ Withdrawn: 200.0
 Withdrawal not allowed. Balance will fall below $100.
 Balance: 1300.0
                 `
-      },
-      "Create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.": {
-          description: "JAVA Program to create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.",
-          code: `
+            },
+            "Create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.": {
+                description: "JAVA Program to create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.",
+                code: `
 package animal2;
 
 class Animal
@@ -7675,10 +8695,10 @@ class Main
 Move
 Cheetah Run
                 `
-      },
-      "Create a class known as Person with methods called getFirstName() and getLastName(). Create a subclass called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title": {
-          description: "JAVA Program to create a class known as Person with methods called getFirstName() and getLastName(). Create a subclass called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title",
-          code: `
+            },
+            "Create a class known as Person with methods called getFirstName() and getLastName(). Create a subclass called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title": {
+                description: "JAVA Program to create a class known as Person with methods called getFirstName() and getLastName(). Create a subclass called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title",
+                code: `
 package person;
 
 class Person
@@ -7743,40 +8763,40 @@ Last Name : Kumar
 Job Title : Manager
 Employee Id : 1
                 `
-      },
-      "Create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.": {
-          description: "JAVA Program to create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.",
-          code: `
+            },
+            "Create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.": {
+                description: "JAVA Program to create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.",
+                code: `
         code//
 
 `,
                 output: `
             output//
                 `
-      },
-      "Create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.": {
-          description: "JAVA Program to create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.",
-          code: `
+            },
+            "Create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.": {
+                description: "JAVA Program to create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.",
+                code: `
         code//
 
 `,
                 output: `
             output//
                 `
-      },
-      "Creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.": {
-          description: "JAVA Program to creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.",
-          code: `
+            },
+            "Creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.": {
+                description: "JAVA Program to creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.",
+                code: `
         code//
 
 `,
                 output: `
             output//
                 `
-      },
-      "Showing an example of super keyword": {
-          description: "JAVA Program to showing an example of super keyword",
-          code: `
+            },
+            "Showing an example of super keyword": {
+                description: "JAVA Program to showing an example of super keyword",
+                code: `
 package superkeyword;
 class Base
     {
@@ -7815,10 +8835,10 @@ Value of Child x : 10
 Value of Base x : 20
 5
                 `
-      },
-      "Showing an example of super function": {
-          description: "JAVA Program to showing an example of super function",
-          code: `
+            },
+            "Showing an example of super function": {
+                description: "JAVA Program to showing an example of super function",
+                code: `
         package superfunction;
 
 class A
@@ -7852,10 +8872,10 @@ class Main
                 output: `
             4 + 5 = 9
                 `
-      },
-      "Showing an example of method overriding": {
-          description: "JAVA Program to showing an example of method overriding",
-          code: `
+            },
+            "Showing an example of method overriding": {
+                description: "JAVA Program to showing an example of method overriding",
+                code: `
         package methodoverriding;
 
 class A
@@ -7882,10 +8902,10 @@ class Main
                 output: `
             This is Class B
                 `
-      },
-      "Showing an example of dynamic method dispatch": {
-          description: "JAVA Program to showing an example of dynamic method dispatch",
-          code: `
+            },
+            "Showing an example of dynamic method dispatch": {
+                description: "JAVA Program to showing an example of dynamic method dispatch",
+                code: `
 package dynamicmethoddispatch;
 
 class A {
@@ -7928,10 +8948,10 @@ This is Class A
 This is Class B
 This is Class C
                 `
-      },
-      "Create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.": {
-          description: "JAVA Program to create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.",
-          code: `
+            },
+            "Create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.": {
+                description: "JAVA Program to create an abstract class Animal with an abstract method called sound(). Create subclasses Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.",
+                code: `
  abstract class Animal
 {
     abstract void sound();
@@ -7967,10 +8987,10 @@ class Main
 Lion sound
 Tiger sound
                 `
-      },
-      "Create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.": {
-          description: "JAVA Program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.",
-          code: `
+            },
+            "Create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.": {
+                description: "JAVA Program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.",
+                code: `
 abstract class Shape
         {
             abstract double calculatePerimeter();
@@ -8039,10 +9059,10 @@ Circle Perimeter: 31.41592653589793
 Triangle Area: 6.0
 Triangle Perimeter: 12.0
                 `
-      },
-      "Create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.": {
-          description: "JAVA Program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.",
-          code: `
+            },
+            "Create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.": {
+                description: "JAVA Program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.",
+                code: `
 abstract class BankAccount {
     protected double balance;
     public BankAccount(double balance) {
@@ -8138,10 +9158,10 @@ Withdrawn: 200.0
 Withdrawal not allowed. Balance will fall below $100.
 Balance: 1300.0
                 `
-      },
-      "Create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.": {
-          description: "JAVA Program to create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.",
-          code: `
+            },
+            "Create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.": {
+                description: "JAVA Program to create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.",
+                code: `
 abstract class Animal
         {
             abstract void eat();
@@ -8208,10 +9228,10 @@ Tiger sleeps for about 16 hours a day.
 Deer is eating meat.
 Deer sleeps for about 4 hours a day.
                 `
-      },
-      "create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.": {
-          description: "JAVA Program to create an abstracWrite a Java program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.",
-          code: `
+            },
+            "create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.": {
+                description: "JAVA Program to create an abstracWrite a Java program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create subclasses Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.",
+                code: `
 abstract class Employee {
     protected String name;
     protected int employeeId;
@@ -8313,10 +9333,10 @@ Overtime Rate: Rs. 40.0 per hour
 Overtime Hours: 10
 Total Salary: Rs. 60400.0
                 `
-      },
-      "Create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape": {
-          description: "JAVA Program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape",
-          code: `
+            },
+            "Create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape": {
+                description: "JAVA Program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create subclasses Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape",
+                code: `
 abstract class Shape3D {
     
     abstract double calculateVolume();
@@ -8388,10 +9408,10 @@ Sphere Surface Area: 314.1592653589793
 Cube Volume: 64.0
 Cube Surface Area: 96.0
                 `
-      },
-      "Create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.": {
-          description: "JAVA Program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.",
-          code: `
+            },
+            "Create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.": {
+                description: "JAVA Program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create subclasses Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.",
+                code: `
 abstract class Vehicle
         {
             abstract String startEngine();
@@ -8438,10 +9458,10 @@ Car Engine Stoped
 Motorcycle Engine Started
 Motorcycle Engine Stoped
                 `
-      },
-      "Create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.": {
-          description: "JAVA Program to create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.",
-          code: `
+            },
+            "Create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.": {
+                description: "JAVA Program to create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.",
+                code: `
 abstract class Person
         {
             abstract void eat();
@@ -8491,10 +9511,10 @@ The Athlete exercises daily, with intense cardio, strength training, and enduran
 The LazyPerson prefers fast food and snacks while watching TV or lounging on the couch.
 The LazyPerson rarely exercises, opting instead for naps and minimal physical activity.
                 `
-      },
-      "Create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.": {
-          description: "JAVA Program to create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.",
-          code: `
+            },
+            "Create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.": {
+                description: "JAVA Program to create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.",
+                code: `
 abstract class Instrument
             {
                 abstract void play();
@@ -8543,10 +9563,10 @@ Tuning the Glockenspiel by adjusting the bars to the correct pitch.
 Playing the Violin with a bow, producing smooth, melodious sounds.
 Tuning the Violin by adjusting the tension of the strings.
                 `
-      },
-      "Create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.": {
-          description: "JAVA Program to create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.",
-          code: `
+            },
+            "Create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.": {
+                description: "JAVA Program to create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.",
+                code: `
 abstract class Shape2D {
    
     abstract void draw();
@@ -8623,10 +9643,10 @@ Resized Rectangle to width 7.5 and height 15.0
 Drawing a Circle with radius 7.0
 Resized Circle to radius 14.0
                 `
-      },
-      "Create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.": {
-          description: "JAVA Program to create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.",
-          code: `
+            },
+            "Create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.": {
+                description: "JAVA Program to create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.",
+                code: `
 abstract class Bird
     {
         abstract void fly();
@@ -8672,10 +9692,10 @@ Eagle makes a sharp, high-pitched screech.
 Hawk flies swiftly, diving at great speed to catch prey.
 Hawk makes a loud, piercing call.
                 `
-      },
-      "Create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape": {
-          description: "JAVA Program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape",
-          code: `
+            },
+            "Create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape": {
+                description: "JAVA Program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape",
+                code: `
 abstract class GeometricShape {
     
     abstract double area();
@@ -8749,22 +9769,22 @@ Triangle Perimeter: 12.0
 Square Area: 25.0
 Square Perimeter: 20.0
                 `
-      },
-                 
-  },
-  "Medium": {
-      
-     
-  },
-  "Hard": {
-     
-  }
-},
-"INPUT/OUTPUT": {
-  "Easy": {
-     "Enter the character from user using InputStreamReader": {
-        description: "Program to Enter the character from user using InputStreamReader",
-        code: `
+            },
+
+        },
+        "Medium": {
+
+
+        },
+        "Hard": {
+
+        }
+    },
+    "INPUT/OUTPUT": {
+        "Easy": {
+            "Enter the character from user using InputStreamReader": {
+                description: "Program to Enter the character from user using InputStreamReader",
+                code: `
       package input1;
 class Input1
 	{
@@ -8790,15 +9810,15 @@ class Input1
 		}
 	}
 `,
-              output: `
+                output: `
 Enter any character
 a
 You enter : a
               `
-    },
-    "Enter the string from user using BufferedStreamReader": {
-        description: "Program to Enter the string from user using BufferedStreamReader",
-        code: `
+            },
+            "Enter the string from user using BufferedStreamReader": {
+                description: "Program to Enter the string from user using BufferedStreamReader",
+                code: `
 package input2;
 class Input2
 	{
@@ -8829,15 +9849,15 @@ class Input2
 	}
 
 `,
-              output: `
+                output: `
 Enter Somrthing
 manjit
 manjit
               `
-    },
-    "Enter the integer from user using Scanner class": {
-        description: "Program to Enter the integer from user using Scanner class",
-        code: `
+            },
+            "Enter the integer from user using Scanner class": {
+                description: "Program to Enter the integer from user using Scanner class",
+                code: `
 package input3;
 class Input3
 	{
@@ -8857,15 +9877,15 @@ class Input3
 }
 
 `,
-              output: `
+                output: `
 Enter Any Number : 
 12
 You enter : 12
               `
-    },
-    "Enter the float from user using Scanner class": {
-        description: "Program to Enter the float from user using Scanner class",
-        code: `
+            },
+            "Enter the float from user using Scanner class": {
+                description: "Program to Enter the float from user using Scanner class",
+                code: `
 package input4;
 class Input4
 	{
@@ -8885,15 +9905,15 @@ class Input4
 }
 
 `,
-              output: `
+                output: `
 Enter Any Number : 
 12.86
 You enter : 12.86
               `
-    },
-    "Enter the double from user using Scanner class": {
-        description: "Program to Enter the double from user using Scanner class",
-        code: `
+            },
+            "Enter the double from user using Scanner class": {
+                description: "Program to Enter the double from user using Scanner class",
+                code: `
 package input5;
 class Input5
 	{
@@ -8913,15 +9933,15 @@ class Input5
 }
 
 `,
-              output: `
+                output: `
 Enter Any Number : 
 12.8754
 You enter : 12.8754
               `
-    },
-    "Enter the boolean from user using Scanner class": {
-        description: "Program to Enter the boolean from user using Scanner class",
-        code: `
+            },
+            "Enter the boolean from user using Scanner class": {
+                description: "Program to Enter the boolean from user using Scanner class",
+                code: `
 package input6;
 class Input6
 	{
@@ -8942,15 +9962,15 @@ class Input6
 }
 
 `,
-              output: `
+                output: `
 Enter false/true : 
 true
 You enter : true
               `
-    },
-    "Enter the long integer from user using Scanner class": {
-        description: "Program to Enter the long integer from user using Scanner class",
-        code: `
+            },
+            "Enter the long integer from user using Scanner class": {
+                description: "Program to Enter the long integer from user using Scanner class",
+                code: `
 class Input6
 	{
 	public static void main(String st[])
@@ -8970,17 +9990,17 @@ class Input6
 }
 
 `,
-              output: `
+                output: `
 123454
               `
-    },
- 
-    
-  },
-  "Medium": {
-    "Get all characters from the file and display on the screen": {
-        description: "Program to Get all characters from the file and display on the screen",
-        code: `
+            },
+
+
+        },
+        "Medium": {
+            "Get all characters from the file and display on the screen": {
+                description: "Program to Get all characters from the file and display on the screen",
+                code: `
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -9006,19 +10026,19 @@ public class FileCharacterReader {
 
 
 `,
-              output: `
+                output: `
 File contents:
 This is a sample file.
 It contains multiple lines of text.
 
               `
-    },
-      
-  },
-  "Hard": {
-    "Get all characters from the file, count number of lines, words, characters and display on the screen": {
-        description: "Program to Get all characters from the file, count number of lines, words, characters and display on the screen",
-        code: `
+            },
+
+        },
+        "Hard": {
+            "Get all characters from the file, count number of lines, words, characters and display on the screen": {
+                description: "Program to Get all characters from the file, count number of lines, words, characters and display on the screen",
+                code: `
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9067,7 +10087,7 @@ public class FileStatistics {
 
 
 `,
-              output: `
+                output: `
 File contents:
 This is a sample file.
 It contains multiple lines of text.
@@ -9078,15 +10098,15 @@ Number of words: 8
 Number of characters: 47
 
               `
-    }
+            }
 
-  }
-},
-"INTERFACES": {
-  "Easy": {
-    "create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes.": {
-        description: "Program to create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes.",
-        code: `
+        }
+    },
+    "INTERFACES": {
+        "Easy": {
+            "create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes.": {
+                description: "Program to create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes.",
+                code: `
 package shape;
 
 interface Shape 
@@ -9149,15 +10169,15 @@ class Main
     }
 
 `,
-output: `
+                output: `
 Area of Rectangle is : 12.0
 Area of Circle is : 153.86
 Area of Triangle is : 28.0
           `
-    },
-    "create a Animal interface with a method called bark() that takes no arguments and returns void. Create a Dog class that implements Animal and overrides speak() to print \"Dog is barking\".": {
-        description: "Program to create a Animal interface with a method called bark() that takes no arguments and returns void. Create a Dog class that implements Animal and overrides speak() to print \"Dog is barking\"..",
-        code: `
+            },
+            "create a Animal interface with a method called bark() that takes no arguments and returns void. Create a Dog class that implements Animal and overrides speak() to print \"Dog is barking\".": {
+                description: "Program to create a Animal interface with a method called bark() that takes no arguments and returns void. Create a Dog class that implements Animal and overrides speak() to print \"Dog is barking\"..",
+                code: `
 package animal;
 
 interface Animal
@@ -9181,13 +10201,13 @@ class Main
     }
 
 `,
-output: `
+                output: `
           Dog is barking
           `
-    },
-    "create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes.": {
-        description: "Program to create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes..",
-        code: `
+            },
+            "create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes.": {
+                description: "Program to create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes..",
+                code: `
 interface Flyable
     {
         void fly_obj();
@@ -9229,14 +10249,14 @@ class Main
     }
 
 `,
-output: `
+                output: `
           output//
           `
-    },
- 
-    "create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. Create a class Rectangle that implements the Resizable interface and implements the resize methods.": {
-        description: "Program to create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. Create a class Rectangle that implements the Resizable interface and implements the resize methods..",
-        code: `
+            },
+
+            "create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. Create a class Rectangle that implements the Resizable interface and implements the resize methods.": {
+                description: "Program to create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized. Create a class Rectangle that implements the Resizable interface and implements the resize methods..",
+                code: `
 // Interface defining resizable behavior
 interface Resizable {
     void resizeWidth(int width);
@@ -9294,17 +10314,17 @@ public class ResizableDemo {
 
 
 `,
-output: `
+                output: `
 Rectangle dimensions -> Width: 10, Height: 5
 Rectangle width resized to: 15
 Rectangle height resized to: 10
 Rectangle dimensions -> Width: 15, Height: 10
 
           `
-    },
-    "create an interface Drawable with a method draw() that takes no arguments and returns void. Create three classes Circle, Rectangle, and Triangle that implement the Drawable interface and override the draw() method to draw their respective shapes.": {
-        description: "Program to create an interface Drawable with a method draw() that takes no arguments and returns void. Create three classes Circle, Rectangle, and Triangle that implement the Drawable interface and override the draw() method to draw their respective shapes..",
-        code: `
+            },
+            "create an interface Drawable with a method draw() that takes no arguments and returns void. Create three classes Circle, Rectangle, and Triangle that implement the Drawable interface and override the draw() method to draw their respective shapes.": {
+                description: "Program to create an interface Drawable with a method draw() that takes no arguments and returns void. Create three classes Circle, Rectangle, and Triangle that implement the Drawable interface and override the draw() method to draw their respective shapes..",
+                code: `
 // Interface defining drawable behavior
 interface Drawable {
     void draw();
@@ -9351,17 +10371,17 @@ public class DrawableDemo {
 
 
 `,
-output: `
+                output: `
 Drawing a Circle
 Drawing a Rectangle
 Drawing a Triangle
 
           `
-    },
+            },
 
-    "create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports.": {
-        description: "Program to create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports..",
-        code: `
+            "create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports.": {
+                description: "Program to create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports..",
+                code: `
 interface Playable {
     void play();
 }
@@ -9399,18 +10419,18 @@ public class PlayableDemo {
 
 
 `,
-output: `
+                output: `
 Playing Football
 Playing Volleyball
 Playing Basketball
 
           `
-    },
-  },
-  "Medium": {
-    "create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
-        description: "Program to create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method..",
-        code: `
+            },
+        },
+        "Medium": {
+            "create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
+                description: "Program to create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method..",
+                code: `
 interface Sortable {
     void sort(int[] arr);
 }
@@ -9468,15 +10488,15 @@ public class Sorting {
 
 
 `,
-output: `
+                output: `
 Array sorted using Bubble Sort: [11, 12, 22, 25, 34, 64, 90]
 Array sorted using Selection Sort: [11, 12, 22, 25, 34, 64, 90]
 
           `
-    },
-    "create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method.": {
-        description: "Program to create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method..",
-        code: `
+            },
+            "create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method.": {
+                description: "Program to create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method..",
+                code: `
 interface Searchable {
     boolean search(String keyword);
 }
@@ -9539,20 +10559,20 @@ public class SearchableDemo {
 
 
 `,
-output: `
+                output: `
 Keyword 'simple' found in Document.
 Keyword 'webpage' found in WebPage.
 Keyword 'missing' not found in Document.
 Keyword 'missing' not found in WebPage.
 
           `
-    },
-    
-  },
-  "Hard": {
-    "create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods.": {
-        description: "Program to create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods..",
-        code: `
+            },
+
+        },
+        "Hard": {
+            "create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods.": {
+                description: "Program to create a banking system with three classes - Bank, Account, SavingsAccount, and CurrentAccount. The bank should have a list of accounts and methods for adding them. Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances. SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods..",
+                code: `
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9675,7 +10695,7 @@ public class BankingSystem {
 
 
 `,
-output: `
+                output: `
 Deposited 200.0 to SavingsAccount. New balance: 1200.0
 Interest added to SavingsAccount. New balance: 1260.0
 Withdrew 300.0 from SavingsAccount. New balance: 960.0
@@ -9686,10 +10706,10 @@ SavingsAccount Balance: 960.0
 CurrentAccount Balance: 50.0
 
           `
-    },
-    " create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations. Create two classes AES and RSA that implement the Encryptable interface and provide their own encryption and decryption algorithms.": {
-        description: "Program to  create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations. Create two classes AES and RSA that implement the Encryptable interface and provide their own encryption and decryption algorithms..",
-        code: `
+            },
+            " create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations. Create two classes AES and RSA that implement the Encryptable interface and provide their own encryption and decryption algorithms.": {
+                description: "Program to  create an interface Encryptable with methods encrypt (String data) and decrypt (String encryptedData) that define encryption and decryption operations. Create two classes AES and RSA that implement the Encryptable interface and provide their own encryption and decryption algorithms..",
+                code: `
 
 interface Encryptable {
     String encrypt(String data);
@@ -9755,17 +10775,17 @@ public class EncryptionDemo {
 
 
 `,
-output: `
+                output: `
 AES Encrypted Data: SEAolleH
 AES Decrypted Data: HelloAES
 RSA Encrypted Data: KhoorUVD
 RSA Decrypted Data: HelloRSA
 
           `
-    },
-    "create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
-        description: "Program to create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method..",
-        code: `
+            },
+            "create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method.": {
+                description: "Program to create an interface Sortable with a method sort (int[] array) that sorts an array of integers in descending order. Create two classes QuickSort and MergeSort that implement the Sortable interface and provide their own implementations of the sort() method..",
+                code: `
 // Interface defining sorting behavior
 interface Sortable {
     void sort(int[] array);
@@ -9898,21 +10918,21 @@ public class SortableDemo {
 
 
 `,
-output: `
+                output: `
 QuickSorted Array (Descending): 
 62 34 32 23 7 5 
 MergeSorted Array (Descending): 
 37 29 14 13 10 
 
           `
+            },
+        }
     },
-  }
-},
-"JAVA DATABASE CONNECTIVITY": {
-  "Easy": {
-    "Create the connection with MySQL Database and manage the driver.": {
-        description: "Program to Create the connection with MySQL Database and manage the driver..",
-        code: `
+    "JAVA DATABASE CONNECTIVITY": {
+        "Easy": {
+            "Create the connection with MySQL Database and manage the driver.": {
+                description: "Program to Create the connection with MySQL Database and manage the driver..",
+                code: `
 import java.sql.DriverManager;
 
 public class Jdbc1 {
@@ -9932,13 +10952,13 @@ public class Jdbc1 {
 
 
 `,
-output: `
+                output: `
 Conection successful
           `
-    },
-    "Create the table in the database from Java API.": {
-        description: "Program to Create the table in the database from Java API..",
-        code: `
+            },
+            "Create the table in the database from Java API.": {
+                description: "Program to Create the table in the database from Java API..",
+                code: `
 public class Jdbc2 {
   
         public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
@@ -9975,14 +10995,14 @@ public class Jdbc2 {
     }
 
 `,
-output: `
+                output: `
 Conection successful
 Table created!
           `
-    },
-    "Insert the row in the table in the database from Java API.": {
-        description: "Program to Insert the row in the table in the database from Java API..",
-        code: `
+            },
+            "Insert the row in the table in the database from Java API.": {
+                description: "Program to Insert the row in the table in the database from Java API..",
+                code: `
 public class Jdbc3 {
     public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
     {
@@ -10016,14 +11036,14 @@ public class Jdbc3 {
 }
 
 `,
-output: `
+                output: `
 Conection successful
 Row inserted!
           `
-    },
-    "Update the row in the table in the database from Java API.": {
-        description: "Program to Update the row in the table in the database from Java API..",
-        code: `
+            },
+            "Update the row in the table in the database from Java API.": {
+                description: "Program to Update the row in the table in the database from Java API..",
+                code: `
 public class Jdbc4 {
     public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
     {
@@ -10057,13 +11077,13 @@ public class Jdbc4 {
 }
 
 `,
-output: `
+                output: `
 Conection successful
           `
-    },
-    "Delete the row in the table in the database from Java API.": {
-        description: "Program to Delete the row in the table in the database from Java API..",
-        code: `
+            },
+            "Delete the row in the table in the database from Java API.": {
+                description: "Program to Delete the row in the table in the database from Java API..",
+                code: `
 public class Jdbc5 {
     public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
     {
@@ -10098,14 +11118,14 @@ public class Jdbc5 {
 
 
 `,
-output: `
+                output: `
 Conection successful
 Row Deleted!
           `
-    },
-    "Select multiple rows from the database table in Java API and show the result on the screen.": {
-        description: "Program to Select multiple rows from the database table in Java API and show the result on the screen..",
-        code: `
+            },
+            "Select multiple rows from the database table in Java API and show the result on the screen.": {
+                description: "Program to Select multiple rows from the database table in Java API and show the result on the screen..",
+                code: `
 public class Jdbc6 {
     public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
     {
@@ -10145,7 +11165,7 @@ public class Jdbc6 {
 
 
 `,
-output: `
+                output: `
 Conection successful
 Roll No : 1
 Name : Manjit
@@ -10157,10 +11177,10 @@ Roll No : 3
 Name : Abhishek
 Marks : 96
           `
-    },
-    "Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.": {
-        description: "Program to Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen..",
-        code: `
+            },
+            "Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.": {
+                description: "Program to Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen..",
+                code: `
 public class Jdbc7 {
     public static void main(String[] args) throws ClassNotFoundException,java.sql.SQLException
     {
@@ -10217,17 +11237,17 @@ public class Jdbc7 {
 
 
 `,
-output: `
+                output: `
 Enter Row Number:
 2
 Roll No : 2
 Name : Manjit
 Marks : 96
           `
-    },
-    "Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only.": {
-        description: "Program to Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only..",
-        code: `
+            },
+            "Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only.": {
+                description: "Program to Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only..",
+                code: `
 import java.sql.*;
 import java.util.Scanner;
 
@@ -10343,7 +11363,7 @@ public class ScrollableUpdateableResultSet {
 
 
 `,
-output: `
+                output: `
 Options:
 1. Insert a new student
 2. Update an existing student
@@ -10392,10 +11412,10 @@ ID: 2, Name: Sandeep, Age: 22
 ID: 3, Name: Manjit kumar, Age: 21
 
           `
-    },
-    "Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement": {
-        description: "Program to Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement.",
-        code: `
+            },
+            "Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement": {
+                description: "Program to Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement.",
+                code: `
 package jdbc9;
 class Database
 	{
@@ -10639,7 +11659,7 @@ class Main
 	}
 
 `,
-output: `
+                output: `
 Insert : 1
 Update : 2
 Delete : 3
@@ -10730,22 +11750,22 @@ Delete : 3
 4
 Invalied!
           `
+            },
+
+        },
+        "Medium": {
+
+
+        },
+        "Hard": {
+
+        }
     },
-   
-  },
-  "Medium": {
-     
-      
-  },
-  "Hard": {
-     
-  }
-},
-" MULTITHREADING": {
-  "Easy": {
-      "create a basic Java thread that prints \"Hello, World!\" when executed.": {
-          description: "Program to create a basic Java thread that prints \"Hello, World!\" when executed.",
-          code: `
+    " MULTITHREADING": {
+        "Easy": {
+            "create a basic Java thread that prints \"Hello, World!\" when executed.": {
+                description: "Program to create a basic Java thread that prints \"Hello, World!\" when executed.",
+                code: `
 class Mythread extends Thread
 {
     public void run()
@@ -10780,10 +11800,10 @@ T1 Hello World!
 T4 Hello World!
     
                 `
-      },
-      "creates two threads to find and print even and odd numbers from 1 to 20.": {
-        description: "Program to creates two threads to find and print even and odd numbers from 1 to 20.",
-        code: `
+            },
+            "creates two threads to find and print even and odd numbers from 1 to 20.": {
+                description: "Program to creates two threads to find and print even and odd numbers from 1 to 20.",
+                code: `
 class Mythread extends Thread
 {
     public void run()
@@ -10806,7 +11826,7 @@ class Mythread extends Thread
 }
 
 `,
-              output: `
+                output: `
 1
 2
 3
@@ -10850,10 +11870,10 @@ class Mythread extends Thread
 
   
               `
-    },
-    "sorts an array of integers using multiple threads.": {
-        description: "Program to sorts an array of integers using multiple threads.",
-        code: `
+            },
+            "sorts an array of integers using multiple threads.": {
+                description: "Program to sorts an array of integers using multiple threads.",
+                code: `
 package thread3;
 class Sort
 {
@@ -10903,7 +11923,7 @@ public class Thread3 {
 
 
 `,
-              output: `
+                output: `
 Thread-0 Unsorted Array:
 1
 4
@@ -10962,10 +11982,10 @@ Thread-1 Sorted Array:
 7
   
               `
-    },
-    "performs matrix multiplication using multiple threads.": {
-        description: "Program to performs matrix multiplication using multiple threads.",
-        code: `
+            },
+            "performs matrix multiplication using multiple threads.": {
+                description: "Program to performs matrix multiplication using multiple threads.",
+                code: `
 class MatrixMulti
 {
     void matrixMulti(int arr1[][],int arr2[][],int multi[][])
@@ -11023,7 +12043,7 @@ class Main {
 
 
 `,
-              output: `
+                output: `
 Thread-0 Matrix 1:
 1 2 3
 4 5 1
@@ -11037,10 +12057,10 @@ Thread-0 Matrix 2:
 96 84 58
   
               `
-    },
-    "calculates the sum of all prime numbers up to a given limit using multiple threads.": {
-        description: "Program to calculates the sum of all prime numbers up to a given limit using multiple threads.",
-        code: `
+            },
+            "calculates the sum of all prime numbers up to a given limit using multiple threads.": {
+                description: "Program to calculates the sum of all prime numbers up to a given limit using multiple threads.",
+                code: `
 class PrimeNum
 {
     int num,sum,isPrime;
@@ -11085,36 +12105,36 @@ class PrimeNum
 
 
 `,
-              output: `
+                output: `
 Sum of 5 to 7 prime Number : 12
   
               `
-    },
-    "implement a concurrent web crawler that crawls multiple websites simultaneously using threads.": {
-        description: "Program to implement a concurrent web crawler that crawls multiple websites simultaneously using threads.",
-        code: `
+            },
+            "implement a concurrent web crawler that crawls multiple websites simultaneously using threads.": {
+                description: "Program to implement a concurrent web crawler that crawls multiple websites simultaneously using threads.",
+                code: `
 code//
 
 `,
-              output: `
+                output: `
               output//
   
               `
-    },
-    "creates a bank account with concurrent deposits and withdrawals using threads.": {
-        description: "Program to creates a bank account with concurrent deposits and withdrawals using threads.",
-        code: `
+            },
+            "creates a bank account with concurrent deposits and withdrawals using threads.": {
+                description: "Program to creates a bank account with concurrent deposits and withdrawals using threads.",
+                code: `
 code//
 
 `,
-              output: `
+                output: `
               output//
   
               `
-    },
-    "create multiple threads by using Runnbale interface": {
-        description: "Program to create multiple threads by using Runnbale interface",
-        code: `
+            },
+            "create multiple threads by using Runnbale interface": {
+                description: "Program to create multiple threads by using Runnbale interface",
+                code: `
 class MyThread implements Runnable
 {
     public void run()
@@ -11133,14 +12153,14 @@ class MyThread implements Runnable
 }
 
 `,
-              output: `
+                output: `
 Hello I am Thread!
   
               `
-    },
-    "create multiple threads by using Thread class": {
-        description: "Program to create multiple threads by using Thread class",
-        code: `
+            },
+            "create multiple threads by using Thread class": {
+                description: "Program to create multiple threads by using Thread class",
+                code: `
 class MyThread extends Thread
 {
     public void run()
@@ -11174,7 +12194,7 @@ class MyThread extends Thread
 
 
 `,
-              output: `
+                output: `
 I am Thread 1
 I am Thread 6
 I am Thread 5
@@ -11183,10 +12203,10 @@ I am Thread 2
 I am Thread 3
   
               `
-    },
-    "create multiple threads, set its name and its priority.": {
-        description: "Program to create multiple threads, set its name and its priority.",
-        code: `
+            },
+            "create multiple threads, set its name and its priority.": {
+                description: "Program to create multiple threads, set its name and its priority.",
+                code: `
 class MyThread extends Thread
     {
         MyThread(String name , int prior)
@@ -11217,7 +12237,7 @@ class MyThread extends Thread
 
 
 `,
-              output: `
+                output: `
 Thread Name : Thread 2
 Thread Priority : 2
 Thread Name : Thread 1
@@ -11228,10 +12248,10 @@ Thread Name : Thread 3
 Thread Priority : 2
   
               `
-    },
-    "create multiple threads, show an example of synchronization keyword.": {
-        description: "Program to create multiple threads, show an example of synchronization keyword.",
-        code: `
+            },
+            "create multiple threads, show an example of synchronization keyword.": {
+                description: "Program to create multiple threads, show an example of synchronization keyword.",
+                code: `
 class Display
     {
        synchronized void display()
@@ -11270,7 +12290,7 @@ class MyThread extends Thread
 
 
 `,
-              output: `
+                output: `
 Start :T1
 1
 2
@@ -11321,43 +12341,129 @@ End :T4
 End :T2
   
               `
-    },
-    "create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.": {
-        description: "Program to create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.",
-        code: `
+            },
+            "create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.": {
+                description: "Program to create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.",
+                code: `
 code//
 
 `,
-              output: `
+                output: `
               output//
   
               `
-    },
-    "create multiple threads, show an example of join and yield methods.": {
-        description: "Program to create multiple threads, show an example of join and yield methods.",
-        code: `
-code//
+            },
+            "create multiple threads, show an example of join and yield methods.": {
+                description: "Program to create multiple threads, show an example of join and yield methods.",
+                code: `
+class Display
+    {
+        
+        void display()
+        {
+            for (int i = 1; i <= 10; i++) {
+                System.out.println(i);
+            }
+        }
+    }
+class MyThread extends Thread
+{
+    Display obj=new Display();
+    MyThread(String n)
+    {
+        super(n);
+    }
+    public void run()
+    {
+        yield();
+        System.out.println("Start :"+getName());
+        obj.display();
+        System.out.println("End :"+getName());
+    }
+}
+ class Main {
+    public static void main(String[] args) throws InterruptedException{
+        MyThread t1 = new MyThread("T1");
+        MyThread t2 = new MyThread("T2");
+        MyThread t3 = new MyThread("T3");
+        MyThread t4 = new MyThread("T4");
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t3.join();
+        t4.join();
+    }
+}
+
 
 `,
-              output: `
-              output//
+                output: `
+Start :T1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+End :T1
+Start :T3
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Start :T2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+End :T3
+Start :T4
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+End :T2
+End :T4
   
               `
+            },
+
+        },
+        "Medium": {
+
+        },
+        "Hard": {
+
+        }
     },
-   
-  },
-  "Medium": {
-     
-  },
-  "Hard": {
-     
-  }
-},
-"OBJECT ORIENTED PROGRAMMING": {
-  "Easy": {
-      "1.create a class called \"Person\" with a name and age attribute. Create two instances of the \"Person\" class, set their attributes using the constructor, and print their name and age.": {
-          description: "Program to create a class called Person with a name and age attribute. Create two instances of the \"Person\" class, set their attributes using the constructor, and print their name and age.",
-          code: `
+    "OBJECT ORIENTED PROGRAMMING": {
+        "Easy": {
+            "1.create a class called \"Person\" with a name and age attribute. Create two instances of the \"Person\" class, set their attributes using the constructor, and print their name and age.": {
+                description: "Program to create a class called Person with a name and age attribute. Create two instances of the \"Person\" class, set their attributes using the constructor, and print their name and age.",
+                code: `
 class Person{
     private String name;
     private int age;
@@ -11385,10 +12491,10 @@ Age : 18
 Name : Sandeep
 Age : 24
                 `
-      },
-      "2.create a class called \"Dog\" with a name and breed attribute. Create two instances of the \"Dog\" class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.": {
-          description: "Program to create a class called Dog with a name and breed attribute. Create two instances of the Dog class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.",
-          code: `
+            },
+            "2.create a class called \"Dog\" with a name and breed attribute. Create two instances of the \"Dog\" class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.": {
+                description: "Program to create a class called Dog with a name and breed attribute. Create two instances of the Dog class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.",
+                code: `
 class Dog
     {
         private String name,breed;
@@ -11425,10 +12531,10 @@ Dog Name : Sheru
 Dog Breed : Bulldog
 
                 `
-      },
-      "create a class called \"Rectangle\" with width and height attributes. Calculate the area and perimeter of the rectangle": {
-          description: "Program to create a class called \"Rectangle\" with width and height attributes. Calculate the area and perimeter of the rectangle",
-          code: `
+            },
+            "create a class called \"Rectangle\" with width and height attributes. Calculate the area and perimeter of the rectangle": {
+                description: "Program to create a class called \"Rectangle\" with width and height attributes. Calculate the area and perimeter of the rectangle",
+                code: `
 class Rectangle 
     {
         private float width,height;
@@ -11469,10 +12575,10 @@ class Rectangle
 Perimeter of Rectangle : 70.0
 Area of Rectangle : 300.0
                 `
-      },
-      "create a class called \"Circle\" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.": {
-          description: "Program to create a class called \"Circle\" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.",
-          code: `
+            },
+            "create a class called \"Circle\" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.": {
+                description: "Program to create a class called \"Circle\" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.",
+                code: `
 class Circle
         {
             final private float PI = 3.14f;
@@ -11519,10 +12625,10 @@ New Radius : 14.0
 New Perimeter of Circle : 87.920006
 New Area of Circle : 615.44
                 `
-      },
-      "create a class called \"Book\" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.": {
-          description: "Program to create a class called \"Book\" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.",
-          code: `
+            },
+            "create a class called \"Book\" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.": {
+                description: "Program to create a class called \"Book\" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.",
+                code: `
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11638,10 +12744,10 @@ Book{title='Java Programming', author='Manjit', isbn='1234567890'}
 Book{title='C++ Programming', author='Abhishek', isbn='1122334455'}
 
                 `
-      },
-      "create a class called \"Employee\" with a name, job title, and salary attributes, and methods to calculate and update salary.": {
-          description: "Program to create a class called \"Employee\" with a name, job title, and salary attributes, and methods to calculate and update salary.",
-          code: `
+            },
+            "create a class called \"Employee\" with a name, job title, and salary attributes, and methods to calculate and update salary.": {
+                description: "Program to create a class called \"Employee\" with a name, job title, and salary attributes, and methods to calculate and update salary.",
+                code: `
 class Employee 
     {
         private String name;
@@ -11701,10 +12807,10 @@ Employee Name: Manjit
 Job Title: Software Engineer
 Current Salary: Rs 66000.0
                 `
-      },
-      "create a class called \"Bank\" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called \"Account\" to maintain account details of a particular customer.": {
-          description: "Program to create a class called \"Bank\" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called \"Account\" to maintain account details of a particular customer.",
-          code: `
+            },
+            "create a class called \"Bank\" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called \"Account\" to maintain account details of a particular customer.": {
+                description: "Program to create a class called \"Bank\" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called \"Account\" to maintain account details of a particular customer.",
+                code: `
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11830,10 +12936,10 @@ Account removed: Manjit
 Account with account number 11111 not found.
 
                 `
-      },
-      "create class called \"TrafficLight\" with attributes for color and duration, and methods to change the color and check for red or green.": {
-          description: "Program to create class called \"TrafficLight\" with attributes for color and duration, and methods to change the color and check for red or green.",
-          code: `
+            },
+            "create class called \"TrafficLight\" with attributes for color and duration, and methods to change the color and check for red or green.": {
+                description: "Program to create class called \"TrafficLight\" with attributes for color and duration, and methods to change the color and check for red or green.",
+                code: `
 class TrafficLight {
     private String color;    // Current color of the traffic light
     private int duration;    // Duration for which the color is displayed in seconds
@@ -11902,10 +13008,10 @@ Is the light red? false
 Is the light green? true
 
                 `
-      },
-      "create a class called \"Employee\" with a name, salary, and hire date attributes, and a method to calculate years of service.": {
-          description: "Program to create a class called \"Employee\" with a name, salary, and hire date attributes, and a method to calculate years of service.",
-          code: `
+            },
+            "create a class called \"Employee\" with a name, salary, and hire date attributes, and a method to calculate years of service.": {
+                description: "Program to create a class called \"Employee\" with a name, salary, and hire date attributes, and a method to calculate years of service.",
+                code: `
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -11955,10 +13061,10 @@ Hire Date: 2015-09-15
 Years of Service: 9
 
                 `
-      },
-      "create a class called \"Student\" with a name, grade, and courses attributes, and methods to add and remove courses.": {
-          description: "Program to create a class called \"Student\" with a name, grade, and courses attributes, and methods to add and remove courses.",
-          code: `
+            },
+            "create a class called \"Student\" with a name, grade, and courses attributes, and methods to add and remove courses.": {
+                description: "Program to create a class called \"Student\" with a name, grade, and courses attributes, and methods to add and remove courses.",
+                code: `
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12047,91 +13153,91 @@ Courses: [Mathematics, English]
 Course History not found for Manjit
 
                 `
-      },
-      "create a class called \"Library\" with a collection of books and methods to add and remove books.": {
-          description: "Program to create a class called \"Library\" with a collection of books and methods to add and remove books.",
-          code: `
+            },
+            "create a class called \"Library\" with a collection of books and methods to add and remove books.": {
+                description: "Program to create a class called \"Library\" with a collection of books and methods to add and remove books.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called \"Airplane\" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.": {
-          description: "Program to create a class called \"Airplane\" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.",
-          code: `
+            },
+            "create a class called \"Airplane\" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.": {
+                description: "Program to create a class called \"Airplane\" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called \"Inventory\" with a collection of products and methods to add and remove products, and to check for low inventory.": {
-          description: "Program to create a class called \"Inventory\" with a collection of products and methods to add and remove products, and to check for low inventory.",
-          code: `
+            },
+            "create a class called \"Inventory\" with a collection of products and methods to add and remove products, and to check for low inventory.": {
+                description: "Program to create a class called \"Inventory\" with a collection of products and methods to add and remove products, and to check for low inventory.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called \"School\" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.": {
-          description: "Program to create a class called \"School\" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.",
-          code: `
+            },
+            "create a class called \"School\" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.": {
+                description: "Program to create a class called \"School\" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called \"MusicLibrary\" with a collection of songs and methods to add and remove songs, and to play a random song.": {
-          description: "Program to create a class called \"MusicLibrary\" with a collection of songs and methods to add and remove songs, and to play a random song.",
-          code: `
+            },
+            "create a class called \"MusicLibrary\" with a collection of songs and methods to add and remove songs, and to play a random song.": {
+                description: "Program to create a class called \"MusicLibrary\" with a collection of songs and methods to add and remove songs, and to play a random song.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called \"Shape\" with abstract methods for calculating area and perimeter, and subclasses for \"Rectangle\", \"Circle\", and \"Triangle\".": {
-          description: "Program to create a class called \"Shape\" with abstract methods for calculating area and perimeter, and subclasses for \"Rectangle\", \"Circle\", and \"Triangle\".",
-          code: `
+            },
+            "create a class called \"Shape\" with abstract methods for calculating area and perimeter, and subclasses for \"Rectangle\", \"Circle\", and \"Triangle\".": {
+                description: "Program to create a class called \"Shape\" with abstract methods for calculating area and perimeter, and subclasses for \"Rectangle\", \"Circle\", and \"Triangle\".",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called \"Movie\" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.": {
-          description: "Program to create a class called \"Movie\" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.",
-          code: `
+            },
+            "create a class called \"Movie\" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.": {
+                description: "Program to create a class called \"Movie\" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called \"Restaurant\" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.": {
-          description: "Program to create a class called \"Restaurant\" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.",
-          code: `
+            },
+            "create a class called \"Restaurant\" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.": {
+                description: "Program to create a class called \"Restaurant\" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class with methods to search for flights and hotels, and to book and cancel reservations.": {
-          description: "Program to create a class with methods to search for flights and hotels, and to book and cancel reservations.",
-          code: `
+            },
+            "create a class with methods to search for flights and hotels, and to book and cancel reservations.": {
+                description: "Program to create a class with methods to search for flights and hotels, and to book and cancel reservations.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Create a class showing an example of default constructor.": {
-          description: "Program to Create a class showing an example of default constructor.",
-          code: `
+            },
+            "Create a class showing an example of default constructor.": {
+                description: "Program to Create a class showing an example of default constructor.",
+                code: `
 class Default
         {
         Default()
@@ -12147,10 +13253,10 @@ class Default
                 output: `
 Hello, I am Default Constructor!
                 `
-      },
-      "Create a class showing an example of parameterized constructor.": {
-          description: "Program to Create a class showing an example of parameterized constructor.",
-          code: `
+            },
+            "Create a class showing an example of parameterized constructor.": {
+                description: "Program to Create a class showing an example of parameterized constructor.",
+                code: `
 class Parameterized
         {
         Parameterized(String n)
@@ -12166,10 +13272,10 @@ class Parameterized
                 output: `
 Hello,Manjit I am Parameterized Constructor
                 `
-      },
-      "Create a class showing an example of copy constructor.": {
-          description: "Program to Create a class showing an example of copy constructor.",
-          code: `
+            },
+            "Create a class showing an example of copy constructor.": {
+                description: "Program to Create a class showing an example of copy constructor.",
+                code: `
 class Copy
         {
         Copy()
@@ -12189,28 +13295,28 @@ class Copy
                 output: `
 Hello, I am Copy Constructor!
                 `
-      },
-      "Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students": {
-          description: "Program to Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students",
-          code: `
+            },
+            "Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students": {
+                description: "Program to Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-"Create a class showing the area of circle and rectangle by method overloading.": {
-          description: "Program to Create a class showing the area of circle and rectangle by method overloading.",
-          code: `
+            },
+            "Create a class showing the area of circle and rectangle by method overloading.": {
+                description: "Program to Create a class showing the area of circle and rectangle by method overloading.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Create a class, entering the command line arguments from the user and show all the arguments as output..": {
-          description: "Program to Create a class, entering the command line arguments from the user and show all the arguments as output..",
-          code: `
+            },
+            "Create a class, entering the command line arguments from the user and show all the arguments as output..": {
+                description: "Program to Create a class, entering the command line arguments from the user and show all the arguments as output..",
+                code: `
 class CmdLineArg
         {
         public static void main(String st[])
@@ -12228,85 +13334,85 @@ Manjit
 Sandeep 
 Abhishek
                 `
-      },
-      "Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.": {
-          description: "Program to Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.",
-          code: `
+            },
+            "Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.": {
+                description: "Program to Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.": {
-          description: "Program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.",
-          code: `
+            },
+            "create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.": {
+                description: "Program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.": {
-          description: "Program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.",
-          code: `
+            },
+            "create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.": {
+                description: "Program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.": {
-          description: "Program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.",
-          code: `
+            },
+            "create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.": {
+                description: "Program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.": {
-          description: "Program to create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.",
-          code: `
+            },
+            "create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.": {
+                description: "Program to create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.": {
-          description: "Program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.",
-          code: `
+            },
+            "create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.": {
+                description: "Program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.": {
-          description: "Program to create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.",
-          code: `
+            },
+            "create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.": {
+                description: "Program to create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-     
+            },
+
+        },
+
+        "Medium": {
+
+        },
+        "Hard": {
+
+        }
     },
-                
-  "Medium": {
-      
-  },
-  "Hard": {
-      
-  }
-},
-" PACKAGES": {
-  "Easy": {
-      " Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.": {
-          description: "Program to create a class called Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.",
-          code: `
+    " PACKAGES": {
+        "Easy": {
+            " Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.": {
+                description: "Program to create a class called Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.",
+                code: `
 package currentdate;
 import java.util.Date;
 
@@ -12324,10 +13430,10 @@ class CurrentDate extends Date {
                 output: `
 Current Date: Thu Sep 19 20:25:38 IST 2024
                 `
-      },
-      "Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.": {
-          description: "Program to Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.",
-          code: `
+            },
+            "Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.": {
+                description: "Program to Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.",
+                code: `
 package currentdate2;
 class CurrentDate  {
     public static void main(String[] args) {
@@ -12343,10 +13449,10 @@ class CurrentDate  {
                 output: `
 Current Date: Thu Sep 19 20:26:52 IST 2024
                 `
-      },
-      "Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.": {
-          description: "Program to Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.",
-          code: `
+            },
+            "Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.": {
+                description: "Program to Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.",
+                code: `
  package currentdate2;
  import java.util.Date;
 class CurrentDate extends Date {
@@ -12363,10 +13469,10 @@ class CurrentDate extends Date {
                 output: `
 Current Date: Thu Sep 19 20:26:52 IST 2024
                 `
-      },
-      "Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.": {
-          description: "Program to Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.",
-          code: `
+            },
+            "Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.": {
+                description: "Program to Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.",
+                code: `
 package currentdate3;
 
 class CurrentDate extends java.util.Date {
@@ -12382,10 +13488,10 @@ class CurrentDate extends java.util.Date {
                 output: `
 Current Date: Thu Sep 19 20:26:52 IST 2024
                 `
-      },
-      "Create a Java program to create a package with multiple default classes.": {
-          description: "Program to Create a Java program to create a package with multiple default classes.",
-          code: `
+            },
+            "Create a Java program to create a package with multiple default classes.": {
+                description: "Program to Create a Java program to create a package with multiple default classes.",
+                code: `
 class A
     {
         A()
@@ -12421,11 +13527,11 @@ class C
  I am Class B
  I am Class C
                 `
-      },
-      " Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.": {
-          description: "Program to  Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.",
-          code: `
-package pack1.pack;
+            },
+            " Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.": {
+                description: "Program to  Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.",
+                code: `
+package pack1;
 public class ClassA
     {
        public void display()
@@ -12434,7 +13540,7 @@ public class ClassA
         }
     }
 --------------------------------------------------
-package pack1.pack;
+package pack1;
 public class ClassB
     {
         public void display()
@@ -12443,7 +13549,7 @@ public class ClassB
         }
     }
 ---------------------------------------------------
-package pack1.pack;
+package pack1;
 public class ClassC
     {
         public void display()
@@ -12452,7 +13558,7 @@ public class ClassC
         }
     }
 --------------------------------------------------
-package pack1.pack;
+package pack1;
 public class ClassD
     {
         public void display()
@@ -12460,6 +13566,23 @@ public class ClassD
             System.out.println("This is Class D!");
         }
     }
+--------------------------------------------------
+
+import pack1.*;
+public class MainPackage
+{
+    public static void main(String st[])
+    {
+        ClassA objA = new ClassA();
+        objA.display();
+        ClassB objB = new ClassB();
+        objB.display();
+        ClassC objC = new ClassC();
+        objC.display();
+        ClassD objD = new ClassD();
+        objD.display();
+    }
+}
 `,
                 output: `
  This is Class A!
@@ -12467,57 +13590,86 @@ public class ClassD
  This is Class C!
  This is Class D!
                 `
-      },
-      "Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.": {
-          description: "Program to Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.",
-          code: `
+            },
+            "Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.": {
+                description: "Program to Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Create a Java program to create a package with public class and protected members to be accessed in another class.": {
-          description: "Program to Create a Java program to create a package with public class and protected members to be accessed in another class.",
-          code: `
+            },
+            "Create a Java program to create a package with public class and protected members to be accessed in another class.": {
+                description: "Program to Create a Java program to create a package with public class and protected members to be accessed in another class.",
+                code: `
+package protect1;
+public class Protect1
+    {
+        protected String name = "Manjit";
+        protected void display()
+        {
+            System.out.println("Hello " +name +" This is Protecte1.diplay()");
+        }
+    }
+--------------------------------------------------
+import protect1.*;
+
+public class ProtectMain extends Protect1
+        {
+            public static void main(String st[])
+            {
+                ProtectMain obj = new ProtectMain();
+                obj.display();
+            }
+        }
+`,
+                output: `
+Hello Manjit This is Protecte1.diplay()
+                `
+            },
+            "Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.": {
+                description: "Program to Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.",
+                code: `
+--------------------------------------------------
+import pack1.pack.*;
+public class NastedPack extends ClassA {
+    public static void main(String[] args) {
+    
+    NastedPack obj = new NastedPack();
+    obj.display();
+    obj.display2();
+    }
+}
+
+`,
+                output: `
+   output//
+                `
+            },
+            "Create a Java program to create a package with public class and public members to be accessed in another class.": {
+                description: "Program to Create a Java program to create a package with public class and public members to be accessed in another class.",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.": {
-          description: "Program to Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.",
-          code: `
-        code//
-`,
-                output: `
-   output//
-                `
-      },
-      "Create a Java program to create a package with public class and public members to be accessed in another class.": {
-          description: "Program to Create a Java program to create a package with public class and public members to be accessed in another class.",
-          code: `
-        code//
-`,
-                output: `
-   output//
-                `
-      },
-  },
-  "Medium": {
-      
-      
-  },
-  "Hard": {
-      
-  }
-},
-"SINGLE DIMENSION ARRAYS": {
-  "Easy": {
-      "Copy all elements of one array into another array": {
-          description: "Program to copy all elements of one array into another array",
-          code: `
+            },
+        },
+        "Medium": {
+
+
+        },
+        "Hard": {
+
+        }
+    },
+    "SINGLE DIMENSION ARRAYS": {
+        "Easy": {
+            "Copy all elements of one array into another array": {
+                description: "Program to copy all elements of one array into another array",
+                code: `
 class CopyArray
 	{
 	public static void main(String st[])
@@ -12554,10 +13706,10 @@ Copy Array
 2
 3
 4               `
-      },
-      "Find the frequency of each element in the array": {
-          description: "Program to find the frequency of each element in the array",
-          code: `
+            },
+            "Find the frequency of each element in the array": {
+                description: "Program to find the frequency of each element in the array",
+                code: `
 class Frequency {
     public static void main(String[] args) {
         int[] array = {1, 2, 2, 3, 3, 3, 4, 4, 4, 4};
@@ -12595,10 +13747,10 @@ Number 3 appears 3 times
 Number 4 appears 4 times
 
                 `
-      },
-      "Left rotate the elements of an array": {
-          description: "Program to left rotate the elements of an array",
-          code: `
+            },
+            "Left rotate the elements of an array": {
+                description: "Program to left rotate the elements of an array",
+                code: `
 class LeftRotate {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5};
@@ -12634,10 +13786,10 @@ Original array:
 Rotated array:
 3 4 5 1 2
                 `
-      },
-      "Print the duplicate elements of an array": {
-          description: "Program to print the duplicate elements of an array",
-          code: `
+            },
+            "Print the duplicate elements of an array": {
+                description: "Program to print the duplicate elements of an array",
+                code: `
  class Duplicate {
     public static void main(String[] args) {
         int[] array = {1, 2, 2, 3, 3, 3, 4, 4, 4, 4};
@@ -12661,10 +13813,10 @@ Rotated array:
                 output: `
    output//
                 `
-      },
-      "Print the elements of an array": {
-          description: "Program to print the elements of an array",
-          code: `
+            },
+            "Print the elements of an array": {
+                description: "Program to print the elements of an array",
+                code: `
 class PrintArray
 	{
 	public static void main(String st[])
@@ -12687,10 +13839,10 @@ Duplicate elements:
 4
 4
                 `
-      },
-      "Print the elements of an array in reverse order": {
-          description: "Program to print the elements of an array in reverse order",
-          code: `
+            },
+            "Print the elements of an array in reverse order": {
+                description: "Program to print the elements of an array in reverse order",
+                code: `
 class PrintReverseArray
         {
         public static void main(String st[])
@@ -12709,10 +13861,10 @@ class PrintReverseArray
 3
 2
 1                `
-      },
-      "Print the elements of an array present on even position": {
-          description: "Program to  print the elements of an array present on even position",
-          code: `
+            },
+            "Print the elements of an array present on even position": {
+                description: "Program to  print the elements of an array present on even position",
+                code: `
 class PrintEvenPosition
 		{
 		public static void main(String st[])
@@ -12732,10 +13884,10 @@ class PrintEvenPosition
 1
 3
                 `
-      },
-      "Print the elements of an array present on odd position": {
-          description: "Program to print the elements of an array present on odd position",
-          code: `
+            },
+            "Print the elements of an array present on odd position": {
+                description: "Program to print the elements of an array present on odd position",
+                code: `
 class PrintOddPosition
                 {
                 public static void main(String st[])
@@ -12754,10 +13906,10 @@ class PrintOddPosition
                 output: `
 2 4
                 `
-      },
-      "Print the largest element in an array": {
-          description: "Program to print the largest element in an array",
-          code: `
+            },
+            "Print the largest element in an array": {
+                description: "Program to print the largest element in an array",
+                code: `
 class Largest
 	{
 	public static void main(String st[])
@@ -12785,10 +13937,10 @@ class Largest
                 output: `
 Largest element is :- 30
                 `
-      },
-      "Print the smallest element in an array": {
-          description: "Program to print the smallest element in an array",
-          code: `
+            },
+            "Print the smallest element in an array": {
+                description: "Program to print the smallest element in an array",
+                code: `
 class Smallest
         {
         public static void main(String st[])
@@ -12816,19 +13968,19 @@ class Smallest
                 output: `
 Smallest element is :- 1
                 `
-      },
-      "Print the number of elements present in an array": {
-          description: "Program to print the number of elements present in an array",
-          code: `
+            },
+            "Print the number of elements present in an array": {
+                description: "Program to print the number of elements present in an array",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Print the sum of all the items of the array": {
-          description: "Program to print the sum of all the items of the array",
-          code: `
+            },
+            "Print the sum of all the items of the array": {
+                description: "Program to print the sum of all the items of the array",
+                code: `
 class SumOfElements
 	{
 	public static void main(String st[])
@@ -12845,19 +13997,19 @@ class SumOfElements
                 output: `
 Sum Of Element :- 10
                 `
-      },
-      "Right rotate the elements of an array": {
-          description: "Program to right rotate the elements of an array",
-          code: `
+            },
+            "Right rotate the elements of an array": {
+                description: "Program to right rotate the elements of an array",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Sort the elements of an array in ascending order": {
-          description: "Program to sort the elements of an array in ascending order",
-          code: `
+            },
+            "Sort the elements of an array in ascending order": {
+                description: "Program to sort the elements of an array in ascending order",
+                code: `
 class Sort
 	{
 	public static void main(String st[])
@@ -12889,10 +14041,10 @@ class Sort
 5
 6
                 `
-      },
-      "Sort the elements of an array in descending order": {
-          description: "Program to sort the elements of an array in descending order",
-          code: `
+            },
+            "Sort the elements of an array in descending order": {
+                description: "Program to sort the elements of an array in descending order",
+                code: `
 class Sort
 	{
 	public static void main(String st[])
@@ -12924,28 +14076,28 @@ class Sort
 3
 1
                 `
-      },
-      "Find 3rd Largest Number in an array": {
-          description: "Program to Find 3rd Largest Number in an array",
-          code: `
+            },
+            "Find 3rd Largest Number in an array": {
+                description: "Program to Find 3rd Largest Number in an array",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Find 2nd Largest Number in an array": {
-          description: "Program to Find 2nd Largest Number in an array",
-          code: `
+            },
+            "Find 2nd Largest Number in an array": {
+                description: "Program to Find 2nd Largest Number in an array",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Find Largest Number in an array": {
-          description: "Program to Find Largest Number in an array",
-          code: `
+            },
+            "Find Largest Number in an array": {
+                description: "Program to Find Largest Number in an array",
+                code: `
 class Largest
 	{
 	public static void main(String st[])
@@ -12973,68 +14125,68 @@ class Largest
                 output: `
 Largest element is :- 30
                 `
-      },
-      "Find 2nd Smallest Number in an array": {
-          description: "Program to Find 2nd Smallest Number in an array",
-          code: `
+            },
+            "Find 2nd Smallest Number in an array": {
+                description: "Program to Find 2nd Smallest Number in an array",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Find Smallest Number in an array": {
-          description: "Program to Find Smallest Number in an array",
-          code: `
+            },
+            "Find Smallest Number in an array": {
+                description: "Program to Find Smallest Number in an array",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Remove Duplicate Element in an array": {
-          description: "Program to Remove Duplicate Element in an array",
-          code: `
+            },
+            "Remove Duplicate Element in an array": {
+                description: "Program to Remove Duplicate Element in an array",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "Print Odd and Even Numbers from an array": {
-          description: "Program to Print Odd and Even Numbers from an array",
-          code: `
+            },
+            "Print Odd and Even Numbers from an array": {
+                description: "Program to Print Odd and Even Numbers from an array",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      "How to Sort an Array in Java": {
-          description: "Program to How to Sort an Array in Java",
-          code: `
+            },
+            "How to Sort an Array in Java": {
+                description: "Program to How to Sort an Array in Java",
+                code: `
         code//
 `,
                 output: `
    output//
                 `
-      },
-      
-      
-  },
-  "Medium": {
-     
+            },
 
-  },
-  "Hard": {
-     
-  }
-},
-"STRINGS": {
-  "Easy": {
-    "Check if a String contains only digits?": {
-        description: "Program to Check if a String contains only digits?.",
-        code: `
+
+        },
+        "Medium": {
+
+
+        },
+        "Hard": {
+
+        }
+    },
+    "STRINGS": {
+        "Easy": {
+            "Check if a String contains only digits?": {
+                description: "Program to Check if a String contains only digits?.",
+                code: `
 class Digit
 	{
 	public static void main(String st[])
@@ -13066,13 +14218,13 @@ class Digit
 
 
 `,
-output: `
+                output: `
 Only digit
           `
-    },
-    " perform Deep Copy for String?": {
-        description: "Program to  perform Deep Copy for String?.",
-        code: `
+            },
+            " perform Deep Copy for String?": {
+                description: "Program to  perform Deep Copy for String?.",
+                code: `
 class DeepCopy {
     public static void main(String[] args) {
         String original = "Hello";
@@ -13092,37 +14244,37 @@ class DeepCopy {
 }
 
 `,
-output: `
+                output: `
 Original: Hello
 Copy: Hello
 After modification:
 Original: World
 Copy: Hello
           `
-    },
-   "prove String is immutable programmatically?": {
-        description: "Program to prove String is immutable programmatically?.",
-        code: `
+            },
+            "prove String is immutable programmatically?": {
+                description: "Program to prove String is immutable programmatically?.",
+                code: `
           code//
 
 `,
-output: `
+                output: `
           output//
           `
-    },
-    "remove all occurrences of a given character from input String?": {
-        description: "Program to remove all occurrences of a given character from input String?.",
-        code: `
+            },
+            "remove all occurrences of a given character from input String?": {
+                description: "Program to remove all occurrences of a given character from input String?.",
+                code: `
           code//
 
 `,
-output: `
+                output: `
           output//
           `
-    },
-    " append the string using StringBuffer class": {
-        description: "Program to  append the string using StringBuffer class.",
-        code: `
+            },
+            " append the string using StringBuffer class": {
+                description: "Program to  append the string using StringBuffer class.",
+                code: `
 public class StringBufferAppendExample {
     public static void main(String[] args) {
         // Create a StringBuffer object
@@ -13138,13 +14290,13 @@ public class StringBufferAppendExample {
 
 
 `,
-output: `
+                output: `
 Appended String: Hello World
           `
-    },
-    "insert the string using StringBuffer class": {
-        description: "Program to insert the string using StringBuffer class.",
-        code: `
+            },
+            "insert the string using StringBuffer class": {
+                description: "Program to insert the string using StringBuffer class.",
+                code: `
   public class StringBufferInsertExample {
     public static void main(String[] args) {
         // Create a StringBuffer object
@@ -13160,14 +14312,14 @@ Appended String: Hello World
 
 
 `,
-output: `
+                output: `
  String after insertion: Hello Java World
 
           `
-    },
-    "add characters to a string.": {
-        description: "Program to add characters to a string.",
-        code: `
+            },
+            "add characters to a string.": {
+                description: "Program to add characters to a string.",
+                code: `
             public class AddCharacters {
                 public static void main(String[] args) {
                     String str = "Hello";
@@ -13176,14 +14328,14 @@ output: `
                 }
             }
         `,
-        output: `
+                output: `
 Hello!
         `
-    }
-    ,
-    "check if two strings are anagrams.": {
-        description: "Program to check if two strings are anagrams.",
-        code: `
+            }
+            ,
+            "check if two strings are anagrams.": {
+                description: "Program to check if two strings are anagrams.",
+                code: `
             public class AnagramCheck {
                 public static void main(String[] args) {
                     String str1 = "listen";
@@ -13212,14 +14364,14 @@ Hello!
                 }
             }
         `,
-        output: `
+                output: `
 Anagram
         `
-    }
-    ,
-   "check if a string is a palindrome": {
-    description: "Program to check if a string is a palindrome ",
-    code: `
+            }
+            ,
+            "check if a string is a palindrome": {
+                description: "Program to check if a string is a palindrome ",
+                code: `
         public class PalindromeCheck {
             public static void main(String[] args) {
                 String str = "madam";
@@ -13237,14 +14389,14 @@ Anagram
             }
         }
     `,
-    output: `
+                output: `
 Palindrome
     `
-}
-,
-    "convert an enum to string.": {
-        description: "Program to convert an enum to string.",
-        code: `
+            }
+            ,
+            "convert an enum to string.": {
+                description: "Program to convert an enum to string.",
+                code: `
             public class EnumToString {
                 enum Day { SUNDAY, MONDAY, TUESDAY }
     
@@ -13255,14 +14407,14 @@ Palindrome
                 }
             }
         `,
-        output: `
+                output: `
 MONDAY
         `
-    }
-    ,
-    "convert String to String Array.": {
-        description: "Program to convert String to String Array.",
-        code: `
+            }
+            ,
+            "convert String to String Array.": {
+                description: "Program to convert String to String Array.",
+                code: `
             public class StringToArray {
                 public static void main(String[] args) {
                     String str = "Hello World";
@@ -13278,14 +14430,14 @@ MONDAY
                 }
             }
         `,
-        output: `
+                output: `
 H e l l o   W o r l d
         `
-    }
-    ,
-    "count the number of words in a string.": {
-        description: "Program to count the number of words in a string.",
-        code: `
+            }
+            ,
+            "count the number of words in a string.": {
+                description: "Program to count the number of words in a string.",
+                code: `
             public class CountWords {
                 public static void main(String[] args) {
                     String str = "Hello World Program";
@@ -13301,14 +14453,14 @@ H e l l o   W o r l d
                 }
             }
         `,
-        output: `
+                output: `
 Number of words: 3
         `
-    }
-    ,
-   "count the total number of characters in a string.": {
-    description: "Program to count the total number of characters in a string.",
-    code: `
+            }
+            ,
+            "count the total number of characters in a string.": {
+                description: "Program to count the total number of characters in a string.",
+                code: `
         public class CountCharacters {
             public static void main(String[] args) {
                 String str = "Hello World";
@@ -13324,26 +14476,26 @@ Number of words: 3
             }
         }
     `,
-    output: `
+                output: `
 Total characters: 10
     `
-}
-,
-"count the total number of punctuation characters exists in a String":
-{
- description: "Program to count the total number of punctuation characters exists in a String."
- ,
- code : `
+            }
+            ,
+            "count the total number of punctuation characters exists in a String":
+            {
+                description: "Program to count the total number of punctuation characters exists in a String."
+                ,
+                code: `
  code//
  `,
- output:
- `
+                output:
+                    `
  output//
  `
-},
-    "count the total number of vowels and consonants in a string.": {
-        description: "Program to count the total number of vowels and consonants in a string.",
-        code: `
+            },
+            "count the total number of vowels and consonants in a string.": {
+                description: "Program to count the total number of vowels and consonants in a string.",
+                code: `
             public class VowelConsonantCount {
                 public static void main(String[] args) {
                     String str = "Hello World";
@@ -13367,26 +14519,26 @@ Total characters: 10
                 }
             }
         `,
-        output: `
+                output: `
 Vowels: 3
 Consonants: 7
         `
-    },
-"determine whether a given string is palindrome":
-{
- description: "Program to determine whether a given string is palindrome."
- ,
- code : `
+            },
+            "determine whether a given string is palindrome":
+            {
+                description: "Program to determine whether a given string is palindrome."
+                ,
+                code: `
  code//
  `,
- output:
- `
+                output:
+                    `
  output//
  `
-},
-    "determine whether one string is a rotation of another.": {
-        description: "Program to determine whether one string is a rotation of another.",
-        code: `
+            },
+            "determine whether one string is a rotation of another.": {
+                description: "Program to determine whether one string is a rotation of another.",
+                code: `
             public class StringRotation {
                 public static void main(String[] args) {
                     String str1 = "abcde";
@@ -13418,14 +14570,14 @@ Consonants: 7
                 }
             }
         `,
-        output: `
+                output: `
 Rotation
         `
-    }
-    ,
-    "divide a string into 'N' equal parts without using any built-in functions.": {
-        description: "Program to divide a string into 'N' equal parts without using any built-in functions.",
-        code: `
+            }
+            ,
+            "divide a string into 'N' equal parts without using any built-in functions.": {
+                description: "Program to divide a string into 'N' equal parts without using any built-in functions.",
+                code: `
             public class DivideString {
                 public static void main(String[] args) {
                     String str = "abcdefghij";
@@ -13445,18 +14597,18 @@ Rotation
                 }
             }
         `,
-        output: `
+                output: `
 ab
 cd
 ef
 gh
 ij
         `
-    }
-    ,
-   "find all subsets of a string.": {
-    description: "Program to find all subsets of a string.",
-    code: `
+            }
+            ,
+            "find all subsets of a string.": {
+                description: "Program to find all subsets of a string.",
+                code: `
         public class SubsetsOfString {
             public static void main(String[] args) {
                 String str = "abc";
@@ -13475,7 +14627,7 @@ ij
             }
         }
     `,
-    output: `
+                output: `
 Subsets are:
 
 a
@@ -13486,11 +14638,11 @@ ac
 bc
 abc
     `
-}
-,
-    "find all the permutations of a string.": {
-        description: "Program to find all the permutations of a string.",
-        code: `
+            }
+            ,
+            "find all the permutations of a string.": {
+                description: "Program to find all the permutations of a string.",
+                code: `
             public class PermutationsOfString {
                 public static void main(String[] args) {
                     String str = "abc";
@@ -13515,7 +14667,7 @@ abc
                 }
             }
         `,
-        output: `
+                output: `
 abc
 acb
 bac
@@ -13523,11 +14675,11 @@ bca
 cab
 cba
         `
-    }
-    ,
-    "find maximum and minimum occurring character in a string.": {
-        description: "Program to find maximum and minimum occurring character in a string.",
-        code: `
+            }
+            ,
+            "find maximum and minimum occurring character in a string.": {
+                description: "Program to find maximum and minimum occurring character in a string.",
+                code: `
             public class MaxMinChar {
                 public static void main(String[] args) {
                     String str = "programming";
@@ -13560,15 +14712,15 @@ cba
                 }
             }
         `,
-        output: `
+                output: `
             Maximum occurring character: g (2)
             Minimum occurring character: a (1)
         `
-    }
-    ,
-    "find the reverse of the string.": {
-        description: "Program to find the reverse of the string.",
-        code: `
+            }
+            ,
+            "find the reverse of the string.": {
+                description: "Program to find the reverse of the string.",
+                code: `
             public class ReverseString {
                 public static void main(String[] args) {
                     String str = "hello";
@@ -13582,14 +14734,14 @@ cba
                 }
             }
         `,
-        output: `
+                output: `
             Reversed string: olleh
         `
-    }
-    ,
-   "find the duplicate characters in a string.": {
-    description: "Program to find the duplicate characters in a string.",
-    code: `
+            }
+            ,
+            "find the duplicate characters in a string.": {
+                description: "Program to find the duplicate characters in a string.",
+                code: `
         public class DuplicateCharacters {
             public static void main(String[] args) {
                 String str = "programming";
@@ -13607,16 +14759,16 @@ cba
             }
         }
     `,
-    output: `
+                output: `
         Duplicate characters are:
         r
         g
     `
-}
-,
-    "find the duplicate words in a string.": {
-        description: "Program to find the duplicate words in a string.",
-        code: `
+            }
+            ,
+            "find the duplicate words in a string.": {
+                description: "Program to find the duplicate words in a string.",
+                code: `
             public class DuplicateWords {
                 public static void main(String[] args) {
                     String str = "this is a test this test is a demo demo demo";
@@ -13666,18 +14818,18 @@ cba
                 }
             }
         `,
-        output: `
+                output: `
 Duplicate words are:
 this
 test
 is
 demo
         `
-    }
-    ,
-    "find the frequency of characters": {
-        description: "Program to find the frequency of characters.",
-        code: `
+            }
+            ,
+            "find the frequency of characters": {
+                description: "Program to find the frequency of characters.",
+                code: `
 public class CharacterFrequency {
     public static void main(String[] args) {
         // Input string
@@ -13704,7 +14856,7 @@ public class CharacterFrequency {
 
 
 `,
-output: `
+                output: `
 Character frequencies are:
 p: 2
 r: 2
@@ -13716,290 +14868,271 @@ i: 1
 n: 1
 
           `
-    },
-    "find the largest and smallest word in a string": {
-        description: "Program to find the largest and smallest word in a string.",
-        code: `
+            },
+            "find the largest and smallest word in a string": {
+                description: "Program to find the largest and smallest word in a string.",
+                code: `
           code//
-
-`,
-output: `
-          output//
-          `
-    },
-   "find the longest repeating sequence in a string": {
-        description: "Program to find the longest repeating sequence in a string.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "find the most repeated word in a text file": {
-        description: "Program to find the most repeated word in a text file.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "find the number of the words in the given text file": {
-        description: "Program to find the number of the words in the given text file.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    " Get a Character From the Given String": {
-        description: "Program to  Get a Character From the Given String.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-   "nsert a string into another string": {
-        description: "Program to nsert a string into another string.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "Iterate Over Characters in String": {
-        description: "Program to Iterate Over Characters in String.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "Print a New Line in String": {
-        description: "Program to Print a New Line in String.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "Print even length words": {
-        description: "Program to Print even length words.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-   "print smallest and biggest possible palindrome word in a given string": {
-        description: "Program to print smallest and biggest possible palindrome word in a given string.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "remove all the white spaces from a string": {
-        description: "Program to remove all the white spaces from a string.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "replace lower-case characters with upper-case and vice-versa": {
-        description: "Program to replace lower-case characters with upper-case and vice-versa.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "replace the spaces of a string with a specific character": {
-        description: "Program to replace the spaces of a string with a specific character.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-   " separate the Individual Characters from a String": {
-        description: "Program to  separate the Individual Characters from a String.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "Splitting into a number of sub-strings": {
-        description: "Program to Splitting into a number of sub-strings.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    " swap two string variables without using third or temp variable.": {
-        description: "Program to  swap two string variables without using third or temp variable..",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "Swapping Pair of Characters": {
-        description: "Program to Swapping Pair of Characters.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-   "Read two String user input and check if first contains second?": {
-        description: "Program to Read two String user input and check if first contains second?.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    " Reserve String without reverse() function": {
-        description: "Program to  Reserve String without reverse() function.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    " Reverse String Word by Word": {
-        description: "Program to  Reverse String Word by Word.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "check if two Strings are created with same characters?": {
-        description: "Program to check if two Strings are created with same characters?.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-   "find out first non repeated character from input String?": {
-        description: "Program to find out first non repeated character from input String?.",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    "Create an object StringBuffer class to reverse the string.": {
-        description: "Program to Create an object StringBuffer class to reverse the string..",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
-    " Create an object StringBuffer class to show functionality of insert, append, delete and replace functions.": {
-        description: "Program to  Create an object StringBuffer class to show functionality of insert, append, delete and replace functions..",
-        code: `
-          code//
-
-`,
-output: `
-          output//
-          `
-    },
- 
-  },
-  "Medium": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
 
 `,
                 output: `
-                output//
-    
-                `
-      },
-     
-  },
-  "Hard": {
-      "comming soon": {
-          description: "comming soon",
-          code: `
-code//
-`,
-output: `
-         output//
-    
-                `
-      },
+          output//
+          `
+            },
+            "find the longest repeating sequence in a string": {
+                description: "Program to find the longest repeating sequence in a string.",
+                code: `
+          code//
 
-  }
-},
+`,
+                output: `
+          output//
+          `
+            },
+            "find the most repeated word in a text file": {
+                description: "Program to find the most repeated word in a text file.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "find the number of the words in the given text file": {
+                description: "Program to find the number of the words in the given text file.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            " Get a Character From the Given String": {
+                description: "Program to  Get a Character From the Given String.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "nsert a string into another string": {
+                description: "Program to nsert a string into another string.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "Iterate Over Characters in String": {
+                description: "Program to Iterate Over Characters in String.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "Print a New Line in String": {
+                description: "Program to Print a New Line in String.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "Print even length words": {
+                description: "Program to Print even length words.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "print smallest and biggest possible palindrome word in a given string": {
+                description: "Program to print smallest and biggest possible palindrome word in a given string.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "remove all the white spaces from a string": {
+                description: "Program to remove all the white spaces from a string.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "replace lower-case characters with upper-case and vice-versa": {
+                description: "Program to replace lower-case characters with upper-case and vice-versa.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "replace the spaces of a string with a specific character": {
+                description: "Program to replace the spaces of a string with a specific character.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            " separate the Individual Characters from a String": {
+                description: "Program to  separate the Individual Characters from a String.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "Splitting into a number of sub-strings": {
+                description: "Program to Splitting into a number of sub-strings.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            " swap two string variables without using third or temp variable.": {
+                description: "Program to  swap two string variables without using third or temp variable..",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "Swapping Pair of Characters": {
+                description: "Program to Swapping Pair of Characters.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "Read two String user input and check if first contains second?": {
+                description: "Program to Read two String user input and check if first contains second?.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            " Reserve String without reverse() function": {
+                description: "Program to  Reserve String without reverse() function.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            " Reverse String Word by Word": {
+                description: "Program to  Reverse String Word by Word.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "check if two Strings are created with same characters?": {
+                description: "Program to check if two Strings are created with same characters?.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "find out first non repeated character from input String?": {
+                description: "Program to find out first non repeated character from input String?.",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            "Create an object StringBuffer class to reverse the string.": {
+                description: "Program to Create an object StringBuffer class to reverse the string..",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+            " Create an object StringBuffer class to show functionality of insert, append, delete and replace functions.": {
+                description: "Program to  Create an object StringBuffer class to show functionality of insert, append, delete and replace functions..",
+                code: `
+          code//
+
+`,
+                output: `
+          output//
+          `
+            },
+
+        },
+        "Medium": {
+
+
+        },
+        "Hard": {
+
+
+        }
+    },
 };
 // Create "Mix" option by combining all difficulties
 function createMixOption() {
-  for (let type in programData) {
-      let mixedPrograms = {};
+    for (let type in programData) {
+        let mixedPrograms = {};
 
-      for (let difficulty in programData[type]) {
-          Object.assign(mixedPrograms, programData[type][difficulty]);
-      }
+        for (let difficulty in programData[type]) {
+            Object.assign(mixedPrograms, programData[type][difficulty]);
+        }
 
-      programData[type]["Mix"] = mixedPrograms;
-      //console.log(mixedPrograms[type]["Mix"].length);
-  }
+        programData[type]["Mix"] = mixedPrograms;
+        //console.log(mixedPrograms[type]["Mix"].length);
+    }
 }
 
 // Initialize the program data with "Mix" option
@@ -14015,13 +15148,13 @@ for (let type in programData) {
 }
 
 // Event Listener for Type Selection
-selectType.addEventListener("change", function() {
+selectType.addEventListener("change", function () {
     selectDifficulty.innerHTML = `<option value="">Select Difficulty</option>`; // Reset second dropdown
     selectProgram.innerHTML = `<option value="">Select Program</option>`; // Reset third dropdown
     resultTitle.innerHTML = ""; // Clear result title
     result.innerHTML = ""; // Clear result
     code.innerHTML = ""; // Clear code
-    output.innerHTML = ""; 
+    output.innerHTML = "";
 
     if (selectType.value !== "") {
         selectDifficulty.disabled = false;
@@ -14039,12 +15172,12 @@ selectType.addEventListener("change", function() {
 });
 
 // Event Listener for Difficulty Selection
-selectDifficulty.addEventListener("change", function() {
+selectDifficulty.addEventListener("change", function () {
     selectProgram.innerHTML = `<option value="">Select Program</option>`; // Reset third dropdown
     resultTitle.innerHTML = ""; // Clear result title
     result.innerHTML = ""; // Clear result
     code.innerHTML = ""; // Clear code
-    output.innerHTML = ""; 
+    output.innerHTML = "";
 
     if (selectDifficulty.value !== "") {
         selectProgram.disabled = false;
@@ -14064,9 +15197,9 @@ selectDifficulty.addEventListener("change", function() {
 });
 
 // Event Listener for Program Selection
-selectProgram.addEventListener("change", function() {
+selectProgram.addEventListener("change", function () {
     if (selectProgram.value !== "") {
-        let i=0;
+        let i = 0;
         let selectedProgram = programData[selectType.value][selectDifficulty.value][selectProgram.value];
         resultTitle.innerHTML = `Selected Program: ${selectType.value} > ${selectDifficulty.value} > ${selectProgram.value}`;
         result.innerHTML = `<strong>Description:</strong> ${selectedProgram.description}`;
@@ -14077,8 +15210,7 @@ selectProgram.addEventListener("change", function() {
         resultTitle.innerHTML = ""; // Clear result title
         result.innerHTML = ""; // Clear result
         code.innerHTML = ""; // Clear code
-        output.innerHTML = ""; 
+        output.innerHTML = "";
     }
 });
 
-  
