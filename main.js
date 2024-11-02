@@ -263,10 +263,79 @@ Subtraction of Matrix A and Matrix B :
             "Determine whether two matrices are equal": {
                 description: "Program to determine whether two matrices are equal",
                 code: `
-               code//
+import java.util.Scanner;
+
+public class MatrixEqualityChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input for the first matrix
+        System.out.print("Enter the number of rows for the matrices: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter the number of columns for the matrices: ");
+        int cols = scanner.nextInt();
+
+        int[][] matrix1 = new int[rows][cols];
+        int[][] matrix2 = new int[rows][cols];
+
+        System.out.println("Enter elements of the first matrix:");
+        fillMatrix(scanner, matrix1, rows, cols);
+
+        System.out.println("Enter elements of the second matrix:");
+        fillMatrix(scanner, matrix2, rows, cols);
+
+        // Check if the matrices are equal
+        boolean areEqual = areMatricesEqual(matrix1, matrix2);
+
+        // Display the result
+        if (areEqual) {
+            System.out.println("The two matrices are equal.");
+        } else {
+            System.out.println("The two matrices are not equal.");
+        }
+
+        scanner.close();
+    }
+
+    // Method to fill a matrix with user input
+    public static void fillMatrix(Scanner scanner, int[][] matrix, int rows, int cols) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter element [" + (i + 1) + "][" + (j + 1) + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+    }
+
+    // Method to check if two matrices are equal
+    public static boolean areMatricesEqual(int[][] matrix1, int[][] matrix2) {
+        for (int i = 0; i < matrix1.length; i++) {
+            for (int j = 0; j < matrix1[i].length; j++) {
+                if (matrix1[i][j] != matrix2[i][j]) {
+                    return false; // Found a mismatch
+                }
+            }
+        }
+        return true; // All elements are equal
+    }
+}
+
 `,
                 output: `
-                output//
+Enter the number of rows for the matrices: 2
+Enter the number of columns for the matrices: 2
+Enter elements of the first matrix:
+Enter element [1][1]: 1
+Enter element [1][2]: 2
+Enter element [2][1]: 3
+Enter element [2][2]: 4
+Enter elements of the second matrix:
+Enter element [1][1]: 1
+Enter element [1][2]: 2
+Enter element [2][1]: 3
+Enter element [2][2]: 4
+The two matrices are equal.
+
                 `
             },
             "Display the lower triangular matrix": {
@@ -810,12 +879,19 @@ public class Square extends Applet{
 import java.applet.*;
 import java.awt.*;
 public class Circles extends Applet{
-    public void paint(Graphics g)
-    {
-        g.drawOval(100, 100, 100, 100);
-        g.drawOval(250, 100, 100, 100);
-        g.drawOval(400, 100, 100, 100);
-        g.drawOval(550, 100, 100, 100);
+  public void paint(Graphics g) {
+        // Set the center of the circles
+        int centerX = getWidth() / 2;
+        int centerY = getHeight() / 2;
+
+        // Set initial radius and radius increment
+        int radiusIncrement = 20;
+
+        // Draw four concentric circles
+        for (int i = 1; i <= 4; i++) {
+            int radius = i * radiusIncrement;
+            g.drawOval(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+        }
     }
 }
 /*
@@ -823,7 +899,7 @@ public class Circles extends Applet{
  */
 `,
                 output: `
-<img src="AppletImg/circles.png" alt="circles" loading="lazy">
+<img src="AppletImg/fourCircles.png" alt="circles" loading="lazy">
                 `
             },
             "Create an applet in Java to draw a line.": {
@@ -885,6 +961,59 @@ public class Arc extends Applet{
 <img src="AppletImg/Arc.png" alt="Arc" loading="lazy">
                 `
             },
+           
+            "Create an applet in Java to draw rounded rectangle.": {
+                description: "Create an applet in Java to draw rounded rectangle.",
+                code: `
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class RoundedRect extends Applet {
+
+    public void paint(Graphics g) {
+        g.drawRoundRect(50, 50, 200, 100, 30, 30);  
+}
+}
+/*
+ &lt;applet code = "RoundedRect.class" width = "300" height= "300"&gt;&lt;/applet&gt;
+ */
+
+`,
+                output: `
+<img src="AppletImg/roundrect.png" alt="roundrect" loading="lazy">
+                `
+            },
+           
+
+            "Java Program to Draw a Smiling Face using Graphics Class Methods": {
+                description: "Java Program to Draw a Smiling Face using Graphics Class Methods",
+                code: `
+import java.applet.Applet;
+import java.awt.Graphics;
+
+/**
+ * SmileFace
+ */
+public class SmileFace extends Applet{
+    public void paint(Graphics g)
+    {
+        g.drawOval(100, 100, 200, 200);
+        g.drawOval(150, 150, 20, 20);
+        g.drawOval(230, 150, 20, 20);
+        g.drawArc(150, 200, 100, 50, 200, 150);
+    }
+}
+/*
+ &lt;applet code = "smileface.SmileFace.class" width = "300" height= "500">&lt;/applet>
+ */
+`,
+                output: `
+<img src="AppletImg/smile.png" alt="smile" loading="lazy">
+                `
+            },
+
+        },
+        "Medium": {
             "Create an applet in Java to change the background color.": {
                 description: "Create an applet in Java to change the background color.",
                 code: `
@@ -934,27 +1063,8 @@ public class BgColor extends Applet{
 <img src="AppletImg/bgcolor.png" alt="bgcolor" loading="lazy">
                 `
             },
-            "Create an applet in Java to draw rounded rectangle.": {
-                description: "Create an applet in Java to draw rounded rectangle.",
-                code: `
-import java.applet.Applet;
-import java.awt.Graphics;
-
-public class RoundedRect extends Applet {
-
-    public void paint(Graphics g) {
-        g.drawRoundRect(50, 50, 200, 100, 30, 30);  
-}
-}
-/*
- &lt;applet code = "RoundedRect.class" width = "300" height= "300"&gt;&lt;/applet&gt;
- */
-
-`,
-                output: `
-<img src="AppletImg/roundrect.png" alt="roundrect" loading="lazy">
-                `
-            },
+        },
+        "Hard": {
             "Create an applet in Java to set font.": {
                 description: "Create an applet in Java to set font.",
                 code: `
@@ -1040,7 +1150,7 @@ public class FontApplet extends Applet implements ItemListener {
 <applet code = "FontApplet.class" width = "300" height= "300"></applet>
                 `
             },
-            "Create an applet to display a digital clock.": {
+"Create an applet to display a digital clock.": {
                 description: "Create an applet to display a digital clock.",
                 code: `
 import java.applet.*;
@@ -1108,39 +1218,6 @@ Thread t;
 <img src="AppletImg/clock.png" alt="clock" loading="lazy">
                 `
             },
-            "Java Program to Draw a Smiling Face using Graphics Class Methods": {
-                description: "Java Program to Draw a Smiling Face using Graphics Class Methods",
-                code: `
-import java.applet.Applet;
-import java.awt.Graphics;
-
-/**
- * SmileFace
- */
-public class SmileFace extends Applet{
-    public void paint(Graphics g)
-    {
-        g.drawOval(100, 100, 200, 200);
-        g.drawOval(150, 150, 20, 20);
-        g.drawOval(230, 150, 20, 20);
-        g.drawArc(150, 200, 100, 50, 200, 150);
-    }
-}
-/*
- &lt;applet code = "smileface.SmileFace.class" width = "300" height= "500">&lt;/applet>
- */
-`,
-                output: `
-<img src="AppletImg/smile.png" alt="smile" loading="lazy">
-                `
-            },
-
-        },
-        "Medium": {
-
-        },
-        "Hard": {
-
         }
     },
     "BASIC PROGRAMMING CONSTRUCTS": {
@@ -1327,10 +1404,53 @@ class  BinaryToDecimal
             " is Java installed ?": {
                 description: "Write a Java program to check whether Java is installed on your computer or not",
                 code: `
-            code//
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class CheckJavaInstallation {
+    public static void main(String[] args) {
+        try {
+            // Create a process to execute the command
+            ProcessBuilder processBuilder = new ProcessBuilder("java", "-version");
+            processBuilder.redirectErrorStream(true); // Combine error stream with output stream
+            Process process = processBuilder.start(); // Start the process
+
+            // Read the output from the process
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            StringBuilder output = new StringBuilder();
+
+            while ((line = reader.readLine()) != null) {
+                output.append(line).append("\n");
+            }
+
+            // Wait for the process to complete
+            int exitCode = process.waitFor();
+
+            // Check if Java is installed based on the exit code
+            if (exitCode == 0) {
+                System.out.println("Java is installed:");
+                System.out.println(output);
+            } else {
+                System.out.println("Java is not installed.");
+            }
+
+        } catch (IOException e) {
+            System.out.println("An error occurred while checking for Java installation: " + e.getMessage());
+        } catch (InterruptedException e) {
+            System.out.println("Process was interrupted: " + e.getMessage());
+        }
+    }
+}
+
 `,
                 output: `
-               output//
+Java is installed:
+java version "17.0.1" 2021-10-19 LTS
+Java(TM) SE Runtime Environment (build 17.0.1+12-39)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-39, mixed mode, sharing)
+
                 `
             },
             " Sum of the digits of an integer": {
@@ -1811,10 +1931,52 @@ class PalindromeNum
             "add two numbers without using any arithmetic operators": {
                 description: "Write a Java program to add two numbers without using any arithmetic operators",
                 code: `
-            code//
+import java.util.Scanner;
+
+public class AddTwoNumbersWithoutArithmetic {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input for the first number
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        // Input for the second number
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        // Call the method to add the numbers
+        int sum = add(num1, num2);
+
+        // Display the result
+        System.out.println("Sum of " + num1 + " and " + num2 + " is: " + sum);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to add two numbers without using arithmetic operators
+    public static int add(int a, int b) {
+        while (b != 0) {
+            // Calculate carry
+            int carry = a & b;
+
+            // Sum without carry
+            a = a ^ b;
+
+            // Shift carry left by one to add it to a
+            b = carry << 1;
+        }
+        return a; // When b becomes 0, a contains the sum
+    }
+}
+
 `,
                 output: `
-                output//
+Enter first number: 5
+Enter second number: 7
+Sum of 5 and 7 is: 12
+
                 `
             },
             "Add all the digits of a given positive integer": {
@@ -2214,8 +2376,6 @@ class ElectricityBill {
 `,
                 output: `
 Electricity Bill: 240.0
-
-    
                 `
             },
             "Calculate CGPA Percentage": {
@@ -2521,11 +2681,43 @@ class First5NaturalNumbers {
             "check vowel or consonant": {
                 description: "Write a java program to check vowel or consonant",
                 code: `
-code//
+import java.util.Scanner;
+
+public class VowelOrConsonant {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user for a character
+        System.out.print("Enter a character: ");
+        char ch = scanner.next().charAt(0); // Read the character input
+
+        // Check if the input is a letter
+        if (Character.isLetter(ch)) {
+            // Convert character to lowercase to handle both cases
+            char lowercaseChar = Character.toLowerCase(ch);
+
+            // Check if the character is a vowel
+            if (lowercaseChar == 'a' || lowercaseChar == 'e' || lowercaseChar == 'i' || 
+                lowercaseChar == 'o' || lowercaseChar == 'u') {
+                System.out.println(ch + " is a vowel.");
+            } else {
+                System.out.println(ch + " is a consonant.");
+            }
+        } else {
+            System.out.println("Invalid input. Please enter a letter.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-                output//
+Enter a character: a
+a is a vowel.
+
     
                 `
             },
@@ -5756,57 +5948,7 @@ class Main
     
                 `
             },
-            "Create and Set Border to Push Buttons": {
-                description: "Program to Create and Set Border to Push Buttons",
-                code: `
-import java.awt.*;
-public class ButtonWithBorderApp extends Frame {
-
-    public ButtonWithBorderApp() {
-        // Set up the frame
-        setTitle("Button with Border Example");
-        setSize(300, 200);
-        setLayout(new FlowLayout());
-
-        // Create a Panel to act as a border for the button
-        Panel buttonPanel = new Panel();
-        buttonPanel.setLayout(new FlowLayout());
-        buttonPanel.setBackground(Color.BLACK); // Border color
-        buttonPanel.setSize(100, 50);
-
-        // Create the Button
-        Button button = new Button("Push Me");
-        button.setBackground(Color.LIGHT_GRAY);
-        button.setPreferredSize(new Dimension(80, 30)); // Inner button size
-
-        // Add the button to the panel (creates a border effect)
-        buttonPanel.add(button);
-
-        // Add the panel (with button inside) to the frame
-        add(buttonPanel);
-
-        // Set up close operation
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                System.exit(0);
-            }
-        });
-    }
-
-    public static void main(String[] args) {
-        // Create and show the frame
-        ButtonWithBorderApp app = new ButtonWithBorderApp();
-        app.setVisible(true);
-    }
-}
-
-
-`,
-                output: `
-<img src="DEMimg/push.png" alt="img" loading="lazy">
-    
-                `
-            },
+            
             "Create a List Box to Select Multiple Items and Display it in the Frame": {
                 description: "Program to Create a List Box to Select Multiple Items and Display it in the Frame",
                 code: `
@@ -6206,71 +6348,64 @@ public class ColorChangeApplet extends Applet {
     
                 `
             },
-            "Display Several Dots on the Screen Continuously": {
-                description: "Program to Display Several Dots on the Screen Continuously",
-                code: `
-import java.applet.Applet;
-import java.awt.*;
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-
-/*
-<applet code="ContinuousDotsApplet" width=400 height=300>
-</applet>
-*/
-
-public class ContinuousDotsApplet extends Applet {
-
-    private Random random;
-    private int dotCount = 50; // Number of dots to display
-    private int[][] dotPositions; // Array to store dot positions
-
-    
-    public void init() {
-        // Initialize random generator and dot positions array
-        random = new Random();
-        dotPositions = new int[dotCount][2];
-
-        // Set a timer to update dot positions and repaint periodically
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
             
-            public void run() {
-                updateDots();
-                repaint();
+            
+
+
+        },
+        "Medium": {
+"Create and Set Border to Push Buttons": {
+                description: "Program to Create and Set Border to Push Buttons",
+                code: `
+import java.awt.*;
+public class ButtonWithBorderApp extends Frame {
+
+    public ButtonWithBorderApp() {
+        // Set up the frame
+        setTitle("Button with Border Example");
+        setSize(300, 200);
+        setLayout(new FlowLayout());
+
+        // Create a Panel to act as a border for the button
+        Panel buttonPanel = new Panel();
+        buttonPanel.setLayout(new FlowLayout());
+        buttonPanel.setBackground(Color.BLACK); // Border color
+        buttonPanel.setSize(100, 50);
+
+        // Create the Button
+        Button button = new Button("Push Me");
+        button.setBackground(Color.LIGHT_GRAY);
+        button.setPreferredSize(new Dimension(80, 30)); // Inner button size
+
+        // Add the button to the panel (creates a border effect)
+        buttonPanel.add(button);
+
+        // Add the panel (with button inside) to the frame
+        add(buttonPanel);
+
+        // Set up close operation
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                System.exit(0);
             }
-        }, 0, 200); // Update every 200 milliseconds (5 times per second)
+        });
     }
 
-    private void updateDots() {
-        // Update positions of each dot to random coordinates within the applet
-        for (int i = 0; i < dotCount; i++) {
-            dotPositions[i][0] = random.nextInt(getWidth()); // X position
-            dotPositions[i][1] = random.nextInt(getHeight()); // Y position
-        }
-    }
-
-    
-    public void paint(Graphics g) {
-        // Draw each dot as a small filled circle at its random position
-        g.setColor(Color.BLUE);
-        for (int i = 0; i < dotCount; i++) {
-            int x = dotPositions[i][0];
-            int y = dotPositions[i][1];
-            g.fillOval(x, y, 5, 5); // Draw dot with 5x5 size
-        }
+    public static void main(String[] args) {
+        // Create and show the frame
+        ButtonWithBorderApp app = new ButtonWithBorderApp();
+        app.setVisible(true);
     }
 }
 
 
 `,
                 output: `
-<img src="DEMimg/dots.png" alt="dots" loading="lazy">
+<img src="DEMimg/push.png" alt="img" loading="lazy">
     
                 `
             },
-            "Validate the TextField for only entering numbers using KeyListener": {
+"Validate the TextField for only entering numbers using KeyListener": {
                 description: "Program to Validate the TextField for only entering numbers using KeyListener",
                 code: `
 import java.awt.*;
@@ -6381,17 +6516,74 @@ public class EmailTextFieldApp extends Frame {
 `,
                 output: `
 <img src="DEMimg/email.png" alt="radio" loading="lazy">
+    `
+            }
+        },
+        "Hard": {
+"Display Several Dots on the Screen Continuously": {
+                description: "Program to Display Several Dots on the Screen Continuously",
+                code: `
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
+/*
+<applet code="ContinuousDotsApplet" width=400 height=300>
+</applet>
+*/
+
+public class ContinuousDotsApplet extends Applet {
+
+    private Random random;
+    private int dotCount = 50; // Number of dots to display
+    private int[][] dotPositions; // Array to store dot positions
+
+    
+    public void init() {
+        // Initialize random generator and dot positions array
+        random = new Random();
+        dotPositions = new int[dotCount][2];
+
+        // Set a timer to update dot positions and repaint periodically
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            
+            public void run() {
+                updateDots();
+                repaint();
+            }
+        }, 0, 200); // Update every 200 milliseconds (5 times per second)
+    }
+
+    private void updateDots() {
+        // Update positions of each dot to random coordinates within the applet
+        for (int i = 0; i < dotCount; i++) {
+            dotPositions[i][0] = random.nextInt(getWidth()); // X position
+            dotPositions[i][1] = random.nextInt(getHeight()); // Y position
+        }
+    }
+
+    
+    public void paint(Graphics g) {
+        // Draw each dot as a small filled circle at its random position
+        g.setColor(Color.BLUE);
+        for (int i = 0; i < dotCount; i++) {
+            int x = dotPositions[i][0];
+            int y = dotPositions[i][1];
+            g.fillOval(x, y, 5, 5); // Draw dot with 5x5 size
+        }
+    }
+}
+
+
+`,
+                output: `
+<img src="DEMimg/dots.png" alt="dots" loading="lazy">
     
                 `
             },
-
-
-        },
-        "Medium": {
-
-        },
-        "Hard": {
-
         }
     },
     "EXCEPTION HANDLING": {
@@ -6595,6 +6787,145 @@ class Exception5
 File is not Empty
               `
             },
+           
+            "connect the Java API to Database, if connection not successful then throw an exception": {
+                description: "Program to connect the Java API to Database, if connection not successful then throw an exception",
+                code: `
+      package exception8;
+class NotConnected extends Throwable 
+        {
+            public String getMessage()
+            {
+                return "Connection not Successful!";
+            }
+        }
+class Exception8
+    {
+        public static void main(String st[])
+        {
+            java.sql.Connection con =null;
+            try
+            {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/DB","root","java");
+            System.out.println(con);
+            if(con==null)
+            {
+                throw new NotConnected();
+            }
+            else
+            {
+                System.out.println("Database Connected Successfully");
+            }
+            }
+            catch(ClassNotFoundException e)
+            {
+                System.out.println(e.getMessage());
+            }
+            catch(java.sql.SQLException e)
+            {
+                System.out.println(e.getMessage());
+            }
+            catch(NotConnected e)
+            {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+`,
+                output: `
+   Database Connected Successfully
+              `
+            },
+            
+           
+            "show an example of throws Keyword.": {
+                description: "Program to show an example of throws Keyword.",
+                code: `
+      package exception11;
+class Exception11
+        {
+            public static void main(String st[]) throws java.io.IOException
+            {
+                java.io.InputStreamReader input = new java.io.InputStreamReader(System.in);
+                System.out.println("The main function throw io exception to JVM using thorws Keyword!");
+                System.out.println(input.read());
+            }
+        }
+
+`,
+                output: `
+             The main function throw io exception to JVM using thorws Keyword!
+             97
+              `
+            },
+            "show an example of multiple catch": {
+                description: "Program to show an example of multiple catch",
+                code: `
+package exception12;
+class Exception12
+    {
+        public static void main(String st[])
+        {
+            try
+            {
+                System.out.println(Integer.parseInt(st[0]));
+            }
+            catch(ArrayIndexOutOfBoundsException e)
+            {
+                System.out.println("Please Enter at least one Argument!");
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Please Enter an Integer value!");
+            }
+        }
+    }
+
+`,
+                output: `
+C:\&gt;java exception12.Exception12
+Please Enter at least one Argument!
+              `
+            },
+            "show an example of nested try block.": {
+                description: "Program to show an example of nested try block.",
+                code: `
+package exception13;
+
+class Exception13 
+    {
+        public static void main(String st[])
+        {
+            try
+            {
+                System.out.println(st[0]); 
+                try
+                {
+                    System.out.println(Integer.parseInt(st[0]));
+                }
+                catch(NumberFormatException e)
+                {
+                    System.out.println("Please Enter an Integer value!");
+                }
+            }
+            catch(ArrayIndexOutOfBoundsException e)
+            {
+                System.out.println("Please Enter at least one Argument!");
+            }
+        }
+    }
+
+`,
+                output: `
+C:\\&gt;java exception13.Exception13 a
+Please Enter an Integer value!
+              `
+            },
+
+        },
+        "Medium": {
             "reads a list of integers from the user and throws an exception if any numbers are duplicates": {
                 description: "Program to reads a list of integers from the user and throws an exception if any numbers are duplicates",
                 code: `
@@ -6729,57 +7060,9 @@ Manjit
 String contain vowel
               `
             },
-            "connect the Java API to Database, if connection not successful then throw an exception": {
-                description: "Program to connect the Java API to Database, if connection not successful then throw an exception",
-                code: `
-      package exception8;
-class NotConnected extends Throwable 
-        {
-            public String getMessage()
-            {
-                return "Connection not Successful!";
-            }
-        }
-class Exception8
-    {
-        public static void main(String st[])
-        {
-            java.sql.Connection con =null;
-            try
-            {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:/DB","root","java");
-            System.out.println(con);
-            if(con==null)
-            {
-                throw new NotConnected();
-            }
-            else
-            {
-                System.out.println("Database Connected Successfully");
-            }
-            }
-            catch(ClassNotFoundException e)
-            {
-                System.out.println(e.getMessage());
-            }
-            catch(java.sql.SQLException e)
-            {
-                System.out.println(e.getMessage());
-            }
-            catch(NotConnected e)
-            {
-                System.out.println(e.getMessage());
-            }
-        }
-    }
-
-`,
-                output: `
-   Database Connected Successfully
-              `
-            },
-            "manage the driver with path, username and password, if not successful then throw an exception": {
+        },
+        "Hard": {
+"manage the driver with path, username and password, if not successful then throw an exception": {
                 description: "Program to manage the driver with path, username and password, if not successful then throw an exception",
                 code: `
 import java.sql.Connection;
@@ -6964,96 +7247,6 @@ Delete successful.
 
               `
             },
-            "show an example of throws Keyword.": {
-                description: "Program to show an example of throws Keyword.",
-                code: `
-      package exception11;
-class Exception11
-        {
-            public static void main(String st[]) throws java.io.IOException
-            {
-                java.io.InputStreamReader input = new java.io.InputStreamReader(System.in);
-                System.out.println("The main function throw io exception to JVM using thorws Keyword!");
-                System.out.println(input.read());
-            }
-        }
-
-`,
-                output: `
-             The main function throw io exception to JVM using thorws Keyword!
-             97
-              `
-            },
-            "show an example of multiple catch": {
-                description: "Program to show an example of multiple catch",
-                code: `
-package exception12;
-class Exception12
-    {
-        public static void main(String st[])
-        {
-            try
-            {
-                System.out.println(Integer.parseInt(st[0]));
-            }
-            catch(ArrayIndexOutOfBoundsException e)
-            {
-                System.out.println("Please Enter at least one Argument!");
-            }
-            catch(NumberFormatException e)
-            {
-                System.out.println("Please Enter an Integer value!");
-            }
-        }
-    }
-
-`,
-                output: `
-C:\&gt;java exception12.Exception12
-Please Enter at least one Argument!
-              `
-            },
-            "show an example of nested try block.": {
-                description: "Program to show an example of nested try block.",
-                code: `
-package exception13;
-
-class Exception13 
-    {
-        public static void main(String st[])
-        {
-            try
-            {
-                System.out.println(st[0]); 
-                try
-                {
-                    System.out.println(Integer.parseInt(st[0]));
-                }
-                catch(NumberFormatException e)
-                {
-                    System.out.println("Please Enter an Integer value!");
-                }
-            }
-            catch(ArrayIndexOutOfBoundsException e)
-            {
-                System.out.println("Please Enter at least one Argument!");
-            }
-        }
-    }
-
-`,
-                output: `
-C:\\&gt;java exception13.Exception13 a
-Please Enter an Integer value!
-              `
-            },
-
-        },
-        "Medium": {
-
-        },
-        "Hard": {
-
         }
     },
     "FUNCTIONS": {
@@ -7347,7 +7540,160 @@ O
 P
                 `
             },
-            "check whether a string is a valid password": {
+            
+            "display the current date and time": {
+                description: "Write a Java method to display the current date and time.",
+                code: `
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateTimeDisplay {
+
+    public static void displayCurrentDateTime() {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
+        System.out.println("Current Date and Time: " + formattedDateTime);
+    }
+
+    public static void main(String[] args) {
+        displayCurrentDateTime();
+    }
+}
+
+            `
+                ,
+                output: `
+Current Date and Time: 2024-10-23 15:30:45
+
+                `
+            },
+            
+            "count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative": {
+                description: "Write a Java method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative.",
+                code: `
+public class NumDigit {
+   static void numDigit(int num)
+    {
+        int count=0,temp;
+        while (num>0) {
+            
+            temp = num%10;
+            if (temp==2) {
+                count++;
+            } 
+            num/=10;
+
+        }
+        System.out.println("count "+count);
+    }
+    public static void main(String[] args) {
+        numDigit(12322);
+    }
+}
+
+            `
+                ,
+                output: `
+count 3
+                `
+            },
+            
+            
+
+        },
+        "Medium": {
+            "accepts three integers and checks whether they are consecutive or not. Returns true or false": {
+                description: "Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.",
+                code: `
+public class ThreeInt {
+    boolean consecutive(int a,int b,int c)
+    {
+        if (++a==b && ++b==c) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    public static void main(String[] args) {
+        int num1=2,num2=3,num3=4;
+        boolean cons = new ThreeInt().consecutive(num1, num2, num3);
+        System.out.println(cons);
+    }
+}
+
+            `
+                ,
+                output: `
+true
+                `
+            },
+            "accepts three integers and returns true if one is the middle point between the other two integers, otherwise false": {
+                description: "Write a Java method to that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false.",
+                code: `
+public class MidPoint {
+     boolean midPoint(int a,int b,int c)
+    {
+        if (++a==b && --c==b) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    public static void main(String[] args) {
+        int num1=2,num2=3,num3=4;
+        boolean mid = new MidPoint().midPoint(num1, num2, num3);
+        System.out.println(mid);
+    }
+}
+
+            `
+                ,
+                output: `
+true
+                `
+            },
+"that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false": {
+                description: "Write a Java method to that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.",
+                code: `
+public class Vowel {
+    boolean isVowel(String s)
+    {
+        boolean isVowel = false;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c=='a' || c =='A' || c=='i' || c == 'I' || c =='e' || c=='E' || c=='o' || c=='O' || c=='u' || c=='U') {
+                isVowel =true;
+            }
+            else
+            {
+                isVowel = false;
+                break;
+            }
+        }
+        return isVowel;
+    }
+    public static void main(String[] args) {
+        boolean vowel = new Vowel().isVowel("aio");
+        System.out.println(vowel);
+    }
+}
+
+            `
+                ,
+                output: `
+true
+                `
+            },
+        },
+        "Hard": {
+"check whether a string is a valid password": {
                 description: "Write a Java method to check whether a string is a valid password.",
                 code: `
 public class PasswordValidator {
@@ -7399,34 +7745,7 @@ Valid password
 
                 `
             },
-            "display the current date and time": {
-                description: "Write a Java method to display the current date and time.",
-                code: `
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-public class DateTimeDisplay {
-
-    public static void displayCurrentDateTime() {
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedDateTime = currentDateTime.format(formatter);
-        System.out.println("Current Date and Time: " + formattedDateTime);
-    }
-
-    public static void main(String[] args) {
-        displayCurrentDateTime();
-    }
-}
-
-            `
-                ,
-                output: `
-Current Date and Time: 2024-10-23 15:30:45
-
-                `
-            },
-            "find all twin prime numbers less than 100": {
+"find all twin prime numbers less than 100": {
                 description: "Write a Java method to find all twin prime numbers less than 100.",
                 code: `
 public class TwinPrimes {
@@ -7470,130 +7789,6 @@ Twin prime numbers less than 100:
 
                 `
             },
-            "count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative": {
-                description: "Write a Java method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative.",
-                code: `
-public class NumDigit {
-   static void numDigit(int num)
-    {
-        int count=0,temp;
-        while (num>0) {
-            
-            temp = num%10;
-            if (temp==2) {
-                count++;
-            } 
-            num/=10;
-
-        }
-        System.out.println("count "+count);
-    }
-    public static void main(String[] args) {
-        numDigit(12322);
-    }
-}
-
-            `
-                ,
-                output: `
-count 3
-                `
-            },
-            "accepts three integers and checks whether they are consecutive or not. Returns true or false": {
-                description: "Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false.",
-                code: `
-public class ThreeInt {
-    boolean consecutive(int a,int b,int c)
-    {
-        if (++a==b && ++b==c) {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        
-    }
-    public static void main(String[] args) {
-        int num1=2,num2=3,num3=4;
-        boolean cons = new ThreeInt().consecutive(num1, num2, num3);
-        System.out.println(cons);
-    }
-}
-
-            `
-                ,
-                output: `
-true
-                `
-            },
-            "that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false": {
-                description: "Write a Java method to that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false.",
-                code: `
-public class MidPoint {
-     boolean midPoint(int a,int b,int c)
-    {
-        if (++a==b && --c==b) {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        
-    }
-    public static void main(String[] args) {
-        int num1=2,num2=3,num3=4;
-        boolean mid = new MidPoint().midPoint(num1, num2, num3);
-        System.out.println(mid);
-    }
-}
-
-            `
-                ,
-                output: `
-true
-                `
-            },
-            "that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false": {
-                description: "Write a Java method to that checks whether all the characters in a given string are vowels (a, e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.",
-                code: `
-public class Vowel {
-    boolean isVowel(String s)
-    {
-        boolean isVowel = false;
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (c=='a' || c =='A' || c=='i' || c == 'I' || c =='e' || c=='E' || c=='o' || c=='O' || c=='u' || c=='U') {
-                isVowel =true;
-            }
-            else
-            {
-                isVowel = false;
-                break;
-            }
-        }
-        return isVowel;
-    }
-    public static void main(String[] args) {
-        boolean vowel = new Vowel().isVowel("aio");
-        System.out.println(vowel);
-    }
-}
-
-            `
-                ,
-                output: `
-true
-                `
-            },
-
-        },
-        "Medium": {
-
-        },
-        "Hard": {
-
         }
     },
     "GRAPHICAL USER INTERFACE (AWT)": {
@@ -8246,7 +8441,14 @@ class MyFrame extends Frame
   
               `
             },
-            "Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.": {
+            
+
+        },
+        "Medium": {
+
+        },
+        "Hard": {
+"Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.": {
                 description: "Program to Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager.",
                 code: `
 import java.awt.*;
@@ -8401,13 +8603,6 @@ class Main {
   
               `
             },
-
-
-        },
-        "Medium": {
-
-        },
-        "Hard": {
 
         }
     },
@@ -8625,7 +8820,7 @@ class SavingsAccount extends BankAccount {
     
     public void withdraw(double amount) {
         if (getBalance() - amount &lt ;100) {
-            System.out.println("Withdrawal not allowed. Balance will fall below $100.");
+            System.out.println("Withdrawal not allowed. Balance will fall below Rs100.");
         } else {
             super.withdraw(amount);
         }
@@ -8655,7 +8850,7 @@ Withdrawn: 200.0
 Balance: 1300.0
 Deposited: 500.0
 Withdrawn: 200.0
-Withdrawal not allowed. Balance will fall below $100.
+Withdrawal not allowed. Balance will fall below Rs100.
 Balance: 1300.0
                 `
             },
@@ -8767,11 +8962,50 @@ Employee Id : 1
             "Create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.": {
                 description: "JAVA Program to create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.",
                 code: `
-        code//
-
+class Shape
+        {
+            final double PI =3.14;
+            private double radius;
+            double getPerimeter()
+            {
+                return 0;
+            }
+            double getArea()
+            {
+                return 0;
+            }
+            
+        }
+class Circle extends Shape
+        {
+            private double radius;
+            Circle(double r)
+            {
+                radius =r;
+            }
+            double getPerimeter()
+            {
+                return 2*PI*radius;
+            }
+            double getArea()
+            {
+                return PI*radius*radius;
+            }
+        }
+class Main
+        {
+            public static void main(String st[])
+                {
+                    Shape obj = new Circle(7.0);
+                    System.out.println("Perimeter of Circle : "+obj.getPerimeter());
+                    System.out.println("Area of Circle : "+obj.getArea());
+                }
+        }
 `,
                 output: `
-            output//
+Perimeter of Circle : 43.96
+Area of Circle : 153.86
+
                 `
             },
             "Create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.": {
@@ -9155,7 +9389,7 @@ Withdrawn: 200.0
 Balance: 1300.0
 Deposited: 500.0
 Withdrawn: 200.0
-Withdrawal not allowed. Balance will fall below $100.
+Withdrawal not allowed. Balance will fall below Rs100.
 Balance: 1300.0
                 `
             },
@@ -11178,7 +11412,13 @@ Name : Abhishek
 Marks : 96
           `
             },
-            "Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.": {
+            
+            
+            
+
+        },
+        "Medium": {
+"Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.": {
                 description: "Program to Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen..",
                 code: `
 public class Jdbc7 {
@@ -11245,6 +11485,9 @@ Name : Manjit
 Marks : 96
           `
             },
+
+        },
+        "Hard": {
             "Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only.": {
                 description: "Program to Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only..",
                 code: `
@@ -11413,7 +11656,7 @@ ID: 3, Name: Manjit kumar, Age: 21
 
           `
             },
-            "Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement": {
+"Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement": {
                 description: "Program to Create a Java Program to show, insert, update, delete of the table in Java API through PreparedStatement.",
                 code: `
 package jdbc9;
@@ -11751,14 +11994,6 @@ Delete : 3
 Invalied!
           `
             },
-
-        },
-        "Medium": {
-
-
-        },
-        "Hard": {
-
         }
     },
     " MULTITHREADING": {
@@ -11983,81 +12218,7 @@ Thread-1 Sorted Array:
   
               `
             },
-            "performs matrix multiplication using multiple threads.": {
-                description: "Program to performs matrix multiplication using multiple threads.",
-                code: `
-class MatrixMulti
-{
-    void matrixMulti(int arr1[][],int arr2[][],int multi[][])
-    {
-        int temp;
-        for (int i = 0; i < arr1.length; i++) {
-            for (int j = 0; j < arr1[i].length; j++) {
-                for (int k = 0; k < arr1[i].length; k++) {
-                    multi[i][j]+=arr1[i][k]*arr2[k][j];
-                }
-            }
-        }
-    }
-}
-class Mythread extends Thread
-{
-    MatrixMulti matrix = new MatrixMulti();
-    public void run()
-    {
-        int array1[][] = {{1,2,3},{4,5,1},{6,8,4}};
-        int array2[][] = {{4,6,7},{8,3,1},{2,6,2}};
-        int multi[][] = new int[array1.length][array1[0].length];
-        System.out.println(getName()+" Matrix 1: ");
-        for (int i = 0; i < array1.length; i++) {
-            for (int j = 0; j < array1[0].length; j++) {
-                System.out.print(array1[i][j]+" ");
-            }
-            System.out.println();
-        }
-        
-        System.out.println(getName()+" Matrix 2: ");
-        for (int i = 0; i < array2.length; i++) {
-            for (int j = 0; j < array2[0].length; j++) {
-                System.out.print(array2[i][j]+" ");
-            }
-            System.out.println();
-        }
-        matrix.matrixMulti(array1, array2, multi);
-        for (int i = 0; i < multi.length; i++) {
-            for (int j = 0; j < multi[0].length; j++) {
-                System.out.print(multi[i][j]+" ");
-            }
-            System.out.println();
-        }
-    }
-}
-class Main {
-    public static void main(String[] args) {
-        Mythread t1= new Mythread();
-        t1.start();
-        
-    }
-    
-}
-
-
-`,
-                output: `
-Thread-0 Matrix 1:
-1 2 3
-4 5 1
-6 8 4
-Thread-0 Matrix 2:
-4 6 7
-8 3 1
-2 6 2
-26 30 15
-58 45 35
-96 84 58
-  
-              `
-            },
+            
             "calculates the sum of all prime numbers up to a given limit using multiple threads.": {
                 description: "Program to calculates the sum of all prime numbers up to a given limit using multiple threads.",
                 code: `
@@ -12124,11 +12285,113 @@ code//
             "creates a bank account with concurrent deposits and withdrawals using threads.": {
                 description: "Program to creates a bank account with concurrent deposits and withdrawals using threads.",
                 code: `
-code//
+package thread7; 
+
+class BankAccount {
+        private int balance;
+    
+        public BankAccount(int initialBalance) {
+            this.balance = initialBalance;
+        }
+    
+        // Synchronized method for deposit
+        public synchronized void deposit(int amount) {
+            if (amount > 0) {
+                balance += amount;
+                System.out.println(Thread.currentThread().getName() + " deposited: Rs" + amount + ", New Balance: Rs" + balance);
+            }
+        }
+    
+        // Synchronized method for withdrawal
+        public synchronized void withdraw(int amount) {
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
+                System.out.println(Thread.currentThread().getName() + " withdrew: Rs" + amount + ", New Balance: Rs" + balance);
+            } else {
+                System.out.println(Thread.currentThread().getName() + " tried to withdraw: Rs" + amount + " (Insufficient funds)");
+            }
+        }
+    
+        public int getBalance() {
+            return balance;
+        }
+    }
+    
+    class DepositTask implements Runnable {
+        private final BankAccount account;
+        private final int amount;
+    
+        public DepositTask(BankAccount account, int amount) {
+            this.account = account;
+            this.amount = amount;
+        }
+
+        public void run() {
+            account.deposit(amount);
+        }
+    }
+    
+    class WithdrawTask implements Runnable {
+        private final BankAccount account;
+        private final int amount;
+    
+        public WithdrawTask(BankAccount account, int amount) {
+            this.account = account;
+            this.amount = amount;
+        }
+    
+        public void run() {
+            account.withdraw(amount);
+        }
+    }
+    
+    public class BankSimulation {
+        public static void main(String[] args) {
+            BankAccount account = new BankAccount(1000); // Initial balance of Rs1000
+    
+            // Create a thread pool
+            Thread[] threads = new Thread[6];
+    
+            // Create deposit tasks
+            threads[0] = new Thread(new DepositTask(account, 500), "Thread-Deposit-1");
+            threads[1] = new Thread(new DepositTask(account, 300), "Thread-Deposit-2");
+    
+            // Create withdrawal tasks
+            threads[2] = new Thread(new WithdrawTask(account, 400), "Thread-Withdraw-1");
+            threads[3] = new Thread(new WithdrawTask(account, 200), "Thread-Withdraw-2");
+            threads[4] = new Thread(new WithdrawTask(account, 700), "Thread-Withdraw-3");
+            threads[5] = new Thread(new WithdrawTask(account, 600), "Thread-Withdraw-4");
+    
+            // Start all threads
+            for (Thread thread : threads) {
+                thread.start();
+            }
+    
+            // Wait for all threads to finish
+            for (Thread thread : threads) {
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+    
+            // Final account balance
+            System.out.println("Final Balance: Rs" + account.getBalance());
+        }
+    }
+    
+
 
 `,
                 output: `
-              output//
+Thread-Deposit-1 deposited: Rs500, New Balance: Rs1500
+Thread-Withdraw-4 withdrew: Rs600, New Balance: Rs900
+Thread-Withdraw-3 withdrew: Rs700, New Balance: Rs200
+Thread-Deposit-2 deposited: Rs300, New Balance: Rs500
+Thread-Withdraw-1 withdrew: Rs400, New Balance: Rs100
+Thread-Withdraw-2 tried to withdraw: Rs200 (Insufficient funds)
+Final Balance: Rs100
   
               `
             },
@@ -12345,11 +12608,130 @@ End :T2
             "create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.": {
                 description: "Program to create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.",
                 code: `
-code//
+package thread12;
+
+class Display {
+    private boolean isAvailable = true; // Indicates if display() can be called
+
+    synchronized void display() throws InterruptedException {
+        // Wait if display is being used by another thread
+        while (!isAvailable) {
+            wait(); // Thread goes into waiting state
+        }
+
+        // Mark display as in use
+        isAvailable = false;
+
+        System.out.println(Thread.currentThread().getName() + " started display");
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(Thread.currentThread().getName() + ": " + i);
+            Thread.sleep(200); // Simulate work with sleep
+        }
+
+        // Mark display as available again
+        System.out.println(Thread.currentThread().getName() + " finished display");
+        isAvailable = true;
+        notifyAll(); // Notify all waiting threads
+    }
+}
+
+class MyThread extends Thread {
+    private final Display obj; // Shared Display instance
+
+    public MyThread(String name, Display obj) {
+        super(name);
+        this.obj = obj;
+    }
+
+    public void run() {
+        try {
+            System.out.println("Start: " + getName());
+            obj.display(); // Call the synchronized display method
+            System.out.println("End: " + getName());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+ class Main {
+    public static void main(String[] args) {
+        Display display = new Display(); // Shared Display object
+
+        // Create multiple threads with the same Display instance
+        MyThread t1 = new MyThread("T1", display);
+        MyThread t2 = new MyThread("T2", display);
+        MyThread t3 = new MyThread("T3", display);
+        MyThread t4 = new MyThread("T4", display);
+
+        // Start all threads
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}
+
 
 `,
                 output: `
-              output//
+Start: T1
+Start: T4
+Start: T3
+Start: T2
+T1 started display
+T1: 1
+T1: 2
+T1: 3
+T1: 4
+T1: 5
+T1: 6
+T1: 7
+T1: 8
+T1: 9
+T1: 10
+T1 finished display
+End: T1
+T2 started display
+T2: 1
+T2: 2
+T2: 3
+T2: 4
+T2: 5
+T2: 6
+T2: 7
+T2: 8
+T2: 9
+T2: 10
+T2 finished display
+End: T2
+T3 started display
+T3: 1
+T3: 2
+T3: 3
+T3: 4
+T3: 5
+T3: 6
+T3: 7
+T3: 8
+T3: 9
+T3: 10
+T3 finished display
+End: T3
+T4 started display
+T4: 1
+T4: 2
+T4: 3
+T4: 4
+T4: 5
+T4: 6
+T4: 7
+T4: 8
+T4: 9
+T4: 10
+T4 finished display
+End: T4
   
               `
             },
@@ -12453,7 +12835,81 @@ End :T4
 
         },
         "Medium": {
+"performs matrix multiplication using multiple threads.": {
+                description: "Program to performs matrix multiplication using multiple threads.",
+                code: `
+class MatrixMulti
+{
+    void matrixMulti(int arr1[][],int arr2[][],int multi[][])
+    {
+        int temp;
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr1[i].length; j++) {
+                for (int k = 0; k < arr1[i].length; k++) {
+                    multi[i][j]+=arr1[i][k]*arr2[k][j];
+                }
+            }
+        }
+    }
+}
+class Mythread extends Thread
+{
+    MatrixMulti matrix = new MatrixMulti();
+    public void run()
+    {
+        int array1[][] = {{1,2,3},{4,5,1},{6,8,4}};
+        int array2[][] = {{4,6,7},{8,3,1},{2,6,2}};
+        int multi[][] = new int[array1.length][array1[0].length];
+        System.out.println(getName()+" Matrix 1: ");
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array1[0].length; j++) {
+                System.out.print(array1[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println(getName()+" Matrix 2: ");
+        for (int i = 0; i < array2.length; i++) {
+            for (int j = 0; j < array2[0].length; j++) {
+                System.out.print(array2[i][j]+" ");
+            }
+            System.out.println();
+        }
+        matrix.matrixMulti(array1, array2, multi);
+        for (int i = 0; i < multi.length; i++) {
+            for (int j = 0; j < multi[0].length; j++) {
+                System.out.print(multi[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Mythread t1= new Mythread();
+        t1.start();
+        
+    }
+    
+}
 
+
+`,
+                output: `
+Thread-0 Matrix 1:
+1 2 3
+4 5 1
+6 8 4
+Thread-0 Matrix 2:
+4 6 7
+8 3 1
+2 6 2
+26 30 15
+58 45 35
+96 84 58
+  
+              `
+            },
         },
         "Hard": {
 
@@ -12787,7 +13243,7 @@ class Employee
 
         // Calculate new salary with a 10% increase
         double newSalary = emp.calculateSalary(10);
-        System.out.println("New Salary after 10% increment: $" + newSalary);
+        System.out.println("New Salary after 10% increment: Rs" + newSalary);
 
         // Update the salary
         emp.updateSalary(newSalary);
@@ -12801,7 +13257,7 @@ class Employee
 Employee Name: Manjit
 Job Title: Software Engineer
 Current Salary: Rs 60000.0
-New Salary after 10% increment: $66000.0
+New Salary after 10% increment: Rs66000.0
 Salary updated successfully!
 Employee Name: Manjit
 Job Title: Software Engineer
@@ -12843,7 +13299,7 @@ class Account {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println("Deposited: $" + amount + " | New Balance: $" + balance);
+            System.out.println("Deposited: Rs" + amount + " | New Balance: Rs" + balance);
         } else {
             System.out.println("Deposit amount must be positive!");
         }
@@ -12853,7 +13309,7 @@ class Account {
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            System.out.println("Withdrawn: $" + amount + " | New Balance: $" + balance);
+            System.out.println("Withdrawn: Rs" + amount + " | New Balance: Rs" + balance);
         } else {
             System.out.println("Invalid withdrawal amount!");
         }
@@ -13157,82 +13613,1301 @@ Course History not found for Manjit
             "create a class called \"Library\" with a collection of books and methods to add and remove books.": {
                 description: "Program to create a class called \"Library\" with a collection of books and methods to add and remove books.",
                 code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class Library {
+    private List<String> books;
+
+    public Library() {
+        books = new ArrayList<>();
+    }
+
+    // Method to add a book to the library
+    public void addBook(String book) {
+        books.add(book);
+        System.out.println("Book added: " + book);
+    }
+
+    // Method to remove a book from the library
+    public void removeBook(String book) {
+        if (books.contains(book)) {
+            books.remove(book);
+            System.out.println("Book removed: " + book);
+        } else {
+            System.out.println("Book not found: " + book);
+        }
+    }
+
+    // Method to display all books in the library
+    public void displayBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books in the library.");
+        } else {
+            System.out.println("Books in the library:");
+            for (String book : books) {
+                System.out.println("- " + book);
+            }
+        }
+    }
+}
+
+public class LibraryManagement {
+    public static void main(String[] args) {
+        Library library = new Library();
+
+        // Adding books to the library
+        library.addBook("The Great Gatsby");
+        library.addBook("To Kill a Mockingbird");
+        library.addBook("1984");
+
+        // Displaying all books
+        library.displayBooks();
+
+        // Removing a book from the library
+        library.removeBook("1984");
+
+        // Displaying all books after removal
+        library.displayBooks();
+
+        // Trying to remove a book that doesn't exist
+        library.removeBook("Moby Dick");
+    }
+}
+
 `,
                 output: `
-   output//
+Book added: The Great Gatsby
+Book added: To Kill a Mockingbird
+Book added: 1984
+Books in the library:
+- The Great Gatsby
+- To Kill a Mockingbird
+- 1984
+Book removed: 1984
+Books in the library:
+- The Great Gatsby
+- To Kill a Mockingbird
+Book not found: Moby Dick
+
                 `
             },
             "create a class called \"Airplane\" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.": {
                 description: "Program to create a class called \"Airplane\" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.",
                 code: `
-        code//
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+class Airplane {
+    private String flightNumber;
+    private String destination;
+    private LocalTime departureTime;
+    private boolean delayed;
+    private LocalTime delayedTime;
+
+    // Constructor to initialize the flight details
+    public Airplane(String flightNumber, String destination, String departureTime) {
+        this.flightNumber = flightNumber;
+        this.destination = destination;
+        this.departureTime = LocalTime.parse(departureTime, DateTimeFormatter.ofPattern("HH:mm"));
+        this.delayed = false;
+        this.delayedTime = this.departureTime;
+    }
+
+    // Method to set a delay in minutes
+    public void delayFlight(int delayMinutes) {
+        delayed = true;
+        delayedTime = departureTime.plusMinutes(delayMinutes);
+        System.out.println("Flight " + flightNumber + " delayed by " + delayMinutes + " minutes.");
+    }
+
+    // Method to check the flight status
+    public void checkFlightStatus() {
+        LocalTime currentTime = LocalTime.now();
+        System.out.println("Flight Number: " + flightNumber);
+        System.out.println("Destination: " + destination);
+        System.out.println("Scheduled Departure Time: " + departureTime.format(DateTimeFormatter.ofPattern("HH:mm")));
+        if (delayed) {
+            System.out.println("Delayed Departure Time: " + delayedTime.format(DateTimeFormatter.ofPattern("HH:mm")));
+        }
+        System.out.println("Flight Status: " + (currentTime.isBefore(delayedTime) ? "Scheduled" : "Departed"));
+    }
+}
+
+public class AirplaneManagement {
+    public static void main(String[] args) {
+        // Creating a new flight
+        Airplane flight = new Airplane("AI101", "New York", "15:30");
+
+        // Checking initial flight status
+        flight.checkFlightStatus();
+
+        // Setting a delay of 45 minutes
+        flight.delayFlight(45);
+
+        // Checking the status again after delay
+        flight.checkFlightStatus();
+    }
+}
+
 `,
                 output: `
-   output//
+Flight Number: AI101
+Destination: New York
+Scheduled Departure Time: 15:30
+Flight Status: Scheduled
+Flight AI101 delayed by 45 minutes.
+Flight Number: AI101
+Destination: New York
+Scheduled Departure Time: 15:30
+Delayed Departure Time: 16:15
+Flight Status: Scheduled
+
                 `
             },
             "create a class called \"Inventory\" with a collection of products and methods to add and remove products, and to check for low inventory.": {
                 description: "Program to create a class called \"Inventory\" with a collection of products and methods to add and remove products, and to check for low inventory.",
                 code: `
-        code//
+import java.util.HashMap;
+import java.util.Map;
+
+class Product {
+    private String name;
+    private int quantity;
+
+    public Product(String name, int quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void addQuantity(int amount) {
+        quantity += amount;
+    }
+
+    public void removeQuantity(int amount) {
+        if (quantity >= amount) {
+            quantity -= amount;
+        } else {
+            System.out.println("Insufficient quantity for product: " + name);
+        }
+    }
+}
+
+class Inventory {
+    private Map<String, Product> products;
+
+    public Inventory() {
+        products = new HashMap<>();
+    }
+
+    // Method to add a new product or increase quantity of an existing product
+    public void addProduct(String name, int quantity) {
+        if (products.containsKey(name)) {
+            products.get(name).addQuantity(quantity);
+            System.out.println("Added " + quantity + " more of " + name + " to inventory.");
+        } else {
+            products.put(name, new Product(name, quantity));
+            System.out.println("Product " + name + " added with quantity " + quantity);
+        }
+    }
+
+    // Method to remove quantity of a product
+    public void removeProduct(String name, int quantity) {
+        if (products.containsKey(name)) {
+            products.get(name).removeQuantity(quantity);
+            System.out.println("Removed " + quantity + " of " + name + " from inventory.");
+            if (products.get(name).getQuantity() == 0) {
+                products.remove(name);
+                System.out.println("Product " + name + " is now out of stock and removed from inventory.");
+            }
+        } else {
+            System.out.println("Product " + name + " not found in inventory.");
+        }
+    }
+
+    // Method to check for low inventory products
+    public void checkLowInventory(int threshold) {
+        System.out.println("Products with quantity below " + threshold + ":");
+        boolean lowInventoryFound = false;
+        for (Product product : products.values()) {
+            if (product.getQuantity() < threshold) {
+                System.out.println("- " + product.getName() + ": " + product.getQuantity());
+                lowInventoryFound = true;
+            }
+        }
+        if (!lowInventoryFound) {
+            System.out.println("No products with low inventory.");
+        }
+    }
+
+    // Method to display all products and their quantities
+    public void displayInventory() {
+        System.out.println("Current Inventory:");
+        for (Product product : products.values()) {
+            System.out.println("- " + product.getName() + ": " + product.getQuantity());
+        }
+    }
+}
+
+public class InventoryManagement {
+    public static void main(String[] args) {
+        Inventory inventory = new Inventory();
+
+        // Adding products to the inventory
+        inventory.addProduct("Apples", 50);
+        inventory.addProduct("Bananas", 20);
+        inventory.addProduct("Oranges", 5);
+
+        // Displaying all products in the inventory
+        inventory.displayInventory();
+
+        // Removing products from the inventory
+        inventory.removeProduct("Bananas", 5);
+        inventory.removeProduct("Oranges", 5);
+
+        // Displaying inventory after removal
+        inventory.displayInventory();
+
+        // Checking for low inventory (threshold set to 10)
+        inventory.checkLowInventory(10);
+
+        // Adding more of an existing product
+        inventory.addProduct("Apples", 30);
+
+        // Displaying final inventory
+        inventory.displayInventory();
+    }
+}
+
 `,
                 output: `
-   output//
+Product Apples added with quantity 50
+Product Bananas added with quantity 20
+Product Oranges added with quantity 5
+Current Inventory:
+- Apples: 50
+- Bananas: 20
+- Oranges: 5
+Removed 5 of Bananas from inventory.
+Removed 5 of Oranges from inventory.
+Product Oranges is now out of stock and removed from inventory.
+Current Inventory:
+- Apples: 50
+- Bananas: 15
+Products with quantity below 10:
+- Bananas: 15
+Added 30 more of Apples to inventory.
+Current Inventory:
+- Apples: 80
+- Bananas: 15
+
                 `
             },
             "create a class called \"School\" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.": {
                 description: "Program to create a class called \"School\" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.",
                 code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class Person {
+    private String name;
+    
+    public Person(String name) {
+        this.name = name;
+    }
+    
+    public String getName() {
+        return name;
+    }
+}
+
+class Student extends Person {
+    public Student(String name) {
+        super(name);
+    }
+}
+
+class Teacher extends Person {
+    public Teacher(String name) {
+        super(name);
+    }
+}
+
+class SchoolClass {
+    private String className;
+    private Teacher teacher;
+    private List<Student> students;
+    
+    public SchoolClass(String className, Teacher teacher) {
+        this.className = className;
+        this.teacher = teacher;
+        this.students = new ArrayList<>();
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+        System.out.println("Student " + student.getName() + " added to class " + className);
+    }
+
+    public void removeStudent(Student student) {
+        if (students.remove(student)) {
+            System.out.println("Student " + student.getName() + " removed from class " + className);
+        } else {
+            System.out.println("Student " + student.getName() + " not found in class " + className);
+        }
+    }
+
+    public void displayClassInfo() {
+        System.out.println("Class: " + className);
+        System.out.println("Teacher: " + teacher.getName());
+        System.out.println("Students:");
+        for (Student student : students) {
+            System.out.println("- " + student.getName());
+        }
+    }
+}
+
+class School {
+    private List<Student> students;
+    private List<Teacher> teachers;
+    private List<SchoolClass> classes;
+
+    public School() {
+        students = new ArrayList<>();
+        teachers = new ArrayList<>();
+        classes = new ArrayList<>();
+    }
+
+    // Add a student to the school
+    public void addStudent(String name) {
+        Student student = new Student(name);
+        students.add(student);
+        System.out.println("Student " + name + " added to the school.");
+    }
+
+    // Remove a student from the school
+    public void removeStudent(String name) {
+        Student student = findStudentByName(name);
+        if (student != null) {
+            students.remove(student);
+            System.out.println("Student " + name + " removed from the school.");
+        } else {
+            System.out.println("Student " + name + " not found.");
+        }
+    }
+
+    // Add a teacher to the school
+    public void addTeacher(String name) {
+        Teacher teacher = new Teacher(name);
+        teachers.add(teacher);
+        System.out.println("Teacher " + name + " added to the school.");
+    }
+
+    // Remove a teacher from the school
+    public void removeTeacher(String name) {
+        Teacher teacher = findTeacherByName(name);
+        if (teacher != null) {
+            teachers.remove(teacher);
+            System.out.println("Teacher " + name + " removed from the school.");
+        } else {
+            System.out.println("Teacher " + name + " not found.");
+        }
+    }
+
+    // Create a new class
+    public void createClass(String className, String teacherName) {
+        Teacher teacher = findTeacherByName(teacherName);
+        if (teacher != null) {
+            SchoolClass schoolClass = new SchoolClass(className, teacher);
+            classes.add(schoolClass);
+            System.out.println("Class " + className + " created with teacher " + teacherName);
+        } else {
+            System.out.println("Teacher " + teacherName + " not found. Cannot create class.");
+        }
+    }
+
+    // Enroll a student into a specific class
+    public void enrollStudentInClass(String studentName, String className) {
+        Student student = findStudentByName(studentName);
+        SchoolClass schoolClass = findClassByName(className);
+        
+        if (student != null && schoolClass != null) {
+            schoolClass.addStudent(student);
+        } else {
+            System.out.println("Cannot enroll student. Either student or class not found.");
+        }
+    }
+
+    // Find a student by name
+    private Student findStudentByName(String name) {
+        for (Student student : students) {
+            if (student.getName().equals(name)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
+    // Find a teacher by name
+    private Teacher findTeacherByName(String name) {
+        for (Teacher teacher : teachers) {
+            if (teacher.getName().equals(name)) {
+                return teacher;
+            }
+        }
+        return null;
+    }
+
+    // Find a class by name
+    private SchoolClass findClassByName(String className) {
+        for (SchoolClass schoolClass : classes) {
+            if (schoolClass.getClassName().equals(className)) {
+                return schoolClass;
+            }
+        }
+        return null;
+    }
+
+    // Display all classes and their details
+    public void displaySchoolInfo() {
+        System.out.println("School Information:");
+        for (SchoolClass schoolClass : classes) {
+            schoolClass.displayClassInfo();
+        }
+    }
+}
+
+public class SchoolManagement {
+    public static void main(String[] args) {
+        School school = new School();
+
+        // Add students to the school
+        school.addStudent("Alice");
+        school.addStudent("Bob");
+
+        // Add teachers to the school
+        school.addTeacher("Mr. Smith");
+        school.addTeacher("Ms. Johnson");
+
+        // Create a class and assign a teacher
+        school.createClass("Math 101", "Mr. Smith");
+
+        // Enroll students in the class
+        school.enrollStudentInClass("Alice", "Math 101");
+        school.enrollStudentInClass("Bob", "Math 101");
+
+        // Display information about the school
+        school.displaySchoolInfo();
+    }
+}
+
 `,
                 output: `
-   output//
+Student Alice added to the school.
+Student Bob added to the school.
+Teacher Mr. Smith added to the school.
+Teacher Ms. Johnson added to the school.
+Class Math 101 created with teacher Mr. Smith
+Student Alice added to class Math 101
+Student Bob added to class Math 101
+School Information:
+Class: Math 101
+Teacher: Mr. Smith
+Students:
+- Alice
+- Bob
+
                 `
             },
             "create a class called \"MusicLibrary\" with a collection of songs and methods to add and remove songs, and to play a random song.": {
                 description: "Program to create a class called \"MusicLibrary\" with a collection of songs and methods to add and remove songs, and to play a random song.",
                 code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+class Song {
+    private String title;
+    private String artist;
+
+    public Song(String title, String artist) {
+        this.title = title;
+        this.artist = artist;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void play() {
+        System.out.println("Now playing: " + title + " by " + artist);
+    }
+}
+
+class MusicLibrary {
+    private List<Song> songs;
+
+    public MusicLibrary() {
+        songs = new ArrayList<>();
+    }
+
+    // Method to add a song to the library
+    public void addSong(String title, String artist) {
+        songs.add(new Song(title, artist));
+        System.out.println("Song \"" + title + "\" by " + artist + " added to the library.");
+    }
+
+    // Method to remove a song from the library by title
+    public void removeSong(String title) {
+        Song songToRemove = null;
+        for (Song song : songs) {
+            if (song.getTitle().equalsIgnoreCase(title)) {
+                songToRemove = song;
+                break;
+            }
+        }
+        if (songToRemove != null) {
+            songs.remove(songToRemove);
+            System.out.println("Song \"" + title + "\" removed from the library.");
+        } else {
+            System.out.println("Song \"" + title + "\" not found in the library.");
+        }
+    }
+
+    // Method to play a random song from the library
+    public void playRandomSong() {
+        if (songs.isEmpty()) {
+            System.out.println("The library is empty. Add some songs to play.");
+            return;
+        }
+        Random random = new Random();
+        Song randomSong = songs.get(random.nextInt(songs.size()));
+        randomSong.play();
+    }
+
+    // Method to display all songs in the library
+    public void displaySongs() {
+        if (songs.isEmpty()) {
+            System.out.println("The library is empty.");
+        } else {
+            System.out.println("Songs in the library:");
+            for (Song song : songs) {
+                System.out.println("- " + song.getTitle() + " by " + song.getArtist());
+            }
+        }
+    }
+}
+
+public class MusicLibraryManager {
+    public static void main(String[] args) {
+        MusicLibrary musicLibrary = new MusicLibrary();
+
+        // Adding songs to the library
+        musicLibrary.addSong("Bohemian Rhapsody", "Queen");
+        musicLibrary.addSong("Imagine", "John Lennon");
+        musicLibrary.addSong("Hotel California", "Eagles");
+
+        // Displaying all songs in the library
+        musicLibrary.displaySongs();
+
+        // Playing a random song
+        musicLibrary.playRandomSong();
+
+        // Removing a song from the library
+        musicLibrary.removeSong("Imagine");
+
+        // Displaying the library after removal
+        musicLibrary.displaySongs();
+
+        // Trying to play a random song again
+        musicLibrary.playRandomSong();
+    }
+}
+
 `,
                 output: `
-   output//
+Song "Bohemian Rhapsody" by Queen added to the library.
+Song "Imagine" by John Lennon added to the library.
+Song "Hotel California" by Eagles added to the library.
+Songs in the library:
+- Bohemian Rhapsody by Queen
+- Imagine by John Lennon
+- Hotel California by Eagles
+Now playing: Hotel California by Eagles
+Song "Imagine" removed from the library.
+Songs in the library:
+- Bohemian Rhapsody by Queen
+- Hotel California by Eagles
+Now playing: Bohemian Rhapsody by Queen
+
                 `
             },
             "create a class called \"Shape\" with abstract methods for calculating area and perimeter, and subclasses for \"Rectangle\", \"Circle\", and \"Triangle\".": {
                 description: "Program to create a class called \"Shape\" with abstract methods for calculating area and perimeter, and subclasses for \"Rectangle\", \"Circle\", and \"Triangle\".",
                 code: `
-        code//
+abstract class Shape {
+    // Abstract methods for calculating area and perimeter
+    public abstract double calculateArea();
+    public abstract double calculatePerimeter();
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Triangle extends Shape {
+    private double sideA;
+    private double sideB;
+    private double sideC;
+
+    public Triangle(double sideA, double sideB, double sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
+
+    @Override
+    public double calculateArea() {
+        double s = (sideA + sideB + sideC) / 2; // semi-perimeter
+        return Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return sideA + sideB + sideC;
+    }
+}
+
+public class ShapeDemo {
+    public static void main(String[] args) {
+        Shape rectangle = new Rectangle(5, 3);
+        System.out.println("Rectangle Area: " + rectangle.calculateArea());
+        System.out.println("Rectangle Perimeter: " + rectangle.calculatePerimeter());
+
+        Shape circle = new Circle(4);
+        System.out.println("Circle Area: " + circle.calculateArea());
+        System.out.println("Circle Perimeter: " + circle.calculatePerimeter());
+
+        Shape triangle = new Triangle(3, 4, 5);
+        System.out.println("Triangle Area: " + triangle.calculateArea());
+        System.out.println("Triangle Perimeter: " + triangle.calculatePerimeter());
+    }
+}
+ 
 `,
                 output: `
-   output//
+Rectangle Area: 15.0
+Rectangle Perimeter: 16.0
+Circle Area: 50.26548245743669
+Circle Perimeter: 25.132741228718345
+Triangle Area: 6.0
+Triangle Perimeter: 12.0
+
                 `
             },
             "create a class called \"Movie\" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.": {
                 description: "Program to create a class called \"Movie\" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.",
                 code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class Review {
+    private String reviewer;
+    private String reviewText;
+    private int rating; // rating out of 5
+
+    public Review(String reviewer, String reviewText, int rating) {
+        this.reviewer = reviewer;
+        this.reviewText = reviewText;
+        this.rating = rating;
+    }
+
+    public String getReviewer() {
+        return reviewer;
+    }
+
+    public String getReviewText() {
+        return reviewText;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    @Override
+    public String toString() {
+        return "Reviewer: " + reviewer + "\nRating: " + rating + "/5\nReview: " + reviewText + "\n";
+    }
+}
+
+class Movie {
+    private String title;
+    private String director;
+    private List<String> actors;
+    private List<Review> reviews;
+
+    public Movie(String title, String director, List<String> actors) {
+        this.title = title;
+        this.director = director;
+        this.actors = new ArrayList<>(actors);
+        this.reviews = new ArrayList<>();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public List<String> getActors() {
+        return actors;
+    }
+
+    // Method to add a review
+    public void addReview(String reviewer, String reviewText, int rating) {
+        reviews.add(new Review(reviewer, reviewText, rating));
+        System.out.println("Review added by " + reviewer);
+    }
+
+    // Method to retrieve all reviews
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    // Method to display all information about the movie
+    public void displayMovieInfo() {
+        System.out.println("Title: " + title);
+        System.out.println("Director: " + director);
+        System.out.print("Actors: ");
+        for (String actor : actors) {
+            System.out.print(actor + " ");
+        }
+        System.out.println("\nReviews:");
+        if (reviews.isEmpty()) {
+            System.out.println("No reviews yet.");
+        } else {
+            for (Review review : reviews) {
+                System.out.println(review);
+            }
+        }
+    }
+}
+
+public class MovieApp {
+    public static void main(String[] args) {
+        // List of actors for the movie
+        List<String> actors = new ArrayList<>();
+        actors.add("Leonardo DiCaprio");
+        actors.add("Kate Winslet");
+
+        // Create a movie instance
+        Movie movie = new Movie("Titanic", "James Cameron", actors);
+
+        // Display movie information
+        movie.displayMovieInfo();
+
+        // Add reviews
+        movie.addReview("Alice", "An amazing love story with stunning visuals.", 5);
+        movie.addReview("Bob", "A timeless classic, though a bit too long.", 4);
+
+        // Display movie information again with reviews
+        System.out.println("\nUpdated Movie Info:");
+        movie.displayMovieInfo();
+    }
+}
+
 `,
                 output: `
-   output//
+Title: Titanic
+Director: James Cameron
+Actors: Leonardo DiCaprio Kate Winslet 
+Reviews:
+No reviews yet.
+Review added by Alice
+Review added by Bob
+
+Updated Movie Info:
+Title: Titanic
+Director: James Cameron
+Actors: Leonardo DiCaprio Kate Winslet 
+Reviews:
+Reviewer: Alice
+Rating: 5/5
+Review: An amazing love story with stunning visuals.
+
+Reviewer: Bob
+Rating: 4/5
+Review: A timeless classic, though a bit too long.
+
                 `
             },
             "create a class called \"Restaurant\" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.": {
                 description: "Program to create a class called \"Restaurant\" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.",
                 code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class MenuItem {
+    private String name;
+    private double price;
+    private List<Integer> ratings;
+
+    public MenuItem(String name, double price) {
+        this.name = name;
+        this.price = price;
+        this.ratings = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void addRating(int rating) {
+        if (rating >= 1 && rating <= 5) {
+            ratings.add(rating);
+        } else {
+            System.out.println("Invalid rating. Please enter a rating between 1 and 5.");
+        }
+    }
+
+    public double getAverageRating() {
+        if (ratings.isEmpty()) {
+            return 0;
+        }
+        double sum = 0;
+        for (int rating : ratings) {
+            sum += rating;
+        }
+        return sum / ratings.size();
+    }
+
+    @Override
+    public String toString() {
+        return name + " - $" + price + " (Average Rating: " + String.format("%.2f", getAverageRating()) + ")";
+    }
+}
+
+class Restaurant {
+    private List<MenuItem> menu;
+
+    public Restaurant() {
+        this.menu = new ArrayList<>();
+    }
+
+    // Method to add a menu item
+    public void addMenuItem(String name, double price) {
+        menu.add(new MenuItem(name, price));
+        System.out.println("Added item: " + name + " - $" + price);
+    }
+
+    // Method to remove a menu item by name
+    public void removeMenuItem(String name) {
+        MenuItem itemToRemove = null;
+        for (MenuItem item : menu) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                itemToRemove = item;
+                break;
+            }
+        }
+        if (itemToRemove != null) {
+            menu.remove(itemToRemove);
+            System.out.println("Removed item: " + name);
+        } else {
+            System.out.println("Item not found: " + name);
+        }
+    }
+
+    // Method to add a rating to a menu item by name
+    public void addRating(String name, int rating) {
+        for (MenuItem item : menu) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                item.addRating(rating);
+                System.out.println("Added rating of " + rating + " to " + name);
+                return;
+            }
+        }
+        System.out.println("Item not found: " + name);
+    }
+
+    // Method to calculate the average rating of all items
+    public double calculateAverageRating() {
+        if (menu.isEmpty()) {
+            return 0;
+        }
+        double totalRating = 0;
+        int count = 0;
+        for (MenuItem item : menu) {
+            totalRating += item.getAverageRating();
+            if (item.getAverageRating() > 0) {
+                count++;
+            }
+        }
+        return count == 0 ? 0 : totalRating / count;
+    }
+
+    // Method to display the menu
+    public void displayMenu() {
+        System.out.println("Menu:");
+        for (MenuItem item : menu) {
+            System.out.println(item);
+        }
+    }
+}
+
+public class RestaurantApp {
+    public static void main(String[] args) {
+        Restaurant restaurant = new Restaurant();
+
+        // Adding menu items
+        restaurant.addMenuItem("Pasta", 12.99);
+        restaurant.addMenuItem("Pizza", 15.49);
+        restaurant.addMenuItem("Burger", 8.99);
+
+        // Displaying the menu
+        restaurant.displayMenu();
+
+        // Adding ratings
+        restaurant.addRating("Pasta", 5);
+        restaurant.addRating("Pasta", 4);
+        restaurant.addRating("Pizza", 3);
+        restaurant.addRating("Burger", 5);
+        restaurant.addRating("Burger", 4);
+
+        // Displaying the menu with ratings
+        System.out.println("\nUpdated Menu:");
+        restaurant.displayMenu();
+
+        // Calculating and displaying the average rating of all items
+        System.out.println("\nAverage Rating of All Items: " + String.format("%.2f", restaurant.calculateAverageRating()));
+
+        // Removing a menu item
+        restaurant.removeMenuItem("Pizza");
+
+        // Displaying the menu after removal
+        System.out.println("\nMenu After Removal:");
+        restaurant.displayMenu();
+    }
+}
+
 `,
                 output: `
-   output//
+Added item: Pasta - $12.99
+Added item: Pizza - $15.49
+Added item: Burger - $8.99
+Menu:
+Pasta - $12.99 (Average Rating: 0.00)
+Pizza - $15.49 (Average Rating: 0.00)
+Burger - $8.99 (Average Rating: 0.00)
+Added rating of 5 to Pasta
+Added rating of 4 to Pasta
+Added rating of 3 to Pizza
+Added rating of 5 to Burger
+Added rating of 4 to Burger
+
+Updated Menu:
+Pasta - $12.99 (Average Rating: 4.50)
+Pizza - $15.49 (Average Rating: 3.00)
+Burger - $8.99 (Average Rating: 4.50)
+
+Average Rating of All Items: 4.00
+Removed item: Pizza
+
+Menu After Removal:
+Pasta - $12.99 (Average Rating: 4.50)
+Burger - $8.99 (Average Rating: 4.50)
+
                 `
             },
             "create a class with methods to search for flights and hotels, and to book and cancel reservations.": {
                 description: "Program to create a class with methods to search for flights and hotels, and to book and cancel reservations.",
                 code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class Flight {
+    private String flightNumber;
+    private String origin;
+    private String destination;
+    private String departureTime;
+
+    public Flight(String flightNumber, String origin, String destination, String departureTime) {
+        this.flightNumber = flightNumber;
+        this.origin = origin;
+        this.destination = destination;
+        this.departureTime = departureTime;
+    }
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public String getDepartureTime() {
+        return departureTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Flight " + flightNumber + " from " + origin + " to " + destination + " at " + departureTime;
+    }
+}
+
+class Hotel {
+    private String name;
+    private String location;
+    private double pricePerNight;
+
+    public Hotel(String name, String location, double pricePerNight) {
+        this.name = name;
+        this.location = location;
+        this.pricePerNight = pricePerNight;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public double getPricePerNight() {
+        return pricePerNight;
+    }
+
+    @Override
+    public String toString() {
+        return name + " in " + location + " - $" + pricePerNight + " per night";
+    }
+}
+
+class Reservation {
+    private String type; // "Flight" or "Hotel"
+    private String details;
+
+    public Reservation(String type, String details) {
+        this.type = type;
+        this.details = details;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    @Override
+    public String toString() {
+        return type + " Reservation: " + details;
+    }
+}
+
+class TravelBooking {
+    private List<Flight> flights;
+    private List<Hotel> hotels;
+    private List<Reservation> reservations;
+
+    public TravelBooking() {
+        flights = new ArrayList<>();
+        hotels = new ArrayList<>();
+        reservations = new ArrayList<>();
+
+        // Adding sample data for flights and hotels
+        flights.add(new Flight("AA101", "New York", "Los Angeles", "10:00 AM"));
+        flights.add(new Flight("UA202", "Chicago", "Miami", "12:30 PM"));
+        flights.add(new Flight("DL303", "San Francisco", "Seattle", "3:45 PM"));
+
+        hotels.add(new Hotel("Grand Hotel", "Los Angeles", 150.00));
+        hotels.add(new Hotel("Beach Resort", "Miami", 200.00));
+        hotels.add(new Hotel("Mountain Inn", "Seattle", 120.00));
+    }
+
+    // Method to search for flights by destination
+    public List<Flight> searchFlights(String destination) {
+        List<Flight> result = new ArrayList<>();
+        for (Flight flight : flights) {
+            if (flight.getDestination().equalsIgnoreCase(destination)) {
+                result.add(flight);
+            }
+        }
+        return result;
+    }
+
+    // Method to search for hotels by location
+    public List<Hotel> searchHotels(String location) {
+        List<Hotel> result = new ArrayList<>();
+        for (Hotel hotel : hotels) {
+            if (hotel.getLocation().equalsIgnoreCase(location)) {
+                result.add(hotel);
+            }
+        }
+        return result;
+    }
+
+    // Method to book a reservation
+    public void bookReservation(String type, String details) {
+        reservations.add(new Reservation(type, details));
+        System.out.println(type + " reservation booked: " + details);
+    }
+
+    // Method to cancel a reservation by details
+    public void cancelReservation(String type, String details) {
+        Reservation toRemove = null;
+        for (Reservation reservation : reservations) {
+            if (reservation.getType().equalsIgnoreCase(type) && reservation.getDetails().equalsIgnoreCase(details)) {
+                toRemove = reservation;
+                break;
+            }
+        }
+        if (toRemove != null) {
+            reservations.remove(toRemove);
+            System.out.println(type + " reservation canceled: " + details);
+        } else {
+            System.out.println(type + " reservation not found: " + details);
+        }
+    }
+
+    // Method to display all reservations
+    public void displayReservations() {
+        System.out.println("Current Reservations:");
+        if (reservations.isEmpty()) {
+            System.out.println("No reservations found.");
+        } else {
+            for (Reservation reservation : reservations) {
+                System.out.println(reservation);
+            }
+        }
+    }
+}
+
+public class TravelBookingApp {
+    public static void main(String[] args) {
+        TravelBooking travelBooking = new TravelBooking();
+
+        // Search for flights to Los Angeles
+        System.out.println("Flights to Los Angeles:");
+        List<Flight> flightsToLA = travelBooking.searchFlights("Los Angeles");
+        for (Flight flight : flightsToLA) {
+            System.out.println(flight);
+        }
+
+        // Search for hotels in Miami
+        System.out.println("\nHotels in Miami:");
+        List<Hotel> hotelsInMiami = travelBooking.searchHotels("Miami");
+        for (Hotel hotel : hotelsInMiami) {
+            System.out.println(hotel);
+        }
+
+        // Book a flight reservation
+        if (!flightsToLA.isEmpty()) {
+            travelBooking.bookReservation("Flight", flightsToLA.get(0).toString());
+        }
+
+        // Book a hotel reservation
+        if (!hotelsInMiami.isEmpty()) {
+            travelBooking.bookReservation("Hotel", hotelsInMiami.get(0).toString());
+        }
+
+        // Display all reservations
+        System.out.println("\nAll Reservations:");
+        travelBooking.displayReservations();
+
+        // Cancel a flight reservation
+        if (!flightsToLA.isEmpty()) {
+            travelBooking.cancelReservation("Flight", flightsToLA.get(0).toString());
+        }
+
+        // Display all reservations after cancellation
+        System.out.println("\nReservations After Cancellation:");
+        travelBooking.displayReservations();
+    }
+}
+
 `,
                 output: `
-   output//
+Flights to Los Angeles:
+Flight AA101 from New York to Los Angeles at 10:00 AM
+
+Hotels in Miami:
+Beach Resort in Miami - $200.0 per night
+
+Flight reservation booked: Flight AA101 from New York to Los Angeles at 10:00 AM
+Hotel reservation booked: Beach Resort in Miami - $200.0 per night
+
+All Reservations:
+Flight Reservation: Flight AA101 from New York to Los Angeles at 10:00 AM
+Hotel Reservation: Beach Resort in Miami - $200.0 per night
+
+Flight reservation canceled: Flight AA101 from New York to Los Angeles at 10:00 AM
+
+Reservations After Cancellation:
+Hotel Reservation: Beach Resort in Miami - $200.0 per night
+
                 `
             },
             "Create a class showing an example of default constructor.": {
@@ -13299,19 +14974,158 @@ Hello, I am Copy Constructor!
             "Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students": {
                 description: "Program to Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students",
                 code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Student {
+    private int rollNo;
+    private String name;
+    private String studentClass;
+
+    public Student(int rollNo, String name, String studentClass) {
+        this.rollNo = rollNo;
+        this.name = name;
+        this.studentClass = studentClass;
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getStudentClass() {
+        return studentClass;
+    }
+
+    @Override
+    public String toString() {
+        return "Roll No: " + rollNo + ", Name: " + name + ", Class: " + studentClass;
+    }
+}
+
+public class StudentApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<Student> students = new ArrayList<>();
+
+        System.out.println("Enter details for 10 students:");
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter name of student " + (i + 1) + ": ");
+            String name = scanner.nextLine();
+
+            System.out.print("Enter class of student " + (i + 1) + ": ");
+            String studentClass = scanner.nextLine();
+
+            // Automatically generate roll number (starting from 1)
+            int rollNo = i + 1;
+
+            // Create a new Student object
+            Student student = new Student(rollNo, name, studentClass);
+            students.add(student);
+        }
+
+        // Display all students
+        System.out.println("\nStudent Details:");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+
+        scanner.close();
+    }
+}
+
 `,
                 output: `
-   output//
+Enter details for 10 students:
+Enter name of student 1: Alice
+Enter class of student 1: 10A
+Enter name of student 2: Bob
+Enter class of student 2: 10B
+Enter name of student 3: Charlie
+Enter class of student 3: 10C
+Enter name of student 4: David
+Enter class of student 4: 10A
+Enter name of student 5: Eva
+Enter class of student 5: 10B
+Enter name of student 6: Frank
+Enter class of student 6: 10C
+Enter name of student 7: Grace
+Enter class of student 7: 10A
+Enter name of student 8: Harry
+Enter class of student 8: 10B
+Enter name of student 9: Ivy
+Enter class of student 9: 10C
+Enter name of student 10: Jack
+Enter class of student 10: 10A
+
+Student Details:
+Roll No: 1, Name: Alice, Class: 10A
+Roll No: 2, Name: Bob, Class: 10B
+Roll No: 3, Name: Charlie, Class: 10C
+Roll No: 4, Name: David, Class: 10A
+Roll No: 5, Name: Eva, Class: 10B
+Roll No: 6, Name: Frank, Class: 10C
+Roll No: 7, Name: Grace, Class: 10A
+Roll No: 8, Name: Harry, Class: 10B
+Roll No: 9, Name: Ivy, Class: 10C
+Roll No: 10, Name: Jack, Class: 10A
+
                 `
             },
             "Create a class showing the area of circle and rectangle by method overloading.": {
                 description: "Program to Create a class showing the area of circle and rectangle by method overloading.",
                 code: `
-        code//
+import java.util.Scanner;
+
+class AreaCalculator {
+    
+    // Method to calculate the area of a circle
+    public double area(double radius) {
+        return Math.PI * radius * radius; // Area = π * r²
+    }
+
+    // Method to calculate the area of a rectangle
+    public double area(double length, double width) {
+        return length * width; // Area = length * width
+    }
+}
+
+public class AreaApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        AreaCalculator calculator = new AreaCalculator();
+
+        // Calculate area of a circle
+        System.out.print("Enter the radius of the circle: ");
+        double radius = scanner.nextDouble();
+        double circleArea = calculator.area(radius);
+        System.out.println("Area of the circle: " + circleArea);
+
+        // Calculate area of a rectangle
+        System.out.print("Enter the length of the rectangle: ");
+        double length = scanner.nextDouble();
+        System.out.print("Enter the width of the rectangle: ");
+        double width = scanner.nextDouble();
+        double rectangleArea = calculator.area(length, width);
+        System.out.println("Area of the rectangle: " + rectangleArea);
+
+        scanner.close();
+    }
+}
+
 `,
                 output: `
-   output//
+Enter the radius of the circle: 5
+Area of the circle: 78.53981633974483
+Enter the length of the rectangle: 4
+Enter the width of the rectangle: 6
+Area of the rectangle: 24.0
+
                 `
             },
             "Create a class, entering the command line arguments from the user and show all the arguments as output..": {
@@ -13321,7 +15135,7 @@ class CmdLineArg
         {
         public static void main(String st[])
         {
-        for(int i =0;i<st.length();i++)
+        for(int i =0;i&lt;st.length();i++)
       {
         System.out.println(st[i]);
         }
@@ -13329,7 +15143,7 @@ class CmdLineArg
         }
 `,
                 output: `
-C:/>java CmdLineArg Manjit Sandeep Abhishek
+C:/&gt;java CmdLineArg Manjit Sandeep Abhishek
 Manjit 
 Sandeep 
 Abhishek
@@ -13338,64 +15152,673 @@ Abhishek
             "Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.": {
                 description: "Program to Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.",
                 code: `
-        code//
+class Person {
+    // Private instance variables
+    private String name;
+    private int age;
+    private String country;
+
+    // Constructor
+    public Person(String name, int age, String country) {
+        this.name = name;
+        this.age = age;
+        this.country = country;
+    }
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter for age
+    public int getAge() {
+        return age;
+    }
+
+    // Setter for age
+    public void setAge(int age) {
+        if (age > 0) { // Validate age
+            this.age = age;
+        } else {
+            System.out.println("Age must be positive.");
+        }
+    }
+
+    // Getter for country
+    public String getCountry() {
+        return country;
+    }
+
+    // Setter for country
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    // Method to display person details
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Country: " + country);
+    }
+}
+
+public class PersonApp {
+    public static void main(String[] args) {
+        // Creating a Person object
+        Person person = new Person("Alice", 30, "USA");
+
+        // Displaying initial details
+        System.out.println("Initial Person Details:");
+        person.displayInfo();
+
+        // Modifying the person's details
+        person.setName("Bob");
+        person.setAge(25);
+        person.setCountry("Canada");
+
+        // Displaying updated details
+        System.out.println("\nUpdated Person Details:");
+        person.displayInfo();
+
+        // Attempting to set an invalid age
+        person.setAge(-5); // Should print an error message
+    }
+}
+
 `,
                 output: `
-   output//
+Initial Person Details:
+Name: Alice
+Age: 30
+Country: USA
+
+Updated Person Details:
+Name: Bob
+Age: 25
+Country: Canada
+Age must be positive.
+
                 `
             },
             "create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.": {
                 description: "Program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.",
                 code: `
-        code//
+class BankAccount {
+    // Private instance variables
+    private String accountNumber;
+    private double balance;
+
+    // Constructor
+    public BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+
+    // Getter for accountNumber
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    // Setter for accountNumber
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    // Getter for balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Setter for balance (with validation)
+    public void setBalance(double balance) {
+        if (balance >= 0) { // Validate balance
+            this.balance = balance;
+        } else {
+            System.out.println("Balance cannot be negative.");
+        }
+    }
+
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrew: " + amount);
+        } else if (amount > balance) {
+            System.out.println("Insufficient balance for withdrawal.");
+        } else {
+            System.out.println("Withdrawal amount must be positive.");
+        }
+    }
+
+    // Method to display account details
+    public void displayAccountInfo() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Balance: " + balance);
+    }
+}
+
+public class BankAccountApp {
+    public static void main(String[] args) {
+        // Creating a BankAccount object
+        BankAccount account = new BankAccount("123456789", 1000.0);
+
+        // Displaying account details
+        System.out.println("Initial Account Details:");
+        account.displayAccountInfo();
+
+        // Modifying account details
+        account.setAccountNumber("987654321");
+        account.setBalance(1500.0);
+
+        // Displaying updated account details
+        System.out.println("\nUpdated Account Details:");
+        account.displayAccountInfo();
+
+        // Testing deposit and withdraw methods
+        account.deposit(500.0); // Depositing money
+        account.withdraw(300.0); // Withdrawing money
+
+        // Displaying final account details
+        System.out.println("\nFinal Account Details:");
+        account.displayAccountInfo();
+
+        // Attempting to set a negative balance
+        account.setBalance(-100.0); // Should print an error message
+    }
+}
+
 `,
                 output: `
-   output//
+Initial Account Details:
+Account Number: 123456789
+Balance: 1000.0
+
+Updated Account Details:
+Account Number: 987654321
+Balance: 1500.0
+Deposited: 500.0
+Withdrew: 300.0
+
+Final Account Details:
+Account Number: 987654321
+Balance: 1700.0
+Balance cannot be negative.
+
                 `
             },
             "create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.": {
                 description: "Program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.",
                 code: `
-        code//
+class Rectangle {
+    // Private instance variables
+    private double length;
+    private double width;
+
+    // Constructor
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Getter for length
+    public double getLength() {
+        return length;
+    }
+
+    // Setter for length
+    public void setLength(double length) {
+        if (length > 0) { // Validate length
+            this.length = length;
+        } else {
+            System.out.println("Length must be positive.");
+        }
+    }
+
+    // Getter for width
+    public double getWidth() {
+        return width;
+    }
+
+    // Setter for width
+    public void setWidth(double width) {
+        if (width > 0) { // Validate width
+            this.width = width;
+        } else {
+            System.out.println("Width must be positive.");
+        }
+    }
+
+    // Method to calculate area of the rectangle
+    public double calculateArea() {
+        return length * width;
+    }
+
+    // Method to calculate perimeter of the rectangle
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+
+    // Method to display rectangle details
+    public void displayRectangleInfo() {
+        System.out.println("Rectangle Length: " + length);
+        System.out.println("Rectangle Width: " + width);
+        System.out.println("Area: " + calculateArea());
+        System.out.println("Perimeter: " + calculatePerimeter());
+    }
+}
+
+public class RectangleApp {
+    public static void main(String[] args) {
+        // Creating a Rectangle object
+        Rectangle rectangle = new Rectangle(5.0, 3.0);
+
+        // Displaying initial rectangle details
+        System.out.println("Initial Rectangle Details:");
+        rectangle.displayRectangleInfo();
+
+        // Modifying rectangle dimensions
+        rectangle.setLength(7.0);
+        rectangle.setWidth(4.0);
+
+        // Displaying updated rectangle details
+        System.out.println("\nUpdated Rectangle Details:");
+        rectangle.displayRectangleInfo();
+
+        // Attempting to set a negative length
+        rectangle.setLength(-2.0); // Should print an error message
+    }
+}
+
 `,
                 output: `
-   output//
+Initial Rectangle Details:
+Rectangle Length: 5.0
+Rectangle Width: 3.0
+Area: 15.0
+Perimeter: 16.0
+
+Updated Rectangle Details:
+Rectangle Length: 7.0
+Rectangle Width: 4.0
+Area: 28.0
+Perimeter: 22.0
+Length must be positive.
+
                 `
             },
             "create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.": {
                 description: "Program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.",
                 code: `
-        code//
+class Employee {
+    // Private instance variables
+    private int employee_id;
+    private String employee_name;
+    private double employee_salary;
+
+    // Constructor
+    public Employee(int employee_id, String employee_name, double employee_salary) {
+        this.employee_id = employee_id;
+        this.employee_name = employee_name;
+        this.employee_salary = employee_salary;
+    }
+
+    // Getter for employee_id
+    public int getEmployeeId() {
+        return employee_id;
+    }
+
+    // Setter for employee_id
+    public void setEmployeeId(int employee_id) {
+        this.employee_id = employee_id;
+    }
+
+    // Getter for employee_name
+    public String getEmployeeName() {
+        return employee_name;
+    }
+
+    // Setter for employee_name
+    public void setEmployeeName(String employee_name) {
+        this.employee_name = employee_name;
+    }
+
+    // Getter for employee_salary (formatted as a string)
+    public String getEmployeeSalary() {
+        return String.format("$%.2f", employee_salary); // Format salary as currency
+    }
+
+    // Method to display employee details
+    public void displayEmployeeInfo() {
+        System.out.println("Employee ID: " + employee_id);
+        System.out.println("Employee Name: " + employee_name);
+        System.out.println("Employee Salary: " + getEmployeeSalary());
+    }
+}
+
+public class EmployeeApp {
+    public static void main(String[] args) {
+        // Creating an Employee object
+        Employee employee = new Employee(1, "John Doe", 75000.50);
+
+        // Displaying initial employee details
+        System.out.println("Initial Employee Details:");
+        employee.displayEmployeeInfo();
+
+        // Modifying employee details
+        employee.setEmployeeId(2);
+        employee.setEmployeeName("Jane Smith");
+
+        // Displaying updated employee details
+        System.out.println("\nUpdated Employee Details:");
+        employee.displayEmployeeInfo();
+    }
+}
+
 `,
                 output: `
-   output//
+Initial Employee Details:
+Employee ID: 1
+Employee Name: John Doe
+Employee Salary: $75000.50
+
+Updated Employee Details:
+Employee ID: 2
+Employee Name: Jane Smith
+Employee Salary: $75000.50
+
                 `
             },
             "create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.": {
                 description: "Program to create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.",
                 code: `
-        code//
+class Circle {
+    // Private instance variable
+    private double radius;
+
+    // Constructor
+    public Circle(double radius) {
+        setRadius(radius); // Use setter for validation
+    }
+
+    // Getter for radius
+    public double getRadius() {
+        return radius;
+    }
+
+    // Setter for radius
+    public void setRadius(double radius) {
+        if (radius > 0) { // Validate radius
+            this.radius = radius;
+        } else {
+            System.out.println("Radius must be positive.");
+        }
+    }
+
+    // Method to calculate area of the circle
+    public double calculateArea() {
+        return Math.PI * radius * radius; // Area = π * r²
+    }
+
+    // Method to calculate perimeter (circumference) of the circle
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius; // Perimeter = 2 * π * r
+    }
+
+    // Method to display circle details
+    public void displayCircleInfo() {
+        System.out.println("Circle Radius: " + radius);
+        System.out.println("Area: " + calculateArea());
+        System.out.println("Perimeter: " + calculatePerimeter());
+    }
+}
+
+public class CircleApp {
+    public static void main(String[] args) {
+        // Creating a Circle object
+        Circle circle = new Circle(5.0);
+
+        // Displaying initial circle details
+        System.out.println("Initial Circle Details:");
+        circle.displayCircleInfo();
+
+        // Modifying the radius
+        circle.setRadius(7.0);
+
+        // Displaying updated circle details
+        System.out.println("\nUpdated Circle Details:");
+        circle.displayCircleInfo();
+
+        // Attempting to set a negative radius
+        circle.setRadius(-3.0); // Should print an error message
+    }
+}
+
 `,
                 output: `
-   output//
+Initial Circle Details:
+Circle Radius: 5.0
+Area: 78.53981633974483
+Perimeter: 31.41592653589793
+
+Updated Circle Details:
+Circle Radius: 7.0
+Area: 153.93804002589985
+Perimeter: 43.982297150257104
+Radius must be positive.
+
                 `
             },
             "create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.": {
                 description: "Program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.",
                 code: `
-        code//
+class Car {
+    // Private instance variables
+    private String company_name;
+    private String model_name;
+    private int year;
+    private double mileage;
+
+    // Constructor
+    public Car(String company_name, String model_name, int year, double mileage) {
+        this.company_name = company_name;
+        this.model_name = model_name;
+        this.year = year;
+        this.mileage = mileage; // Mileage is set once during initialization
+    }
+
+    // Getter for company_name
+    public String getCompanyName() {
+        return company_name;
+    }
+
+    // Setter for company_name
+    public void setCompanyName(String company_name) {
+        this.company_name = company_name;
+    }
+
+    // Getter for model_name
+    public String getModelName() {
+        return model_name;
+    }
+
+    // Setter for model_name
+    public void setModelName(String model_name) {
+        this.model_name = model_name;
+    }
+
+    // Getter for year
+    public int getYear() {
+        return year;
+    }
+
+    // Setter for year
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    // Getter for mileage
+    public double getMileage() {
+        return mileage; // No setter for mileage
+    }
+
+    // Method to display car details
+    public void displayCarInfo() {
+        System.out.println("Car Company: " + company_name);
+        System.out.println("Car Model: " + model_name);
+        System.out.println("Year: " + year);
+        System.out.println("Mileage: " + mileage);
+    }
+}
+
+public class CarApp {
+    public static void main(String[] args) {
+        // Creating a Car object
+        Car car = new Car("Toyota", "Camry", 2020, 15000.5);
+
+        // Displaying initial car details
+        System.out.println("Initial Car Details:");
+        car.displayCarInfo();
+
+        // Modifying car details
+        car.setCompanyName("Honda");
+        car.setModelName("Accord");
+        car.setYear(2021);
+
+        // Displaying updated car details
+        System.out.println("\nUpdated Car Details:");
+        car.displayCarInfo();
+
+        // Attempting to set mileage (not allowed)
+        // car.setMileage(20000.0); // Uncommenting this line would cause a compilation error
+    }
+}
+
 `,
                 output: `
-   output//
+Initial Car Details:
+Car Company: Toyota
+Car Model: Camry
+Year: 2020
+Mileage: 15000.5
+
+Updated Car Details:
+Car Company: Honda
+Car Model: Accord
+Year: 2021
+Mileage: 15000.5
+
                 `
             },
             "create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.": {
                 description: "Program to create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.",
                 code: `
-        code//
+import java.util.ArrayList;
+import java.util.List;
+
+class Student {
+    // Private instance variables
+    private int student_id;
+    private String student_name;
+    private List<Double> grades;
+
+    // Constructor
+    public Student(int student_id, String student_name) {
+        this.student_id = student_id;
+        this.student_name = student_name;
+        this.grades = new ArrayList<>(); // Initialize the grades list
+    }
+
+    // Getter for student_id
+    public int getStudentId() {
+        return student_id;
+    }
+
+    // Setter for student_id
+    public void setStudentId(int student_id) {
+        this.student_id = student_id;
+    }
+
+    // Getter for student_name
+    public String getStudentName() {
+        return student_name;
+    }
+
+    // Setter for student_name
+    public void setStudentName(String student_name) {
+        this.student_name = student_name;
+    }
+
+    // Method to add a grade with validation
+    public void addGrade(double grade) {
+        if (grade >= 0 && grade <= 100) { // Validate that the grade is between 0 and 100
+            grades.add(grade);
+            System.out.println("Grade " + grade + " added for student " + student_name);
+        } else {
+            System.out.println("Invalid grade. Please enter a grade between 0 and 100.");
+        }
+    }
+
+    // Method to display student details and grades
+    public void displayStudentInfo() {
+        System.out.println("Student ID: " + student_id);
+        System.out.println("Student Name: " + student_name);
+        System.out.println("Grades: " + grades);
+    }
+}
+
+public class StudentApp {
+    public static void main(String[] args) {
+        // Creating a Student object
+        Student student = new Student(1, "Alice");
+
+        // Displaying initial student details
+        System.out.println("Initial Student Details:");
+        student.displayStudentInfo();
+
+        // Adding grades
+        student.addGrade(85.5); // Valid grade
+        student.addGrade(92.0);  // Valid grade
+        student.addGrade(150.0); // Invalid grade
+        student.addGrade(-10.0); // Invalid grade
+
+        // Displaying updated student details
+        System.out.println("\nUpdated Student Details:");
+        student.displayStudentInfo();
+    }
+}
+
 `,
                 output: `
-   output//
+Initial Student Details:
+Student ID: 1
+Student Name: Alice
+Grades: []
+
+Grade 85.5 added for student Alice
+Grade 92.0 added for student Alice
+Invalid grade. Please enter a grade between 0 and 100.
+Invalid grade. Please enter a grade between 0 and 100.
+
+Updated Student Details:
+Student ID: 1
+Student Name: Alice
+Grades: [85.5, 92.0]
+
                 `
             },
 
@@ -13591,15 +16014,7 @@ public class MainPackage
  This is Class D!
                 `
             },
-            "Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.": {
-                description: "Program to Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.",
-                code: `
-        code//
-`,
-                output: `
-   output//
-                `
-            },
+           
             "Create a Java program to create a package with public class and protected members to be accessed in another class.": {
                 description: "Program to Create a Java program to create a package with public class and protected members to be accessed in another class.",
                 code: `
@@ -13641,19 +16056,48 @@ public class NastedPack extends ClassA {
     obj.display2();
     }
 }
-
+--------------------------------------------------
+package pack1.pack;
+public class ClassA
+    {
+       public void display()
+        {
+            System.out.println("This is public class!");
+        }
+        protected void display2()
+        {
+            System.out.println("This is protected Class");
+        }
+    }
 `,
                 output: `
-   output//
+This is public class!
+This is protected Class
                 `
             },
             "Create a Java program to create a package with public class and public members to be accessed in another class.": {
                 description: "Program to Create a Java program to create a package with public class and public members to be accessed in another class.",
                 code: `
-        code//
+package pack1;
+public class ClassA
+    {
+       public void display()
+        {
+            System.out.println("This is Class A!");
+        }
+    }
+--------------------------------------------------
+package pack1;
+public class ClassB
+    {
+       public static void main(String st[])
+       {
+       new ClassA.display();
+       }
+    }
 `,
                 output: `
-   output//
+This is Class A!
                 `
             },
         },
@@ -13662,7 +16106,77 @@ public class NastedPack extends ClassA {
 
         },
         "Hard": {
+            "Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.": {
+                description: "Program to Write a Java program to perform employee payroll processing using packages. In the java file, Emp.java creates a package employee and creates a class Emp. Declare the variables name,empid, category, bpay, hra, da, npay, pf, grosspay, incometax, and allowance. Calculate the values in methods. Create another java file Emppay.java. Create an object e to call the methods to perform and print values.",
+                code: `
+package employee;
 
+public class Emp {
+    // Instance variables
+    private String name;
+    private int empid;
+    private String category;
+    private double bpay; // Basic pay
+    private double hra;  // House Rent Allowance
+    private double da;   // Dearness Allowance
+    private double npay; // Net Pay
+    private double pf;   // Provident Fund
+    private double grosspay; // Gross Pay
+    private double incometax; // Income Tax
+    private double allowance; // Other allowances
+
+    // Constructor
+    public Emp(String name, int empid, String category, double bpay) {
+        this.name = name;
+        this.empid = empid;
+        this.category = category;
+        this.bpay = bpay;
+        calculatePay();
+    }
+
+    // Method to calculate various pays
+    private void calculatePay() {
+        hra = bpay * 0.15; // 15% of basic pay
+        da = bpay * 0.10;  // 10% of basic pay
+        grosspay = bpay + hra + da; // Gross Pay
+        pf = grosspay * 0.12; // 12% of gross pay
+        incometax = (grosspay - pf) * 0.1; // 10% of amount after PF
+        allowance = 0.05 * grosspay; // 5% of gross pay
+        npay = grosspay - (pf + incometax); // Net Pay
+    }
+
+    // Method to display employee payroll details
+    public void displayPayroll() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee ID: " + empid);
+        System.out.println("Category: " + category);
+        System.out.println("Basic Pay: " + bpay);
+        System.out.println("House Rent Allowance: " + hra);
+        System.out.println("Dearness Allowance: " + da);
+        System.out.println("Gross Pay: " + grosspay);
+        System.out.println("Provident Fund: " + pf);
+        System.out.println("Income Tax: " + incometax);
+        System.out.println("Net Pay: " + npay);
+        System.out.println("Allowances: " + allowance);
+    }
+}
+
+`,
+                output: `
+Employee Name: John Doe
+Employee ID: 101
+Category: Manager
+Basic Pay: 50000.0
+House Rent Allowance: 7500.0
+Dearness Allowance: 5000.0
+Gross Pay: 62500.0
+Provident Fund: 7500.0
+Income Tax: 5500.0
+Net Pay: 49500.0
+Allowances: 3125.0
+
+                `
+            },
         }
     },
     "SINGLE DIMENSION ARRAYS": {
@@ -13811,7 +16325,13 @@ Rotated array:
 }
 `,
                 output: `
-   output//
+ Duplicate elements:
+2
+3
+3
+4
+4
+4
                 `
             },
             "Print the elements of an array": {
@@ -13831,13 +16351,11 @@ class PrintArray
 
 `,
                 output: `
-Duplicate elements:
+1
 2
 3
-3
 4
-4
-4
+
                 `
             },
             "Print the elements of an array in reverse order": {
@@ -13972,10 +16490,23 @@ Smallest element is :- 1
             "Print the number of elements present in an array": {
                 description: "Program to print the number of elements present in an array",
                 code: `
-        code//
+public class ArrayElementCount {
+    public static void main(String[] args) {
+        // Define an array
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        // Calculate the number of elements in the array
+        int numberOfElements = numbers.length;
+
+        // Print the number of elements
+        System.out.println("The number of elements in the array is: " + numberOfElements);
+    }
+}
+
 `,
                 output: `
-   output//
+The number of elements in the array is: 5
+
                 `
             },
             "Print the sum of all the items of the array": {
@@ -14001,10 +16532,68 @@ Sum Of Element :- 10
             "Right rotate the elements of an array": {
                 description: "Program to right rotate the elements of an array",
                 code: `
-        code//
+public class ArrayRightRotate {
+    // Method to right rotate the array
+    public static void rightRotate(int[] arr, int d) {
+        int n = arr.length;
+        // Handle cases where d >= n
+        d = d % n; 
+        if (d == 0) return; // No rotation needed if d is 0
+
+        // Create a temporary array to hold the rotated elements
+        int[] temp = new int[d];
+
+        // Store the last d elements in the temporary array
+        for (int i = 0; i < d; i++) {
+            temp[i] = arr[n - d + i];
+        }
+
+        // Shift the remaining elements in the original array
+        for (int i = n - 1; i >= d; i--) {
+            arr[i] = arr[i - d];
+        }
+
+        // Copy the temporary array back to the original array
+        for (int i = 0; i < d; i++) {
+            arr[i] = temp[i];
+        }
+    }
+
+    public static void main(String[] args) {
+        // Define an array
+        int[] arr = {1, 2, 3, 4, 5};
+
+        // Number of positions to rotate
+        int d = 2;
+
+        // Print original array
+        System.out.println("Original Array:");
+        printArray(arr);
+
+        // Right rotate the array
+        rightRotate(arr, d);
+
+        // Print rotated array
+        System.out.println("Array after right rotation by " + d + " positions:");
+        printArray(arr);
+    }
+
+    // Method to print the array
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println(); // New line for better output formatting
+    }
+}
+
 `,
                 output: `
-   output//
+Original Array:
+1 2 3 4 5 
+Array after right rotation by 2 positions:
+4 5 1 2 3 
+
                 `
             },
             "Sort the elements of an array in ascending order": {
@@ -14080,19 +16669,89 @@ class Sort
             "Find 3rd Largest Number in an array": {
                 description: "Program to Find 3rd Largest Number in an array",
                 code: `
-        code//
+import java.util.Arrays;
+
+public class ThirdLargestInArray {
+    public static void main(String[] args) {
+        // Define an array
+        int[] arr = {12, 35, 1, 10, 34, 1};
+
+        // Find the third largest number
+        int thirdLargest = findThirdLargest(arr);
+
+        // Print the result
+        if (thirdLargest != Integer.MIN_VALUE) {
+            System.out.println("The third largest number in the array is: " + thirdLargest);
+        } else {
+            System.out.println("The array does not contain enough distinct elements.");
+        }
+    }
+
+    public static int findThirdLargest(int[] arr) {
+        // Create a new array with unique elements
+        int[] uniqueArr = Arrays.stream(arr).distinct().toArray();
+
+        // Check if there are at least 3 unique elements
+        if (uniqueArr.length < 3) {
+            return Integer.MIN_VALUE; // Not enough distinct elements
+        }
+
+        // Sort the unique array in descending order
+        Arrays.sort(uniqueArr);
+        
+        // Return the third largest element
+        return uniqueArr[uniqueArr.length - 3];
+    }
+}
+
 `,
                 output: `
-   output//
+The third largest number in the array is: 12
+
                 `
             },
             "Find 2nd Largest Number in an array": {
                 description: "Program to Find 2nd Largest Number in an array",
                 code: `
-        code//
+import java.util.Arrays;
+
+public class SecondLargestInArray {
+    public static void main(String[] args) {
+        // Define an array
+        int[] arr = {12, 35, 1, 10, 34, 1};
+
+        // Find the second largest number
+        int secondLargest = findSecondLargest(arr);
+
+        // Print the result
+        if (secondLargest != Integer.MIN_VALUE) {
+            System.out.println("The second largest number in the array is: " + secondLargest);
+        } else {
+            System.out.println("The array does not contain enough distinct elements.");
+        }
+    }
+
+    public static int findSecondLargest(int[] arr) {
+        // Create a new array with unique elements
+        int[] uniqueArr = Arrays.stream(arr).distinct().toArray();
+
+        // Check if there are at least 2 unique elements
+        if (uniqueArr.length < 2) {
+            return Integer.MIN_VALUE; // Not enough distinct elements
+        }
+
+        // Sort the unique array in descending order
+        Arrays.sort(uniqueArr);
+        
+        // Return the second largest element
+        return uniqueArr[uniqueArr.length - 2];
+    }
+}
+
 `,
                 output: `
-   output//
+The second largest number in the array is: 34
+
                 `
             },
             "Find Largest Number in an array": {
@@ -14126,60 +16785,207 @@ class Largest
 Largest element is :- 30
                 `
             },
-            "Find 2nd Smallest Number in an array": {
-                description: "Program to Find 2nd Smallest Number in an array",
-                code: `
-        code//
-`,
-                output: `
-   output//
-                `
-            },
+            
             "Find Smallest Number in an array": {
                 description: "Program to Find Smallest Number in an array",
                 code: `
-        code//
+public class SmallestNumberInArray {
+    public static void main(String[] args) {
+        // Define an array
+        int[] arr = {12, 35, 1, 10, 34, 1};
+
+        // Find the smallest number
+        int smallest = findSmallest(arr);
+
+        // Print the result
+        System.out.println("The smallest number in the array is: " + smallest);
+    }
+
+    public static int findSmallest(int[] arr) {
+        // Assume the first element is the smallest
+        int smallest = arr[0];
+
+        // Iterate through the array to find the smallest number
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < smallest) {
+                smallest = arr[i];
+            }
+        }
+
+        return smallest;
+    }
+}
+
 `,
                 output: `
-   output//
+The smallest number in the array is: 1
+
                 `
             },
-            "Remove Duplicate Element in an array": {
-                description: "Program to Remove Duplicate Element in an array",
-                code: `
-        code//
-`,
-                output: `
-   output//
-                `
-            },
+            
             "Print Odd and Even Numbers from an array": {
                 description: "Program to Print Odd and Even Numbers from an array",
                 code: `
-        code//
+public class OddEvenNumbersInArray {
+    public static void main(String[] args) {
+        // Define an array
+        int[] arr = {12, 35, 1, 10, 34, 21, 7, 42, 18};
+
+        // Print odd and even numbers
+        printOddAndEvenNumbers(arr);
+    }
+
+    public static void printOddAndEvenNumbers(int[] arr) {
+        System.out.print("Even numbers: ");
+        for (int num : arr) {
+            if (num % 2 == 0) { // Check if the number is even
+                System.out.print(num + " ");
+            }
+        }
+
+        System.out.println(); // Move to the next line
+
+        System.out.print("Odd numbers: ");
+        for (int num : arr) {
+            if (num % 2 != 0) { // Check if the number is odd
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
+
 `,
                 output: `
-   output//
+Even numbers: 12 10 34 42 18 
+Odd numbers: 35 1 21 7 
+
                 `
             },
             "How to Sort an Array in Java": {
                 description: "Program to How to Sort an Array in Java",
                 code: `
-        code//
+import java.util.Arrays;
+
+public class SortArrayExample {
+    public static void main(String[] args) {
+        // Integer array to be sorted
+        int[] intArray = {12, 35, 1, 10, 34, 7};
+
+        // Sorting the integer array
+        Arrays.sort(intArray);
+        System.out.println("Sorted integer array: " + Arrays.toString(intArray));
+
+        // String array to be sorted
+        String[] strArray = {"Banana", "Apple", "Orange", "Mango"};
+
+        // Sorting the string array
+        Arrays.sort(strArray);
+        System.out.println("Sorted string array: " + Arrays.toString(strArray));
+    }
+}
+
 `,
                 output: `
-   output//
+Sorted integer array: [1, 7, 10, 12, 34, 35]
+Sorted string array: [Apple, Banana, Mango, Orange]
+
                 `
             },
 
 
         },
         "Medium": {
+"Remove Duplicate Element in an array": {
+                description: "Program to Remove Duplicate Element in an array",
+                code: `
+import java.util.Arrays;
+import java.util.HashSet;
 
+public class RemoveDuplicatesInArray {
+    public static void main(String[] args) {
+        // Define an array with duplicate elements
+        int[] arr = {12, 35, 1, 10, 35, 1, 34, 1};
+
+        // Remove duplicates
+        int[] uniqueArr = removeDuplicates(arr);
+
+        // Print the result
+        System.out.println("Array after removing duplicates: " + Arrays.toString(uniqueArr));
+    }
+
+    public static int[] removeDuplicates(int[] arr) {
+        // Create a HashSet to store unique elements
+        HashSet<Integer> uniqueElements = new HashSet<>();
+
+        // Add each element to the HashSet (duplicates will be ignored)
+        for (int num : arr) {
+            uniqueElements.add(num);
+        }
+
+        // Convert the HashSet back to an array
+        int[] result = new int[uniqueElements.size()];
+        int index = 0;
+        for (int num : uniqueElements) {
+            result[index++] = num;
+        }
+
+        return result;
+    }
+}
+
+`,
+                output: `
+Array after removing duplicates: [1, 34, 10, 35, 12]
+
+                `
+            },
 
         },
         "Hard": {
+"Find 2nd Smallest Number in an array": {
+                description: "Program to Find 2nd Smallest Number in an array",
+                code: `
+import java.util.Arrays;
 
+public class SecondSmallestInArray {
+    public static void main(String[] args) {
+        // Define an array
+        int[] arr = {12, 35, 1, 10, 34, 1};
+
+        // Find the second smallest number
+        int secondSmallest = findSecondSmallest(arr);
+
+        // Print the result
+        if (secondSmallest != Integer.MAX_VALUE) {
+            System.out.println("The second smallest number in the array is: " + secondSmallest);
+        } else {
+            System.out.println("The array does not contain enough distinct elements.");
+        }
+    }
+
+    public static int findSecondSmallest(int[] arr) {
+        // Create a new array with unique elements
+        int[] uniqueArr = Arrays.stream(arr).distinct().toArray();
+
+        // Check if there are at least 2 unique elements
+        if (uniqueArr.length < 2) {
+            return Integer.MAX_VALUE; // Not enough distinct elements
+        }
+
+        // Sort the unique array in ascending order
+        Arrays.sort(uniqueArr);
+        
+        // Return the second smallest element
+        return uniqueArr[1];
+    }
+}
+
+`,
+                output: `
+The second smallest number in the array is: 10
+
+                `
+            },
         }
     },
     "STRINGS": {
@@ -14255,21 +17061,75 @@ Copy: Hello
             "prove String is immutable programmatically?": {
                 description: "Program to prove String is immutable programmatically?.",
                 code: `
-          code//
+public class StringImmutability {
+    public static void main(String[] args) {
+        // Create a string
+        String originalString = "Hello, World!";
+        
+        // Print original string
+        System.out.println("Original String: " + originalString);
+        
+        // Attempt to modify the string
+        String modifiedString = originalString.replace("World", "Java");
+        
+        // Print the modified string
+        System.out.println("Modified String: " + modifiedString);
+        
+        // Print the original string again to show it hasn't changed
+        System.out.println("Original String after modification attempt: " + originalString);
+    }
+}
+
 
 `,
                 output: `
-          output//
+Original String: Hello, World!
+Modified String: Hello, Java!
+Original String after modification attempt: Hello, World!
+
           `
             },
             "remove all occurrences of a given character from input String?": {
                 description: "Program to remove all occurrences of a given character from input String?.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class RemoveCharacterFromString {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for input string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Prompt the user for the character to remove
+        System.out.print("Enter the character to remove: ");
+        char charToRemove = scanner.next().charAt(0);
+
+        // Call the method to remove the character
+        String resultString = removeCharacter(inputString, charToRemove);
+
+        // Display the result
+        System.out.println("String after removing '" + charToRemove + "': " + resultString);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to remove all occurrences of a given character from the string
+    public static String removeCharacter(String str, char ch) {
+        return str.replaceAll(Character.toString(ch), ""); // Use replaceAll to remove all occurrences
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Hello, World!
+Enter the character to remove: o
+String after removing 'o': Hell, Wrld!
+
           `
             },
             " append the string using StringBuffer class": {
@@ -14486,11 +17346,54 @@ Total characters: 10
                 description: "Program to count the total number of punctuation characters exists in a String."
                 ,
                 code: `
- code//
+import java.util.Scanner;
+
+public class CountPunctuationInString {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for input string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Call the method to count punctuation characters
+        int punctuationCount = countPunctuation(inputString);
+
+        // Display the result
+        System.out.println("Total number of punctuation characters: " + punctuationCount);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to count punctuation characters in the string
+    public static int countPunctuation(String str) {
+        int count = 0;
+
+        // Iterate through each character in the string
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            // Check if the character is a punctuation character
+            if (isPunctuation(ch)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // Helper method to determine if a character is punctuation
+    public static boolean isPunctuation(char ch) {
+        return !Character.isLetterOrDigit(ch) && !Character.isWhitespace(ch);
+    }
+}
+
  `,
                 output:
                     `
- output//
+Enter a string: Hello, World! How's it going? (Hope you are well.)
+Total number of punctuation characters: 7
+
  `
             },
             "count the total number of vowels and consonants in a string.": {
@@ -14529,11 +17432,55 @@ Consonants: 7
                 description: "Program to determine whether a given string is palindrome."
                 ,
                 code: `
- code//
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for input string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Call the method to check if the string is a palindrome
+        boolean isPalindrome = isPalindrome(inputString);
+
+        // Display the result
+        if (isPalindrome) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to check if a string is a palindrome
+    public static boolean isPalindrome(String str) {
+        // Remove spaces and convert to lower case
+        String cleanedString = str.replaceAll("[\\W]", "").toLowerCase();
+
+        // Get the length of the cleaned string
+        int len = cleanedString.length();
+
+        // Check characters from the beginning and end of the string
+        for (int i = 0; i < len / 2; i++) {
+            if (cleanedString.charAt(i) != cleanedString.charAt(len - 1 - i)) {
+                return false; // Not a palindrome
+            }
+        }
+        return true; // It's a palindrome
+    }
+}
+
  `,
                 output:
                     `
- output//
+Enter a string: A man, a plan, a canal, Panama
+The string is a palindrome.
+
  `
             },
             "determine whether one string is a rotation of another.": {
@@ -14872,21 +17819,121 @@ n: 1
             "find the largest and smallest word in a string": {
                 description: "Program to find the largest and smallest word in a string.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class LargestAndSmallestWord {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for input string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Call the method to find largest and smallest words
+        String[] result = findLargestAndSmallestWord(inputString);
+
+        // Display the results
+        System.out.println("Largest word: " + result[0]);
+        System.out.println("Smallest word: " + result[1]);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to find the largest and smallest words in a string
+    public static String[] findLargestAndSmallestWord(String str) {
+        // Split the string into words using space as a delimiter
+        String[] words = str.split("\\s+");
+        
+        String largestWord = "";
+        String smallestWord = words[0]; // Assume the first word is the smallest initially
+
+        // Iterate through the words to find largest and smallest
+        for (String word : words) {
+            // Update largest word if current word is longer
+            if (word.length() > largestWord.length()) {
+                largestWord = word;
+            }
+            // Update smallest word if current word is shorter
+            if (word.length() < smallestWord.length()) {
+                smallestWord = word;
+            }
+        }
+        
+        return new String[]{largestWord, smallestWord}; // Return the largest and smallest words
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: The quick brown fox jumps over the lazy dog
+Largest word: jumps
+Smallest word: The
+
           `
             },
             "find the longest repeating sequence in a string": {
                 description: "Program to find the longest repeating sequence in a string.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class LongestRepeatingSequence {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for input string
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Call the method to find the longest repeating sequence
+        String longestSequence = findLongestRepeatingSequence(inputString);
+
+        // Display the result
+        if (longestSequence.isEmpty()) {
+            System.out.println("No repeating sequence found.");
+        } else {
+            System.out.println("Longest repeating sequence: " + longestSequence);
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to find the longest repeating sequence in a string
+    public static String findLongestRepeatingSequence(String str) {
+        int n = str.length();
+        String longestRepeating = "";
+
+        // Use a nested loop to compare substrings
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int len = 0;
+
+                // Compare characters while they are the same
+                while (j + len < n && str.charAt(i + len) == str.charAt(j + len)) {
+                    len++;
+                }
+
+                // Update the longest repeating substring if found
+                if (len > longestRepeating.length() && len > 0) {
+                    longestRepeating = str.substring(i, i + len);
+                }
+            }
+        }
+
+        return longestRepeating; // Return the longest repeating substring
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: abcabcabcd
+Longest repeating sequence: abc
+
           `
             },
             "find the most repeated word in a text file": {
