@@ -2062,7 +2062,7 @@ class AreaOfTriangle
 
 `,
                 output: `
-                output//
+Area of Triangle is :- 11.61895003862225
     
                 `
             },
@@ -10783,7 +10783,9 @@ class Main
 
 `,
                 output: `
-          output//
+Spacecraft is Flyable
+Airplane is Flyable
+Helicopter is Flyable
           `
             },
 
