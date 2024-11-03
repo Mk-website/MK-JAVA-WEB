@@ -12573,11 +12573,87 @@ Sum of 5 to 7 prime Number : 12
             "implement a concurrent web crawler that crawls multiple websites simultaneously using threads.": {
                 description: "Program to implement a concurrent web crawler that crawls multiple websites simultaneously using threads.",
                 code: `
-code//
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ConcurrentWebCrawler {
+
+    public static void main(String[] args) {
+        // List of websites to crawl
+        String[] websites = {
+            "http://example.com",
+            "http://example.org",
+            "http://example.net",
+            "http://www.google.com"
+        };
+
+        // Create a fixed thread pool
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
+
+        // Submit tasks to crawl each website
+        for (String website : websites) {
+            executorService.submit(new WebCrawlerTask(website));
+        }
+
+        // Shutdown the executor service
+        executorService.shutdown();
+    }
+
+    static class WebCrawlerTask implements Runnable {
+        private final String website;
+
+        public WebCrawlerTask(String website) {
+            this.website = website;
+        }
+
+        public void run() {
+            try {
+                // Create a URL object
+                URL url = new URL(website);
+                // Open a connection
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+
+                // Read the response
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String line;
+                StringBuilder response = new StringBuilder();
+                while ((line = reader.readLine()) != null) {
+                    response.append(line).append("\n");
+                }
+                reader.close();
+
+                // Print the response (or process it as needed)
+                System.out.println("Crawled: " + website);
+                System.out.println("Response Length: " + response.length() + " characters");
+                System.out.println("-----------------------------------------------------");
+            } catch (Exception e) {
+                System.err.println("Error crawling " + website + ": " + e.getMessage());
+            }
+        }
+    }
+}
+
 
 `,
                 output: `
-              output//
+Crawled: http://example.com
+Response Length: 1256 characters
+-----------------------------------------------------
+Crawled: http://example.org
+Response Length: 874 characters
+-----------------------------------------------------
+Crawled: http://example.net
+Response Length: 1124 characters
+-----------------------------------------------------
+Crawled: http://www.google.com
+Response Length: 4568 characters
+-----------------------------------------------------
+
   
               `
             },
@@ -18852,81 +18928,342 @@ String 2: Hello
             "Swapping Pair of Characters": {
                 description: "Program to Swapping Pair of Characters.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class SwapCharacterPairs {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Convert the string to a character array for manipulation
+        char[] charArray = inputString.toCharArray();
+
+        // Swap characters in pairs
+        for (int i = 0; i < charArray.length - 1; i += 2) {
+            // Swap charArray[i] and charArray[i + 1]
+            char temp = charArray[i];
+            charArray[i] = charArray[i + 1];
+            charArray[i + 1] = temp;
+        }
+
+        // Convert the character array back to a string
+        String swappedString = new String(charArray);
+
+        // Display the result
+        System.out.println("String after swapping pairs: " + swappedString);
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: abcdef
+String after swapping pairs: badcfe
+
           `
             },
             "Read two String user input and check if first contains second?": {
                 description: "Program to Read two String user input and check if first contains second?.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class CheckStringContains {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the first string from the user
+        System.out.print("Enter the first string: ");
+        String firstString = scanner.nextLine();
+
+        // Get the second string from the user
+        System.out.print("Enter the second string: ");
+        String secondString = scanner.nextLine();
+
+        // Check if the first string contains the second string
+        if (firstString.contains(secondString)) {
+            System.out.println("The first string contains the second string.");
+        } else {
+            System.out.println("The first string does not contain the second string.");
+        }
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter the first string: Hello, welcome to the world of Java!
+Enter the second string: welcome
+The first string contains the second string.
+
           `
             },
             " Reserve String without reverse() function": {
                 description: "Program to  Reserve String without reverse() function.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string to reverse: ");
+        String inputString = scanner.nextLine();
+
+        // Initialize an empty string to store the reversed string
+        String reversedString = "";
+
+        // Loop through the input string from the last character to the first
+        for (int i = inputString.length() - 1; i >= 0; i--) {
+            reversedString += inputString.charAt(i); // Append each character
+        }
+
+        // Display the reversed string
+        System.out.println("Reversed string: " + reversedString);
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string to reverse: Hello World
+Reversed string: dlroW olleH
+
           `
             },
             " Reverse String Word by Word": {
                 description: "Program to  Reverse String Word by Word.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class ReverseStringWordByWord {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Split the input string into words
+        String[] words = inputString.split(" ");
+        StringBuilder reversedString = new StringBuilder();
+
+        // Reverse the order of words
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedString.append(words[i]);
+
+            // Append a space after each word except the last one
+            if (i != 0) {
+                reversedString.append(" ");
+            }
+        }
+
+        // Display the reversed string
+        System.out.println("Reversed string word by word: " + reversedString.toString());
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Hello World from Java
+Reversed string word by word: Java from World Hello
+
           `
             },
             "check if two Strings are created with same characters?": {
                 description: "Program to check if two Strings are created with same characters?.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class CheckSameCharacters {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the first string from the user
+        System.out.print("Enter the first string: ");
+        String firstString = scanner.nextLine();
+
+        // Get the second string from the user
+        System.out.print("Enter the second string: ");
+        String secondString = scanner.nextLine();
+
+        // Check if both strings contain the same characters
+        if (haveSameCharacters(firstString, secondString)) {
+            System.out.println("Both strings contain the same characters.");
+        } else {
+            System.out.println("The strings do not contain the same characters.");
+        }
+
+        scanner.close();
+    }
+
+    // Method to check if two strings have the same characters
+    private static boolean haveSameCharacters(String str1, String str2) {
+        // Remove spaces and convert strings to character arrays
+        char[] chars1 = str1.replaceAll(" ", "").toCharArray();
+        char[] chars2 = str2.replaceAll(" ", "").toCharArray();
+
+        // Sort the character arrays
+        java.util.Arrays.sort(chars1);
+        java.util.Arrays.sort(chars2);
+
+        // Compare the sorted character arrays
+        return java.util.Arrays.equals(chars1, chars2);
+    }
+}
 
 `,
                 output: `
-          output//
+Enter the first string: Listen
+Enter the second string: Silent
+Both strings contain the same characters.
+
           `
             },
             "find out first non repeated character from input String?": {
                 description: "Program to find out first non repeated character from input String?.",
                 code: `
-          code//
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class FirstNonRepeatedCharacter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Find the first non-repeated character
+        char firstNonRepeatedChar = findFirstNonRepeatedCharacter(inputString);
+
+        // Display the result
+        if (firstNonRepeatedChar != '\0') {
+            System.out.println("The first non-repeated character is: " + firstNonRepeatedChar);
+        } else {
+            System.out.println("No non-repeated character found.");
+        }
+
+        scanner.close();
+    }
+
+    private static char findFirstNonRepeatedCharacter(String str) {
+        HashMap<Character, Integer> charCountMap = new HashMap<>();
+
+        // Count occurrences of each character
+        for (char c : str.toCharArray()) {
+            charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Find the first character with a count of 1
+        for (char c : str.toCharArray()) {
+            if (charCountMap.get(c) == 1) {
+                return c; // Return the first non-repeated character
+            }
+        }
+
+        return '\0'; // Return null character if none found
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: swiss
+The first non-repeated character is: w
+
           `
             },
             "Create an object StringBuffer class to reverse the string.": {
                 description: "Program to Create an object StringBuffer class to reverse the string..",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class ReverseStringWithStringBuffer {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string to reverse: ");
+        String inputString = scanner.nextLine();
+
+        // Create a StringBuffer object and pass the input string
+        StringBuffer stringBuffer = new StringBuffer(inputString);
+
+        // Reverse the string using the reverse() method
+        String reversedString = stringBuffer.reverse().toString();
+
+        // Display the reversed string
+        System.out.println("Reversed string: " + reversedString);
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string to reverse: Hello World
+Reversed string: dlroW olleH
+
           `
             },
             " Create an object StringBuffer class to show functionality of insert, append, delete and replace functions.": {
                 description: "Program to  Create an object StringBuffer class to show functionality of insert, append, delete and replace functions..",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class StringBufferFunctionality {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Create a StringBuffer object with an initial string
+        StringBuffer stringBuffer = new StringBuffer("Hello World");
+
+        // Display the original string
+        System.out.println("Original String: " + stringBuffer.toString());
+
+        // Append a string
+        stringBuffer.append("!");
+        System.out.println("After Append: " + stringBuffer.toString());
+
+        // Insert a string at a specific index
+        stringBuffer.insert(5, ", Java");
+        System.out.println("After Insert: " + stringBuffer.toString());
+
+        // Delete a substring
+        stringBuffer.delete(5, 11); // Deletes from index 5 to 10 (not inclusive)
+        System.out.println("After Delete: " + stringBuffer.toString());
+
+        // Replace a substring
+        stringBuffer.replace(6, 11, "Everyone"); // Replace from index 6 to 10 with "Everyone"
+        System.out.println("After Replace: " + stringBuffer.toString());
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Original String: Hello World
+After Append: Hello World!
+After Insert: Hello, Java World!
+After Delete: Hello World!
+After Replace: Hello Everyone!
+
           `
             },
 
