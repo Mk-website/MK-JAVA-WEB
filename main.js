@@ -9011,21 +9011,320 @@ Area of Circle : 153.86
             "Create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.": {
                 description: "JAVA Program to create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.",
                 code: `
-        code//
+abstract class Vehicle {
+    protected String make;
+    protected String model;
+    protected int year;
+    protected String fuelType;
+
+    // Constructor for Vehicle
+    public Vehicle(String m, String mdl, int y, String fType) {
+        make = m;
+        model = mdl;
+        year = y;
+        fuelType = fType;
+    }
+
+    
+    abstract double calculateFuelEfficiency(); 
+    abstract double calculateDistanceTraveled(double fuelAmount); 
+    abstract double calculateMaximumSpeed(); 
+
+    
+    void displayInfo() {
+        System.out.println("Make: " + make);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Fuel Type: " + fuelType);
+        System.out.println("Fuel Efficiency: " + calculateFuelEfficiency() + " units");
+        System.out.println("Distance Traveled (for 1 unit of fuel): " + calculateDistanceTraveled(1) + " units");
+        System.out.println("Maximum Speed: " + calculateMaximumSpeed() + " km/h");
+    }
+}
+
+
+class Truck extends Vehicle {
+    private double cargoCapacity; 
+
+    
+    public Truck(String make, String model, int year, String fuelType, double cCap) {
+        super(make, model, year, fuelType);
+        cargoCapacity = cCap;
+    }
+
+    
+    double calculateFuelEfficiency() {
+        return 8; 
+    }
+
+    
+    double calculateDistanceTraveled(double fuelAmount) {
+        return calculateFuelEfficiency() * fuelAmount;
+    }
+
+    
+    double calculateMaximumSpeed() {
+        return 120; 
+    }
+}
+
+
+class Car extends Vehicle {
+    private boolean hasSunroof;
+
+    
+    public Car(String make, String model, int year, String fuelType, boolean hasSunroof) {
+        super(make, model, year, fuelType);
+        this.hasSunroof = hasSunroof;
+    }
+
+   
+    double calculateFuelEfficiency() {
+        return 30; 
+    }
+
+    
+    double calculateDistanceTraveled(double fuelAmount) {
+        return calculateFuelEfficiency() * fuelAmount;
+    }
+
+    
+    double calculateMaximumSpeed() {
+        return 200; 
+    }
+}
+
+
+class Motorcycle extends Vehicle {
+    private boolean hasSidecar;
+
+    
+    public Motorcycle(String make, String model, int year, String fuelType, boolean hasSidecar) {
+        super(make, model, year, fuelType);
+        this.hasSidecar = hasSidecar;
+    }
+
+   
+    double calculateFuelEfficiency() {
+        return 50; 
+    }
+
+    
+    double calculateDistanceTraveled(double fuelAmount) {
+        return calculateFuelEfficiency() * fuelAmount;
+    }
+
+   
+    double calculateMaximumSpeed() {
+        return 180; 
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        
+        Vehicle truck = new Truck("Ford", "F-150", 2023, "Diesel", 3.5);
+        truck.displayInfo();
+
+        System.out.println(); 
+
+       
+        Vehicle car = new Car("Toyota", "Camry", 2024, "Gasoline", true);
+        car.displayInfo();
+
+        System.out.println(); 
+
+       
+        Vehicle motorcycle = new Motorcycle("Harley-Davidson", "Street 750", 2022, "Gasoline", false);
+        motorcycle.displayInfo();
+    }
+}
+
 
 `,
                 output: `
-            output//
+Make: Ford
+Model: F-150
+Year: 2023
+Fuel Type: Diesel
+Fuel Efficiency: 8.0 units
+Distance Traveled (for 1 unit of fuel): 8.0 units
+Maximum Speed: 120.0 km/h
+
+Make: Toyota
+Model: Camry
+Year: 2024
+Fuel Type: Gasoline
+Fuel Efficiency: 30.0 units
+Distance Traveled (for 1 unit of fuel): 30.0 units
+Maximum Speed: 200.0 km/h
+
+Make: Harley-Davidson
+Model: Street 750
+Year: 2022
+Fuel Type: Gasoline
+Fuel Efficiency: 50.0 units
+Distance Traveled (for 1 unit of fuel): 50.0 units
+Maximum Speed: 180.0 km/h
                 `
             },
             "Creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.": {
                 description: "JAVA Program to creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.",
                 code: `
-        code//
+class Employee {
+    protected String name;
+    protected String address;
+    protected double salary;
+    protected String jobTitle;
+
+    
+    public Employee(String n, String adr, double sal, String jTitle) {
+        name = n;
+        address = adr;
+        salary = sal;
+        jobTitle = jTitle;
+    }
+
+    
+    public double calculateBonus() {
+        return salary * 0.05; 
+    }
+
+    
+    public String generatePerformanceReport() {
+        return "Employee " + name + " has been performing well in the role of " + jobTitle + ".";
+    }
+
+    
+    public void manageProject(String projectName) {
+        System.out.println(name + " is working on the project: " + projectName);
+    }
+
+   
+    public void displayDetails() {
+        System.out.println("Name: " + name + ", Address: " + address + ", Salary: $" + salary + ", Job Title: " + jobTitle);
+    }
+}
+
+
+class Manager extends Employee {
+    private int numberOfTeams;
+
+    public Manager(String n, String adr, double sal, int noOfTeams) {
+        super(n, adr, sal, "Manager");
+        numberOfTeams = noOfTeams;
+    }
+
+    
+    public double calculateBonus() {
+        return salary * 0.1; 
+    }
+
+   
+    public String generatePerformanceReport() {
+        return "Manager " + name + " is leading " + numberOfTeams + " teams effectively.";
+    }
+
+    
+    public void manageProject(String projectName) {
+        System.out.println(name + " is managing the project: " + projectName + " with a team of " + numberOfTeams + " teams.");
+    }
+}
+
+
+class Developer extends Employee {
+    private String[] programmingLanguages;
+
+    
+    public Developer(String name, String address, double salary, String[] Languages) {
+        super(name, address, salary, "Developer");
+        programmingLanguages = Languages;
+    }
+
+   
+    public double calculateBonus() {
+        return salary * 0.08; 
+    }
+
+    
+    public String generatePerformanceReport() {
+        return "Developer " + name + " is proficient in " + String.join(", ", programmingLanguages) + ".";
+    }
+
+    
+    public void manageProject(String projectName) {
+        System.out.println(name + " is developing the project: " + projectName + " using " + String.join(", ", programmingLanguages) + ".");
+    }
+}
+
+
+class Programmer extends Employee {
+    private String primaryLanguage;
+
+    
+    public Programmer(String name, String address, double salary, String Language) {
+        super(name, address, salary, "Programmer");
+        primaryLanguage = Language;
+    }
+
+    
+    public double calculateBonus() {
+        return salary * 0.07; 
+    }
+
+    
+    public String generatePerformanceReport() {
+        return "Programmer " + name + " is proficient in " + primaryLanguage + ".";
+    }
+
+    
+    public void manageProject(String projectName) {
+        System.out.println(name + " is programming the project: " + projectName + " using " + primaryLanguage + ".");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Manager manager = new Manager("Manjit", "1515B hallomajra ", 90000, 3);
+        manager.displayDetails();
+        System.out.println("Bonus: Rs." + manager.calculateBonus());
+        System.out.println(manager.generatePerformanceReport());
+        manager.manageProject("Enterprise Project");
+
+       
+        String[] languages = {"Java", "Python", "JavaScript"};
+        Developer developer = new Developer("Abhishek", "1313 Ram darbar", 80000, languages);
+        developer.displayDetails();
+        System.out.println("Bonus: Rs." + developer.calculateBonus());
+        System.out.println(developer.generatePerformanceReport());
+        developer.manageProject("Mobile App Development");
+
+        
+        Programmer programmer = new Programmer("Sandeep", "1515 chd", 70000, "C++");
+        programmer.displayDetails();
+        System.out.println("Bonus: Rs." + programmer.calculateBonus());
+        System.out.println(programmer.generatePerformanceReport());
+        programmer.manageProject("Embedded System Development");
+    }
+}
+
 
 `,
                 output: `
-            output//
+Name: Manjit, Address: 1515B hallomajra , Salary: $90000.0, Job Title: Manager
+Bonus: Rs.9000.0
+Manager Manjit is leading 3 teams effectively.
+Manjit is managing the project: Enterprise Project with a team of 3 teams.
+Name: Abhishek, Address: 1313 Ram darbar, Salary: $80000.0, Job Title: Developer
+Bonus: Rs.6400.0
+Developer Abhishek is proficient in Java, Python, JavaScript.
+Abhishek is developing the project: Mobile App Development using Java, Python, JavaScript.
+Name: Sandeep, Address: 1515 chd, Salary: $70000.0, Job Title: Programmer
+Bonus: Rs.4900.000000000001
+Programmer Sandeep is proficient in C++.
+Sandeep is programming the project: Embedded System Development using C++.
                 `
             },
             "Showing an example of super keyword": {
@@ -17939,141 +18238,615 @@ Longest repeating sequence: abc
             "find the most repeated word in a text file": {
                 description: "Program to find the most repeated word in a text file.",
                 code: `
-          code//
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class MostRepeatedWord {
+    public static void main(String[] args) {
+        String filePath = "sample.txt"; // Specify the path to your text file here
+        findMostRepeatedWord(filePath);
+    }
+
+    public static void findMostRepeatedWord(String filePath) {
+        Map<String, Integer> wordCountMap = new HashMap<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] words = line.toLowerCase().split("\\W+"); // Split line into words, ignoring punctuation
+                for (String word : words) {
+                    if (word.isEmpty()) continue;
+                    wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
+                }
+            }
+
+            // Find the most repeated word
+            String mostRepeatedWord = null;
+            int maxCount = 0;
+
+            for (Map.Entry<String, Integer> entry : wordCountMap.entrySet()) {
+                if (entry.getValue() > maxCount) {
+                    mostRepeatedWord = entry.getKey();
+                    maxCount = entry.getValue();
+                }
+            }
+
+            if (mostRepeatedWord != null) {
+                System.out.println("Most repeated word: " + mostRepeatedWord);
+                System.out.println("Frequency: " + maxCount);
+            } else {
+                System.out.println("No words found in the file.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file: " + e.getMessage());
+        }
+    }
+}
+
 
 `,
                 output: `
-          output//
+Most repeated word: java
+Frequency: 3
+
           `
             },
             "find the number of the words in the given text file": {
                 description: "Program to find the number of the words in the given text file.",
                 code: `
-          code//
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class WordCount {
+    public static void main(String[] args) {
+        String filePath = "sample.txt"; // Specify the path to your text file here
+        int wordCount = countWordsInFile(filePath);
+        System.out.println("Total number of words in the file: " + wordCount);
+    }
+
+    public static int countWordsInFile(String filePath) {
+        int wordCount = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] words = line.trim().split("\\s+"); // Split by whitespace
+                wordCount += words.length; // Add the number of words in this line to the total count
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file: " + e.getMessage());
+        }
+
+        return wordCount;
+    }
+}
+
 
 `,
                 output: `
-          output//
+Total number of words in the file: 9
+
           `
             },
             " Get a Character From the Given String": {
                 description: "Program to  Get a Character From the Given String.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class GetCharacterFromString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Get the index from the user
+        System.out.print("Enter the index of the character you want to retrieve: ");
+        int index = scanner.nextInt();
+
+        // Check if the index is within the valid range
+        if (index >= 0 && index < inputString.length()) {
+            char character = inputString.charAt(index);
+            System.out.println("Character at index " + index + " is: " + character);
+        } else {
+            System.out.println("Invalid index. Please enter an index between 0 and " + (inputString.length() - 1));
+        }
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Hello, World!
+Enter the index of the character you want to retrieve: 7
+Character at index 7 is: W
+
           `
             },
-            "nsert a string into another string": {
-                description: "Program to nsert a string into another string.",
+            "insert a string into another string": {
+                description: "Program to insert a string into another string.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class InsertString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the main string from the user
+        System.out.print("Enter the main string: ");
+        String mainString = scanner.nextLine();
+
+        // Get the string to insert from the user
+        System.out.print("Enter the string to insert: ");
+        String stringToInsert = scanner.nextLine();
+
+        // Get the position from the user
+        System.out.print("Enter the position to insert the string at: ");
+        int position = scanner.nextInt();
+
+        // Check if the position is within the valid range
+        if (position >= 0 && position <= mainString.length()) {
+            // Insert the string
+            String result = mainString.substring(0, position) + stringToInsert + mainString.substring(position);
+            System.out.println("Resulting string: " + result);
+        } else {
+            System.out.println("Invalid position. Please enter a position between 0 and " + mainString.length());
+        }
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter the main string: Kumar
+Enter the string to insert: Manjit
+Enter the position to insert the string at: 0
+Resulting string: ManjitKumar
+
           `
             },
             "Iterate Over Characters in String": {
                 description: "Program to Iterate Over Characters in String.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class IterateCharacters {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Method 1: Using a for loop with charAt()
+        System.out.println("Using charAt() method:");
+        for (int i = 0; i < inputString.length(); i++) {
+            System.out.print(inputString.charAt(i) + " ");
+        }
+
+        System.out.println(); // New line for separation
+
+        // Method 2: Using a for-each loop with toCharArray()
+        System.out.println("Using toCharArray() method:");
+        for (char ch : inputString.toCharArray()) {
+            System.out.print(ch + " ");
+        }
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Hello
+Using charAt() method:
+H e l l o 
+Using toCharArray() method:
+H e l l o 
+
           `
             },
             "Print a New Line in String": {
                 description: "Program to Print a New Line in String.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class PrintNewLineInString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string with \\n to indicate new lines: ");
+        String inputString = scanner.nextLine();
+
+        // Replace occurrences of "\n" with actual new line characters
+        String formattedString = inputString.replace("\\n", "\n");
+
+        System.out.println("Formatted string with new lines:");
+        System.out.println(formattedString);
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string with \n to indicate new lines: Hello\nWorld\nWelcome to Java
+Formatted string with new lines:
+Hello
+World
+Welcome to Java
+
           `
             },
             "Print even length words": {
                 description: "Program to Print even length words.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class EvenLengthWords {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get a sentence from the user
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine();
+
+        // Split the sentence into words
+        String[] words = sentence.split("\\s+");
+
+        System.out.println("Even length words:");
+        for (String word : words) {
+            // Check if the word has an even length
+            if (word.length() % 2 == 0) {
+                System.out.println(word);
+            }
+        }
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a sentence: Java is fun to learn
+Even length words:
+Java
+is
+to
+learn
+
           `
             },
             "print smallest and biggest possible palindrome word in a given string": {
                 description: "Program to print smallest and biggest possible palindrome word in a given string.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class SmallestAndLargestPalindrome {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine();
+
+        // Split the sentence into words
+        String[] words = sentence.split("\\s+");
+
+        String smallestPalindrome = null;
+        String largestPalindrome = null;
+
+        for (String word : words) {
+            if (isPalindrome(word)) {
+                if (smallestPalindrome == null || word.length() < smallestPalindrome.length()) {
+                    smallestPalindrome = word;
+                }
+                if (largestPalindrome == null || word.length() > largestPalindrome.length()) {
+                    largestPalindrome = word;
+                }
+            }
+        }
+
+        // Display the results
+        if (smallestPalindrome != null) {
+            System.out.println("Smallest palindrome: " + smallestPalindrome);
+        } else {
+            System.out.println("No palindromes found.");
+        }
+
+        if (largestPalindrome != null) {
+            System.out.println("Largest palindrome: " + largestPalindrome);
+        }
+
+        scanner.close();
+    }
+
+    // Helper method to check if a word is a palindrome
+    public static boolean isPalindrome(String word) {
+        int left = 0;
+        int right = word.length() - 1;
+        while (left < right) {
+            if (word.charAt(left) != word.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a sentence: Anna went to civic center to see her mom and dad
+Smallest palindrome: mom
+Largest palindrome: civic
+
           `
             },
             "remove all the white spaces from a string": {
                 description: "Program to remove all the white spaces from a string.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class RemoveWhitespace {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Remove all whitespace characters
+        String stringWithoutSpaces = inputString.replaceAll("\\s+", "");
+
+        // Display the result
+        System.out.println("String without whitespace: " + stringWithoutSpaces);
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Hello World! This is a test.
+String without whitespace: HelloWorld!Thisisatest.
+
           `
             },
             "replace lower-case characters with upper-case and vice-versa": {
                 description: "Program to replace lower-case characters with upper-case and vice-versa.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class ReplaceCase {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // StringBuilder to hold the modified string
+        StringBuilder modifiedString = new StringBuilder();
+
+        // Iterate over each character in the input string
+        for (char ch : inputString.toCharArray()) {
+            // Check if the character is lowercase
+            if (Character.isLowerCase(ch)) {
+                // Convert to uppercase
+                modifiedString.append(Character.toUpperCase(ch));
+            } else if (Character.isUpperCase(ch)) {
+                // Convert to lowercase
+                modifiedString.append(Character.toLowerCase(ch));
+            } else {
+                // If it's not a letter, keep it unchanged
+                modifiedString.append(ch);
+            }
+        }
+
+        // Display the result
+        System.out.println("Modified string: " + modifiedString.toString());
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Hello World!
+Modified string: hELLO wORLD!
+
           `
             },
             "replace the spaces of a string with a specific character": {
                 description: "Program to replace the spaces of a string with a specific character.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class ReplaceSpacesWithCharacter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Get the character to replace spaces with
+        System.out.print("Enter a character to replace spaces: ");
+        char replacementChar = scanner.next().charAt(0);
+
+        // Replace spaces with the specified character
+        String modifiedString = inputString.replace(' ', replacementChar);
+
+        // Display the result
+        System.out.println("Modified string: " + modifiedString);
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Hello World! This is Java.
+Enter a character to replace spaces: _
+Modified string: Hello_World!_This_is_Java.
+
           `
             },
             " separate the Individual Characters from a String": {
                 description: "Program to  separate the Individual Characters from a String.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class SeparateCharacters {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Separate and print individual characters
+        System.out.println("Individual characters in the string:");
+        for (char ch : inputString.toCharArray()) {
+            System.out.println(ch);
+        }
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Java Programming
+Individual characters in the string:
+J
+a
+v
+a
+
+P
+r
+o
+g
+r
+a
+m
+m
+i
+n
+g
+
           `
             },
             "Splitting into a number of sub-strings": {
                 description: "Program to Splitting into a number of sub-strings.",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class SplitStringIntoSubstrings {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input string from the user
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        // Get the delimiter for splitting
+        System.out.print("Enter a delimiter (e.g., space, comma): ");
+        String delimiter = scanner.nextLine();
+
+        // Split the string into substrings based on the delimiter
+        String[] substrings = inputString.split(delimiter);
+
+        // Display the resulting substrings
+        System.out.println("Substrings:");
+        for (String substring : substrings) {
+            System.out.println(substring.trim()); // trim to remove leading/trailing spaces
+        }
+
+        scanner.close();
+    }
+}
+
 
 `,
                 output: `
-          output//
+Enter a string: Apple, Banana, Cherry, Date
+Enter a delimiter (e.g., space, comma): ,
+Substrings:
+Apple
+Banana
+Cherry
+Date
+
           `
             },
             " swap two string variables without using third or temp variable.": {
                 description: "Program to  swap two string variables without using third or temp variable..",
                 code: `
-          code//
+import java.util.Scanner;
+
+public class SwapStrings {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the input strings from the user
+        System.out.print("Enter the first string: ");
+        String str1 = scanner.nextLine();
+        
+        System.out.print("Enter the second string: ");
+        String str2 = scanner.nextLine();
+
+        // Display original strings
+        System.out.println("Before swapping: ");
+        System.out.println("String 1: " + str1);
+        System.out.println("String 2: " + str2);
+
+        // Swap the strings
+        str1 = str1 + str2; // Concatenate both strings
+        str2 = str1.substring(0, str1.length() - str2.length()); // Extract the first string
+        str1 = str1.substring(str2.length()); // Extract the second string
+
+        // Display swapped strings
+        System.out.println("After swapping: ");
+        System.out.println("String 1: " + str1);
+        System.out.println("String 2: " + str2);
+
+        scanner.close();
+    }
+}
 
 `,
                 output: `
-          output//
+Enter the first string: Hello
+Enter the second string: World
+Before swapping: 
+String 1: Hello
+String 2: World
+After swapping: 
+String 1: World
+String 2: Hello
+
           `
             },
             "Swapping Pair of Characters": {
